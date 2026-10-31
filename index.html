@@ -27,48 +27,67 @@ img{max-width:100%}
 /* Layout: carnet de cuisine en colonne, onglets collants en haut, étiquettes de prix jaunes façon prospectus suisse */
 :root{
   --paper:#F7F9F5; --card:#FFFFFF; --ink:#1C2923; --muted:#5B6961; --line:#D6DDD4;
-  --accent:#2C6A4D; --accent-soft:#E0EBE3; --tag:#FFD84D; --tag-ink:#2A2300; --danger:#A3362B;
+  --accent:#2C6A4D; --accent-soft:#E0EBE3; --hero-a:#2C6A4D; --hero-b:#46916C; --hero-hi:#CDEFD9; --bar:rgba(255,255,255,.94); --shadow:0 1px 2px rgba(28,41,35,.06),0 6px 16px rgba(28,41,35,.06); --tag:#FFD84D; --tag-ink:#2A2300; --danger:#A3362B;
   --s-migros:#D9601C; --s-lidl:#2457A8; --s-aldi:#2B7A8C; --s-denner:#B3263A;
   /* Une seule police douce et arrondie pour toute l'app */
   --f-display:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
   --f-body:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
   --f-mono:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
-  --r:10px;
+  --r:14px;
 }
 /* Mode nuit (par défaut), en tons plus clairs qu'avant */
 :root[data-theme="dark"]{
   --paper:#1F2924; --card:#2A3530; --ink:#EEF3EF; --muted:#B0BDB5; --line:#3D4A43;
-  --accent:#8FD3AE; --accent-soft:#2D4A3B; --tag:#F5D452; --tag-ink:#231C00; --danger:#F0897C;
+  --accent:#8FD3AE; --accent-soft:#2D4A3B; --hero-a:#2F6049; --hero-b:#3F7A5E; --hero-hi:#BDEBD1; --bar:rgba(42,53,48,.96); --shadow:0 1px 2px rgba(0,0,0,.18); --tag:#F5D452; --tag-ink:#231C00; --danger:#F0897C;
   --s-migros:#F59A60; --s-lidl:#84AAF0; --s-aldi:#74C4D4; --s-denner:#EC7E8C; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
-.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
-header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 16px}
-h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1;margin:0;letter-spacing:-.02em}
-h1 span{color:var(--accent)}
-.week{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);text-align:right}
-.week b{color:var(--ink);font-weight:600}
-nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin:16px 0 20px;padding-block:8px;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
-nav.tabs a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-weight:700;padding:8px 12px;border-radius:999px;white-space:nowrap}
-nav.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-top:16px;padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+/* Icônes (style trait, comme les apps iOS) */
+.ic{width:1.15em;height:1.15em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;vertical-align:-.18em}
+/* En-tête : bandeau vert bien séparé du contenu */
+header.top{position:relative;overflow:hidden;border-radius:24px;padding:20px 20px 18px;margin-bottom:22px;background:linear-gradient(135deg,var(--hero-a),var(--hero-b));color:#fff;box-shadow:0 8px 24px rgba(20,50,35,.25);display:grid;grid-template-columns:1fr auto;gap:12px 12px;align-items:start}
+header.top .deco{position:absolute;right:-18px;bottom:-40px;width:130px;height:130px;opacity:.12;stroke:#fff;stroke-width:1.5;pointer-events:none}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;color:var(--hero-hi);margin-bottom:6px}
+.iconbtn{display:grid;place-items:center;width:42px;height:42px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:#fff}
+.iconbtn .ic{width:20px;height:20px}
+.iconbtn.spin .ic{animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,8vw,2.6rem);line-height:1.02;margin:0;letter-spacing:-.02em;color:#fff}
+h1 span{color:var(--hero-hi)}
+.week{grid-column:1/-1;position:relative;font-size:.86rem;color:rgba(255,255,255,.88);display:flex;gap:8px;align-items:flex-start}
+.week b{color:#fff;font-weight:700}
+/* Onglets : barre flottante en bas, à portée de pouce, icône + nom */
+nav.tabs{position:fixed;z-index:12;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px;border-radius:24px;background:var(--bar);border:1px solid var(--line);box-shadow:0 8px 28px rgba(0,0,0,.22);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+nav.tabs a{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--muted);font-weight:700;font-size:.7rem;padding:2px 0;-webkit-tap-highlight-color:transparent}
+nav.tabs .pill{display:grid;place-items:center;width:54px;height:32px;border-radius:999px;transition:background .15s}
+nav.tabs .ic{width:22px;height:22px}
+nav.tabs a[aria-current="page"]{color:var(--accent)}
+nav.tabs a[aria-current="page"] .pill{background:var(--accent-soft)}
+nav.tabs a[aria-current="page"] .ic{stroke-width:2.4}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.count{font-family:var(--f-mono);font-size:.75rem;margin-left:4px;opacity:.8}
-h2{font-family:var(--f-display);font-weight:800;font-size:1.45rem;margin:0 0 4px;text-wrap:balance}
+.count{font-size:.75rem;margin-left:2px;opacity:.75}
+nav.tabs .count{position:absolute;top:-2px;left:calc(50% + 8px);margin:0;opacity:1;min-width:18px;padding:0 5px;border-radius:999px;background:var(--accent);color:var(--paper);font-size:.62rem;line-height:16px;text-align:center}
+.count:empty{display:none}
+h2{font-family:var(--f-display);font-weight:800;font-size:1.45rem;margin:0 0 6px;text-wrap:balance;display:flex;align-items:center;gap:12px;line-height:1.15}
+.ibub{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border-radius:13px;background:var(--accent-soft);color:var(--accent)}
+.ibub .ic{width:21px;height:21px}
 h3{font-family:var(--f-display);font-weight:600;font-size:1.15rem;margin:0;text-wrap:balance;line-height:1.2}
 .lede{color:var(--muted);margin:0 0 16px;max-width:62ch}
 .status{font-size:.9rem;color:var(--muted);padding:10px 12px;border:1px dashed var(--line);border-radius:var(--r);margin-bottom:16px}
 .stack{display:flex;flex-direction:column;gap:12px}
-.group{font-family:var(--f-display);font-weight:600;font-size:1rem;margin:16px 0 6px;display:flex;align-items:center;gap:8px}
+.group{font-family:var(--f-display);font-weight:800;font-size:1.05rem;margin:16px 0 6px;display:flex;align-items:center;gap:8px}
+.group .ic{color:var(--accent)}
 /* cartes recettes */
-.rcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.rcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .rhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
 .badge{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
 .badge.claude{background:var(--accent-soft);color:var(--accent)}
 .badge.moi{background:var(--ink);color:var(--paper)}
 .savings{font-family:var(--f-mono);font-size:.8rem;background:var(--tag);color:var(--tag-ink);padding:2px 8px;border-radius:4px;white-space:nowrap}
-.timing{font-family:var(--f-mono);font-size:.8rem}
+.timing{font-size:.82rem;display:inline-flex;align-items:center;gap:4px}
 .ings{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .ings li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline}
 .ings .q{font-family:var(--f-mono);font-size:.85rem;color:var(--muted);min-width:4.5em}
@@ -92,11 +111,11 @@ button:disabled{opacity:.5;cursor:default}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .chip.static{cursor:default}
 .chip .rm{border:0;background:transparent;color:inherit;padding:0 0 0 2px;font-size:1rem;line-height:1;cursor:pointer}
-.search,.field{width:100%;font:inherit;padding:9px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.search,.field{width:100%;font:inherit;padding:11px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 .search{margin-bottom:12px}
 /* promos */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-.promo{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.promo{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .promo .store{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px}
 .promo .name{font-weight:700;line-height:1.25}
 .promo .fmt{font-size:.85rem;color:var(--muted)}
@@ -111,20 +130,20 @@ button:disabled{opacity:.5;cursor:default}
 .mhead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .mhead .group{margin:0}
 .slots{display:grid;gap:10px}
-.slot{display:grid;grid-template-columns:5.5rem 1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;align-items:start}
+.slot{display:grid;grid-template-columns:5.5rem 1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:12px 14px;align-items:start}
 .slot .day{font-family:var(--f-mono);font-weight:600;font-size:.85rem;line-height:1.3}
 .slot .day small{display:block;font-weight:500;color:var(--muted);font-size:.75rem;margin-top:2px}
 .slot .body{min-width:0;display:grid;gap:4px}
 .slot .body button.link{all:unset;cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:1.05rem;line-height:1.25;color:var(--ink)}
 .slot .body button.link:hover,.slot .body button.link:focus-visible{color:var(--accent);text-decoration:underline}
-.slot.rest{background:transparent;border-style:dashed}
+.slot.rest{background:transparent;border-style:dashed;box-shadow:none}
 .slot .tip{font-size:.85rem;color:var(--muted)}
 .vegs{display:flex;flex-wrap:wrap;gap:4px}
 .theme{font-size:.9rem;color:var(--muted);margin:-6px 0 14px}
 @media (max-width:440px){.slot{grid-template-columns:1fr;gap:6px}}
 .rcard.flash{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
 /* favoris */
-.favbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:12px}
+.favbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 16px;margin-bottom:12px}
 .favbox .group{margin-top:0}
 .kv{display:grid;grid-template-columns:8rem 1fr;gap:6px 12px;font-size:.92rem}
 .kv dt{color:var(--muted);font-weight:700}
@@ -132,7 +151,7 @@ button:disabled{opacity:.5;cursor:default}
 .kv ul{margin:0;padding-left:1.1em}
 @media (max-width:480px){.kv{grid-template-columns:1fr}.kv dd{margin-bottom:6px}}
 /* formulaire */
-form.add{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+form.add{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
 form.add label{display:grid;gap:4px;font-weight:700;font-size:.9rem}
 form.add .hint{font-weight:400;color:var(--muted);font-size:.82rem}
 form.add input:not([type=checkbox]),form.add textarea,form.add select{font:inherit;font-weight:400;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
@@ -142,45 +161,47 @@ form.add label.check input{width:20px;height:20px;accent-color:var(--accent)}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:520px){.three{grid-template-columns:1fr 1fr}}
 .empty{padding:20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--r)}
-.totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;width:44px;height:44px;padding:0;border-radius:50%;border:none;background:var(--accent);color:var(--paper);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:15;width:44px;height:44px;padding:0;border-radius:50%;border:none;background:var(--accent);color:var(--paper);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .totop svg{width:22px;height:22px}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.9rem;z-index:20}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.9rem;z-index:20}
 .source{font-size:.8rem;color:var(--muted);margin-top:24px}
 @media (prefers-reduced-motion:no-preference){.rcard,.promo{transition:border-color .15s}.rcard:hover,.promo:hover{border-color:var(--accent)}}
 
-.topright{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 button.small{padding:4px 12px;font-size:.82rem}
-@media (display-mode: standalone){ .wrap{padding-block:12px 40px} }
+@media (display-mode: standalone){ .wrap{padding-top:10px} }
 </style>
 </head>
 <body>
 
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
 <div class="wrap">
   <header class="top">
-    <h1>Carnet <span>de repas</span></h1>
-    <div class="topright"><div class="week" id="week"></div><button type="button" id="refresh" class="ghost small" aria-label="Actualiser le carnet">Actualiser</button></div>
+    <svg class="deco" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="#i-leaf"/></svg>
+    <div><div class="brand"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg> Pour nous deux</div><h1>Carnet <span>de repas</span></h1></div>
+    <button type="button" id="refresh" class="iconbtn" aria-label="Actualiser le carnet" title="Actualiser"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg></button>
+    <div class="week"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg><span id="week"></span></div>
   </header>
 
   <nav class="tabs" aria-label="Sections">
-    <a href="#menu" data-view="menu">Menu</a>
-    <a href="#recettes" data-view="recettes">Recettes<span class="count" id="c-rec"></span></a>
-    <a href="#actions" data-view="actions">Actions<span class="count" id="c-promo"></span></a>
-    <a href="#favoris" data-view="favoris">Favoris</a>
-    <a href="#ajout" data-view="ajout">+ Ajout recette</a>
+    <a href="#menu" data-view="menu"><span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></span>Menu</a>
+    <a href="#recettes" data-view="recettes"><span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>Recettes<span class="count" id="c-rec"></span></a>
+    <a href="#actions" data-view="actions"><span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg></span>Actions<span class="count" id="c-promo"></span></a>
+    <a href="#favoris" data-view="favoris"><span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>Favoris</a>
+    <a href="#ajout" data-view="ajout"><span class="pill"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span>Ajouter</a>
   </nav>
 
   <div class="status" id="status">Chargement du carnet…</div>
 
   <section id="v-menu">
-    <h2 id="menuTitle">Menus de la semaine</h2>
+    <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></span><span id="menuTitle">Menus de la semaine</span></h2>
     <p class="lede" id="menuLede">Deux menus au choix pour deux personnes.</p>
     <div class="chips" id="menuPick" role="group" aria-label="Choisir un menu"></div>
     <div id="menuWrap"></div>
   </section>
 
   <section id="v-recettes" hidden>
-    <h2>Toutes les recettes</h2>
+    <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span>Toutes les recettes</span></h2>
     <p class="lede">Les vôtres et les suggestions de Claude. Le temps affiché en premier est le temps de préparation, hors cuisson.</p>
     <div class="chips" id="recFilter">
       <button class="chip" data-f="all" aria-pressed="true">Toutes</button>
@@ -190,12 +211,12 @@ button.small{padding:4px 12px;font-size:.82rem}
       <button class="chip" data-f="claude" aria-pressed="false">Suggestions de Claude</button>
       <button class="chip" data-f="rapide" aria-pressed="false">Rapides · 15 min max</button>
     </div>
-    <input class="search" id="recSearch" type="search" placeholder="Chercher une recette ou un ingrédient">
+    <input class="search" id="recSearch" type="search" enterkeyhint="search" placeholder="Chercher une recette ou un ingrédient">
     <div class="stack" id="recList"></div>
   </section>
 
   <section id="v-actions" hidden>
-    <h2>Actions alimentaires</h2>
+    <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg></span><span>Actions alimentaires</span></h2>
     <p class="lede">Une sélection des produits utiles pour cuisiner, viande suisse uniquement. Prix relevés pour le canton de Vaud, ils peuvent varier un peu selon la région.</p>
     <div class="chips" id="storeFilter"></div>
     <input class="search" id="promoSearch" type="search" placeholder="Chercher un produit (ex. poulet, courgette)">
@@ -203,24 +224,24 @@ button.small{padding:4px 12px;font-size:.82rem}
   </section>
 
   <section id="v-favoris" hidden>
-    <h2>Nos favoris</h2>
+    <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><span>Nos favoris</span></h2>
     <p class="lede">Les menus mettent ces produits en avant. Ajoutez ou retirez ce que vous voulez.</p>
     <div id="favLists"></div>
     <div class="favbox">
-      <div class="group">Nos goûts et règles</div>
+      <div class="group"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg> Nos goûts et règles</div>
       <dl class="kv" id="gouts"></dl>
       <p class="note">Pour changer ces règles, il suffit de le dire à Claude dans le chat.</p>
     </div>
     <div class="favbox">
-      <div class="group">Affichage</div>
+      <div class="group"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg> Affichage</div>
       <div class="chips" id="themeChips" style="margin-bottom:4px">
-        <button type="button" class="chip" data-theme-set="dark" aria-pressed="false">🌙 Mode nuit</button>
-        <button type="button" class="chip" data-theme-set="light" aria-pressed="false">☀️ Mode jour</button>
+        <button type="button" class="chip" data-theme-set="dark" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg> Mode nuit</button>
+        <button type="button" class="chip" data-theme-set="light" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg> Mode jour</button>
       </div>
       <p class="note">Le choix est gardé sur ce téléphone.</p>
     </div>
     <div class="favbox">
-      <div class="group">Accès en modification</div>
+      <div class="group"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Accès en modification</div>
       <p class="note" id="accessState" style="margin-top:0"></p>
       <form class="row" id="tokenForm" style="margin-top:8px">
         <input class="field" id="tokenInput" type="password" style="flex:1;min-width:0" placeholder="Coller le code d'accès (github_pat_…)" autocomplete="off" autocapitalize="off" spellcheck="false">
@@ -232,7 +253,7 @@ button.small{padding:4px 12px;font-size:.82rem}
   </section>
 
   <section id="v-ajout" hidden>
-    <h2 id="formTitle">Ajouter une recette</h2>
+    <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span><span id="formTitle">Ajouter une recette</span></h2>
     <p class="lede" id="formLede">Elle rejoint ton carnet et sera reliée automatiquement aux actions de chaque semaine.</p>
     <div class="empty" id="v-ajout-locked" hidden>Pour ajouter ou modifier des recettes, enregistre d'abord le code d'accès dans l'onglet <a href="#favoris" style="color:var(--accent)">Favoris</a>.</div>
     <form class="add" id="addForm">
@@ -286,6 +307,7 @@ const FAVS = [["legumes","Légumes"],["fruits","Fruits"],["viandes","Viandes"]];
 const EMPTY = {"moi-midi":"Aucun plat de midi à toi pour l'instant.","moi-soir":"Aucune recette du soir à toi pour l'instant.","moi-weekend":"Aucune recette du weekend à toi pour l'instant."};
 const S = {promos:[], recettes:[], meta:null, menu:null, prefs:null, menuIdx:0, recFilter:"all", store:"all", editing:null};
 const $ = s => document.querySelector(s);
+const ic = n => `<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`;
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm = s => String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const chf = n => typeof n === "number" ? n.toFixed(2) : "";
@@ -394,7 +416,7 @@ function recipeCard(r){
   const insp = r.inspiration && /^https:\/\//.test(r.inspiration.url||"") ? `<p class="note">Inspiré de <a href="${esc(r.inspiration.url)}" target="_blank" rel="noopener">${esc(r.inspiration.nom||"la recette d'origine")}</a></p>` : "";
   return `<article class="rcard" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
     <div class="rhead"><h3>${esc(r.title)}</h3>${hits.length?`<span class="savings">${hits.length} en action</span>`:""}</div>
-    <div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Ma recette":"Suggestion"}</span>${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
+    <div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Ma recette":"Suggestion"}</span>${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
     ${(r.tags||[]).length?`<div class="meta">${r.tags.map(esc).join(" · ")}</div>`:""}
     ${r.reheat?`<p class="note">Au micro-ondes : ${esc(r.reheat)}</p>`:""}
     <ul class="ings">${ings}</ul>
@@ -433,7 +455,7 @@ function slotHtml(s, kind){
     <div class="day">${esc(s.days||s.day)}${s.when?`<small>${esc(s.when)}</small>`:""}</div>
     <div class="body">
       <button class="link" type="button" data-open="${esc(r._id)}">${s.leftover?"Reste : ":""}${esc(r.title)}</button>
-      ${s.leftover?"":`<div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>${kind==="midi"?`<span>${esc(s.portions||r.servings||4)} portions</span>`:""}${timing(r)?`<span class="timing">${esc(timing(r))}</span>`:""}${pc?`<span class="savings">${pc} en action</span>`:""}</div>`}
+      ${s.leftover?"":`<div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>${kind==="midi"?`<span>${esc(s.portions||r.servings||4)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${pc?`<span class="savings">${pc} en action</span>`:""}</div>`}
       ${vegs.length&&!s.leftover?`<div class="vegs">${vegs.map(v=>`<span class="veg">${esc(v)}</span>`).join("")}</div>`:""}
       ${s.tip?`<span class="tip">${esc(s.tip)}</span>`:""}
     </div></div>`;
@@ -446,9 +468,9 @@ function renderMenu(){
   $("#menuPick").innerHTML = opts.map((o,i)=>`<button class="chip" type="button" data-menu="${i}" aria-pressed="${i===S.menuIdx}">${esc(o.nom||"Menu "+(i+1))}</button>`).join("");
   const o = opts[S.menuIdx];
   el.innerHTML = `${o.theme?`<p class="theme">${esc(o.theme)}</p>`:""}
-    <div class="mblock"><div class="mhead"><div class="group">Midis · tupperwares</div><span class="until">2 personnes × 2 jours par fournée</span></div>
+    <div class="mblock"><div class="mhead"><div class="group">${ic("box")} Midis · tupperwares</div><span class="until">2 personnes × 2 jours par fournée</span></div>
       <div class="slots">${(o.midi||[]).map(s=>slotHtml(s,"midi")).join("")}</div></div>
-    <div class="mblock"><div class="mhead"><div class="group">Soirs rapides</div><span class="until">Pour 2</span></div>
+    <div class="mblock"><div class="mhead"><div class="group">${ic("moon")} Soirs rapides</div><span class="until">Pour 2</span></div>
       <div class="slots">${(o.soir||[]).map(s=>slotHtml(s,"soir")).join("")}</div></div>
     ${o.note?`<p class="note">${esc(o.note)}</p>`:""}`;
 }
@@ -476,14 +498,14 @@ function renderPromos(){
 }
 function renderWeek(){
   const m = S.meta;
-  $("#week").innerHTML = m ? `Actions du <b>${esc(m.from)}</b> au <b>${esc(m.to)}</b><br>mises à jour le ${esc(m.updated)}` : "";
+  $("#week").innerHTML = m ? `Actions du <b>${esc(m.from)}</b> au <b>${esc(m.to)}</b> · mises à jour le ${esc(m.updated)}` : "";
 }
 
 /* ---- favoris ---- */
 function renderFavs(){
   const w = canWrite();
   $("#favLists").innerHTML = FAVS.map(([k,label]) => `<div class="favbox">
-    <div class="group">${label} favoris</div>
+    <div class="group">${ic("leaf")} ${label} favoris</div>
     <div class="chips" style="margin-bottom:8px">${favList(k).length ? favList(k).map((v,i)=>`<span class="chip static">${esc(v)}${w?`<button class="rm" type="button" data-rmfav="${k}:${i}" aria-label="Retirer ${esc(v)}">×</button>`:""}</span>`).join("") : `<span class="note" style="margin:0">Aucun pour l'instant.</span>`}</div>
     ${w?`<form class="row" data-addfav="${k}"><input class="field" id="fav-${k}" style="flex:1;min-width:0" placeholder="Ajouter (ex. ${k==="fruits"?"pomme":k==="viandes"?"émincé de porc":"poireau"})" autocomplete="off"><button type="submit">Ajouter</button></form>`:""}
   </div>`).join("");
@@ -509,7 +531,7 @@ function route(){
   VIEWS.forEach(x => { $("#v-"+x).hidden = x!==v; });
   document.querySelectorAll("nav.tabs a").forEach(a => { if (a.dataset.view===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
 }
-window.addEventListener("hashchange", route);
+window.addEventListener("hashchange", ()=>{ route(); window.scrollTo(0,0); });
 
 /* ---- écritures ---- */
 function writeError(e){
@@ -585,7 +607,7 @@ document.addEventListener("submit", e => {
 $("#recSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-10-31c";
+const APP_VERSION = "2026-11-01a";
 function applyTheme(t){
   document.documentElement.setAttribute("data-theme", t);
   const m = document.getElementById("themeColor"); if (m) m.content = t==="light" ? "#F7F9F5" : "#1F2924";
@@ -601,7 +623,7 @@ async function checkAppUpdate(){
   }catch{}
   return false;
 }
-$("#refresh").addEventListener("click", async ()=>{ if (!(await checkAppUpdate())) loadAll(); });
+$("#refresh").addEventListener("click", async (e)=>{ const b=e.currentTarget; b.classList.add("spin"); try{ if (!(await checkAppUpdate())) await loadAll(); } finally { b.classList.remove("spin"); } });
 document.addEventListener("visibilitychange", ()=>{ if (document.visibilityState==="visible"){ checkAppUpdate(); if (Date.now()-(loadAll.last||0) > 5*60*1000){ loadAll.last=Date.now(); loadAll(true); } } });
 $("#f-cancel").addEventListener("click", ()=>{ const id=S.editing; fillForm(null); if(id) openRecipe(id); });
 $("#addForm").addEventListener("submit", async e => {
