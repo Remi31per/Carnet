@@ -577,8 +577,18 @@ document.addEventListener("submit", e => {
 });
 $("#recSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
-$("#refresh").addEventListener("click", ()=>loadAll());
-document.addEventListener("visibilitychange", ()=>{ if (document.visibilityState==="visible" && Date.now()-(loadAll.last||0) > 5*60*1000){ loadAll.last=Date.now(); loadAll(true); } });
+// Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
+const APP_VERSION = "2026-10-31b";
+async function checkAppUpdate(){
+  try{
+    const r = await fetch(`./?t=${Date.now()}`, {cache:"no-store"}); if (!r.ok) return false;
+    const m = (await r.text()).match(/const APP_VERSION = "([^"]+)"/);
+    if (m && m[1] !== APP_VERSION){ toast("Nouvelle version de l'app…"); setTimeout(()=>location.replace(`./?v=${encodeURIComponent(m[1])}${location.hash}`), 600); return true; }
+  }catch{}
+  return false;
+}
+$("#refresh").addEventListener("click", async ()=>{ if (!(await checkAppUpdate())) loadAll(); });
+document.addEventListener("visibilitychange", ()=>{ if (document.visibilityState==="visible"){ checkAppUpdate(); if (Date.now()-(loadAll.last||0) > 5*60*1000){ loadAll.last=Date.now(); loadAll(true); } } });
 $("#f-cancel").addEventListener("click", ()=>{ const id=S.editing; fillForm(null); if(id) openRecipe(id); });
 $("#addForm").addEventListener("submit", async e => {
   e.preventDefault();
@@ -622,7 +632,7 @@ $("#tokenForm").addEventListener("submit", async e => {
 });
 $("#tokenClear").addEventListener("click", ()=>{ store.set("ghToken", null); toast("Code d'accès retiré de ce téléphone"); loadAll(); });
 
-route(); renderAll(); loadAll.last = Date.now(); loadAll();
+route(); renderAll(); loadAll.last = Date.now(); loadAll(); checkAppUpdate();
 </script>
 </body>
 </html>
