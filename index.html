@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Carnet & Actions</title>
+<title>Carnet de repas</title>
 <meta name="description" content="Nos recettes, nos menus de la semaine et les actions Migros, Lidl, Aldi et Denner.">
 <meta name="theme-color" content="#F2F5EF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111714" media="(prefers-color-scheme: dark)">
@@ -143,6 +143,8 @@ form.add label.check input{width:20px;height:20px;accent-color:var(--accent)}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:520px){.three{grid-template-columns:1fr 1fr}}
 .empty{padding:20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--r)}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;width:44px;height:44px;padding:0;border-radius:50%;border:none;background:var(--accent);color:var(--paper);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.totop svg{width:22px;height:22px}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.9rem;z-index:20}
 .source{font-size:.8rem;color:var(--muted);margin-top:24px}
 @media (prefers-reduced-motion:no-preference){.rcard,.promo{transition:border-color .15s}.rcard:hover,.promo:hover{border-color:var(--accent)}}
@@ -157,7 +159,7 @@ button.small{padding:4px 12px;font-size:.82rem}
 
 <div class="wrap">
   <header class="top">
-    <h1>Carnet <span>&amp;</span> Actions</h1>
+    <h1>Carnet <span>de repas</span></h1>
     <div class="topright"><div class="week" id="week"></div><button type="button" id="refresh" class="ghost small" aria-label="Actualiser le carnet">Actualiser</button></div>
   </header>
 
@@ -265,6 +267,7 @@ button.small{padding:4px 12px;font-size:.82rem}
 
   <p class="source">Actions relevées sur les prospectus publics de chaque enseigne, mises à jour automatiquement chaque lundi et jeudi par Claude. Vérifiez en magasin : les stocks et quelques prix diffèrent selon la région.</p>
 </div>
+<button type="button" class="totop" id="totop" aria-label="Revenir en haut" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div class="toast" id="toast" hidden></div>
 
 
@@ -280,6 +283,8 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const norm = s => String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const chf = n => typeof n === "number" ? n.toFixed(2) : "";
 const typeOf = r => r.type === "autre" ? "weekend" : (r.type || "");
+(()=>{const b=document.getElementById("totop");const upd=()=>{b.hidden=window.scrollY<500};window.addEventListener("scroll",upd,{passive:true});upd();
+  b.addEventListener("click",()=>window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));})();
 function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
 function setStatus(msg){ const s=$("#status"); s.textContent=msg||""; s.hidden=!msg; }
 const store = { get(k){ try{return localStorage.getItem(k)}catch{return null} }, set(k,v){ try{ v==null?localStorage.removeItem(k):localStorage.setItem(k,v) }catch{} } };

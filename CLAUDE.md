@@ -1,4 +1,6 @@
-# Carnet & Actions — notes pour Claude
+# Carnet de repas — notes pour Claude
+
+Nom affiché dans l'app : « Carnet de repas » (anciennement « Carnet & Actions » ; le dépôt et l'adresse restent « Carnet »).
 
 App de recettes et de menus pour un couple en Suisse romande, utilisée sur iPhone (ajoutée à l'écran d'accueil).
 Adresse : https://remi31per.github.io/Carnet/ — hébergée par GitHub Pages depuis la branche `main`, dossier racine.
@@ -11,7 +13,7 @@ Quand l'utilisateur change une règle ou une attente, ou demande une modificatio
 Puis committer et pousser sur `main`. Sinon le changement reste dans la conversation et est oublié la fois suivante.
 
 ## Fichiers
-- `index.html` : toute l'app (HTML, CSS, JS dans un seul fichier). Pas de build.
+- `index.html` : toute l'app (HTML, CSS, JS dans un seul fichier). Pas de build. Un bouton flèche « Revenir en haut » (`#totop`, en bas à droite) apparaît dès qu'on a défilé de 500 px ; le garder.
 - `manifest.webmanifest`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` : installation sur l'écran d'accueil. Après un changement d'icône, incrémenter `?v=` dans `index.html` et le manifest.
 - `data/recettes.json` : objet `{id: recette}`. `source: "moi"` = leurs recettes (ne jamais supprimer sans demande explicite), `source: "claude"` = suggestions (id `c-…`).
   Recette : `{title, source, type: "midi"|"soir"|"weekend", weekend?, servings, prep (min hors cuisson), cuisson (min), time?, tags, reheat? (micro-ondes, plats de midi), ingredients: [{q, n}], steps, notes, inspiration? {nom, url}, saison? {de, a, label}, createdAt, updatedAt?}`
