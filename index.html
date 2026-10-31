@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Carnet de repas</title>
 <meta name="description" content="Nos recettes, nos menus de la semaine et les actions Migros, Lidl, Aldi et Denner.">
-<script>/* Thème : nuit par défaut, jour en option (Favoris → Affichage) */
-(function(){var t="dark";try{t=localStorage.getItem("theme")||"dark"}catch(e){}document.documentElement.setAttribute("data-theme",t);
-document.write('<meta name="theme-color" id="themeColor" content="'+(t==="light"?"#F7F9F5":"#1F2924")+'">');})();</script>
+<script>/* Thème : automatique par défaut (nuit de 19 h à 7 h), ou nuit / jour fixe (Favoris → Affichage) */
+(function(){var m="auto";try{m=localStorage.getItem("themeMode")||"auto"}catch(e){}var h=new Date().getHours();
+var t=m==="auto"?((h>=19||h<7)?"dark":"light"):m;document.documentElement.setAttribute("data-theme",t);
+document.write('<meta name="theme-color" id="themeColor" content="'+(t==="light"?"#F6F0E3":"#1F2924")+'">');})();</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet">
@@ -24,10 +25,16 @@ body{margin:0}
 [hidden]{display:none!important}
 img{max-width:100%}
 
-/* Layout: carnet de cuisine en colonne, onglets collants en haut, étiquettes de prix jaunes façon prospectus suisse */
+/* Layout : bandeau vert en haut, barre d'onglets verte en bas, blocs teintés ; palette vert + ivoire, sea teal, dusty rose, terracotta */
 :root{
-  --paper:#F7F9F5; --card:#FFFFFF; --ink:#1C2923; --muted:#5B6961; --line:#D6DDD4;
-  --accent:#2C6A4D; --accent-soft:#E0EBE3; --hero-a:#2C6A4D; --hero-b:#46916C; --hero-hi:#CDEFD9; --bar:rgba(255,255,255,.94); --shadow:0 1px 2px rgba(28,41,35,.06),0 6px 16px rgba(28,41,35,.06); --tag:#FFD84D; --tag-ink:#2A2300; --danger:#A3362B;
+  /* Palette : vert principal + ivoire doux, bleu-vert (sea teal), vieux rose (dusty rose), terracotta */
+  --paper:#F6F0E3; --card:#FFFCF6; --ink:#26302B; --muted:#676B63; --line:#E3D8C3;
+  --accent:#2C6A4D; --accent-soft:#E2ECE2;
+  --teal:#4E7F7B; --teal-soft:#E0EBE8; --rose:#B2767F; --rose-soft:#F4E4E5; --rose-ink:#8B4E58; --terra:#C56A4D; --terra-soft:#F7E2D8;
+  --hero-a:#2C6A4D; --hero-b:#4E7F7B; --hero-hi:#F1E8D6;
+  --bar-bg:#2C6A4D; --bar-ink:#D3E6DA; --bar-on:#F1E8D6; --bar-on-ink:#24583F;
+  --shadow:0 1px 2px rgba(70,55,30,.07),0 6px 16px rgba(70,55,30,.07);
+  --tag:#B95F43; --tag-ink:#FFF8EE; --danger:#9E5A64;
   --s-migros:#D9601C; --s-lidl:#2457A8; --s-aldi:#2B7A8C; --s-denner:#B3263A;
   /* Une seule police douce et arrondie pour toute l'app */
   --f-display:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
@@ -37,8 +44,13 @@ img{max-width:100%}
 }
 /* Mode nuit (par défaut), en tons plus clairs qu'avant */
 :root[data-theme="dark"]{
-  --paper:#1F2924; --card:#2A3530; --ink:#EEF3EF; --muted:#B0BDB5; --line:#3D4A43;
-  --accent:#8FD3AE; --accent-soft:#2D4A3B; --hero-a:#2F6049; --hero-b:#3F7A5E; --hero-hi:#BDEBD1; --bar:rgba(42,53,48,.96); --shadow:0 1px 2px rgba(0,0,0,.18); --tag:#F5D452; --tag-ink:#231C00; --danger:#F0897C;
+  --paper:#1F2924; --card:#2A3530; --ink:#F1E8D6; --muted:#BAB6A6; --line:#3D4A43;
+  --accent:#8FD3AE; --accent-soft:#2D4A3B;
+  --teal:#8DBDB8; --teal-soft:#26403D; --rose:#D9A0A8; --rose-soft:#3E2E31; --rose-ink:#EDBDC4; --terra:#D98466; --terra-soft:#45302A;
+  --hero-a:#2F6049; --hero-b:#3F6B68; --hero-hi:#F1E8D6;
+  --bar-bg:#3A7A5B; --bar-ink:#D6EADD; --bar-on:#F1E8D6; --bar-on-ink:#24583F;
+  --shadow:0 1px 2px rgba(0,0,0,.18);
+  --tag:#D98466; --tag-ink:#2A140C; --danger:#E8A3AC;
   --s-migros:#F59A60; --s-lidl:#84AAF0; --s-aldi:#74C4D4; --s-denner:#EC7E8C; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
@@ -59,16 +71,15 @@ h1 span{color:var(--hero-hi)}
 .week{grid-column:1/-1;position:relative;font-size:.86rem;color:rgba(255,255,255,.88);display:flex;gap:8px;align-items:flex-start}
 .week b{color:#fff;font-weight:700}
 /* Onglets : barre flottante en bas, à portée de pouce, icône + nom */
-nav.tabs{position:fixed;z-index:12;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px;border-radius:24px;background:var(--bar);border:1px solid var(--line);box-shadow:0 8px 28px rgba(0,0,0,.22);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
-nav.tabs a{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--muted);font-weight:700;font-size:.7rem;padding:2px 0;-webkit-tap-highlight-color:transparent}
-nav.tabs .pill{display:grid;place-items:center;width:54px;height:32px;border-radius:999px;transition:background .15s}
-nav.tabs .ic{width:22px;height:22px}
-nav.tabs a[aria-current="page"]{color:var(--accent)}
-nav.tabs a[aria-current="page"] .pill{background:var(--accent-soft)}
+nav.tabs{position:fixed;z-index:12;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:7px 6px;border-radius:26px;background:var(--bar-bg);border:1px solid rgba(255,255,255,.14);box-shadow:0 10px 30px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.2)}
+nav.tabs a{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--bar-ink);font-weight:700;font-size:.72rem;padding:6px 0 5px;border-radius:19px;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s}
+nav.tabs .pill{display:grid;place-items:center;height:26px}
+nav.tabs .ic{width:23px;height:23px}
+nav.tabs a[aria-current="page"]{background:var(--bar-on);color:var(--bar-on-ink);font-weight:800}
 nav.tabs a[aria-current="page"] .ic{stroke-width:2.4}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .count{font-size:.75rem;margin-left:2px;opacity:.75}
-nav.tabs .count{position:absolute;top:-2px;left:calc(50% + 8px);margin:0;opacity:1;min-width:18px;padding:0 5px;border-radius:999px;background:var(--accent);color:var(--paper);font-size:.62rem;line-height:16px;text-align:center}
+nav.tabs .count{position:absolute;top:1px;left:calc(50% + 8px);margin:0;opacity:1;min-width:18px;padding:0 5px;border-radius:999px;background:var(--terra);color:#FFF8EE;border:1.5px solid var(--bar-bg);font-size:.62rem;line-height:16px;text-align:center}
 .count:empty{display:none}
 h2{font-family:var(--f-display);font-weight:800;font-size:1.45rem;margin:0 0 6px;text-wrap:balance;display:flex;align-items:center;gap:12px;line-height:1.15}
 .ibub{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border-radius:13px;background:var(--accent-soft);color:var(--accent)}
@@ -84,9 +95,9 @@ h3{font-family:var(--f-display);font-weight:600;font-size:1.15rem;margin:0;text-
 .rhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
 .badge{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
-.badge.claude{background:var(--accent-soft);color:var(--accent)}
-.badge.moi{background:var(--ink);color:var(--paper)}
-.savings{font-family:var(--f-mono);font-size:.8rem;background:var(--tag);color:var(--tag-ink);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.badge.claude{background:var(--rose-soft);color:var(--rose-ink)}
+.badge.moi{background:var(--teal);color:var(--paper)}
+.savings{font-family:var(--f-mono);font-size:.8rem;font-weight:700;background:var(--tag);color:var(--tag-ink);padding:2px 10px;border-radius:999px;white-space:nowrap}
 .timing{font-size:.82rem;display:inline-flex;align-items:center;gap:4px}
 .ings{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .ings li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline}
@@ -108,11 +119,20 @@ button:disabled{opacity:.5;cursor:default}
 /* filtres */
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:.88rem;cursor:pointer;color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--paper);border-color:var(--accent)}
 .chip.static{cursor:default}
 .chip .rm{border:0;background:transparent;color:inherit;padding:0 0 0 2px;font-size:1rem;line-height:1;cursor:pointer}
 .search,.field{width:100%;font:inherit;padding:11px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 .search{margin-bottom:12px}
+.searchbox{position:relative}
+.searchbox .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;width:18px;height:18px}
+.searchbox .search{padding-left:40px;margin:0}
+.searches{display:grid;gap:0;margin-bottom:14px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:6px;box-shadow:var(--shadow)}
+.searches .search{border:0;background:transparent;border-radius:16px}
+.searches .sep{height:1px;background:var(--line);margin:2px 12px}
+.searches .lbl{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 14px 0}
+.ingres{font-size:.88rem;color:var(--muted);margin:-4px 4px 12px}
+.ings li.match .n{background:var(--terra-soft);border-radius:6px;padding:0 4px;font-weight:700}
 /* promos */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
 .promo{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
@@ -120,13 +140,17 @@ button:disabled{opacity:.5;cursor:default}
 .promo .name{font-weight:700;line-height:1.25}
 .promo .fmt{font-size:.85rem;color:var(--muted)}
 .ticket{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:auto}
-.price{font-family:var(--f-mono);font-weight:600;background:var(--tag);color:var(--tag-ink);padding:2px 8px;border-radius:4px;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.price{font-family:var(--f-mono);font-weight:600;background:var(--tag);color:var(--tag-ink);padding:2px 10px;border-radius:8px;font-size:1.05rem;font-variant-numeric:tabular-nums}
 .was{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);text-decoration:line-through}
 .pct{font-family:var(--f-mono);font-size:.8rem;font-weight:600;color:var(--danger)}
 .until{font-size:.78rem;color:var(--muted)}
 .used{font-size:.78rem;color:var(--accent);font-weight:700}
 /* menu */
-.mblock{margin-bottom:22px}
+.mblock{margin-bottom:14px;padding:14px 12px 12px;border-radius:22px;background:var(--teal-soft)}
+.mblock.soir{background:var(--rose-soft)}
+.mblock .mhead{padding:0 4px}
+.mblock.soir .group .ic{color:var(--rose-ink)}
+.mblock .group .ic{color:var(--teal)}
 .mhead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .mhead .group{margin:0}
 .slots{display:grid;gap:10px}
@@ -174,7 +198,7 @@ button.small{padding:4px 12px;font-size:.82rem}
 <body>
 
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol><symbol id="i-carrot" viewBox="0 0 24 24"><path d="M2.27 21.7s9.87-3.5 12.73-6.36a4.5 4.5 0 0 0-6.36-6.37C5.77 11.84 2.27 21.7 2.27 21.7zM8.64 14l-2.05-2.04M15.34 15l-2.46-2.46"/><path d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z"/><path d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z"/></symbol><symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
 <div class="wrap">
   <header class="top">
     <svg class="deco" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="#i-leaf"/></svg>
@@ -211,7 +235,14 @@ button.small{padding:4px 12px;font-size:.82rem}
       <button class="chip" data-f="claude" aria-pressed="false">Suggestions de Claude</button>
       <button class="chip" data-f="rapide" aria-pressed="false">Rapides · 15 min max</button>
     </div>
-    <input class="search" id="recSearch" type="search" enterkeyhint="search" placeholder="Chercher une recette ou un ingrédient">
+    <div class="searches">
+      <div class="lbl">Par nom de plat</div>
+      <div class="searchbox"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><input class="search" id="recSearch" type="search" enterkeyhint="search" placeholder="Ex. curry, bolognese…" aria-label="Chercher un plat par son nom"></div>
+      <div class="sep" role="separator"></div>
+      <div class="lbl">Par aliment que j'ai</div>
+      <div class="searchbox"><svg class="ic" aria-hidden="true"><use href="#i-carrot"/></svg><input class="search" id="ingSearch" type="search" enterkeyhint="search" placeholder="Ex. poulet, courgette" aria-label="Chercher les plats qui contiennent un aliment" autocapitalize="off"></div>
+    </div>
+    <p class="ingres" id="ingRes" hidden></p>
     <div class="stack" id="recList"></div>
   </section>
 
@@ -235,10 +266,11 @@ button.small{padding:4px 12px;font-size:.82rem}
     <div class="favbox">
       <div class="group"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg> Affichage</div>
       <div class="chips" id="themeChips" style="margin-bottom:4px">
+        <button type="button" class="chip" data-theme-set="auto" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-auto"/></svg> Automatique</button>
         <button type="button" class="chip" data-theme-set="dark" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg> Mode nuit</button>
         <button type="button" class="chip" data-theme-set="light" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg> Mode jour</button>
       </div>
-      <p class="note">Le choix est gardé sur ce téléphone.</p>
+      <p class="note">Automatique : mode nuit de 19 h à 7 h, mode jour le reste du temps. Le choix est gardé sur ce téléphone.</p>
     </div>
     <div class="favbox">
       <div class="group"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Accès en modification</div>
@@ -409,7 +441,8 @@ function recipeCard(r){
   const hits = recipeHits(r);
   const ings = (r.ingredients||[]).map(i => {
     const m = matchPromos(i.n), ph = phareOf(i.n);
-    return `<li><span class="q">${esc(i.q)}</span><span>${esc(i.n)}</span>${ph?`<span class="veg">légume favori</span>`:""}${m.length?hitHtml(m[0]):""}</li>`;
+    const hit = (S.ingTerms||[]).some(t=>norm(i.n).includes(t));
+    return `<li${hit?' class="match"':""}><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}</span>${ph?`<span class="veg">légume favori</span>`:""}${m.length?hitHtml(m[0]):""}</li>`;
   }).join("");
   const steps = (r.steps||[]).map(s=>`<li>${esc(s)}</li>`).join("");
   const mine = r.source === "moi", t = typeOf(r);
@@ -428,14 +461,21 @@ function recipeCard(r){
 }
 function renderRecipes(){
   const q = norm($("#recSearch").value), f = S.recFilter;
+  // Recherche par aliment : plusieurs aliments séparés par une virgule, « et » ou « + » ; chacun doit être dans le plat.
+  const terms = norm($("#ingSearch").value).split(/,|\+|\bet\b/).map(t=>t.trim()).filter(t=>t.length>1);
+  S.ingTerms = terms;
+  const hasIng = (r,t) => (r.ingredients||[]).some(i=>norm(i.n).includes(t));
   const isWe = r => typeOf(r)==="weekend" || r.weekend===true;
   const pass = (r,k) => k==="all" || (k==="claude" && r.source==="claude") || (k==="rapide" && hasPrep(r) && r.prep<=15) ||
     (k.startsWith("moi-") && r.source==="moi" && (k==="moi-weekend" ? isWe(r) : typeOf(r)===k.slice(4)));
   document.querySelectorAll("#recFilter .chip").forEach(c => { let sp=c.querySelector(".count"); if(!sp){sp=document.createElement("span");sp.className="count";c.append(" ",sp);} sp.textContent=S.recettes.filter(r=>pass(r,c.dataset.f)).length; });
   const list = S.recettes.filter(r => pass(r,f))
-    .filter(r => !q || norm(r.title).includes(q) || (r.ingredients||[]).some(i=>norm(i.n).includes(q)) || (r.tags||[]).some(t=>norm(t).includes(q)))
+    .filter(r => !q || norm(r.title).includes(q) || (r.tags||[]).some(t=>norm(t).includes(q)))
+    .filter(r => terms.every(t => hasIng(r,t)))
     .map(r=>({r,h:recipeHits(r).length})).sort((a,b)=>b.h-a.h || (a.r.prep??99)-(b.r.prep??99) || a.r.title.localeCompare(b.r.title)).map(x=>x.r);
-  $("#recList").innerHTML = list.length ? list.map(recipeCard).join("") : `<div class="empty">${EMPTY[f] && !q ? `${EMPTY[f]} Ajoute-la avec « + Ajout recette ».` : "Aucune recette ne correspond."}</div>`;
+  const ir = $("#ingRes"); ir.hidden = !terms.length;
+  if (terms.length) ir.textContent = list.length ? `${list.length} plat${list.length>1?"s":""} avec ${terms.join(" + ")}` : `Aucun plat avec ${terms.join(" + ")}. Essaie un mot plus court (ex. « poulet »).`;
+  $("#recList").innerHTML = list.length ? list.map(recipeCard).join("") : (terms.length ? "" : `<div class="empty">${EMPTY[f] && !q ? `${EMPTY[f]} Ajoute-la avec « Ajouter ».` : "Aucune recette ne correspond."}</div>`);
   $("#c-rec").textContent = S.recettes.length || "";
 }
 
@@ -470,7 +510,7 @@ function renderMenu(){
   el.innerHTML = `${o.theme?`<p class="theme">${esc(o.theme)}</p>`:""}
     <div class="mblock"><div class="mhead"><div class="group">${ic("box")} Midis · tupperwares</div><span class="until">2 personnes × 2 jours par fournée</span></div>
       <div class="slots">${(o.midi||[]).map(s=>slotHtml(s,"midi")).join("")}</div></div>
-    <div class="mblock"><div class="mhead"><div class="group">${ic("moon")} Soirs rapides</div><span class="until">Pour 2</span></div>
+    <div class="mblock soir"><div class="mhead"><div class="group">${ic("moon")} Soirs rapides</div><span class="until">Pour 2</span></div>
       <div class="slots">${(o.soir||[]).map(s=>slotHtml(s,"soir")).join("")}</div></div>
     ${o.note?`<p class="note">${esc(o.note)}</p>`:""}`;
 }
@@ -567,7 +607,7 @@ function fillForm(r){
   $("#f-notes").value = r ? r.notes||"" : "";
 }
 function openRecipe(id){
-  S.recFilter="all"; $("#recSearch").value="";
+  S.recFilter="all"; $("#recSearch").value=""; $("#ingSearch").value="";
   document.querySelectorAll("#recFilter .chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.f==="all"));
   location.hash="recettes"; renderRecipes();
   requestAnimationFrame(()=>{ const card=document.getElementById("r-"+id); if(card){ card.scrollIntoView({block:"start"}); card.classList.add("flash"); const d=card.querySelector("details"); if(d) d.open=true; setTimeout(()=>card.classList.remove("flash"),1800);} });
@@ -605,16 +645,22 @@ document.addEventListener("submit", e => {
   saveFav(k, [...favList(k), t]);
 });
 $("#recSearch").addEventListener("input", renderRecipes);
+$("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01a";
-function applyTheme(t){
+const APP_VERSION = "2026-11-01b";
+function themeMode(){ return store.get("themeMode") || "auto"; }
+function applyTheme(){
+  const mode = themeMode(), h = new Date().getHours();
+  const t = mode==="auto" ? ((h>=19 || h<7) ? "dark" : "light") : mode;
   document.documentElement.setAttribute("data-theme", t);
-  const m = document.getElementById("themeColor"); if (m) m.content = t==="light" ? "#F7F9F5" : "#1F2924";
-  document.querySelectorAll("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.themeSet===t)));
+  const m = document.getElementById("themeColor"); if (m) m.content = t==="light" ? "#F6F0E3" : "#1F2924";
+  document.querySelectorAll("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.themeSet===mode)));
 }
-applyTheme(store.get("theme")||"dark");
-document.querySelectorAll("[data-theme-set]").forEach(b=>b.addEventListener("click",()=>{ store.set("theme", b.dataset.themeSet); applyTheme(b.dataset.themeSet); }));
+applyTheme();
+setInterval(applyTheme, 60*1000);
+document.addEventListener("visibilitychange", ()=>{ if (document.visibilityState==="visible") applyTheme(); });
+document.querySelectorAll("[data-theme-set]").forEach(b=>b.addEventListener("click",()=>{ store.set("themeMode", b.dataset.themeSet); applyTheme(); }));
 async function checkAppUpdate(){
   try{
     const r = await fetch(`./?t=${Date.now()}`, {cache:"no-store"}); if (!r.ok) return false;
