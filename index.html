@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carnet & Actions</title>
+<meta name="description" content="Nos recettes, nos menus de la semaine et les actions Migros, Lidl, Aldi et Denner.">
+<meta name="theme-color" content="#F2F5EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111714" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Carnet">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{color-scheme:light}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+
+/* Layout: carnet de cuisine en colonne, onglets collants en haut, étiquettes de prix jaunes façon prospectus suisse */
+:root{
+  --paper:#F2F5EF; --card:#FFFFFF; --ink:#1C2923; --muted:#5B6961; --line:#D6DDD4;
+  --accent:#2C6A4D; --accent-soft:#E0EBE3; --tag:#FFD84D; --tag-ink:#2A2300; --danger:#A3362B;
+  --s-migros:#D9601C; --s-lidl:#2457A8; --s-aldi:#2B7A8C; --s-denner:#B3263A;
+  --f-display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111714; --card:#19211D; --ink:#E5ECE7; --muted:#9BA8A0; --line:#2C3631;
+  --accent:#7FC4A0; --accent-soft:#1E3329; --tag:#F0C93A; --tag-ink:#231C00; --danger:#E07A6E;
+  --s-migros:#F08A4B; --s-lidl:#6F9BE6; --s-aldi:#5FB6C7; --s-denner:#E06676; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111714; --card:#19211D; --ink:#E5ECE7; --muted:#9BA8A0; --line:#2C3631;
+  --accent:#7FC4A0; --accent-soft:#1E3329; --tag:#F0C93A; --tag-ink:#231C00; --danger:#E07A6E;
+  --s-migros:#F08A4B; --s-lidl:#6F9BE6; --s-aldi:#5FB6C7; --s-denner:#E06676; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 16px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1;margin:0;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.week{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);text-align:right}
+.week b{color:var(--ink);font-weight:600}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin:16px 0 20px;padding-block:8px;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
+nav.tabs a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-weight:700;padding:8px 12px;border-radius:999px;white-space:nowrap}
+nav.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-family:var(--f-mono);font-size:.75rem;margin-left:4px;opacity:.8}
+h2{font-family:var(--f-display);font-weight:800;font-size:1.45rem;margin:0 0 4px;text-wrap:balance}
+h3{font-family:var(--f-display);font-weight:600;font-size:1.15rem;margin:0;text-wrap:balance;line-height:1.2}
+.lede{color:var(--muted);margin:0 0 16px;max-width:62ch}
+.status{font-size:.9rem;color:var(--muted);padding:10px 12px;border:1px dashed var(--line);border-radius:var(--r);margin-bottom:16px}
+.stack{display:flex;flex-direction:column;gap:12px}
+.group{font-family:var(--f-display);font-weight:600;font-size:1rem;margin:16px 0 6px;display:flex;align-items:center;gap:8px}
+/* cartes recettes */
+.rcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.rhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.meta{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.badge{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.badge.claude{background:var(--accent-soft);color:var(--accent)}
+.badge.moi{background:var(--ink);color:var(--paper)}
+.savings{font-family:var(--f-mono);font-size:.8rem;background:var(--tag);color:var(--tag-ink);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.timing{font-family:var(--f-mono);font-size:.8rem}
+.ings{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ings li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline}
+.ings .q{font-family:var(--f-mono);font-size:.85rem;color:var(--muted);min-width:4.5em}
+.hit{font-size:.78rem;font-family:var(--f-mono);display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:4px;padding:0 6px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:0 0 auto}
+.d-migros{background:var(--s-migros)}.d-lidl{background:var(--s-lidl)}.d-aldi{background:var(--s-aldi)}.d-denner{background:var(--s-denner)}
+details.more summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:.9rem}
+details.more ol{margin:8px 0 0;padding-left:1.3em;display:grid;gap:6px;max-width:65ch}
+.note{font-size:.88rem;color:var(--muted);margin:6px 0 0}
+.note a{color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:inherit;font-weight:700;font-size:.9rem;border-radius:999px;padding:7px 14px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+button.ghost{background:transparent}
+button.danger{color:var(--danger);border-color:var(--danger);background:transparent}
+button:disabled{opacity:.5;cursor:default}
+.veg{font-size:.75rem;font-weight:700;background:var(--accent-soft);color:var(--accent);padding:1px 8px;border-radius:999px}
+/* filtres */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:.88rem;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.static{cursor:default}
+.chip .rm{border:0;background:transparent;color:inherit;padding:0 0 0 2px;font-size:1rem;line-height:1;cursor:pointer}
+.search,.field{width:100%;font:inherit;padding:9px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.search{margin-bottom:12px}
+/* promos */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.promo{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.promo .store{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px}
+.promo .name{font-weight:700;line-height:1.25}
+.promo .fmt{font-size:.85rem;color:var(--muted)}
+.ticket{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:auto}
+.price{font-family:var(--f-mono);font-weight:600;background:var(--tag);color:var(--tag-ink);padding:2px 8px;border-radius:4px;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.was{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);text-decoration:line-through}
+.pct{font-family:var(--f-mono);font-size:.8rem;font-weight:600;color:var(--danger)}
+.until{font-size:.78rem;color:var(--muted)}
+.used{font-size:.78rem;color:var(--accent);font-weight:700}
+/* menu */
+.mblock{margin-bottom:22px}
+.mhead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.mhead .group{margin:0}
+.slots{display:grid;gap:10px}
+.slot{display:grid;grid-template-columns:5.5rem 1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;align-items:start}
+.slot .day{font-family:var(--f-mono);font-weight:600;font-size:.85rem;line-height:1.3}
+.slot .day small{display:block;font-weight:500;color:var(--muted);font-size:.75rem;margin-top:2px}
+.slot .body{min-width:0;display:grid;gap:4px}
+.slot .body button.link{all:unset;cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:1.05rem;line-height:1.25;color:var(--ink)}
+.slot .body button.link:hover,.slot .body button.link:focus-visible{color:var(--accent);text-decoration:underline}
+.slot.rest{background:transparent;border-style:dashed}
+.slot .tip{font-size:.85rem;color:var(--muted)}
+.vegs{display:flex;flex-wrap:wrap;gap:4px}
+.theme{font-size:.9rem;color:var(--muted);margin:-6px 0 14px}
+@media (max-width:440px){.slot{grid-template-columns:1fr;gap:6px}}
+.rcard.flash{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+/* favoris */
+.favbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:12px}
+.favbox .group{margin-top:0}
+.kv{display:grid;grid-template-columns:8rem 1fr;gap:6px 12px;font-size:.92rem}
+.kv dt{color:var(--muted);font-weight:700}
+.kv dd{margin:0;min-width:0}
+.kv ul{margin:0;padding-left:1.1em}
+@media (max-width:480px){.kv{grid-template-columns:1fr}.kv dd{margin-bottom:6px}}
+/* formulaire */
+form.add{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+form.add label{display:grid;gap:4px;font-weight:700;font-size:.9rem}
+form.add .hint{font-weight:400;color:var(--muted);font-size:.82rem}
+form.add input:not([type=checkbox]),form.add textarea,form.add select{font:inherit;font-weight:400;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
+form.add textarea{min-height:120px;resize:vertical}
+form.add label.check{display:flex;gap:8px;align-items:center;font-weight:400}
+form.add label.check input{width:20px;height:20px;accent-color:var(--accent)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:520px){.three{grid-template-columns:1fr 1fr}}
+.empty{padding:20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--r)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:700;font-size:.9rem;z-index:20}
+.source{font-size:.8rem;color:var(--muted);margin-top:24px}
+@media (prefers-reduced-motion:no-preference){.rcard,.promo{transition:border-color .15s}.rcard:hover,.promo:hover{border-color:var(--accent)}}
+
+.topright{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+button.small{padding:4px 12px;font-size:.82rem}
+@media (display-mode: standalone){ .wrap{padding-block:12px 40px} }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="top">
+    <h1>Carnet <span>&amp;</span> Actions</h1>
+    <div class="topright"><div class="week" id="week"></div><button type="button" id="refresh" class="ghost small" aria-label="Actualiser le carnet">Actualiser</button></div>
+  </header>
+
+  <nav class="tabs" aria-label="Sections">
+    <a href="#menu" data-view="menu">Menu</a>
+    <a href="#recettes" data-view="recettes">Recettes<span class="count" id="c-rec"></span></a>
+    <a href="#actions" data-view="actions">Actions<span class="count" id="c-promo"></span></a>
+    <a href="#favoris" data-view="favoris">Favoris</a>
+    <a href="#ajout" data-view="ajout">+ Ajout recette</a>
+  </nav>
+
+  <div class="status" id="status">Chargement du carnet…</div>
+
+  <section id="v-menu">
+    <h2 id="menuTitle">Menus de la semaine</h2>
+    <p class="lede" id="menuLede">Deux menus au choix pour deux personnes.</p>
+    <div class="chips" id="menuPick" role="group" aria-label="Choisir un menu"></div>
+    <div id="menuWrap"></div>
+  </section>
+
+  <section id="v-recettes" hidden>
+    <h2>Toutes les recettes</h2>
+    <p class="lede">Les vôtres et les suggestions de Claude. Le temps affiché en premier est le temps de préparation, hors cuisson.</p>
+    <div class="chips" id="recFilter">
+      <button class="chip" data-f="all" aria-pressed="true">Toutes</button>
+      <button class="chip" data-f="moi-midi" aria-pressed="false">Les miennes · midis de semaine</button>
+      <button class="chip" data-f="moi-soir" aria-pressed="false">Les miennes · soirs</button>
+      <button class="chip" data-f="moi-weekend" aria-pressed="false">Les miennes · weekend</button>
+      <button class="chip" data-f="claude" aria-pressed="false">Suggestions de Claude</button>
+      <button class="chip" data-f="rapide" aria-pressed="false">Rapides · 15 min max</button>
+    </div>
+    <input class="search" id="recSearch" type="search" placeholder="Chercher une recette ou un ingrédient">
+    <div class="stack" id="recList"></div>
+  </section>
+
+  <section id="v-actions" hidden>
+    <h2>Actions alimentaires</h2>
+    <p class="lede">Une sélection des produits utiles pour cuisiner, viande suisse uniquement. Prix relevés pour le canton de Vaud, ils peuvent varier un peu selon la région.</p>
+    <div class="chips" id="storeFilter"></div>
+    <input class="search" id="promoSearch" type="search" placeholder="Chercher un produit (ex. poulet, courgette)">
+    <div class="pgrid" id="promoGrid"></div>
+  </section>
+
+  <section id="v-favoris" hidden>
+    <h2>Nos favoris</h2>
+    <p class="lede">Les menus mettent ces produits en avant. Ajoutez ou retirez ce que vous voulez.</p>
+    <div id="favLists"></div>
+    <div class="favbox">
+      <div class="group">Nos goûts et règles</div>
+      <dl class="kv" id="gouts"></dl>
+      <p class="note">Pour changer ces règles, il suffit de le dire à Claude dans le chat.</p>
+    </div>
+    <div class="favbox">
+      <div class="group">Accès en modification</div>
+      <p class="note" id="accessState" style="margin-top:0"></p>
+      <form class="row" id="tokenForm" style="margin-top:8px">
+        <input class="field" id="tokenInput" type="password" style="flex:1;min-width:0" placeholder="Coller le code d'accès (github_pat_…)" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" id="tokenSave">Enregistrer</button>
+      </form>
+      <div class="row" style="margin-top:8px"><button type="button" class="ghost" id="tokenClear" hidden>Retirer le code de ce téléphone</button></div>
+      <p class="note">Le code reste uniquement sur ce téléphone. À faire une fois sur chaque iPhone, depuis l'icône de l'écran d'accueil.</p>
+    </div>
+  </section>
+
+  <section id="v-ajout" hidden>
+    <h2 id="formTitle">Ajouter une recette</h2>
+    <p class="lede" id="formLede">Elle rejoint ton carnet et sera reliée automatiquement aux actions de chaque semaine.</p>
+    <div class="empty" id="v-ajout-locked" hidden>Pour ajouter ou modifier des recettes, enregistre d'abord le code d'accès dans l'onglet <a href="#favoris" style="color:var(--accent)">Favoris</a>.</div>
+    <form class="add" id="addForm">
+      <label for="f-title">Nom de la recette
+        <input id="f-title" required maxlength="120" placeholder="Gratin de courgettes au jambon">
+      </label>
+      <label for="f-type">Pour quel repas
+        <select id="f-type">
+          <option value="midi">Midi de la semaine (tupperware, se réchauffe au micro-ondes)</option>
+          <option value="soir">Soir léger</option>
+          <option value="weekend">Weekend (pas besoin de réchauffer)</option>
+        </select>
+      </label>
+      <label class="check" for="f-we"><input id="f-we" type="checkbox"> Convient aussi pour le weekend</label>
+      <div class="three">
+        <label for="f-serv">Portions <input id="f-serv" type="number" min="1" max="20" value="4"></label>
+        <label for="f-prep">Préparation <span class="hint">minutes, hors cuisson</span><input id="f-prep" type="number" min="0" max="300" placeholder="15"></label>
+        <label for="f-cuis">Cuisson <span class="hint">minutes</span><input id="f-cuis" type="number" min="0" max="600" placeholder="30"></label>
+      </div>
+      <label for="f-ing">Ingrédients <span class="hint">Un par ligne, la quantité en premier : « 600 g filet de poulet »</span>
+        <textarea id="f-ing" required placeholder="600 g filet de poulet&#10;2 courgettes&#10;2 dl crème"></textarea>
+      </label>
+      <label for="f-steps">Étapes <span class="hint">Une étape par ligne</span>
+        <textarea id="f-steps" placeholder="Couper le poulet en dés.&#10;Faire revenir 6 minutes…"></textarea>
+      </label>
+      <label for="f-reheat">Réchauffage au micro-ondes <span class="hint">Pour les plats de midi</span>
+        <input id="f-reheat" placeholder="2 min 30 à 800 W avec 1 cs d'eau">
+      </label>
+      <label for="f-tags">Mots-clés <span class="hint">Séparés par des virgules : italien, rapide, four</span>
+        <input id="f-tags">
+      </label>
+      <label for="f-notes">Notes <input id="f-notes" placeholder="Variante, origine de la recette…"></label>
+      <div class="row">
+        <button class="primary" type="submit" id="f-submit">Enregistrer la recette</button>
+        <button class="ghost" type="button" id="f-cancel" hidden>Annuler</button>
+      </div>
+    </form>
+  </section>
+
+  <p class="source">Actions relevées sur les prospectus publics de chaque enseigne, mises à jour automatiquement chaque lundi et jeudi par Claude. Vérifiez en magasin : les stocks et quelques prix diffèrent selon la région.</p>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+
+<script>
+const STORES = {migros:"Migros", lidl:"Lidl", aldi:"Aldi", denner:"Denner"};
+const TYPES = {midi:"Midi de semaine", soir:"Soir léger", weekend:"Weekend"};
+const DEFAULT_VEG = ["carotte","brocoli","haricots","petits pois","courge butternut","tomate","courgette"];
+const FAVS = [["legumes","Légumes"],["fruits","Fruits"],["viandes","Viandes"]];
+const EMPTY = {"moi-midi":"Aucun plat de midi à toi pour l'instant.","moi-soir":"Aucune recette du soir à toi pour l'instant.","moi-weekend":"Aucune recette du weekend à toi pour l'instant."};
+const S = {promos:[], recettes:[], meta:null, menu:null, prefs:null, menuIdx:0, recFilter:"all", store:"all", editing:null};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const chf = n => typeof n === "number" ? n.toFixed(2) : "";
+const typeOf = r => r.type === "autre" ? "weekend" : (r.type || "");
+function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
+function setStatus(msg){ const s=$("#status"); s.textContent=msg||""; s.hidden=!msg; }
+const store = { get(k){ try{return localStorage.getItem(k)}catch{return null} }, set(k,v){ try{ v==null?localStorage.removeItem(k):localStorage.setItem(k,v) }catch{} } };
+{ const m = Number(store.get("menuIdx")); if (m===0||m===1) S.menuIdx=m; }
+
+/* ================= Stockage GitHub =================
+   Le dépôt est déduit de l'adresse : <proprietaire>.github.io/<depot>/
+   Lecture : avec le code d'accès via l'API GitHub (toujours à jour), sinon les fichiers publiés.
+   Écriture : API GitHub avec le code d'accès enregistré sur ce téléphone. */
+const GH = (() => {
+  const host = location.hostname, seg = location.pathname.split("/").filter(Boolean);
+  const owner = host.endsWith(".github.io") ? host.split(".")[0] : (store.get("ghOwner")||"");
+  const repo = host.endsWith(".github.io") ? (seg[0]||`${owner}.github.io`) : (store.get("ghRepo")||"carnet");
+  return { owner, repo, branch:"main" };
+})();
+const token = () => store.get("ghToken") || "";
+const b64decode = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\n/g,"")), c=>c.charCodeAt(0)));
+const b64encode = s => { const bytes = new TextEncoder().encode(s); let bin=""; for (let i=0;i<bytes.length;i+=0x8000) bin+=String.fromCharCode.apply(null, bytes.subarray(i,i+0x8000)); return btoa(bin); };
+const sha = {};
+async function ghFetch(path, opts={}){
+  const r = await fetch(`https://api.github.com/repos/${GH.owner}/${GH.repo}/${path}`, {...opts, cache:"no-store", headers:{"Accept":"application/vnd.github+json","Authorization":`Bearer ${token()}`,"X-GitHub-Api-Version":"2022-11-28", ...(opts.body?{"Content-Type":"application/json"}:{})}});
+  return r;
+}
+async function readFile(name){
+  if (token()){
+    const r = await ghFetch(`contents/data/${name}?ref=${GH.branch}`);
+    if (r.ok){ const j = await r.json(); sha[name]=j.sha; return JSON.parse(b64decode(j.content)); }
+    if (r.status===401 || r.status===403) throw Object.assign(new Error("auth"),{code:"auth"});
+    if (r.status===404) return null;
+  }
+  const r = await fetch(`data/${name}?t=${Date.now()}`, {cache:"no-store"});
+  if (r.status===404) return null;
+  if (!r.ok) throw new Error("read");
+  return r.json();
+}
+// mutate(current) -> nouvelle valeur ; relit et réessaie en cas de modification simultanée
+async function writeFile(name, mutate, message){
+  if (!token()) throw Object.assign(new Error("notoken"),{code:"notoken"});
+  for (let attempt=0; attempt<4; attempt++){
+    const g = await ghFetch(`contents/data/${name}?ref=${GH.branch}`);
+    if (g.status===401 || g.status===403) throw Object.assign(new Error("auth"),{code:"auth"});
+    let cur = null, s;
+    if (g.ok){ const j = await g.json(); cur = JSON.parse(b64decode(j.content)); s = j.sha; }
+    const next = mutate(cur);
+    const p = await ghFetch(`contents/data/${name}`, {method:"PUT", body: JSON.stringify({message, branch:GH.branch, content:b64encode(JSON.stringify(next,null,1)+"\n"), ...(s?{sha:s}:{})})});
+    if (p.ok){ const j = await p.json(); sha[name]=j.content.sha; return next; }
+    if (p.status===409 || p.status===422){ await new Promise(r=>setTimeout(r, 400+Math.random()*600)); continue; }
+    if (p.status===401 || p.status===403 || p.status===404) throw Object.assign(new Error("auth"),{code:"auth"});
+    throw new Error("write");
+  }
+  throw new Error("conflict");
+}
+const canWrite = () => !!token();
+
+/* ---- chargement ---- */
+async function loadAll(silent){
+  if (!silent) setStatus("Chargement du carnet…");
+  try{
+    const [rec, pro, men, pref, sem] = await Promise.all(["recettes.json","promos.json","menus.json","preferences.json","semaine.json"].map(readFile));
+    S.recettes = Object.entries(rec||{}).map(([id,v])=>({_id:id,...v}));
+    S.promos = Object.entries(pro||{}).map(([id,v])=>({_id:id,...v}));
+    S.menu = men; S.prefs = pref; S.meta = sem;
+    setStatus(canWrite() ? "" : "Mode lecture. Pour ajouter ou modifier des recettes, enregistre le code d'accès dans l'onglet Favoris.");
+  }catch(e){
+    setStatus(e.code==="auth" ? "Le code d'accès n'est plus valide. Remplace-le dans l'onglet Favoris." : "Le carnet n'a pas pu être chargé. Vérifie la connexion, puis touche Actualiser.");
+  }
+  renderAll();
+}
+
+/* ---- préférences ---- */
+const favList = k => (S.prefs && Array.isArray(S.prefs[k])) ? S.prefs[k] : (k==="legumes" ? DEFAULT_VEG : []);
+function vegRegex(v){
+  const words = norm(v).split(/\s+/).filter(Boolean).map(w => w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&").replace(/s$/,"") + "s?");
+  const alts = [words.join("\\s+")];
+  if (norm(v).includes("butternut")) alts.push("butternut");
+  return new RegExp("\\b(" + alts.join("|") + ")\\b");
+}
+function phareOf(name){ const n = norm(name); if (/\bsauce|\bconcentre|\bpassata|\bsugo/.test(n)) return null; return favList("legumes").find(v => vegRegex(v).test(n)) || null; }
+
+/* ---- actions ---- */
+function matchPromos(ingName){
+  const n = norm(ingName);
+  return S.promos.filter(p => (p.keywords||[]).some(k => n.includes(norm(k))) && !(p.exclude||[]).some(x => n.includes(norm(x))))
+    .sort((a,b)=>(b.pct||0)-(a.pct||0));
+}
+function recipeHits(r){ const res=[]; (r.ingredients||[]).forEach(i=>{ const m=matchPromos(i.n); if(m.length) res.push({ing:i,promo:m[0],all:m}); }); return res; }
+function hitHtml(p){return `<span class="hit" title="${esc(p.name)}"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)} ${p.price!=null?chf(p.price):""}${p.pct?` · −${p.pct} %`:""}</span>`}
+const hasPrep = r => typeof r.prep === "number";
+function timing(r){ if (hasPrep(r)) return `Prép. ${r.prep} min${r.cuisson?` · cuisson ${r.cuisson} min`:""}`; return r.time || ""; }
+
+/* ---- recettes ---- */
+function recipeCard(r){
+  const hits = recipeHits(r);
+  const ings = (r.ingredients||[]).map(i => {
+    const m = matchPromos(i.n), ph = phareOf(i.n);
+    return `<li><span class="q">${esc(i.q)}</span><span>${esc(i.n)}</span>${ph?`<span class="veg">légume favori</span>`:""}${m.length?hitHtml(m[0]):""}</li>`;
+  }).join("");
+  const steps = (r.steps||[]).map(s=>`<li>${esc(s)}</li>`).join("");
+  const mine = r.source === "moi", t = typeOf(r);
+  const insp = r.inspiration && /^https:\/\//.test(r.inspiration.url||"") ? `<p class="note">Inspiré de <a href="${esc(r.inspiration.url)}" target="_blank" rel="noopener">${esc(r.inspiration.nom||"la recette d'origine")}</a></p>` : "";
+  return `<article class="rcard" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
+    <div class="rhead"><h3>${esc(r.title)}</h3>${hits.length?`<span class="savings">${hits.length} en action</span>`:""}</div>
+    <div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Ma recette":"Suggestion"}</span>${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
+    ${(r.tags||[]).length?`<div class="meta">${r.tags.map(esc).join(" · ")}</div>`:""}
+    ${r.reheat?`<p class="note">Au micro-ondes : ${esc(r.reheat)}</p>`:""}
+    <ul class="ings">${ings}</ul>
+    ${steps?`<details class="more"><summary>Préparation</summary><ol>${steps}</ol></details>`:""}
+    ${r.notes?`<p class="note">${esc(r.notes)}</p>`:""}
+    ${insp}
+    ${canWrite()?`<div class="row"><button type="button" data-act="edit">Modifier</button>${mine?`<button type="button" class="danger" data-act="del">Supprimer</button>`:""}</div>`:""}
+  </article>`;
+}
+function renderRecipes(){
+  const q = norm($("#recSearch").value), f = S.recFilter;
+  const isWe = r => typeOf(r)==="weekend" || r.weekend===true;
+  const pass = (r,k) => k==="all" || (k==="claude" && r.source==="claude") || (k==="rapide" && hasPrep(r) && r.prep<=15) ||
+    (k.startsWith("moi-") && r.source==="moi" && (k==="moi-weekend" ? isWe(r) : typeOf(r)===k.slice(4)));
+  document.querySelectorAll("#recFilter .chip").forEach(c => { let sp=c.querySelector(".count"); if(!sp){sp=document.createElement("span");sp.className="count";c.append(" ",sp);} sp.textContent=S.recettes.filter(r=>pass(r,c.dataset.f)).length; });
+  const list = S.recettes.filter(r => pass(r,f))
+    .filter(r => !q || norm(r.title).includes(q) || (r.ingredients||[]).some(i=>norm(i.n).includes(q)) || (r.tags||[]).some(t=>norm(t).includes(q)))
+    .map(r=>({r,h:recipeHits(r).length})).sort((a,b)=>b.h-a.h || (a.r.prep??99)-(b.r.prep??99) || a.r.title.localeCompare(b.r.title)).map(x=>x.r);
+  $("#recList").innerHTML = list.length ? list.map(recipeCard).join("") : `<div class="empty">${EMPTY[f] && !q ? `${EMPTY[f]} Ajoute-la avec « + Ajout recette ».` : "Aucune recette ne correspond."}</div>`;
+  $("#c-rec").textContent = S.recettes.length || "";
+}
+
+/* ---- menus ---- */
+function menuOptions(){
+  const m = S.menu; if (!m) return [];
+  if (Array.isArray(m.options) && m.options.length) return m.options;
+  if (m.midi || m.soir) return [{nom:"Menu 1", midi:m.midi, soir:m.soir, note:m.note}];
+  return [];
+}
+function slotHtml(s, kind){
+  const r = S.recettes.find(x=>x._id===s.recipeId);
+  if (!r) return `<div class="slot rest"><div class="day">${esc(s.days||s.day)}</div><div class="body"><span>${esc(s.title||"Libre")}</span>${s.tip?`<span class="tip">${esc(s.tip)}</span>`:""}</div></div>`;
+  const vegs = [...new Set((r.ingredients||[]).map(i=>phareOf(i.n)).filter(Boolean))];
+  const pc = recipeHits(r).length, mine = r.source==="moi";
+  return `<div class="slot${s.leftover?" rest":""}">
+    <div class="day">${esc(s.days||s.day)}${s.when?`<small>${esc(s.when)}</small>`:""}</div>
+    <div class="body">
+      <button class="link" type="button" data-open="${esc(r._id)}">${s.leftover?"Reste : ":""}${esc(r.title)}</button>
+      ${s.leftover?"":`<div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>${kind==="midi"?`<span>${esc(s.portions||r.servings||4)} portions</span>`:""}${timing(r)?`<span class="timing">${esc(timing(r))}</span>`:""}${pc?`<span class="savings">${pc} en action</span>`:""}</div>`}
+      ${vegs.length&&!s.leftover?`<div class="vegs">${vegs.map(v=>`<span class="veg">${esc(v)}</span>`).join("")}</div>`:""}
+      ${s.tip?`<span class="tip">${esc(s.tip)}</span>`:""}
+    </div></div>`;
+}
+function renderMenu(){
+  const opts = menuOptions(), el = $("#menuWrap");
+  if (S.menu){ $("#menuTitle").textContent = S.menu.label || "Menus de la semaine"; $("#menuLede").textContent = S.menu.intro || ""; }
+  if (!opts.length){ $("#menuPick").innerHTML=""; el.innerHTML = `<div class="empty">Les menus de la semaine ne sont pas encore prêts. Ils sont préparés automatiquement chaque jeudi.</div>`; return; }
+  if (S.menuIdx >= opts.length) S.menuIdx = 0;
+  $("#menuPick").innerHTML = opts.map((o,i)=>`<button class="chip" type="button" data-menu="${i}" aria-pressed="${i===S.menuIdx}">${esc(o.nom||"Menu "+(i+1))}</button>`).join("");
+  const o = opts[S.menuIdx];
+  el.innerHTML = `${o.theme?`<p class="theme">${esc(o.theme)}</p>`:""}
+    <div class="mblock"><div class="mhead"><div class="group">Midis · tupperwares</div><span class="until">2 personnes × 2 jours par fournée</span></div>
+      <div class="slots">${(o.midi||[]).map(s=>slotHtml(s,"midi")).join("")}</div></div>
+    <div class="mblock"><div class="mhead"><div class="group">Soirs rapides</div><span class="until">Pour 2</span></div>
+      <div class="slots">${(o.soir||[]).map(s=>slotHtml(s,"soir")).join("")}</div></div>
+    ${o.note?`<p class="note">${esc(o.note)}</p>`:""}`;
+}
+
+/* ---- actions (promos) ---- */
+function renderPromos(){
+  const q = norm($("#promoSearch").value);
+  const counts = {}; S.promos.forEach(p=>counts[p.store]=(counts[p.store]||0)+1);
+  $("#storeFilter").innerHTML = [["all","Tous",S.promos.length], ...Object.keys(STORES).map(k=>[k,STORES[k],counts[k]||0])]
+    .map(([k,l,c])=>`<button class="chip" data-s="${k}" aria-pressed="${S.store===k}">${k!=="all"?`<span class="dot d-${k}"></span>`:""}${l} <span class="count">${c}</span></button>`).join("");
+  const usedBy = {};
+  S.recettes.forEach(r => recipeHits(r).forEach(h => h.all.forEach(p => (usedBy[p._id] ||= new Set()).add(r.title))));
+  const list = S.promos.filter(p => S.store==="all" || p.store===S.store)
+    .filter(p => !q || norm(p.name).includes(q) || (p.keywords||[]).some(k=>norm(k).includes(q)))
+    .sort((a,b)=> (usedBy[b._id]?1:0)-(usedBy[a._id]?1:0) || (b.pct||0)-(a.pct||0));
+  $("#promoGrid").innerHTML = list.length ? list.map(p=>{ const u=usedBy[p._id]?[...usedBy[p._id]]:[]; return `<div class="promo">
+      <div class="store"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)}${p.cat?` · ${esc(p.cat)}`:""}</div>
+      <div class="name">${esc(p.name)}</div>
+      ${p.format?`<div class="fmt">${esc(p.format)}${p.condition?` · ${esc(p.condition)}`:""}</div>`:""}
+      ${u.length?`<div class="used">Pour : ${u.slice(0,3).map(esc).join(", ")}${u.length>3?` et ${u.length-3} autres`:""}</div>`:""}
+      <div class="ticket">${p.price!=null?`<span class="price">${chf(p.price)}</span>`:`<span class="price">${esc(p.priceLabel||"Action")}</span>`}${p.regular?`<span class="was">${chf(p.regular)}</span>`:""}${p.pct?`<span class="pct">−${p.pct} %</span>`:""}</div>
+      <div class="until">${esc(p.until||"")}</div>
+    </div>`;}).join("") : `<div class="empty">${S.promos.length?"Aucune action ne correspond.":"Les actions de la semaine n'ont pas encore été chargées."}</div>`;
+  $("#c-promo").textContent = S.promos.length || "";
+}
+function renderWeek(){
+  const m = S.meta;
+  $("#week").innerHTML = m ? `Actions du <b>${esc(m.from)}</b> au <b>${esc(m.to)}</b><br>mises à jour le ${esc(m.updated)}` : "";
+}
+
+/* ---- favoris ---- */
+function renderFavs(){
+  const w = canWrite();
+  $("#favLists").innerHTML = FAVS.map(([k,label]) => `<div class="favbox">
+    <div class="group">${label} favoris</div>
+    <div class="chips" style="margin-bottom:8px">${favList(k).length ? favList(k).map((v,i)=>`<span class="chip static">${esc(v)}${w?`<button class="rm" type="button" data-rmfav="${k}:${i}" aria-label="Retirer ${esc(v)}">×</button>`:""}</span>`).join("") : `<span class="note" style="margin:0">Aucun pour l'instant.</span>`}</div>
+    ${w?`<form class="row" data-addfav="${k}"><input class="field" id="fav-${k}" style="flex:1;min-width:0" placeholder="Ajouter (ex. ${k==="fruits"?"pomme":k==="viandes"?"émincé de porc":"poireau"})" autocomplete="off"><button type="submit">Ajouter</button></form>`:""}
+  </div>`).join("");
+  const p = S.prefs || {}, rows = [];
+  if ((p.cuisines||[]).length) rows.push(["Cuisines", p.cuisines.map(esc).join(" · ")]);
+  if (p.viandes_midi) rows.push(["Viande à midi", esc(p.viandes_midi)]);
+  if (p.viande_suisse) rows.push(["Viande", esc(p.viande_suisse)]);
+  if (p.poulet) rows.push(["Poulet", esc(p.poulet)]);
+  if (Array.isArray(p.regles) && p.regles.length) rows.push(["Règles", `<ul>${p.regles.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`]);
+  if ((p.exclusions||[]).length) rows.push(["À éviter", p.exclusions.map(esc).join(" · ")]);
+  if (p.variete) rows.push(["Variété", esc(p.variete)]);
+  if ((p.sources||[]).length) rows.push(["Inspirations", p.sources.map(s=>/^https:\/\//.test(s.url||"")?`<a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--accent)">${esc(s.nom)}</a>`:esc(s.nom)).join(" · ") + (p.sources_note?`<br><span class="until">${esc(p.sources_note)}</span>`:"")]);
+  $("#gouts").innerHTML = rows.length ? rows.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("") : `<dd>Pas encore de préférences enregistrées.</dd>`;
+  $("#accessState").textContent = w ? "Code d'accès enregistré sur ce téléphone : tu peux ajouter et modifier." : "Aucun code d'accès sur ce téléphone : le carnet est en lecture seule.";
+  $("#tokenClear").hidden = !w;
+}
+function renderAll(){renderWeek();renderMenu();renderRecipes();renderPromos();renderFavs();$("#v-ajout-locked").hidden=canWrite();$("#addForm").hidden=!canWrite();}
+
+/* ---- navigation ---- */
+const VIEWS = ["menu","recettes","actions","favoris","ajout"];
+function route(){
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "menu";
+  VIEWS.forEach(x => { $("#v-"+x).hidden = x!==v; });
+  document.querySelectorAll("nav.tabs a").forEach(a => { if (a.dataset.view===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+}
+window.addEventListener("hashchange", route);
+
+/* ---- écritures ---- */
+function writeError(e){
+  if (e.code==="auth"){ toast("Code d'accès refusé. Vérifie-le dans Favoris."); }
+  else if (e.code==="notoken"){ toast("Enregistre d'abord le code d'accès dans Favoris."); }
+  else toast("Enregistrement impossible, réessaie dans un instant.");
+}
+async function saveFav(k, list){
+  const prev = S.prefs; S.prefs = {...(S.prefs||{}), [k]: list}; renderFavs(); renderMenu(); renderRecipes();
+  try{ S.prefs = await writeFile("preferences.json", cur => ({...(cur||{}), [k]: list}), `App : favoris ${k}`); renderFavs(); }
+  catch(e){ S.prefs = prev; renderFavs(); writeError(e); }
+}
+function parseIngredients(text){
+  const re = /^((?:\d+[.,]?\d*|[½¼¾]|\d+\/\d+)\s*(?:kg|g|mg|ml|cl|dl|l|cs|cc|c\.\s?à\s?s\.?|c\.\s?à\s?c\.?|pces?|pièces?|tranches?|gousses?|bottes?|pincées?|sachets?|boîtes?|bocal|brins?|feuilles?|branches?|morceaux?|doses?)?)\s+(.+)$/i;
+  return text.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{const m=l.match(re);return m?{q:m[1].trim(),n:m[2].trim()}:{q:"",n:l}});
+}
+function fillForm(r){
+  S.editing = r ? r._id : null;
+  $("#formTitle").textContent = r ? "Modifier la recette" : "Ajouter une recette";
+  $("#formLede").textContent = r ? `Tu modifies « ${r.title} ».` : "Elle rejoint votre carnet et sera reliée automatiquement aux actions de chaque semaine.";
+  $("#f-submit").textContent = r ? "Enregistrer les modifications" : "Enregistrer la recette";
+  $("#f-cancel").hidden = !r;
+  $("#f-title").value = r ? r.title||"" : "";
+  $("#f-type").value = r ? (typeOf(r)||"midi") : "midi";
+  $("#f-we").checked = !!(r && r.weekend);
+  $("#f-serv").value = r && r.servings ? r.servings : 4;
+  $("#f-prep").value = r && hasPrep(r) ? r.prep : "";
+  $("#f-cuis").value = r && typeof r.cuisson==="number" ? r.cuisson : "";
+  $("#f-ing").value = r ? (r.ingredients||[]).map(i=>[i.q,i.n].filter(Boolean).join(" ")).join("\n") : "";
+  $("#f-steps").value = r ? (r.steps||[]).join("\n") : "";
+  $("#f-reheat").value = r ? r.reheat||"" : "";
+  $("#f-tags").value = r ? (r.tags||[]).join(", ") : "";
+  $("#f-notes").value = r ? r.notes||"" : "";
+}
+function openRecipe(id){
+  S.recFilter="all"; $("#recSearch").value="";
+  document.querySelectorAll("#recFilter .chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.f==="all"));
+  location.hash="recettes"; renderRecipes();
+  requestAnimationFrame(()=>{ const card=document.getElementById("r-"+id); if(card){ card.scrollIntoView({block:"start"}); card.classList.add("flash"); const d=card.querySelector("details"); if(d) d.open=true; setTimeout(()=>card.classList.remove("flash"),1800);} });
+}
+function slug(t){ return norm(t).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40) || "recette"; }
+
+document.addEventListener("click", async e => {
+  const chip = e.target.closest("#recFilter .chip");
+  if (chip){ S.recFilter = chip.dataset.f; document.querySelectorAll("#recFilter .chip").forEach(c=>c.setAttribute("aria-pressed", c===chip)); renderRecipes(); return; }
+  const mp = e.target.closest("[data-menu]");
+  if (mp){ S.menuIdx = Number(mp.dataset.menu); store.set("menuIdx",S.menuIdx); renderMenu(); return; }
+  const sc = e.target.closest("#storeFilter .chip");
+  if (sc){ S.store = sc.dataset.s; renderPromos(); return; }
+  const op = e.target.closest("[data-open]");
+  if (op){ openRecipe(op.dataset.open); return; }
+  const rf = e.target.closest("[data-rmfav]");
+  if (rf){ const [k,i]=rf.dataset.rmfav.split(":"); saveFav(k, favList(k).filter((_,j)=>j!==Number(i))); return; }
+  const btn = e.target.closest("[data-act]");
+  if (btn){
+    const id = btn.closest(".rcard").dataset.id, r = S.recettes.find(x=>x._id===id); if(!r) return;
+    if (btn.dataset.act==="edit"){ fillForm(r); location.hash="ajout"; window.scrollTo(0,0); return; }
+    if (btn.dataset.act==="del"){
+      if (btn.dataset.confirm!=="1"){ btn.dataset.confirm="1"; btn.textContent="Confirmer la suppression"; setTimeout(()=>{btn.dataset.confirm="";btn.textContent="Supprimer"},4000); return; }
+      btn.disabled = true;
+      try{ const all = await writeFile("recettes.json", cur => { const n={...(cur||{})}; delete n[id]; return n; }, `App : suppression de ${r.title}`);
+        S.recettes = Object.entries(all).map(([k,v])=>({_id:k,...v})); renderAll(); toast("Recette supprimée"); }
+      catch(err){ btn.disabled=false; writeError(err); }
+    }
+  }
+});
+document.addEventListener("submit", e => {
+  const f = e.target.closest("[data-addfav]"); if (!f) return;
+  e.preventDefault(); const k=f.dataset.addfav, inp=f.querySelector("input"), t=inp.value.trim(); inp.value="";
+  if (!t || favList(k).some(v=>norm(v)===norm(t))) return;
+  saveFav(k, [...favList(k), t]);
+});
+$("#recSearch").addEventListener("input", renderRecipes);
+$("#promoSearch").addEventListener("input", renderPromos);
+$("#refresh").addEventListener("click", ()=>loadAll());
+document.addEventListener("visibilitychange", ()=>{ if (document.visibilityState==="visible" && Date.now()-(loadAll.last||0) > 5*60*1000){ loadAll.last=Date.now(); loadAll(true); } });
+$("#f-cancel").addEventListener("click", ()=>{ const id=S.editing; fillForm(null); if(id) openRecipe(id); });
+$("#addForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const num = v => v==="" ? null : Number(v);
+  const r = {
+    title: $("#f-title").value.trim(), type: $("#f-type").value, weekend: $("#f-we").checked,
+    servings: Number($("#f-serv").value)||null, prep: num($("#f-prep").value), cuisson: num($("#f-cuis").value),
+    ingredients: parseIngredients($("#f-ing").value),
+    steps: $("#f-steps").value.split("\n").map(s=>s.trim()).filter(Boolean),
+    reheat: $("#f-reheat").value.trim(),
+    tags: $("#f-tags").value.split(",").map(s=>s.trim()).filter(Boolean),
+    notes: $("#f-notes").value.trim()
+  };
+  if (r.prep==null) delete r.prep; if (r.cuisson==null) delete r.cuisson;
+  if (!r.title || !r.ingredients.length) return;
+  $("#f-submit").disabled = true;
+  const editing = S.editing;
+  const id = editing || `moi-${slug(r.title)}-${Date.now().toString(36).slice(-4)}`;
+  try{
+    const all = await writeFile("recettes.json", cur => {
+      const n = {...(cur||{})};
+      n[id] = editing ? {...(n[id]||{}), ...r, updatedAt:new Date().toISOString()} : {...r, source:"moi", createdAt:new Date().toISOString()};
+      return n;
+    }, editing ? `App : modification de ${r.title}` : `App : ajout de ${r.title}`);
+    S.recettes = Object.entries(all).map(([k,v])=>({_id:k,...v}));
+    fillForm(null); renderAll(); toast(editing ? "Recette modifiée" : "Recette enregistrée"); openRecipe(id);
+  }catch(err){ writeError(err); }
+  $("#f-submit").disabled = false;
+});
+$("#tokenForm").addEventListener("submit", async e => {
+  e.preventDefault(); const t = $("#tokenInput").value.trim(); if (!t) return;
+  $("#tokenSave").disabled = true;
+  const prev = token(); store.set("ghToken", t);
+  try{
+    const r = await ghFetch("");
+    const j = r.ok ? await r.json() : null;
+    if (!j || !j.permissions || !j.permissions.push) throw new Error("perm");
+    $("#tokenInput").value = ""; toast("Code d'accès enregistré"); await loadAll();
+  }catch{ store.set("ghToken", prev||null); toast("Ce code ne donne pas accès en écriture au carnet."); renderFavs(); }
+  $("#tokenSave").disabled = false;
+});
+$("#tokenClear").addEventListener("click", ()=>{ store.set("ghToken", null); toast("Code d'accès retiré de ce téléphone"); loadAll(); });
+
+route(); renderAll(); loadAll.last = Date.now(); loadAll();
+</script>
+</body>
+</html>

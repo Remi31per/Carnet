@@ -1,0 +1,2795 @@
+{
+ "c-ayam-kecap": {
+  "createdAt": "2026-10-31T16:51:00Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "kecap manis (sauce soja sucrée)",
+    "q": "5 cs"
+   },
+   {
+    "n": "sauce soja",
+    "q": "1 cs"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousses d'ail",
+    "q": "3"
+   },
+   {
+    "n": "gingembre (2 cm)",
+    "q": "1 morceau"
+   },
+   {
+    "n": "tomates",
+    "q": "2"
+   },
+   {
+    "n": "haricots verts",
+    "q": "400 g"
+   },
+   {
+    "n": "riz jasmin",
+    "q": "250 g"
+   },
+   {
+    "n": "huile",
+    "q": "2 cs"
+   }
+  ],
+  "notes": "Plat familial indonésien ; le kecap manis se trouve au rayon asiatique de Migros et Coop.",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W, couvercle entrouvert ; la sauce garde le riz moelleux.",
+  "servings": 4,
+  "source": "claude",
+  "steps": [
+   "Cuire le riz. Cuire les haricots 6 minutes à l'eau salée.",
+   "Faire revenir oignon émincé, ail et gingembre râpé dans l'huile.",
+   "Ajouter le poulet en morceaux, dorer 5 minutes, puis kecap manis, sauce soja, tomates en dés et 1 dl d'eau.",
+   "Laisser mijoter 10 minutes jusqu'à ce que la sauce nappe le poulet."
+  ],
+  "tags": [
+   "indonésien",
+   "asiatique"
+  ],
+  "time": "35 min",
+  "title": "Ayam kecap : poulet sauce soja sucrée, riz et haricots",
+  "type": "midi",
+  "weekend": true
+ },
+ "c-curry-butternut": {
+  "createdAt": "2026-10-31T16:00:00Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "courge butternut",
+    "q": "1 kg"
+   },
+   {
+    "n": "carottes",
+    "q": "3"
+   },
+   {
+    "n": "petits pois surgelés",
+    "q": "200 g"
+   },
+   {
+    "n": "pois chiches (400 g)",
+    "q": "1 boîte"
+   },
+   {
+    "n": "lait de coco",
+    "q": "250 ml"
+   },
+   {
+    "n": "bouillon de légumes",
+    "q": "3 dl"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "pâte de curry ou curry en poudre",
+    "q": "2 cs"
+   },
+   {
+    "n": "riz basmati",
+    "q": "250 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Une portion de plus ? Le curry se congèle sans le riz.",
+  "prep": 20,
+  "reheat": "2 min 30 à 800 W, couvercle entrouvert, remuer à mi-temps. Garder le riz sous le curry pour qu'il ne sèche pas.",
+  "servings": 4,
+  "source": "claude",
+  "steps": [
+   "Peler la courge et les carottes, couper en cubes de 2 cm. Émincer l'oignon.",
+   "Faire revenir l'oignon dans l'huile avec le curry 2 minutes.",
+   "Ajouter courge, carottes, bouillon et lait de coco. Couvrir et cuire 20 minutes.",
+   "Ajouter pois chiches égouttés et petits pois, cuire encore 5 minutes. Saler.",
+   "Cuire le riz. Laisser tiédir puis répartir riz et curry dans 4 boîtes. Frigo : 3 jours."
+  ],
+  "tags": [
+   "végétarien",
+   "batch cooking"
+  ],
+  "time": "45 min",
+  "title": "Curry de butternut, petits pois et carottes au coco, riz basmati",
+  "type": "midi"
+ },
+ "c-dorade-four": {
+  "createdAt": "2026-10-31T15:37:00Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "dorades entières (env. 400 g pièce)",
+    "q": "2"
+   },
+   {
+    "n": "citron",
+    "q": "1"
+   },
+   {
+    "n": "tomates cerises",
+    "q": "300 g"
+   },
+   {
+    "n": "pommes de terre",
+    "q": "600 g"
+   },
+   {
+    "n": "bouquet de persil",
+    "q": "1"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "3 cs"
+   },
+   {
+    "n": "gousses d'ail",
+    "q": "2"
+   }
+  ],
+  "notes": "Demande au rayon de vider et écailler les dorades.",
+  "prep": 10,
+  "servings": 2,
+  "source": "claude",
+  "steps": [
+   "Préchauffer le four à 200 °C. Couper les pommes de terre en fines rondelles, les huiler, saler et précuire 15 minutes.",
+   "Inciser les dorades, les garnir de rondelles de citron, d'ail et de persil.",
+   "Poser les dorades et les tomates cerises sur les pommes de terre, arroser d'huile.",
+   "Cuire 20 minutes, jusqu'à ce que la chair se détache facilement de l'arête."
+  ],
+  "tags": [
+   "poisson",
+   "léger",
+   "four"
+  ],
+  "time": "35 min",
+  "title": "Dorade au four, citron et tomates cerises",
+  "type": "soir"
+ },
+ "c-omelette-courgettes": {
+  "createdAt": "2026-10-31T16:04:00Z",
+  "cuisson": 12,
+  "ingredients": [
+   {
+    "n": "œufs",
+    "q": "5"
+   },
+   {
+    "n": "courgette",
+    "q": "1"
+   },
+   {
+    "n": "brocoli",
+    "q": "200 g"
+   },
+   {
+    "n": "Tomme vaudoise",
+    "q": "1"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "1 cs"
+   },
+   {
+    "n": "ciboulette, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "claude",
+  "steps": [
+   "Couper le brocoli en petites fleurettes et le cuire 4 minutes à la vapeur. Couper la courgette en fines rondelles.",
+   "Faire revenir la courgette 5 minutes dans l'huile, ajouter le brocoli.",
+   "Verser les œufs battus avec la ciboulette, sel et poivre. Cuire à feu doux à couvert 6 minutes.",
+   "Poser la Tomme coupée en tranches dessus, couvrir 2 minutes pour la faire fondre."
+  ],
+  "tags": [
+   "végétarien",
+   "léger"
+  ],
+  "time": "20 min",
+  "title": "Omelette aux courgettes, brocoli et Tomme vaudoise",
+  "type": "soir"
+ },
+ "c-pates-bolets": {
+  "createdAt": "2026-10-31T15:38:00Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "pâtes casarecce",
+    "q": "500 g"
+   },
+   {
+    "n": "bolets séchés",
+    "q": "30 g"
+   },
+   {
+    "n": "épinards frais",
+    "q": "300 g"
+   },
+   {
+    "n": "Gruyère salé",
+    "q": "100 g"
+   },
+   {
+    "n": "crème",
+    "q": "2 dl"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "beurre",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "reheat": "ajouter 1 cs d'eau ou de lait, 2 min 30 à 800 W en remuant à mi-temps.",
+  "servings": 4,
+  "source": "claude",
+  "steps": [
+   "Réhydrater les bolets 20 minutes dans 2 dl d'eau tiède. Les égoutter en gardant l'eau, puis les hacher.",
+   "Cuire les pâtes al dente.",
+   "Faire revenir l'ail et les bolets dans le beurre, ajouter 1 dl d'eau de trempage filtrée et la crème, laisser réduire 5 minutes.",
+   "Ajouter les épinards et laisser tomber 2 minutes.",
+   "Mélanger avec les pâtes et la moitié du Gruyère râpé, servir avec le reste par-dessus."
+  ],
+  "tags": [
+   "végétarien",
+   "rapide",
+   "pâtes"
+  ],
+  "time": "30 min",
+  "title": "Casarecce aux bolets, épinards et Gruyère",
+  "type": "midi"
+ },
+ "c-penne-pesto-poulet": {
+  "createdAt": "2026-10-31T16:50:00Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "penne",
+    "q": "400 g"
+   },
+   {
+    "n": "filet de poulet",
+    "q": "500 g"
+   },
+   {
+    "n": "pesto",
+    "q": "190 g"
+   },
+   {
+    "n": "tomates cerises",
+    "q": "300 g"
+   },
+   {
+    "n": "haricots verts",
+    "q": "300 g"
+   },
+   {
+    "n": "parmesan râpé",
+    "q": "40 g"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Pesto, pâtes et tomates cerises en action chez Migros cette semaine.",
+  "prep": 10,
+  "reheat": "2 min 30 à 800 W avec 1 cs d'eau, remuer à mi-temps.",
+  "servings": 4,
+  "source": "claude",
+  "steps": [
+   "Cuire les penne et, dans la même eau, les haricots coupés en deux pendant les 8 dernières minutes.",
+   "Saisir le poulet en dés dans l'huile 6 minutes, ajouter les tomates cerises coupées en deux 2 minutes.",
+   "Égoutter pâtes et haricots en gardant un peu d'eau, mélanger avec poulet, pesto et parmesan."
+  ],
+  "tags": [
+   "italien",
+   "rapide"
+  ],
+  "time": "25 min",
+  "title": "Penne au pesto, poulet et tomates cerises",
+  "type": "midi",
+  "weekend": true
+ },
+ "c-poulet-chou-rouge": {
+  "createdAt": "2026-10-31T15:39:00Z",
+  "cuisson": 55,
+  "ingredients": [
+   {
+    "n": "cuisses de poulet",
+    "q": "1 kg"
+   },
+   {
+    "n": "pommes de terre",
+    "q": "600 g"
+   },
+   {
+    "n": "chou rouge",
+    "q": "1 kg"
+   },
+   {
+    "n": "pommes golden",
+    "q": "2"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "vinaigre de vin rouge",
+    "q": "2 cs"
+   },
+   {
+    "n": "sucre",
+    "q": "1 cs"
+   },
+   {
+    "n": "huile",
+    "q": "2 cs"
+   },
+   {
+    "n": "thym, sel, poivre, paprika",
+    "q": ""
+   }
+  ],
+  "notes": "Plat avec os : réservé au weekend, pas aux tupperwares.",
+  "prep": 20,
+  "servings": 4,
+  "source": "claude",
+  "steps": [
+   "Préchauffer le four à 200 °C. Frotter les cuisses avec huile, paprika, thym, sel et poivre.",
+   "Couper les pommes de terre en quartiers, les disposer autour du poulet et enfourner 50 à 55 minutes.",
+   "Pendant ce temps, émincer finement le chou rouge et l'oignon, couper les pommes en dés.",
+   "Faire suer l'oignon, ajouter chou, pommes, vinaigre, sucre et un verre d'eau. Couvrir et cuire 40 minutes à feu doux.",
+   "Servir le poulet doré avec le chou fondant et les pommes de terre."
+  ],
+  "tags": [
+   "four",
+   "plat du dimanche"
+  ],
+  "time": "1 h 10",
+  "title": "Cuisses de poulet rôties, chou rouge aux pommes",
+  "type": "weekend"
+ },
+ "c-saumon-riz": {
+  "createdAt": "2026-10-31T15:36:00Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "dos de saumon",
+    "q": "400 g"
+   },
+   {
+    "n": "riz basmati",
+    "q": "250 g"
+   },
+   {
+    "n": "épinards frais",
+    "q": "500 g"
+   },
+   {
+    "n": "citron",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   },
+   {
+    "n": "beurre",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 3,
+  "source": "claude",
+  "steps": [
+   "Cuire le riz selon le paquet.",
+   "Couper le saumon en 3 pavés, saler et poêler côté peau 4 minutes, puis 2 minutes de l'autre côté.",
+   "Dans la même poêle, faire tomber les épinards avec l'ail et le beurre, ajouter le zeste et un filet de jus de citron.",
+   "Servir le saumon sur le riz et les épinards."
+  ],
+  "tags": [
+   "poisson",
+   "rapide"
+  ],
+  "time": "25 min",
+  "title": "Saumon poêlé, riz et épinards au citron",
+  "type": "soir"
+ },
+ "c-tartines-saumon": {
+  "createdAt": "2026-10-31T16:03:00Z",
+  "cuisson": 0,
+  "ingredients": [
+   {
+    "n": "pain tessinois",
+    "q": "4 tranches"
+   },
+   {
+    "n": "saumon fumé",
+    "q": "125 g"
+   },
+   {
+    "n": "cottage cheese",
+    "q": "200 g"
+   },
+   {
+    "n": "concombre",
+    "q": "1/2"
+   },
+   {
+    "n": "tomates cerises",
+    "q": "6"
+   },
+   {
+    "n": "citron",
+    "q": "1/2"
+   },
+   {
+    "n": "aneth ou ciboulette, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "Idéal le soir où l'on prépare une fournée.",
+  "prep": 10,
+  "servings": 2,
+  "source": "claude",
+  "steps": [
+   "Griller légèrement le pain.",
+   "Mélanger le cottage cheese avec un filet de citron, les herbes et du poivre.",
+   "Tartiner, ajouter le concombre en fines tranches et le saumon. Servir avec les tomates cerises."
+  ],
+  "tags": [
+   "léger",
+   "sans cuisson"
+  ],
+  "time": "10 min",
+  "title": "Tartines de saumon fumé, cottage cheese et concombre",
+  "type": "soir"
+ },
+ "c-veloute-butternut": {
+  "createdAt": "2026-10-31T15:40:00Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "courge butternut",
+    "q": "1 kg"
+   },
+   {
+    "n": "châtaignes cuites",
+    "q": "200 g"
+   },
+   {
+    "n": "lait de coco",
+    "q": "250 ml"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "bouillon de légumes",
+    "q": "8 dl"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "1 cs"
+   },
+   {
+    "n": "sel, poivre, muscade",
+    "q": ""
+   }
+  ],
+  "notes": "Se congèle très bien en portions.",
+  "prep": 15,
+  "servings": 4,
+  "source": "claude",
+  "steps": [
+   "Peler la courge, retirer les graines et la couper en cubes. Émincer l'oignon.",
+   "Faire revenir l'oignon dans l'huile 3 minutes, ajouter la courge et 150 g de châtaignes.",
+   "Mouiller avec le bouillon, couvrir et cuire 25 minutes à feu moyen.",
+   "Ajouter le lait de coco, mixer finement, assaisonner de sel, poivre et muscade.",
+   "Servir avec le reste des châtaignes émiettées et poêlées à sec."
+  ],
+  "tags": [
+   "végétarien",
+   "soupe",
+   "automne"
+  ],
+  "time": "40 min",
+  "title": "Velouté de butternut, châtaignes et coco",
+  "type": "soir"
+ },
+ "moi-bol-cereales": {
+  "createdAt": "2026-10-31T16:31:04Z",
+  "cuisson": 0,
+  "ingredients": [
+   {
+    "n": "céréales ou flocons d'avoine",
+    "q": ""
+   },
+   {
+    "n": "lait ou yaourt",
+    "q": ""
+   },
+   {
+    "n": "fruits de saison",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 2,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Servir les céréales avec le lait et quelques fruits coupés."
+  ],
+  "tags": [
+   "sans cuisson"
+  ],
+  "time": "2 min",
+  "title": "Bol de céréales",
+  "type": "soir"
+ },
+ "moi-bolognese": {
+  "createdAt": "2026-10-31T16:30:08Z",
+  "cuisson": 60,
+  "ingredients": [
+   {
+    "n": "viande hachée de bœuf",
+    "q": "500 g"
+   },
+   {
+    "n": "carottes",
+    "q": "2"
+   },
+   {
+    "n": "céleri",
+    "q": "3 branches"
+   },
+   {
+    "n": "sauce tomate",
+    "q": "700 g"
+   },
+   {
+    "n": "concentré de tomate",
+    "q": "2 cs"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousses d'ail",
+    "q": "2"
+   },
+   {
+    "n": "vin blanc ou rouge",
+    "q": "2 à 3 dl"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "2 cs"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "sel, poivre, origan, thym, basilic",
+    "q": ""
+   }
+  ],
+  "notes": "Recette d'après le message reçu. Se congèle très bien : faire double dose pour les lasagnes.",
+  "prep": 20,
+  "reheat": "ajouter 1 à 2 cs d'eau sur les pâtes, 2 min 30 à 800 W, remuer et compléter 30 s.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Faire revenir l'ail et l'oignon dans l'huile d'olive.",
+   "Ajouter les carottes et le céleri coupés en petits dés.",
+   "Ajouter la viande, la faire revenir en versant le vin, à l'œil (environ 2 à 3 dl).",
+   "Quand il n'y a presque plus de vin, ajouter le concentré de tomate, puis la sauce tomate et les herbes.",
+   "Laisser cuire le plus longtemps possible ; les jours où il y a le temps, laisser mijoter longtemps à feu doux. Servir avec les pâtes."
+  ],
+  "tags": [
+   "italien",
+   "mijoté"
+  ],
+  "time": "1 h 30 (ou plus à feu doux)",
+  "title": "Pâtes bolognese (la recette maison)",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-boulettes": {
+  "createdAt": "2026-10-31T16:30:16Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "viande hachée",
+    "q": "500 g"
+   },
+   {
+    "n": "œuf",
+    "q": "1"
+   },
+   {
+    "n": "chapelure",
+    "q": "3 cs"
+   },
+   {
+    "n": "parmesan râpé",
+    "q": "30 g"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "sauce tomate",
+    "q": "500 g"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "courgettes",
+    "q": "2"
+   },
+   {
+    "n": "persil, sel, poivre, huile d'olive",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 25,
+  "reheat": "3 min à 800 W, couvercle entrouvert.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Mélanger viande, œuf, chapelure, parmesan, ail et persil ; former une vingtaine de boulettes.",
+   "Les dorer à la poêle, puis les laisser mijoter 15 minutes dans la sauce tomate.",
+   "Faire sauter les courgettes en dés. Cuire les pâtes.",
+   "Répartir pâtes, boulettes en sauce et courgettes."
+  ],
+  "tags": [
+   "italien"
+  ],
+  "time": "45 min",
+  "title": "Boulettes de viande hachée, sauce tomate, pâtes et légumes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-butternut-farcie": {
+  "createdAt": "2026-10-31T16:30:03Z",
+  "cuisson": 50,
+  "ingredients": [
+   {
+    "n": "courges butternut moyennes",
+    "q": "2"
+   },
+   {
+    "n": "viande hachée",
+    "q": "500 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "tomates concassées",
+    "q": "200 g"
+   },
+   {
+    "n": "Gruyère râpé",
+    "q": "80 g"
+   },
+   {
+    "n": "riz",
+    "q": "250 g"
+   },
+   {
+    "n": "paprika, thym, sel, poivre, huile d'olive",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 25,
+  "reheat": "3 min à 800 W, couvercle entrouvert.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Couper les courges en deux, retirer les graines, huiler et saler. Cuire 35 minutes à 200 °C, face coupée vers le bas.",
+   "Faire revenir oignon, ail et viande, ajouter tomates, paprika et thym, mijoter 10 minutes.",
+   "Creuser un peu la chair cuite, la mélanger à la farce et remplir les demi-courges.",
+   "Parsemer de fromage, gratiner 15 minutes. Couper chaque demi-courge en deux pour les boîtes, servir avec le riz."
+  ],
+  "tags": [
+   "four",
+   "farcis",
+   "automne"
+  ],
+  "time": "1 h 15",
+  "title": "Butternut farcie à la viande hachée, riz",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-carbonara": {
+  "createdAt": "2026-10-31T16:30:21Z",
+  "cuisson": 12,
+  "ingredients": [
+   {
+    "n": "rigatoni ou penne",
+    "q": "400 g"
+   },
+   {
+    "n": "lardons",
+    "q": "200 g"
+   },
+   {
+    "n": "œufs",
+    "q": "3"
+   },
+   {
+    "n": "parmesan râpé",
+    "q": "80 g"
+   },
+   {
+    "n": "petits pois",
+    "q": "400 g"
+   },
+   {
+    "n": "poivre noir",
+    "q": ""
+   }
+  ],
+  "notes": "Les petits pois sont un ajout pour les légumes.",
+  "prep": 10,
+  "reheat": "ajouter 1 à 2 cs de lait ou d'eau, 2 min à 600 W en remuant à mi-temps (puissance plus douce pour ne pas cuire l'œuf).",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les pâtes en gardant un verre d'eau de cuisson. Cuire les petits pois 5 minutes.",
+   "Dorer les lardons à sec.",
+   "Battre œufs, parmesan et poivre.",
+   "Hors du feu, mélanger pâtes, lardons et œufs en ajoutant un peu d'eau de cuisson pour une sauce crémeuse. Ajouter les petits pois."
+  ],
+  "tags": [
+   "italien",
+   "rapide"
+  ],
+  "time": "20 min",
+  "title": "Pâtes carbonara",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-chili": {
+  "createdAt": "2026-10-31T16:30:23Z",
+  "cuisson": 40,
+  "ingredients": [
+   {
+    "n": "viande hachée de bœuf",
+    "q": "500 g"
+   },
+   {
+    "n": "haricots rouges (400 g)",
+    "q": "1 boîte"
+   },
+   {
+    "n": "maïs",
+    "q": "200 g"
+   },
+   {
+    "n": "poivron",
+    "q": "1"
+   },
+   {
+    "n": "carottes",
+    "q": "2"
+   },
+   {
+    "n": "tomates concassées",
+    "q": "400 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousses d'ail",
+    "q": "2"
+   },
+   {
+    "n": "cumin",
+    "q": "2 cc"
+   },
+   {
+    "n": "paprika fumé",
+    "q": "1 cc"
+   },
+   {
+    "n": "piment au goût, sel",
+    "q": ""
+   },
+   {
+    "n": "riz",
+    "q": "250 g"
+   }
+  ],
+  "notes": "Encore meilleur réchauffé.",
+  "prep": 20,
+  "reheat": "3 min à 800 W, couvercle entrouvert, remuer à mi-temps.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Faire revenir oignon, ail et viande. Ajouter cumin, paprika et piment.",
+   "Ajouter poivron et carottes en dés, tomates et 1 dl d'eau. Mijoter 30 minutes.",
+   "Ajouter haricots rouges rincés et maïs, cuire encore 10 minutes.",
+   "Servir avec le riz."
+  ],
+  "tags": [
+   "tex-mex",
+   "mijoté"
+  ],
+  "time": "1 h",
+  "title": "Chili con carne",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-cordons-bleus": {
+  "createdAt": "2026-10-31T16:30:20Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "cordons bleus du commerce",
+    "q": "4"
+   },
+   {
+    "n": "pâtes ou riz",
+    "q": "400 g"
+   },
+   {
+    "n": "haricots verts",
+    "q": "500 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Produit industriel : l'origine de la viande n'est pas un critère.",
+  "prep": 5,
+  "reheat": "1 min 30 à 800 W, puis quelques minutes au four si possible.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les cordons bleus selon l'emballage.",
+   "Cuire pâtes et haricots.",
+   "Répartir dans les boîtes."
+  ],
+  "tags": [
+   "rapide",
+   "industriel"
+  ],
+  "time": "25 min",
+  "title": "Cordons bleus (achetés), légumes et pâtes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-courgettes-farcies": {
+  "createdAt": "2026-10-31T16:30:02Z",
+  "cuisson": 40,
+  "ingredients": [
+   {
+    "n": "courgettes",
+    "q": "4"
+   },
+   {
+    "n": "viande hachée",
+    "q": "500 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "sauce tomate",
+    "q": "200 g"
+   },
+   {
+    "n": "Gruyère râpé",
+    "q": "80 g"
+   },
+   {
+    "n": "riz",
+    "q": "250 g"
+   },
+   {
+    "n": "origan, sel, poivre, huile d'olive",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 25,
+  "reheat": "3 min à 800 W, couvercle entrouvert.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Couper les courgettes en deux dans la longueur, les évider à la cuillère et hacher la chair.",
+   "Faire revenir oignon, ail, viande et chair des courgettes 8 minutes, ajouter la moitié de la sauce tomate et l'origan.",
+   "Farcir les courgettes, napper du reste de sauce, parsemer de fromage.",
+   "Cuire 30 minutes à 200 °C. Servir avec le riz."
+  ],
+  "tags": [
+   "four",
+   "farcis"
+  ],
+  "time": "55 min",
+  "title": "Courgettes farcies à la viande hachée, riz",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-crepes": {
+  "createdAt": "2026-10-31T16:31:08Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "farine",
+    "q": "250 g"
+   },
+   {
+    "n": "œufs",
+    "q": "3"
+   },
+   {
+    "n": "lait",
+    "q": "5 dl"
+   },
+   {
+    "n": "sel",
+    "q": "1 pincée"
+   },
+   {
+    "n": "jambon",
+    "q": "4 tranches"
+   },
+   {
+    "n": "Gruyère râpé",
+    "q": "100 g"
+   },
+   {
+    "n": "sucre, confiture ou pâte à tartiner",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 15,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Fouetter farine, œufs, lait et sel ; laisser reposer 15 minutes si possible.",
+   "Cuire les crêpes dans une poêle beurrée.",
+   "Garnir de jambon et fromage, replier et laisser fondre 1 minute.",
+   "Finir par des crêpes sucrées."
+  ],
+  "tags": [
+   "poêle"
+  ],
+  "time": "30 min",
+  "title": "Crêpes jambon-fromage (et sucrées)",
+  "type": "soir"
+ },
+ "moi-croque": {
+  "createdAt": "2026-10-31T16:31:07Z",
+  "cuisson": 10,
+  "ingredients": [
+   {
+    "n": "pain de mie",
+    "q": "8 tranches"
+   },
+   {
+    "n": "jambon",
+    "q": "4 tranches"
+   },
+   {
+    "n": "Gruyère",
+    "q": "100 g"
+   },
+   {
+    "n": "beurre",
+    "q": "20 g"
+   },
+   {
+    "n": "tomates cerises en accompagnement",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Beurrer le pain, garnir de jambon et de fromage.",
+   "Cuire 4 minutes par face à la poêle, ou 10 minutes au four à 200 °C.",
+   "Servir avec quelques tomates."
+  ],
+  "tags": [
+   "rapide"
+  ],
+  "time": "15 min",
+  "title": "Croque-monsieur",
+  "type": "soir"
+ },
+ "moi-flammekueche": {
+  "createdAt": "2026-10-31T16:31:00Z",
+  "cuisson": 12,
+  "ingredients": [
+   {
+    "n": "pâte à tarte flambée (ou pâte à pizza fine)",
+    "q": "1"
+   },
+   {
+    "n": "crème fraîche épaisse",
+    "q": "200 g"
+   },
+   {
+    "n": "lardons",
+    "q": "150 g"
+   },
+   {
+    "n": "muscade, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "Sans oignons, comme vous l'aimez.",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Préchauffer le four à 250 °C.",
+   "Étaler la pâte finement, la napper de crème fraîche assaisonnée.",
+   "Répartir les lardons crus.",
+   "Cuire 10 à 12 minutes jusqu'à ce que les bords soient dorés."
+  ],
+  "tags": [
+   "four",
+   "alsacien"
+  ],
+  "time": "25 min",
+  "title": "Flammekueche sans oignons",
+  "type": "soir"
+ },
+ "moi-fondue": {
+  "createdAt": "2026-10-31T16:32:00Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "mélange fondue moitié-moitié (Gruyère et Vacherin fribourgeois)",
+    "q": "400 g"
+   },
+   {
+    "n": "vin blanc sec",
+    "q": "2 dl"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "fécule de maïs",
+    "q": "1 cc"
+   },
+   {
+    "n": "kirsch (facultatif)",
+    "q": "1 cs"
+   },
+   {
+    "n": "pain mi-blanc en cubes",
+    "q": "400 g"
+   },
+   {
+    "n": "poivre, muscade",
+    "q": ""
+   },
+   {
+    "n": "cornichons, oignons au vinaigre, pommes de terre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Frotter le caquelon avec l'ail, chauffer le vin.",
+   "Ajouter le fromage peu à peu en remuant en huit, sans bouillir.",
+   "Lier avec la fécule délayée dans le kirsch, poivrer.",
+   "Servir sur le réchaud avec le pain coupé la veille."
+  ],
+  "tags": [
+   "suisse",
+   "fromage",
+   "hiver"
+  ],
+  "time": "25 min",
+  "title": "Fondue moitié-moitié",
+  "type": "weekend"
+ },
+ "moi-gateau-courgette": {
+  "createdAt": "2026-10-31T16:31:02Z",
+  "cuisson": 35,
+  "ingredients": [
+   {
+    "n": "pâte brisée ronde",
+    "q": "1"
+   },
+   {
+    "n": "courgettes",
+    "q": "2"
+   },
+   {
+    "n": "Gruyère râpé",
+    "q": "100 g"
+   },
+   {
+    "n": "jambon en dés",
+    "q": "100 g"
+   },
+   {
+    "n": "œufs",
+    "q": "3"
+   },
+   {
+    "n": "crème ou lait",
+    "q": "2 dl"
+   },
+   {
+    "n": "sel, poivre, muscade",
+    "q": ""
+   }
+  ],
+  "notes": "J'ai supposé un gâteau salé à la romande (façon quiche) ; dis-moi si c'est un cake sucré.",
+  "prep": 20,
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Foncer un moule avec la pâte et piquer le fond.",
+   "Râper les courgettes, les saler 10 minutes puis bien les presser.",
+   "Répartir courgettes, jambon et fromage sur la pâte.",
+   "Verser œufs battus avec la crème et les épices, cuire 35 minutes à 200 °C."
+  ],
+  "tags": [
+   "four",
+   "salé"
+  ],
+  "time": "50 min",
+  "title": "Gâteau à la courgette",
+  "type": "soir"
+ },
+ "moi-gateau-pommes": {
+  "createdAt": "2026-10-31T16:31:01Z",
+  "cuisson": 35,
+  "ingredients": [
+   {
+    "n": "pâte brisée ronde",
+    "q": "1"
+   },
+   {
+    "n": "pommes",
+    "q": "4"
+   },
+   {
+    "n": "noisettes moulues",
+    "q": "2 cs"
+   },
+   {
+    "n": "œufs",
+    "q": "2"
+   },
+   {
+    "n": "crème ou lait",
+    "q": "2 dl"
+   },
+   {
+    "n": "sucre",
+    "q": "3 cs"
+   },
+   {
+    "n": "cannelle",
+    "q": "1 cc"
+   }
+  ],
+  "notes": "",
+  "prep": 15,
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Foncer un moule avec la pâte, piquer le fond et parsemer de noisettes.",
+   "Disposer les pommes en fines tranches.",
+   "Battre œufs, crème, sucre et cannelle, verser sur les pommes.",
+   "Cuire 35 minutes à 200 °C, dans le bas du four."
+  ],
+  "tags": [
+   "suisse",
+   "sucré",
+   "four"
+  ],
+  "time": "50 min",
+  "title": "Gâteau aux pommes",
+  "type": "soir"
+ },
+ "moi-gratin-pates": {
+  "createdAt": "2026-10-31T16:30:00Z",
+  "cuisson": 30,
+  "ingredients": [
+   {
+    "n": "pâtes (cornettes ou penne)",
+    "q": "400 g"
+   },
+   {
+    "n": "jambon en dés",
+    "q": "200 g"
+   },
+   {
+    "n": "Gruyère râpé",
+    "q": "150 g"
+   },
+   {
+    "n": "lait",
+    "q": "3 dl"
+   },
+   {
+    "n": "crème",
+    "q": "2 dl"
+   },
+   {
+    "n": "œufs",
+    "q": "2"
+   },
+   {
+    "n": "brocoli",
+    "q": "300 g"
+   },
+   {
+    "n": "sel, poivre, muscade",
+    "q": ""
+   }
+  ],
+  "notes": "Le brocoli est un ajout pour avoir des légumes à midi ; les petits pois marchent aussi.",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W avec 1 cs de lait, couvercle entrouvert.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les pâtes 2 minutes de moins que le temps indiqué. Cuire le brocoli 4 minutes à l'eau.",
+   "Mélanger pâtes, jambon, brocoli et la moitié du fromage dans un plat beurré.",
+   "Battre lait, crème et œufs avec sel, poivre et muscade, verser sur les pâtes.",
+   "Couvrir du reste de fromage, cuire 25 minutes à 200 °C."
+  ],
+  "tags": [
+   "four",
+   "classique"
+  ],
+  "time": "45 min",
+  "title": "Gratin de pâtes jambon-fromage",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-grillades": {
+  "createdAt": "2026-10-31T16:32:03Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "viande à griller (côtelettes, steaks)",
+    "q": "400 g"
+   },
+   {
+    "n": "saucisses à griller",
+    "q": "2"
+   },
+   {
+    "n": "courgettes",
+    "q": "2"
+   },
+   {
+    "n": "poivron",
+    "q": "1"
+   },
+   {
+    "n": "tomates",
+    "q": "2"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "3 cs"
+   },
+   {
+    "n": "herbes, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "Uniquement de mai à octobre.",
+  "prep": 15,
+  "saison": {
+   "a": 10,
+   "de": 5,
+   "label": "de mai à octobre"
+  },
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Sortir la viande du frigo 30 minutes avant.",
+   "Couper les légumes en tranches épaisses, les huiler et assaisonner.",
+   "Griller légumes et viande en saisissant d'abord à feu vif."
+  ],
+  "tags": [
+   "barbecue",
+   "été"
+  ],
+  "time": "40 min",
+  "title": "Grillades : viande, saucisses et légumes",
+  "type": "weekend"
+ },
+ "moi-lasagne": {
+  "createdAt": "2026-10-31T16:30:09Z",
+  "cuisson": 40,
+  "ingredients": [
+   {
+    "n": "sauce bolognese maison (voir la recette)",
+    "q": "1 dose"
+   },
+   {
+    "n": "feuilles de lasagne",
+    "q": "250 g"
+   },
+   {
+    "n": "beurre",
+    "q": "50 g"
+   },
+   {
+    "n": "farine",
+    "q": "50 g"
+   },
+   {
+    "n": "lait",
+    "q": "7 dl"
+   },
+   {
+    "n": "Gruyère ou parmesan râpé",
+    "q": "100 g"
+   },
+   {
+    "n": "épinards en branches",
+    "q": "200 g"
+   },
+   {
+    "n": "muscade, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "Les épinards sont un ajout pour les légumes ; facultatifs.",
+  "prep": 30,
+  "reheat": "3 min à 800 W, couvercle entrouvert, laisser reposer 1 min.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Préparer la sauce bolognese.",
+   "Béchamel : fondre le beurre, ajouter la farine, puis le lait en fouettant ; cuire jusqu'à épaississement, assaisonner de muscade.",
+   "Monter les couches : bolognese, feuilles, béchamel, quelques épinards ; répéter et finir par béchamel et fromage.",
+   "Cuire 40 minutes à 190 °C, laisser reposer 10 minutes avant de couper."
+  ],
+  "tags": [
+   "italien",
+   "four"
+  ],
+  "time": "2 h (avec la bolognese)",
+  "title": "Lasagne maison",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-omelette": {
+  "createdAt": "2026-10-31T16:31:10Z",
+  "cuisson": 8,
+  "ingredients": [
+   {
+    "n": "œufs",
+    "q": "5"
+   },
+   {
+    "n": "tomates",
+    "q": "2"
+   },
+   {
+    "n": "jambon",
+    "q": "100 g"
+   },
+   {
+    "n": "champignons (en bonus)",
+    "q": "100 g"
+   },
+   {
+    "n": "beurre",
+    "q": "1 cs"
+   },
+   {
+    "n": "sel, poivre, ciboulette",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Faire revenir les champignons émincés dans le beurre, ajouter tomates et jambon en dés.",
+   "Verser les œufs battus et assaisonnés.",
+   "Cuire à feu doux en ramenant les bords vers le centre, plier et servir."
+  ],
+  "tags": [
+   "rapide"
+  ],
+  "time": "15 min",
+  "title": "Omelette tomate, jambon et champignons",
+  "type": "soir"
+ },
+ "moi-pain-fromage-yaourt": {
+  "createdAt": "2026-10-31T16:31:03Z",
+  "cuisson": 0,
+  "ingredients": [
+   {
+    "n": "pain",
+    "q": ""
+   },
+   {
+    "n": "fromages au choix",
+    "q": ""
+   },
+   {
+    "n": "yaourts",
+    "q": "2"
+   },
+   {
+    "n": "tomates cerises ou concombre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 5,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Préparer une planche avec pain et fromages, quelques légumes crus, et un yaourt chacun."
+  ],
+  "tags": [
+   "sans cuisson"
+  ],
+  "time": "5 min",
+  "title": "Pain, fromage et yaourt",
+  "type": "soir"
+ },
+ "moi-pain-perdu": {
+  "createdAt": "2026-10-31T16:31:09Z",
+  "cuisson": 8,
+  "ingredients": [
+   {
+    "n": "pain rassis",
+    "q": "6 tranches"
+   },
+   {
+    "n": "œufs",
+    "q": "2"
+   },
+   {
+    "n": "lait",
+    "q": "2 dl"
+   },
+   {
+    "n": "sucre",
+    "q": "1 cs"
+   },
+   {
+    "n": "cannelle",
+    "q": "1 cc"
+   },
+   {
+    "n": "beurre",
+    "q": "20 g"
+   },
+   {
+    "n": "compote ou fruits",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Battre œufs, lait, sucre et cannelle.",
+   "Tremper les tranches de pain.",
+   "Dorer au beurre 2 minutes par face. Servir avec compote ou fruits."
+  ],
+  "tags": [
+   "sucré",
+   "anti-gaspi"
+  ],
+  "time": "15 min",
+  "title": "Pain perdu",
+  "type": "soir"
+ },
+ "moi-pain-viande-froide": {
+  "createdAt": "2026-10-31T16:31:05Z",
+  "cuisson": 0,
+  "ingredients": [
+   {
+    "n": "pain",
+    "q": ""
+   },
+   {
+    "n": "viande séchée, jambon, salami",
+    "q": ""
+   },
+   {
+    "n": "cornichons",
+    "q": ""
+   },
+   {
+    "n": "crudités (carottes, concombre, tomates)",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 5,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Dresser une assiette de charcuterie avec le pain, les cornichons et quelques crudités."
+  ],
+  "tags": [
+   "sans cuisson",
+   "suisse"
+  ],
+  "time": "5 min",
+  "title": "Pain et viande froide",
+  "type": "soir"
+ },
+ "moi-pates-thon": {
+  "createdAt": "2026-10-31T16:30:22Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "thon au naturel",
+    "q": "2 boîtes"
+   },
+   {
+    "n": "sauce tomate",
+    "q": "500 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "courgettes ou haricots verts",
+    "q": "500 g"
+   },
+   {
+    "n": "origan, huile d'olive, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "reheat": "2 min 30 à 800 W avec 1 cs d'eau.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Faire revenir oignon et ail dans l'huile, ajouter la sauce tomate et l'origan, mijoter 10 minutes.",
+   "Ajouter le thon émietté en fin de cuisson.",
+   "Cuire légumes et pâtes.",
+   "Mélanger pâtes et sauce, ajouter les légumes."
+  ],
+  "tags": [
+   "italien",
+   "rapide"
+  ],
+  "time": "20 min",
+  "title": "Pâtes au thon et sauce tomate, légumes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-pilons-four": {
+  "createdAt": "2026-10-31T16:32:02Z",
+  "cuisson": 40,
+  "ingredients": [
+   {
+    "n": "pilons de poulet",
+    "q": "6"
+   },
+   {
+    "n": "carottes",
+    "q": "2"
+   },
+   {
+    "n": "courgette",
+    "q": "1"
+   },
+   {
+    "n": "poivron",
+    "q": "1"
+   },
+   {
+    "n": "pâtes",
+    "q": "200 g"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "2 cs"
+   },
+   {
+    "n": "paprika",
+    "q": "1 cc"
+   },
+   {
+    "n": "herbes de Provence, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Préchauffer le four à 200 °C. Frotter les pilons d'huile, paprika, herbes, sel.",
+   "Disposer les pilons et les légumes en morceaux sur une plaque.",
+   "Cuire 40 minutes en retournant à mi-cuisson.",
+   "Servir avec les pâtes."
+  ],
+  "tags": [
+   "four"
+  ],
+  "time": "50 min",
+  "title": "Pilons de poulet au four, légumes et pâtes",
+  "type": "weekend"
+ },
+ "moi-pizza": {
+  "createdAt": "2026-10-31T16:31:11Z",
+  "cuisson": 12,
+  "ingredients": [
+   {
+    "n": "farine",
+    "q": "300 g"
+   },
+   {
+    "n": "levure sèche",
+    "q": "7 g"
+   },
+   {
+    "n": "eau tiède",
+    "q": "1.8 dl"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "2 cs"
+   },
+   {
+    "n": "sel",
+    "q": "1 cc"
+   },
+   {
+    "n": "sauce tomate",
+    "q": "200 g"
+   },
+   {
+    "n": "mozzarella",
+    "q": "250 g"
+   },
+   {
+    "n": "garniture : jambon, champignons, courgettes, olives…",
+    "q": ""
+   },
+   {
+    "n": "origan",
+    "q": ""
+   }
+  ],
+  "notes": "Pâte achetée possible les soirs pressés : préparation 10 min. Pâte maison : prévoir 1 h de levée.",
+  "prep": 20,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Pétrir farine, levure, eau, huile et sel 10 minutes. Laisser lever 1 heure.",
+   "Préchauffer le four à 250 °C avec la plaque.",
+   "Étaler la pâte, napper de sauce tomate, ajouter mozzarella et garniture.",
+   "Cuire 10 à 12 minutes."
+  ],
+  "tags": [
+   "italien",
+   "four"
+  ],
+  "time": "1 h 30 (avec la levée)",
+  "title": "Pizza maison",
+  "type": "soir",
+  "weekend": true
+ },
+ "moi-poulet-cajou": {
+  "createdAt": "2026-10-31T16:30:05Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "noix de cajou",
+    "q": "100 g"
+   },
+   {
+    "n": "carottes",
+    "q": "3"
+   },
+   {
+    "n": "poivrons",
+    "q": "2"
+   },
+   {
+    "n": "nouilles chinoises aux œufs",
+    "q": "300 g"
+   },
+   {
+    "n": "sauce soja",
+    "q": "4 cs"
+   },
+   {
+    "n": "sauce d'huître",
+    "q": "2 cs"
+   },
+   {
+    "n": "miel",
+    "q": "1 cs"
+   },
+   {
+    "n": "fécule de maïs",
+    "q": "1 cc"
+   },
+   {
+    "n": "gousses d'ail",
+    "q": "2"
+   },
+   {
+    "n": "huile",
+    "q": "2 cs"
+   }
+  ],
+  "notes": "",
+  "prep": 20,
+  "reheat": "2 min 30 à 800 W avec 1 cs d'eau, remuer à mi-temps.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Couper le poulet en dés, les carottes en bâtonnets fins, les poivrons en lanières. Mélanger soja, sauce d'huître, miel, fécule et 1 dl d'eau.",
+   "Torréfier les noix de cajou à sec, réserver. Cuire les nouilles et les égoutter.",
+   "Saisir le poulet dans l'huile chaude 5 minutes, ajouter ail, carottes et poivrons 4 minutes.",
+   "Verser la sauce, laisser épaissir, ajouter nouilles et cajou, bien mélanger."
+  ],
+  "tags": [
+   "wok",
+   "asiatique"
+  ],
+  "time": "30 min",
+  "title": "Poulet sauté aux noix de cajou, nouilles, carottes et poivrons",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-poulet-cantadou": {
+  "createdAt": "2026-10-31T16:30:11Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "Cantadou ail et fines herbes",
+    "q": "150 g"
+   },
+   {
+    "n": "crème ou lait",
+    "q": "1.5 dl"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "brocoli",
+    "q": "400 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "reheat": "2 min 30 à 800 W avec 1 cs de lait.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire le brocoli 5 minutes et les pâtes.",
+   "Dorer le poulet en dés dans l'huile 6 minutes.",
+   "Ajouter Cantadou et crème, laisser fondre en remuant 3 minutes.",
+   "Mélanger avec pâtes et brocoli."
+  ],
+  "tags": [
+   "crème",
+   "rapide"
+  ],
+  "time": "25 min",
+  "title": "Poulet Cantadou, pâtes et légumes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-poulet-champignons": {
+  "createdAt": "2026-10-31T16:30:06Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "champignons de Paris",
+    "q": "300 g"
+   },
+   {
+    "n": "échalote",
+    "q": "1"
+   },
+   {
+    "n": "crème",
+    "q": "2.5 dl"
+   },
+   {
+    "n": "bouillon de volaille",
+    "q": "1 dl"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "carottes",
+    "q": "600 g"
+   },
+   {
+    "n": "beurre",
+    "q": "1 cs"
+   },
+   {
+    "n": "persil, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W avec 1 cs de lait, remuer à mi-temps.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les carottes en rondelles 12 minutes à l'eau salée. Cuire les pâtes.",
+   "Dorer le poulet en dés dans le beurre, réserver.",
+   "Faire revenir échalote et champignons émincés jusqu'à évaporation de l'eau.",
+   "Ajouter bouillon et crème, remettre le poulet, mijoter 5 minutes. Saler, poivrer, persil."
+  ],
+  "tags": [
+   "crème",
+   "classique"
+  ],
+  "time": "30 min",
+  "title": "Poulet aux champignons à la crème, pâtes et carottes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-poulet-citron": {
+  "createdAt": "2026-10-31T16:30:04Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "citrons",
+    "q": "2"
+   },
+   {
+    "n": "huile d'olive",
+    "q": "4 cs"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "carottes",
+    "q": "600 g"
+   },
+   {
+    "n": "thym, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "Marinade possible la veille au frigo.",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W avec 1 cs d'eau sur les pâtes.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Couper le poulet en lanières, le faire mariner au moins 30 minutes dans le jus des citrons, l'huile, l'ail écrasé et le thym.",
+   "Cuire les carottes en rondelles 12 minutes à l'eau salée. Cuire les pâtes.",
+   "Égoutter le poulet et le saisir à la poêle bien chaude 6 à 8 minutes. Déglacer avec un peu de marinade.",
+   "Répartir pâtes, poulet et carottes dans les boîtes."
+  ],
+  "tags": [
+   "poêle",
+   "méditerranéen"
+  ],
+  "time": "30 min + marinade",
+  "title": "Poulet au citron, pâtes et carottes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-poulet-curry-coco": {
+  "createdAt": "2026-10-31T16:30:13Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "lait de coco",
+    "q": "4 dl"
+   },
+   {
+    "n": "curry en poudre",
+    "q": "2 cs"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "riz basmati",
+    "q": "250 g"
+   },
+   {
+    "n": "carottes",
+    "q": "600 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W, couvercle entrouvert, remuer à mi-temps.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les carottes en rondelles 12 minutes à l'eau salée et le riz.",
+   "Faire revenir oignon et ail, ajouter le curry 1 minute.",
+   "Ajouter le poulet en dés, dorer 5 minutes, verser le lait de coco et mijoter 10 minutes.",
+   "Répartir riz, curry et carottes."
+  ],
+  "tags": [
+   "asiatique",
+   "curry"
+  ],
+  "time": "30 min",
+  "title": "Poulet curry coco, riz et carottes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-poulet-moutarde": {
+  "createdAt": "2026-10-31T16:30:10Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "moutarde à l'ancienne",
+    "q": "2 cs"
+   },
+   {
+    "n": "moutarde mi-forte",
+    "q": "1 cs"
+   },
+   {
+    "n": "crème",
+    "q": "2.5 dl"
+   },
+   {
+    "n": "échalote",
+    "q": "1"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "haricots verts",
+    "q": "500 g"
+   },
+   {
+    "n": "beurre",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Légumes au choix : haricots, brocoli ou carottes.",
+  "prep": 10,
+  "reheat": "2 min 30 à 800 W avec 1 cs de lait.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les haricots 8 minutes à l'eau salée et les pâtes.",
+   "Dorer le poulet en morceaux dans le beurre, ajouter l'échalote.",
+   "Verser crème et moutardes, mijoter 5 minutes à feu doux sans faire bouillir.",
+   "Répartir pâtes, poulet et haricots."
+  ],
+  "tags": [
+   "crème"
+  ],
+  "time": "30 min",
+  "title": "Poulet à la crème moutarde, pâtes et légumes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-poulet-sauce-tomate": {
+  "createdAt": "2026-10-31T16:30:17Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "sauce tomate",
+    "q": "500 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "haricots verts ou carottes",
+    "q": "500 g"
+   },
+   {
+    "n": "basilic, origan, sel, poivre, huile d'olive",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "reheat": "2 min 30 à 800 W avec 1 cs d'eau.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Dorer le poulet en morceaux dans l'huile, ajouter oignon et ail.",
+   "Verser la sauce tomate et les herbes, mijoter 15 minutes à couvert.",
+   "Cuire les légumes à l'eau et les pâtes.",
+   "Répartir dans les boîtes."
+  ],
+  "tags": [
+   "italien"
+  ],
+  "time": "35 min",
+  "title": "Poulet mijoté à la sauce tomate, pâtes et légumes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-raclette": {
+  "createdAt": "2026-10-31T16:32:01Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "fromage à raclette en tranches",
+    "q": "500 g"
+   },
+   {
+    "n": "pommes de terre",
+    "q": "800 g"
+   },
+   {
+    "n": "cornichons, oignons au vinaigre",
+    "q": ""
+   },
+   {
+    "n": "viande séchée et jambon cru (facultatif)",
+    "q": ""
+   },
+   {
+    "n": "poivre, paprika",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Cuire les pommes de terre en robe des champs 20 minutes.",
+   "Allumer l'appareil à raclette.",
+   "Faire fondre le fromage et le servir sur les pommes de terre avec les condiments."
+  ],
+  "tags": [
+   "suisse",
+   "fromage",
+   "hiver"
+  ],
+  "time": "30 min",
+  "title": "Raclette",
+  "type": "weekend"
+ },
+ "moi-risotto-viande": {
+  "createdAt": "2026-10-31T16:32:06Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "riz arborio",
+    "q": "180 g"
+   },
+   {
+    "n": "échalote",
+    "q": "1"
+   },
+   {
+    "n": "vin blanc",
+    "q": "1 dl"
+   },
+   {
+    "n": "bouillon chaud",
+    "q": "7 dl"
+   },
+   {
+    "n": "parmesan râpé",
+    "q": "40 g"
+   },
+   {
+    "n": "beurre",
+    "q": "20 g"
+   },
+   {
+    "n": "morceaux de viande (escalope de veau, filet de poulet ou de porc)",
+    "q": "2"
+   },
+   {
+    "n": "safran ou champignons au choix",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Faire revenir l'échalote, nacrer le riz 2 minutes, déglacer au vin.",
+   "Ajouter le bouillon louche par louche en remuant, 18 minutes.",
+   "Hors du feu, ajouter beurre et parmesan, couvrir 2 minutes.",
+   "Pendant ce temps, poêler la viande et la servir sur le risotto."
+  ],
+  "tags": [
+   "italien"
+  ],
+  "time": "35 min",
+  "title": "Risotto avec un morceau de viande",
+  "type": "weekend"
+ },
+ "moi-riz-casimir": {
+  "createdAt": "2026-10-31T16:30:14Z",
+  "cuisson": 20,
+  "ingredients": [
+   {
+    "n": "émincé de poulet (ou de veau)",
+    "q": "600 g"
+   },
+   {
+    "n": "riz",
+    "q": "250 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "curry doux",
+    "q": "2 cs"
+   },
+   {
+    "n": "crème",
+    "q": "2 dl"
+   },
+   {
+    "n": "bouillon de volaille",
+    "q": "2 dl"
+   },
+   {
+    "n": "ananas en morceaux",
+    "q": "1 boîte"
+   },
+   {
+    "n": "bananes",
+    "q": "2"
+   },
+   {
+    "n": "petits pois",
+    "q": "300 g"
+   },
+   {
+    "n": "beurre",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Les petits pois sont un ajout pour les légumes.",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W ; les fruits peuvent aller dans une petite boîte à part.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire le riz et les petits pois.",
+   "Saisir l'émincé dans le beurre, réserver. Faire revenir l'oignon, ajouter le curry.",
+   "Verser bouillon et crème, réduire 5 minutes, remettre la viande.",
+   "Chauffer brièvement ananas et bananes en rondelles à la poêle. Servir sur le riz."
+  ],
+  "tags": [
+   "suisse",
+   "curry"
+  ],
+  "time": "30 min",
+  "title": "Riz Casimir",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-riz-saute-poulet": {
+  "createdAt": "2026-10-31T16:30:12Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "riz jasmin (cuit la veille idéalement)",
+    "q": "300 g"
+   },
+   {
+    "n": "filet de poulet",
+    "q": "500 g"
+   },
+   {
+    "n": "œufs",
+    "q": "3"
+   },
+   {
+    "n": "petits pois",
+    "q": "200 g"
+   },
+   {
+    "n": "carottes",
+    "q": "2"
+   },
+   {
+    "n": "oignons nouveaux",
+    "q": "3"
+   },
+   {
+    "n": "sauce soja",
+    "q": "4 cs"
+   },
+   {
+    "n": "sauce d'huître",
+    "q": "1 cs"
+   },
+   {
+    "n": "gousses d'ail",
+    "q": "2"
+   },
+   {
+    "n": "huile",
+    "q": "3 cs"
+   }
+  ],
+  "notes": "Bien refroidir le riz avant de mettre au frigo.",
+  "prep": 15,
+  "reheat": "2 min 30 à 800 W avec 1 cs d'eau, remuer à mi-temps.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire le riz et le laisser refroidir complètement.",
+   "Saisir le poulet en dés dans l'huile, réserver. Brouiller les œufs dans le wok, réserver.",
+   "Sauter ail, carottes en petits dés et petits pois 4 minutes.",
+   "Ajouter le riz froid, les sauces, le poulet et les œufs ; sauter 3 minutes à feu vif. Finir avec les oignons nouveaux."
+  ],
+  "tags": [
+   "wok",
+   "asiatique"
+  ],
+  "time": "25 min",
+  "title": "Riz sauté au poulet",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-sandwich": {
+  "createdAt": "2026-10-31T16:31:06Z",
+  "cuisson": 0,
+  "ingredients": [
+   {
+    "n": "baguettes ou pains",
+    "q": "2"
+   },
+   {
+    "n": "jambon, fromage ou thon",
+    "q": ""
+   },
+   {
+    "n": "salade, tomate, concombre",
+    "q": ""
+   },
+   {
+    "n": "beurre ou mayonnaise",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Garnir le pain selon les envies avec viande ou thon, fromage et crudités."
+  ],
+  "tags": [
+   "sans cuisson"
+  ],
+  "time": "10 min",
+  "title": "Sandwich",
+  "type": "soir"
+ },
+ "moi-saucisse-rotir": {
+  "createdAt": "2026-10-31T16:30:15Z",
+  "cuisson": 25,
+  "ingredients": [
+   {
+    "n": "saucisses à rôtir de veau",
+    "q": "4"
+   },
+   {
+    "n": "oignons",
+    "q": "2"
+   },
+   {
+    "n": "fond de veau",
+    "q": "2 dl"
+   },
+   {
+    "n": "cornettes",
+    "q": "400 g"
+   },
+   {
+    "n": "carottes",
+    "q": "600 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Purée remplacée par des cornettes : elles se réchauffent mieux au micro-ondes.",
+  "prep": 10,
+  "reheat": "3 min à 800 W avec 1 cs d'eau, saucisse coupée en tranches.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les cornettes et les carottes en rondelles à l'eau salée.",
+   "Dorer les saucisses à feu moyen 12 à 15 minutes, réserver.",
+   "Dans la même poêle, faire fondre les oignons émincés, mouiller avec le fond et réduire.",
+   "Répartir cornettes, carottes, saucisse en tranches et sauce."
+  ],
+  "tags": [
+   "suisse"
+  ],
+  "time": "35 min",
+  "title": "Saucisse à rôtir, sauce oignon, cornettes et carottes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-tacquitos": {
+  "createdAt": "2026-10-31T16:30:07Z",
+  "cuisson": 30,
+  "ingredients": [
+   {
+    "n": "filet de poulet",
+    "q": "600 g"
+   },
+   {
+    "n": "poivrons",
+    "q": "2"
+   },
+   {
+    "n": "oignon rouge",
+    "q": "1"
+   },
+   {
+    "n": "tortillas de blé",
+    "q": "8"
+   },
+   {
+    "n": "portions de Kiri",
+    "q": "6"
+   },
+   {
+    "n": "cheddar râpé",
+    "q": "150 g"
+   },
+   {
+    "n": "sauce salsa",
+    "q": "1 bocal"
+   },
+   {
+    "n": "épices fajitas",
+    "q": "1 sachet"
+   },
+   {
+    "n": "huile",
+    "q": "2 cs"
+   },
+   {
+    "n": "maïs",
+    "q": "200 g"
+   }
+  ],
+  "notes": "",
+  "prep": 25,
+  "reheat": "1 min 30 à 800 W, puis 2 min à la poêle ou au four si possible pour recroustiller ; la salsa à part.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Pocher le poulet 15 minutes dans l'eau frémissante salée, puis l'effilocher à la fourchette.",
+   "Faire revenir poivrons et oignon émincés, ajouter poulet, épices et 3 cs de salsa.",
+   "Tartiner chaque tortilla de Kiri, garnir de poulet et de cheddar, rouler serré.",
+   "Poser dans un plat, badigeonner d'huile, parsemer de cheddar et cuire 15 minutes à 200 °C. Servir avec la salsa et le maïs."
+  ],
+  "tags": [
+   "four",
+   "tex-mex"
+  ],
+  "time": "50 min",
+  "title": "Taquitos au poulet effiloché, poivrons, Kiri et cheddar",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-tomates-farcies": {
+  "createdAt": "2026-10-31T16:30:01Z",
+  "cuisson": 45,
+  "ingredients": [
+   {
+    "n": "grosses tomates",
+    "q": "8"
+   },
+   {
+    "n": "viande hachée",
+    "q": "500 g"
+   },
+   {
+    "n": "oignon",
+    "q": "1"
+   },
+   {
+    "n": "gousse d'ail",
+    "q": "1"
+   },
+   {
+    "n": "œuf",
+    "q": "1"
+   },
+   {
+    "n": "chapelure",
+    "q": "2 cs"
+   },
+   {
+    "n": "riz",
+    "q": "250 g"
+   },
+   {
+    "n": "persil, thym, sel, poivre, huile d'olive",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 25,
+  "reheat": "3 min à 800 W, couvercle entrouvert ; garder un peu de jus de cuisson sur le riz.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Couper un chapeau aux tomates, les évider et garder la pulpe hachée.",
+   "Mélanger viande, oignon et ail hachés, œuf, chapelure, herbes, sel et poivre.",
+   "Farcir les tomates, remettre les chapeaux. Verser la pulpe et un filet d'huile dans le plat.",
+   "Cuire 45 minutes à 190 °C. Servir sur le riz cuit, arrosé du jus de cuisson."
+  ],
+  "tags": [
+   "four",
+   "farcis"
+  ],
+  "time": "1 h",
+  "title": "Tomates farcies à la viande hachée, riz",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-tranche-boeuf": {
+  "createdAt": "2026-10-31T16:32:04Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "tranches de bœuf (entrecôte ou rumsteck)",
+    "q": "2"
+   },
+   {
+    "n": "haricots verts",
+    "q": "400 g"
+   },
+   {
+    "n": "pommes de terre",
+    "q": "400 g"
+   },
+   {
+    "n": "beurre",
+    "q": "20 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   },
+   {
+    "n": "fleur de sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Sortir la viande 30 minutes avant. Cuire haricots et pommes de terre (à l'eau ou sautées).",
+   "Saisir les tranches 2 à 3 minutes par face dans l'huile très chaude, ajouter le beurre en fin de cuisson.",
+   "Laisser reposer 3 minutes sous aluminium, saler et poivrer."
+  ],
+  "tags": [
+   "poêle"
+  ],
+  "time": "25 min",
+  "title": "Tranche de bœuf, légumes poêlés",
+  "type": "weekend"
+ },
+ "moi-tranche-porc": {
+  "createdAt": "2026-10-31T16:32:05Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "tranches de porc (cou ou filet)",
+    "q": "2"
+   },
+   {
+    "n": "carottes ou brocoli",
+    "q": "400 g"
+   },
+   {
+    "n": "pommes de terre",
+    "q": "400 g"
+   },
+   {
+    "n": "moutarde",
+    "q": "1 cs"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   },
+   {
+    "n": "thym, sel, poivre",
+    "q": ""
+   }
+  ],
+  "notes": "",
+  "prep": 10,
+  "servings": 2,
+  "source": "moi",
+  "steps": [
+   "Cuire les légumes et les pommes de terre.",
+   "Badigeonner les tranches de moutarde et de thym, cuire 4 à 5 minutes par face à feu moyen.",
+   "Laisser reposer 2 minutes avant de servir."
+  ],
+  "tags": [
+   "poêle"
+  ],
+  "time": "25 min",
+  "title": "Tranche de porc, légumes et pommes de terre",
+  "type": "weekend"
+ },
+ "moi-tranches-panees-indus": {
+  "createdAt": "2026-10-31T16:30:19Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "tranches panées du commerce",
+    "q": "4"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "petits pois et carottes",
+    "q": "500 g"
+   },
+   {
+    "n": "huile",
+    "q": "1 cs"
+   }
+  ],
+  "notes": "Produit industriel : l'origine de la viande n'est pas un critère.",
+  "prep": 5,
+  "reheat": "1 min 30 à 800 W, puis quelques minutes au four ou à la poêle si possible.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Cuire les tranches à la poêle ou au four selon l'emballage.",
+   "Cuire pâtes et légumes.",
+   "Répartir dans les boîtes."
+  ],
+  "tags": [
+   "rapide",
+   "industriel"
+  ],
+  "time": "20 min",
+  "title": "Tranches panées (achetées), légumes et pâtes",
+  "type": "midi",
+  "weekend": true
+ },
+ "moi-tranches-panees-maison": {
+  "createdAt": "2026-10-31T16:30:18Z",
+  "cuisson": 15,
+  "ingredients": [
+   {
+    "n": "tranches de porc ou de poulet",
+    "q": "4"
+   },
+   {
+    "n": "œufs",
+    "q": "2"
+   },
+   {
+    "n": "farine",
+    "q": "50 g"
+   },
+   {
+    "n": "chapelure",
+    "q": "100 g"
+   },
+   {
+    "n": "pâtes",
+    "q": "400 g"
+   },
+   {
+    "n": "brocoli ou carottes",
+    "q": "500 g"
+   },
+   {
+    "n": "huile",
+    "q": "4 cs"
+   },
+   {
+    "n": "citron",
+    "q": "1"
+   }
+  ],
+  "notes": "",
+  "prep": 20,
+  "reheat": "1 min 30 à 800 W, puis quelques minutes au four ou à la poêle si possible pour garder le croustillant.",
+  "servings": 4,
+  "source": "moi",
+  "steps": [
+   "Aplatir les tranches, saler et poivrer.",
+   "Passer dans la farine, l'œuf battu puis la chapelure.",
+   "Cuire 3 à 4 minutes par face dans l'huile chaude, égoutter sur du papier.",
+   "Cuire légumes et pâtes, servir avec un quartier de citron."
+  ],
+  "tags": [
+   "poêle"
+  ],
+  "time": "35 min",
+  "title": "Tranches panées maison, légumes et pâtes",
+  "type": "midi",
+  "weekend": true
+ }
+}

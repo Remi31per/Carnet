@@ -1,0 +1,113 @@
+{
+ "intro": "Deux menus au choix pour deux personnes. Courses à faire d'ici mercredi 4.11 pour profiter des actions.",
+ "label": "Menus du lun. 2.11 au ven. 6.11",
+ "options": [
+  {
+   "midi": [
+    {
+     "days": "Lun – Mar",
+     "portions": 4,
+     "recipeId": "moi-bolognese",
+     "tip": "Pâtes Barilla −50 % chez Denner, sugo à 0.99 chez Aldi.",
+     "when": "cuisiné dim. soir"
+    },
+    {
+     "days": "Mer – Jeu",
+     "portions": 4,
+     "recipeId": "moi-poulet-curry-coco",
+     "tip": "Lait de coco en action chez Lidl, riz Ben's −40 % chez Denner.",
+     "when": "cuisiné mar. soir"
+    },
+    {
+     "days": "Ven",
+     "portions": 4,
+     "recipeId": "c-penne-pesto-poulet",
+     "tip": "Nouvelle idée. 2 portions de plus pour le samedi.",
+     "when": "cuisiné jeu. soir"
+    }
+   ],
+   "nom": "Menu 1",
+   "note": "Aucune courge cette semaine ; carottes, haricots, petits pois et tomates à midi.",
+   "soir": [
+    {
+     "day": "Lun",
+     "recipeId": "moi-omelette"
+    },
+    {
+     "day": "Mar",
+     "recipeId": "c-tartines-saumon",
+     "tip": "Sans cuisson, pendant que le curry mijote."
+    },
+    {
+     "day": "Mer",
+     "recipeId": "moi-croque"
+    },
+    {
+     "day": "Jeu",
+     "recipeId": "moi-pain-fromage-yaourt",
+     "tip": "Soir de fournée : rien à cuisiner."
+    },
+    {
+     "day": "Ven",
+     "recipeId": "moi-flammekueche"
+    }
+   ],
+   "theme": "Italien et curry"
+  },
+  {
+   "midi": [
+    {
+     "days": "Lun – Mar",
+     "portions": 4,
+     "recipeId": "moi-poulet-cantadou",
+     "tip": "10 min de préparation seulement.",
+     "when": "cuisiné dim. soir"
+    },
+    {
+     "days": "Mer – Jeu",
+     "portions": 4,
+     "recipeId": "moi-chili",
+     "tip": "Encore meilleur réchauffé.",
+     "when": "cuisiné mar. soir"
+    },
+    {
+     "days": "Ven",
+     "portions": 4,
+     "recipeId": "c-ayam-kecap",
+     "tip": "Nouvelle idée indonésienne. 2 portions de plus pour le samedi.",
+     "when": "cuisiné jeu. soir"
+    }
+   ],
+   "nom": "Menu 2",
+   "note": "Brocoli, carottes, haricots, tomates et maïs à midi.",
+   "soir": [
+    {
+     "day": "Lun",
+     "recipeId": "c-veloute-butternut",
+     "tip": "Le seul plat à la butternut de la semaine ; en garder la moitié pour jeudi."
+    },
+    {
+     "day": "Mar",
+     "recipeId": "moi-crepes"
+    },
+    {
+     "day": "Mer",
+     "recipeId": "c-dorade-four",
+     "tip": "Dorade en action jusqu'à ce soir."
+    },
+    {
+     "day": "Jeu",
+     "leftover": true,
+     "recipeId": "c-veloute-butternut"
+    },
+    {
+     "day": "Ven",
+     "recipeId": "moi-pizza",
+     "tip": "Avec une pâte achetée pour rester rapide."
+    }
+   ],
+   "theme": "Crème, tex-mex et Indonésie"
+  }
+ ],
+ "week": "2026-S45"
+}

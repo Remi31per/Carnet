@@ -1,0 +1,74 @@
+{
+ "cuisines": [
+  "Méditerranéenne",
+  "Italienne",
+  "Asiatique",
+  "Suisse"
+ ],
+ "exclusions": [
+  "Pas de tofu pour les midis et le weekend"
+ ],
+ "fruits": [],
+ "legumes": [
+  "carotte",
+  "brocoli",
+  "haricots",
+  "petits pois",
+  "courge butternut",
+  "tomate",
+  "courgette"
+ ],
+ "personnes": 2,
+ "poulet": "« Poulet » = filet de poulet, sauf indication contraire dans le nom de la recette.",
+ "regles": [
+  "Butternut avec modération : au plus un plat par menu.",
+  "Pas de plats avec os (poulet rôti, cuisses, pilons) dans les tupperwares de la semaine.",
+  "Pas de purée de pommes de terre dans les plats à réchauffer.",
+  "Pâtes courtes plutôt que spaghetti.",
+  "Soirs : 15 minutes de préparation au plus (hors cuisson).",
+  "En général, privilégier les plats rapides à préparer (hors cuisson)."
+ ],
+ "sources": [
+  {
+   "nom": "Croqu'menus",
+   "url": "https://croqumenus.ch/recettes"
+  },
+  {
+   "nom": "Betty Bossi",
+   "url": "https://bettybossi.de/fr/recettes/"
+  },
+  {
+   "nom": "Philippe Etchebest",
+   "url": "https://philippe-etchebest.com/recettes-mentor/"
+  },
+  {
+   "nom": "Wongnai Cooking",
+   "url": "https://www.wongnai.com/cooking"
+  },
+  {
+   "nom": "Thaidata",
+   "url": "https://thaidata.uk/recipes/"
+  },
+  {
+   "nom": "Cookpad Indonésie",
+   "url": "https://cookpad.com/id/cari/masakan%20indonesia%20tradisional"
+  },
+  {
+   "nom": "Swissmilk",
+   "url": "https://www.swissmilk.ch/fr/recettes-idees/"
+  },
+  {
+   "nom": "Le Riz Jaune",
+   "url": "https://www.lerizjaune.com/"
+  }
+ ],
+ "sources_note": "Pas de recettes d'influenceurs des réseaux sociaux, sauf Le Riz Jaune.",
+ "variete": "Mélanger nos recettes et de nouvelles idées, sans répéter les plats d'une semaine à l'autre.",
+ "viande_suisse": "Uniquement de la viande suisse, sauf produits industriels (tranches panées, cordons bleus).",
+ "viandes": [
+  "filet de poulet",
+  "viande hachée",
+  "porc"
+ ],
+ "viandes_midi": "Surtout poulet et viande hachée, porc possible"
+}

@@ -1,0 +1,578 @@
+{
+ "a-avoine": {
+  "cat": "Céréales",
+  "format": "500 g",
+  "keywords": [
+   "flocons d'avoine",
+   "avoine"
+  ],
+  "name": "Flocons d'avoine bio",
+  "price": 1.09,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-herbes": {
+  "cat": "Fruits & légumes",
+  "format": "pot",
+  "keywords": [
+   "persil",
+   "ciboulette",
+   "thym",
+   "romarin",
+   "herbes"
+  ],
+  "name": "Herbes de cuisine Saveurs Suisses",
+  "price": 2.99,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-lard": {
+  "cat": "Viande",
+  "format": "400 g · Suisse",
+  "keywords": [
+   "lard",
+   "lardons",
+   "bacon"
+  ],
+  "name": "Lard Swiss Bacon Country's Best",
+  "origin": "Suisse",
+  "price": 5.99,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-marrons": {
+  "cat": "Fruits & légumes",
+  "format": "400 g",
+  "keywords": [
+   "châtaigne",
+   "marron"
+  ],
+  "name": "Marrons Happy Harvest XXL",
+  "price": 4.99,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-risotto": {
+  "cat": "Riz",
+  "format": "175 g",
+  "keywords": [
+   "risotto"
+  ],
+  "name": "Risotto au safran Cucina",
+  "price": 0.99,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-rosti": {
+  "cat": "Surgelés & prêts",
+  "format": "750 g",
+  "keywords": [
+   "rösti"
+  ],
+  "name": "Rösti Primana",
+  "price": 2.19,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-sugo": {
+  "cat": "Épicerie",
+  "format": "500 g",
+  "keywords": [
+   "sauce tomate",
+   "sugo",
+   "passata"
+  ],
+  "name": "Sugo de base Le Gusto (basilic, arrabbiata, bolognaise)",
+  "price": 0.99,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "a-tomme": {
+  "cat": "Fromage",
+  "format": "pièce",
+  "keywords": [
+   "tomme"
+  ],
+  "name": "Tomme vaudoise Saveurs Suisses",
+  "price": 1.79,
+  "store": "aldi",
+  "until": "jusqu'à épuisement du stock"
+ },
+ "d-barilla": {
+  "cat": "Pâtes",
+  "format": "emballage individuel",
+  "keywords": [
+   "pâtes",
+   "spaghetti",
+   "penne",
+   "fusilli",
+   "rigatoni",
+   "linguine"
+  ],
+  "name": "Pâtes Barilla al bronzo (tout l'assortiment)",
+  "pct": 50,
+  "priceLabel": "−50 %",
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-bens": {
+  "cat": "Riz",
+  "exclude": [
+   "risotto"
+  ],
+  "format": "emballage individuel",
+  "keywords": [
+   "riz"
+  ],
+  "name": "Riz Ben's Original (tout l'assortiment)",
+  "pct": 40,
+  "priceLabel": "−40 %",
+  "store": "denner",
+  "until": "assortiment en action"
+ },
+ "d-chataignes": {
+  "cat": "Fruits & légumes",
+  "format": "les 100 g",
+  "keywords": [
+   "châtaigne",
+   "marron"
+  ],
+  "name": "Châtaignes",
+  "pct": 30,
+  "price": 0.69,
+  "regular": 0.99,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-chou-rouge": {
+  "cat": "Fruits & légumes",
+  "format": "1 kg",
+  "keywords": [
+   "chou rouge"
+  ],
+  "name": "Chou rouge IP-Suisse",
+  "pct": 20,
+  "price": 1.6,
+  "regular": 2,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-citrons": {
+  "cat": "Fruits & légumes",
+  "exclude": [
+   "vert"
+  ],
+  "format": "500 g",
+  "keywords": [
+   "citron"
+  ],
+  "name": "Citrons",
+  "pct": 29,
+  "price": 0.85,
+  "regular": 1.2,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-cottage": {
+  "cat": "Produits laitiers",
+  "format": "3 × 200 g",
+  "keywords": [
+   "cottage"
+  ],
+  "name": "Cottage cheese nature Hirz",
+  "pct": 33,
+  "price": 3.9,
+  "regular": 5.85,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-dorades": {
+  "cat": "Poisson",
+  "format": "les 100 g",
+  "keywords": [
+   "dorade"
+  ],
+  "name": "Dorades royales",
+  "pct": 34,
+  "price": 1.19,
+  "regular": 1.79,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-epinards": {
+  "cat": "Fruits & légumes",
+  "format": "500 g",
+  "keywords": [
+   "épinard"
+  ],
+  "name": "Épinards frais",
+  "pct": 31,
+  "price": 2.4,
+  "regular": 3.5,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-pain-tessinois": {
+  "cat": "Pain",
+  "format": "400 g",
+  "keywords": [
+   "pain"
+  ],
+  "name": "Pain tessinois",
+  "pct": 30,
+  "price": 1.4,
+  "regular": 2,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-pommes": {
+  "cat": "Fruits & légumes",
+  "exclude": [
+   "terre"
+  ],
+  "format": "1 kg",
+  "keywords": [
+   "pomme"
+  ],
+  "name": "Pommes golden",
+  "pct": 30,
+  "price": 1.95,
+  "regular": 2.8,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "d-saumon-fume": {
+  "cat": "Poisson",
+  "format": "250 g",
+  "keywords": [
+   "saumon fumé"
+  ],
+  "name": "Saumon fumé de l'Atlantique Arctic Fish",
+  "pct": 38,
+  "price": 6.9,
+  "regular": 11.2,
+  "store": "denner",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-butternut": {
+  "cat": "Fruits & légumes",
+  "format": "1 kg",
+  "keywords": [
+   "butternut",
+   "courge"
+  ],
+  "name": "Courge butternut suisse",
+  "pct": 32,
+  "price": 1.95,
+  "regular": 2.85,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-coco": {
+  "cat": "Épicerie",
+  "format": "250 ml",
+  "keywords": [
+   "lait de coco",
+   "crème de coco"
+  ],
+  "name": "Lait de coco Real Thai",
+  "pct": 24,
+  "price": 1.89,
+  "regular": 2.49,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-concombre": {
+  "cat": "Fruits & légumes",
+  "format": "pièce",
+  "keywords": [
+   "concombre"
+  ],
+  "name": "Concombre",
+  "pct": 30,
+  "price": 0.69,
+  "regular": 0.99,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-dorade": {
+  "cat": "Poisson",
+  "format": "les 100 g",
+  "keywords": [
+   "dorade"
+  ],
+  "name": "Dorade royale ASC",
+  "pct": 34,
+  "price": 1.19,
+  "regular": 1.79,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-fond": {
+  "cat": "Épicerie",
+  "format": "400 ml",
+  "keywords": [
+   "fond de volaille",
+   "fond de veau",
+   "fond de légumes",
+   "bouillon"
+  ],
+  "name": "Fond de cuisson Kania",
+  "pct": 20,
+  "price": 1.99,
+  "regular": 2.49,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-mangue": {
+  "cat": "Fruits & légumes",
+  "format": "pièce",
+  "keywords": [
+   "mangue"
+  ],
+  "name": "Mangue",
+  "pct": 34,
+  "price": 0.99,
+  "regular": 1.49,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-pdt": {
+  "cat": "Fruits & légumes",
+  "format": "600 g",
+  "keywords": [
+   "pomme de terre",
+   "pommes de terre"
+  ],
+  "name": "Pommes de terre Les Royales",
+  "pct": 25,
+  "price": 1.49,
+  "regular": 1.99,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-philadelphia": {
+  "cat": "Fromage",
+  "format": "200 g",
+  "keywords": [
+   "fromage frais",
+   "philadelphia"
+  ],
+  "name": "Fromage frais aux herbes Philadelphia",
+  "pct": 31,
+  "price": 1.89,
+  "regular": 2.75,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-pommes": {
+  "cat": "Fruits & légumes",
+  "exclude": [
+   "terre"
+  ],
+  "format": "1 kg",
+  "keywords": [
+   "pomme"
+  ],
+  "name": "Pommes rouges suisses",
+  "pct": 29,
+  "price": 1.99,
+  "regular": 2.79,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-prunes": {
+  "cat": "Fruits & légumes",
+  "format": "1 kg",
+  "keywords": [
+   "prune"
+  ],
+  "name": "Prunes noires",
+  "pct": 29,
+  "price": 2.49,
+  "regular": 3.49,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "l-raclette": {
+  "cat": "Fromage",
+  "format": "les 100 g",
+  "keywords": [
+   "raclette"
+  ],
+  "name": "Raclette en bloc Qualité Suisse",
+  "pct": 25,
+  "price": 0.89,
+  "regular": 1.19,
+  "store": "lidl",
+  "until": "jusqu'au sam. 31.10"
+ },
+ "l-schublig": {
+  "cat": "Viande",
+  "format": "2 × 140 g · Suisse",
+  "keywords": [
+   "schublig",
+   "saucisse"
+  ],
+  "name": "Schublig de Saint-Gall",
+  "origin": "Suisse",
+  "pct": 21,
+  "price": 2.99,
+  "regular": 3.79,
+  "store": "lidl",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-bolets": {
+  "cat": "Épicerie",
+  "condition": "dès 2 pces",
+  "format": "30 g",
+  "keywords": [
+   "bolet",
+   "cèpe"
+  ],
+  "name": "Bolets séchés M-Classic",
+  "pct": 33,
+  "price": 2.55,
+  "regular": 3.8,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-chataignes": {
+  "cat": "Fruits & légumes",
+  "format": "1 kg",
+  "keywords": [
+   "châtaigne",
+   "marron"
+  ],
+  "name": "Châtaignes",
+  "pct": 50,
+  "price": 6,
+  "regular": 12,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-cuisses-poulet": {
+  "cat": "Viande",
+  "format": "1 kg · Suisse",
+  "keywords": [
+   "cuisse de poulet",
+   "cuisses de poulet"
+  ],
+  "name": "Cuisses de poulet Optigal",
+  "origin": "Suisse",
+  "pct": 40,
+  "price": 7.8,
+  "regular": 13,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-gruyere": {
+  "cat": "Fromage",
+  "format": "100 g",
+  "keywords": [
+   "gruyère"
+  ],
+  "name": "Gruyère salé AOP",
+  "pct": 31,
+  "price": 1.45,
+  "regular": 2.1,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-mozzarella": {
+  "cat": "Fromage",
+  "condition": "dès 2 pces",
+  "format": "150 g",
+  "keywords": [
+   "mozzarella"
+  ],
+  "name": "Mozzarella Alfredo",
+  "pct": 30,
+  "price": 1.05,
+  "regular": 1.5,
+  "store": "migros",
+  "until": "jusqu'au dim. 01.11"
+ },
+ "m-pates-molisana": {
+  "cat": "Pâtes",
+  "condition": "dès 2 pces",
+  "format": "500 g",
+  "keywords": [
+   "pâtes",
+   "casarecce",
+   "fusilli",
+   "farfalle",
+   "rigatoni",
+   "penne"
+  ],
+  "name": "Pâtes La Molisana (casarecce, fusilli, farfalle, rigatoni…)",
+  "pct": 40,
+  "price": 1.5,
+  "regular": 2.5,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-pesto": {
+  "cat": "Épicerie",
+  "condition": "dès 2 pces",
+  "format": "190 g",
+  "keywords": [
+   "pesto"
+  ],
+  "name": "Pesto La Molisana",
+  "pct": 40,
+  "price": 2.28,
+  "regular": 3.8,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-sauce-tomate": {
+  "cat": "Épicerie",
+  "condition": "dès 2 pces",
+  "format": "340 g",
+  "keywords": [
+   "sauce tomate",
+   "sugo",
+   "passata"
+  ],
+  "name": "Sauces tomate La Molisana (basilic, arrabbiata, marinara)",
+  "pct": 40,
+  "price": 1.5,
+  "regular": 2.5,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-saumon": {
+  "cat": "Poisson",
+  "exclude": [
+   "fumé"
+  ],
+  "format": "400 g",
+  "keywords": [
+   "saumon"
+  ],
+  "name": "Dos de saumon sans peau M-Classic",
+  "pct": 46,
+  "price": 14.95,
+  "regular": 27.8,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ },
+ "m-tomates-dattes": {
+  "cat": "Fruits & légumes",
+  "format": "300 g",
+  "keywords": [
+   "tomate cerise",
+   "tomates cerises",
+   "tomate datte",
+   "tomates dattes",
+   "tomates cerises"
+  ],
+  "name": "Tomates dattes Migros Bio",
+  "pct": 37,
+  "price": 2.5,
+  "regular": 3.95,
+  "store": "migros",
+  "until": "jusqu'au mer. 04.11"
+ }
+}
