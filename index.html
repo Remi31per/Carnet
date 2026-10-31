@@ -160,11 +160,55 @@ button:disabled{opacity:.5;cursor:default}
 .slot .body{min-width:0;display:grid;gap:4px}
 .slot .body button.link{all:unset;cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:1.05rem;line-height:1.25;color:var(--ink)}
 .slot .body button.link:hover,.slot .body button.link:focus-visible{color:var(--accent);text-decoration:underline}
+.slot[data-open]{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .slot.rest{background:transparent;border-style:dashed;box-shadow:none}
 .slot .tip{font-size:.85rem;color:var(--muted)}
 .vegs{display:flex;flex-wrap:wrap;gap:4px}
 .theme{font-size:.9rem;color:var(--muted);margin:-6px 0 14px}
 @media (max-width:440px){.slot{grid-template-columns:1fr;gap:6px}}
+.rcard{gap:0;padding:0;overflow:hidden}
+.rtoggle{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr auto;gap:6px 10px;width:100%;padding:12px 14px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.rtoggle h3{font-size:1.05rem}
+.rtoggle .meta{grid-column:1/-1}
+.rtoggle .chev{width:22px;height:22px;color:var(--muted);transition:transform .2s;align-self:start;margin-top:1px}
+.rcard.open .rtoggle .chev{transform:rotate(180deg)}
+.rbody{display:none;flex-direction:column;gap:8px;padding:0 14px 14px;border-top:1px solid var(--line);padding-top:12px}
+.rcard.open .rbody{display:flex}
+.mini{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.82rem;color:var(--muted)}
+.savings{display:inline-flex;align-items:center;gap:5px;cursor:pointer}
+button.savings{border:0}
+.savings .ic{width:14px;height:14px}
+button.hit{font:inherit;font-size:.78rem;font-weight:600;color:var(--ink);background:transparent;padding:0 8px;border-radius:999px;cursor:pointer}
+/* Fenêtre (feuille) qui monte du bas : recette du menu, actions d'une recette */
+.sheet-back{position:fixed;inset:0;z-index:30;background:rgba(10,15,12,.5);display:flex;align-items:flex-end;justify-content:center;opacity:0;transition:opacity .2s}
+.sheet-back.show{opacity:1}
+.sheet{position:relative;width:100%;max-width:620px;max-height:88vh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:var(--paper);color:var(--ink);border-radius:26px 26px 0 0;padding:10px 18px calc(22px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 40px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.sheet-back.show .sheet{transform:none}
+@media (prefers-reduced-motion:reduce){.sheet,.sheet-back{transition:none}}
+.grab{width:42px;height:5px;border-radius:99px;background:var(--line);margin:0 auto 6px;touch-action:none}
+.sheet-x{position:sticky;top:0;float:right;margin:-2px -6px 0 8px;width:38px;height:38px;padding:0;border-radius:50%;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);z-index:1}
+.sheet-x .ic{width:18px;height:18px}
+.sheet h2{font-size:1.3rem;margin:4px 0 6px;display:block}
+.sheet .kicker{font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sheet .sec{font-weight:800;font-size:1rem;margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.sheet .sec .ic{color:var(--accent)}
+.sheet ol{padding-left:1.3em;margin:0;display:grid;gap:8px}
+.shop{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.shop li{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:12px;background:var(--card);border:1px solid var(--line);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.shop li .box{width:20px;height:20px;border-radius:6px;border:2px solid var(--muted);flex:0 0 auto;display:grid;place-items:center}
+.shop li.done .box{background:var(--accent);border-color:var(--accent)}
+.shop li.done .box::after{content:"";width:5px;height:10px;border:solid var(--paper);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.shop li.done .n{text-decoration:line-through;color:var(--muted)}
+.shop .q{color:var(--muted);font-size:.88rem;min-width:4.2em}
+.shop .n{flex:1;min-width:0}
+.shop .hit{margin-left:auto}
+.deal{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 14px;border-radius:16px;background:var(--card);border:1px solid var(--line);margin-bottom:8px}
+.deal .store{grid-column:1/-1;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px}
+.deal .name{font-weight:700;line-height:1.25}
+.deal .for{font-size:.82rem;color:var(--accent);font-weight:700}
+.deal .fmt,.deal .until{font-size:.82rem;color:var(--muted)}
+.deal .tk{grid-row:2/span 3;grid-column:2;display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+html.noscroll,html.noscroll body{overflow:hidden}
 .rcard.flash{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
 /* favoris */
 .favbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 16px;margin-bottom:12px}
@@ -198,7 +242,7 @@ button.small{padding:4px 12px;font-size:.82rem}
 <body>
 
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol><symbol id="i-carrot" viewBox="0 0 24 24"><path d="M2.27 21.7s9.87-3.5 12.73-6.36a4.5 4.5 0 0 0-6.36-6.37C5.77 11.84 2.27 21.7 2.27 21.7zM8.64 14l-2.05-2.04M15.34 15l-2.46-2.46"/><path d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z"/><path d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z"/></symbol><symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol><symbol id="i-carrot" viewBox="0 0 24 24"><path d="M2.27 21.7s9.87-3.5 12.73-6.36a4.5 4.5 0 0 0-6.36-6.37C5.77 11.84 2.27 21.7 2.27 21.7zM8.64 14l-2.05-2.04M15.34 15l-2.46-2.46"/><path d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z"/><path d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z"/></symbol><symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1 1 2-2M3 12l1 1 2-2M3 18l1 1 2-2"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
 <div class="wrap">
   <header class="top">
     <svg class="deco" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="#i-leaf"/></svg>
@@ -328,6 +372,7 @@ button.small{padding:4px 12px;font-size:.82rem}
   <p class="source">Actions relevées sur les prospectus publics de chaque enseigne, mises à jour automatiquement chaque lundi et jeudi par Claude. Vérifiez en magasin : les stocks et quelques prix diffèrent selon la région.</p>
 </div>
 <button type="button" class="totop" id="totop" aria-label="Revenir en haut" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="sheet-back" id="sheetBack" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"><div class="grab" id="sheetGrab"></div><button type="button" class="sheet-x" id="sheetX" aria-label="Fermer"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button><div id="sheetBody"></div></div></div>
 <div class="toast" id="toast" hidden></div>
 
 
@@ -432,7 +477,8 @@ function matchPromos(ingName){
     .sort((a,b)=>(b.pct||0)-(a.pct||0));
 }
 function recipeHits(r){ const res=[]; (r.ingredients||[]).forEach(i=>{ const m=matchPromos(i.n); if(m.length) res.push({ing:i,promo:m[0],all:m}); }); return res; }
-function hitHtml(p){return `<span class="hit" title="${esc(p.name)}"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)} ${p.price!=null?chf(p.price):""}${p.pct?` · −${p.pct} %`:""}</span>`}
+function hitHtml(p, ingName){return `<button type="button" class="hit" data-promo="${esc(p._id)}" data-ing="${esc(ingName||"")}" aria-label="Voir l'action ${esc(p.name)}"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)} ${p.price!=null?chf(p.price):""}${p.pct?` · −${p.pct} %`:""}</button>`}
+function savingsBtn(r, n){ return n ? `<button type="button" class="savings" data-hits="${esc(r._id)}" aria-label="Voir les ${n} actions de ce plat">${ic("tag")}${n} en action</button>` : ""; }
 const hasPrep = r => typeof r.prep === "number";
 function timing(r){ if (hasPrep(r)) return `Prép. ${r.prep} min${r.cuisson?` · cuisson ${r.cuisson} min`:""}`; return r.time || ""; }
 
@@ -442,14 +488,17 @@ function recipeCard(r){
   const ings = (r.ingredients||[]).map(i => {
     const m = matchPromos(i.n), ph = phareOf(i.n);
     const hit = (S.ingTerms||[]).some(t=>norm(i.n).includes(t));
-    return `<li${hit?' class="match"':""}><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}</span>${ph?`<span class="veg">légume favori</span>`:""}${m.length?hitHtml(m[0]):""}</li>`;
+    return `<li${hit?' class="match"':""}><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}</span>${ph?`<span class="veg">légume favori</span>`:""}${m.length?hitHtml(m[0],i.n):""}</li>`;
   }).join("");
   const steps = (r.steps||[]).map(s=>`<li>${esc(s)}</li>`).join("");
   const mine = r.source === "moi", t = typeOf(r);
   const insp = r.inspiration && /^https:\/\//.test(r.inspiration.url||"") ? `<p class="note">Inspiré de <a href="${esc(r.inspiration.url)}" target="_blank" rel="noopener">${esc(r.inspiration.nom||"la recette d'origine")}</a></p>` : "";
-  return `<article class="rcard" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
-    <div class="rhead"><h3>${esc(r.title)}</h3>${hits.length?`<span class="savings">${hits.length} en action</span>`:""}</div>
-    <div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Ma recette":"Suggestion"}</span>${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
+  const open = S.openCards && S.openCards.has(r._id);
+  return `<article class="rcard${open?" open":""}" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
+    <button type="button" class="rtoggle" aria-expanded="${open}"><h3>${esc(r.title)}</h3><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+      <span class="mini"><span class="badge ${mine?"moi":"claude"}">${mine?"Ma recette":"Suggestion"}</span>${TYPES[t]?`<span>${TYPES[t]}</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(hasPrep(r)?r.prep+" min":timing(r))}</span>`:""}${hits.length?`<span class="savings" data-hits="${esc(r._id)}">${ic("tag")}${hits.length} en action</span>`:""}</span></button>
+    <div class="rbody">
+    <div class="meta">${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
     ${(r.tags||[]).length?`<div class="meta">${r.tags.map(esc).join(" · ")}</div>`:""}
     ${r.reheat?`<p class="note">Au micro-ondes : ${esc(r.reheat)}</p>`:""}
     <ul class="ings">${ings}</ul>
@@ -457,6 +506,7 @@ function recipeCard(r){
     ${r.notes?`<p class="note">${esc(r.notes)}</p>`:""}
     ${insp}
     ${canWrite()?`<div class="row"><button type="button" data-act="edit">Modifier</button>${mine?`<button type="button" class="danger" data-act="del">Supprimer</button>`:""}</div>`:""}
+    </div>
   </article>`;
 }
 function renderRecipes(){
@@ -464,6 +514,7 @@ function renderRecipes(){
   // Recherche par aliment : plusieurs aliments séparés par une virgule, « et » ou « + » ; chacun doit être dans le plat.
   const terms = norm($("#ingSearch").value).split(/,|\+|\bet\b/).map(t=>t.trim()).filter(t=>t.length>1);
   S.ingTerms = terms;
+  S.openCards ||= new Set();
   const hasIng = (r,t) => (r.ingredients||[]).some(i=>norm(i.n).includes(t));
   const isWe = r => typeOf(r)==="weekend" || r.weekend===true;
   const pass = (r,k) => k==="all" || (k==="claude" && r.source==="claude") || (k==="rapide" && hasPrep(r) && r.prep<=15) ||
@@ -491,11 +542,11 @@ function slotHtml(s, kind){
   if (!r) return `<div class="slot rest"><div class="day">${esc(s.days||s.day)}</div><div class="body"><span>${esc(s.title||"Libre")}</span>${s.tip?`<span class="tip">${esc(s.tip)}</span>`:""}</div></div>`;
   const vegs = [...new Set((r.ingredients||[]).map(i=>phareOf(i.n)).filter(Boolean))];
   const pc = recipeHits(r).length, mine = r.source==="moi";
-  return `<div class="slot${s.leftover?" rest":""}">
+  return `<div class="slot${s.leftover?" rest":""}" data-open="${esc(r._id)}">
     <div class="day">${esc(s.days||s.day)}${s.when?`<small>${esc(s.when)}</small>`:""}</div>
     <div class="body">
       <button class="link" type="button" data-open="${esc(r._id)}">${s.leftover?"Reste : ":""}${esc(r.title)}</button>
-      ${s.leftover?"":`<div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>${kind==="midi"?`<span>${esc(s.portions||r.servings||4)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${pc?`<span class="savings">${pc} en action</span>`:""}</div>`}
+      ${s.leftover?"":`<div class="meta"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>${kind==="midi"?`<span>${esc(s.portions||r.servings||4)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${savingsBtn(r,pc)}</div>`}
       ${vegs.length&&!s.leftover?`<div class="vegs">${vegs.map(v=>`<span class="veg">${esc(v)}</span>`).join("")}</div>`:""}
       ${s.tip?`<span class="tip">${esc(s.tip)}</span>`:""}
     </div></div>`;
@@ -606,11 +657,74 @@ function fillForm(r){
   $("#f-tags").value = r ? (r.tags||[]).join(", ") : "";
   $("#f-notes").value = r ? r.notes||"" : "";
 }
+/* ---- fenêtre du bas ---- */
+let sheetLast = null;
+function openSheet(html){
+  sheetLast = document.activeElement;
+  $("#sheetBody").innerHTML = html;
+  const back = $("#sheetBack"), sh = $("#sheet");
+  sh.scrollTop = 0; sh.style.transform = "";
+  back.hidden = false; document.documentElement.classList.add("noscroll");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>back.classList.add("show")));
+  setTimeout(()=>$("#sheetX").focus({preventScroll:true}), 260);
+}
+function closeSheet(){
+  const back = $("#sheetBack"); if (back.hidden) return;
+  back.classList.remove("show"); document.documentElement.classList.remove("noscroll");
+  setTimeout(()=>{ back.hidden = true; $("#sheet").style.transform=""; }, 230);
+  if (sheetLast && sheetLast.focus) sheetLast.focus({preventScroll:true});
+}
+$("#sheetX").addEventListener("click", closeSheet);
+$("#sheetBack").addEventListener("click", e => { if (e.target.id==="sheetBack") closeSheet(); });
+document.addEventListener("keydown", e => { if (e.key==="Escape") closeSheet(); });
+// Glisser vers le bas pour fermer (depuis la poignée, ou quand la fenêtre est tout en haut)
+(()=>{ const sh=$("#sheet"); let y0=null, dy=0;
+  sh.addEventListener("touchstart", e=>{ if (sh.scrollTop>0) return; y0=e.touches[0].clientY; dy=0; sh.style.transition="none"; }, {passive:true});
+  sh.addEventListener("touchmove", e=>{ if (y0==null) return; dy=Math.max(0,e.touches[0].clientY-y0); if (dy>0) sh.style.transform=`translateY(${dy}px)`; }, {passive:true});
+  sh.addEventListener("touchend", ()=>{ if (y0==null) return; sh.style.transition=""; if (dy>110) closeSheet(); else sh.style.transform=""; y0=null; });
+})();
+function dealHtml(p, forIng){
+  return `<div class="deal">
+    <div class="store"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)}${p.cat?` · ${esc(p.cat)}`:""}</div>
+    <div class="name">${esc(p.name)}</div>
+    <div class="tk">${p.price!=null?`<span class="price">${chf(p.price)}</span>`:`<span class="price">${esc(p.priceLabel||"Action")}</span>`}${p.regular?`<span class="was">${chf(p.regular)}</span>`:""}${p.pct&&!(p.price==null&&/%/.test(p.priceLabel||""))?`<span class="pct">−${p.pct} %</span>`:""}</div>
+    ${p.format?`<div class="fmt">${esc(p.format)}${p.condition?` · ${esc(p.condition)}`:""}</div>`:""}
+    ${forIng?`<div class="for">Pour : ${esc(forIng)}</div>`:""}
+    ${p.until?`<div class="until">${esc(p.until)}</div>`:""}
+  </div>`;
+}
+function showHits(id){
+  const r = S.recettes.find(x=>x._id===id); if (!r) return;
+  const h = recipeHits(r);
+  openSheet(`<div class="kicker">${esc(r.title)}</div><h2 id="sheetTitle">${h.length} aliment${h.length>1?"s":""} en action</h2>
+    ${h.map(x=>dealHtml(x.promo, x.ing.n)).join("")}
+    <p class="note">Prix relevés pour le canton de Vaud. Vérifie en magasin.</p>`);
+}
+function showPromo(pid, ing){
+  const p = S.promos.find(x=>x._id===pid); if (!p) return;
+  openSheet(`<div class="kicker">Action</div><h2 id="sheetTitle">${esc(p.name)}</h2>${dealHtml(p, ing)}`);
+}
+function showRecipe(id){
+  const r = S.recettes.find(x=>x._id===id); if (!r) return;
+  const mine = r.source==="moi", hits = recipeHits(r), t = typeOf(r);
+  const ings = (r.ingredients||[]).map(i=>{ const m=matchPromos(i.n); return `<li><span class="box" aria-hidden="true"></span><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}</span>${m.length?hitHtml(m[0],i.n):""}</li>`; }).join("");
+  const steps = (r.steps||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+  openSheet(`<div class="kicker">${mine?"Notre plat":"Suggestion de Claude"}${TYPES[t]?` · ${TYPES[t]}`:""}</div>
+    <h2 id="sheetTitle">${esc(r.title)}</h2>
+    <div class="meta">${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${savingsBtn(r,hits.length)}</div>
+    ${r.reheat?`<p class="note">Au micro-ondes : ${esc(r.reheat)}</p>`:""}
+    <div class="sec">${ic("list")} Ingrédients à avoir</div>
+    <ul class="shop">${ings || `<li>Pas d'ingrédients notés.</li>`}</ul>
+    ${steps?`<div class="sec">${ic("utensils")} Préparation</div><ol>${steps}</ol>`:""}
+    ${r.notes?`<p class="note">${esc(r.notes)}</p>`:""}
+    <div class="row" style="margin-top:16px"><button type="button" data-goto="${esc(r._id)}">Voir dans Recettes</button></div>`);
+}
 function openRecipe(id){
+  S.openCards ||= new Set();
   S.recFilter="all"; $("#recSearch").value=""; $("#ingSearch").value="";
   document.querySelectorAll("#recFilter .chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.f==="all"));
   location.hash="recettes"; renderRecipes();
-  requestAnimationFrame(()=>{ const card=document.getElementById("r-"+id); if(card){ card.scrollIntoView({block:"start"}); card.classList.add("flash"); const d=card.querySelector("details"); if(d) d.open=true; setTimeout(()=>card.classList.remove("flash"),1800);} });
+  requestAnimationFrame(()=>{ const card=document.getElementById("r-"+id); if(card){ S.openCards.add(id); card.classList.add("open"); card.querySelector(".rtoggle").setAttribute("aria-expanded","true"); card.scrollIntoView({block:"start"}); card.classList.add("flash"); const d=card.querySelector("details"); if(d) d.open=true; setTimeout(()=>card.classList.remove("flash"),1800);} });
 }
 function slug(t){ return norm(t).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40) || "recette"; }
 
@@ -621,8 +735,18 @@ document.addEventListener("click", async e => {
   if (mp){ S.menuIdx = Number(mp.dataset.menu); store.set("menuIdx",S.menuIdx); renderMenu(); return; }
   const sc = e.target.closest("#storeFilter .chip");
   if (sc){ S.store = sc.dataset.s; renderPromos(); return; }
+  const hb = e.target.closest("[data-hits]");
+  if (hb){ e.preventDefault(); e.stopPropagation(); showHits(hb.dataset.hits); return; }
+  const pb = e.target.closest("[data-promo]");
+  if (pb){ showPromo(pb.dataset.promo, pb.dataset.ing); return; }
   const op = e.target.closest("[data-open]");
-  if (op){ openRecipe(op.dataset.open); return; }
+  if (op){ showRecipe(op.dataset.open); return; }
+  const gt = e.target.closest("[data-goto]");
+  if (gt){ closeSheet(); openRecipe(gt.dataset.goto); return; }
+  const sl = e.target.closest(".shop li");
+  if (sl){ sl.classList.toggle("done"); return; }
+  const tg = e.target.closest(".rtoggle");
+  if (tg){ const card=tg.closest(".rcard"), id=card.dataset.id, on=!card.classList.contains("open"); S.openCards ||= new Set(); on?S.openCards.add(id):S.openCards.delete(id); card.classList.toggle("open",on); tg.setAttribute("aria-expanded",String(on)); return; }
   const rf = e.target.closest("[data-rmfav]");
   if (rf){ const [k,i]=rf.dataset.rmfav.split(":"); saveFav(k, favList(k).filter((_,j)=>j!==Number(i))); return; }
   const btn = e.target.closest("[data-act]");
@@ -648,7 +772,7 @@ $("#recSearch").addEventListener("input", renderRecipes);
 $("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01b";
+const APP_VERSION = "2026-11-01c";
 function themeMode(){ return store.get("themeMode") || "auto"; }
 function applyTheme(){
   const mode = themeMode(), h = new Date().getHours();
