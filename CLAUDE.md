@@ -4,6 +4,12 @@ App de recettes et de menus pour un couple en Suisse romande, utilisée sur iPho
 Adresse : https://remi31per.github.io/Carnet/ — hébergée par GitHub Pages depuis la branche `main`, dossier racine.
 Toujours répondre en français.
 
+## Règle de travail : noter chaque changement
+Quand l'utilisateur change une règle ou une attente, ou demande une modification durable, la noter **dans la même demande** :
+- règles de repas, goûts, favoris, exclusions → `data/preferences.json` (et mettre à jour le résumé en bas de ce fichier) ;
+- fonctionnement de l'app, format des données, façon de travailler, tâche programmée → ce fichier `CLAUDE.md`.
+Puis committer et pousser sur `main`. Sinon le changement reste dans la conversation et est oublié la fois suivante.
+
 ## Fichiers
 - `index.html` : toute l'app (HTML, CSS, JS dans un seul fichier). Pas de build.
 - `manifest.webmanifest`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` : installation sur l'écran d'accueil. Après un changement d'icône, incrémenter `?v=` dans `index.html` et le manifest.
