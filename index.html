@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Carnet de repas</title>
 <meta name="description" content="Nos recettes, nos menus de la semaine et les actions Migros, Lidl, Aldi et Denner.">
-<meta name="theme-color" content="#F2F5EF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111714" media="(prefers-color-scheme: dark)">
+<script>/* Thème : nuit par défaut, jour en option (Favoris → Affichage) */
+(function(){var t="dark";try{t=localStorage.getItem("theme")||"dark"}catch(e){}document.documentElement.setAttribute("data-theme",t);
+document.write('<meta name="theme-color" id="themeColor" content="'+(t==="light"?"#F7F9F5":"#1F2924")+'">');})();</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet">
@@ -15,7 +16,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="icon" href="icon-192.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
 <style>
 :root{color-scheme:light}
 html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -25,24 +26,22 @@ img{max-width:100%}
 
 /* Layout: carnet de cuisine en colonne, onglets collants en haut, étiquettes de prix jaunes façon prospectus suisse */
 :root{
-  --paper:#F2F5EF; --card:#FFFFFF; --ink:#1C2923; --muted:#5B6961; --line:#D6DDD4;
+  --paper:#F7F9F5; --card:#FFFFFF; --ink:#1C2923; --muted:#5B6961; --line:#D6DDD4;
   --accent:#2C6A4D; --accent-soft:#E0EBE3; --tag:#FFD84D; --tag-ink:#2A2300; --danger:#A3362B;
   --s-migros:#D9601C; --s-lidl:#2457A8; --s-aldi:#2B7A8C; --s-denner:#B3263A;
-  --f-display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
-  --f-body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  /* Une seule police douce et arrondie pour toute l'app */
+  --f-display:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
+  --f-body:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
+  --f-mono:"Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
   --r:10px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#111714; --card:#19211D; --ink:#E5ECE7; --muted:#9BA8A0; --line:#2C3631;
-  --accent:#7FC4A0; --accent-soft:#1E3329; --tag:#F0C93A; --tag-ink:#231C00; --danger:#E07A6E;
-  --s-migros:#F08A4B; --s-lidl:#6F9BE6; --s-aldi:#5FB6C7; --s-denner:#E06676; color-scheme:dark}}
+/* Mode nuit (par défaut), en tons plus clairs qu'avant */
 :root[data-theme="dark"]{
-  --paper:#111714; --card:#19211D; --ink:#E5ECE7; --muted:#9BA8A0; --line:#2C3631;
-  --accent:#7FC4A0; --accent-soft:#1E3329; --tag:#F0C93A; --tag-ink:#231C00; --danger:#E07A6E;
-  --s-migros:#F08A4B; --s-lidl:#6F9BE6; --s-aldi:#5FB6C7; --s-denner:#E06676; color-scheme:dark}
+  --paper:#1F2924; --card:#2A3530; --ink:#EEF3EF; --muted:#B0BDB5; --line:#3D4A43;
+  --accent:#8FD3AE; --accent-soft:#2D4A3B; --tag:#F5D452; --tag-ink:#231C00; --danger:#F0897C;
+  --s-migros:#F59A60; --s-lidl:#84AAF0; --s-aldi:#74C4D4; --s-denner:#EC7E8C; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;font-variant-numeric:tabular-nums}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
 .wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
 header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 16px}
@@ -211,6 +210,14 @@ button.small{padding:4px 12px;font-size:.82rem}
       <div class="group">Nos goûts et règles</div>
       <dl class="kv" id="gouts"></dl>
       <p class="note">Pour changer ces règles, il suffit de le dire à Claude dans le chat.</p>
+    </div>
+    <div class="favbox">
+      <div class="group">Affichage</div>
+      <div class="chips" id="themeChips" style="margin-bottom:4px">
+        <button type="button" class="chip" data-theme-set="dark" aria-pressed="false">🌙 Mode nuit</button>
+        <button type="button" class="chip" data-theme-set="light" aria-pressed="false">☀️ Mode jour</button>
+      </div>
+      <p class="note">Le choix est gardé sur ce téléphone.</p>
     </div>
     <div class="favbox">
       <div class="group">Accès en modification</div>
@@ -578,7 +585,14 @@ document.addEventListener("submit", e => {
 $("#recSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-10-31b";
+const APP_VERSION = "2026-10-31c";
+function applyTheme(t){
+  document.documentElement.setAttribute("data-theme", t);
+  const m = document.getElementById("themeColor"); if (m) m.content = t==="light" ? "#F7F9F5" : "#1F2924";
+  document.querySelectorAll("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.themeSet===t)));
+}
+applyTheme(store.get("theme")||"dark");
+document.querySelectorAll("[data-theme-set]").forEach(b=>b.addEventListener("click",()=>{ store.set("theme", b.dataset.themeSet); applyTheme(b.dataset.themeSet); }));
 async function checkAppUpdate(){
   try{
     const r = await fetch(`./?t=${Date.now()}`, {cache:"no-store"}); if (!r.ok) return false;

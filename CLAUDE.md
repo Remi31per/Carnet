@@ -14,6 +14,7 @@ Puis committer et pousser sur `main`. Sinon le changement reste dans la conversa
 
 ## Fichiers
 - `index.html` : toute l'app (HTML, CSS, JS dans un seul fichier). Pas de build. Un bouton flèche « Revenir en haut » (`#totop`, en bas à droite) apparaît dès qu'on a défilé de 500 px ; le garder.
+  Apparence : une seule police douce, **Nunito**, partout (titres, texte, prix). **Mode nuit par défaut**, en tons assez clairs (fond `#1F2924`, cartes `#2A3530`) ; **mode jour en option** dans Favoris → Affichage (choix gardé dans le téléphone, clé `theme`). Ne pas revenir aux couleurs sombres d'avant.
   **À chaque modification de `index.html`, changer `APP_VERSION`** (ex. `2026-11-02a`) : l'app compare sa version à celle publiée (au démarrage, au retour dans l'app et sur « Actualiser ») et se recharge seule si elle diffère, sinon l'iPhone garde l'ancienne page en cache.
 - `manifest.webmanifest`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` : installation sur l'écran d'accueil. Après un changement d'icône, incrémenter `?v=` dans `index.html` et le manifest.
 - `data/recettes.json` : objet `{id: recette}`. `source: "moi"` = leurs recettes (ne jamais supprimer sans demande explicite), `source: "claude"` = suggestions (id `c-…`).
