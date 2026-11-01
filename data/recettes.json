@@ -319,7 +319,7 @@
   "prep": 10,
   "reheat": "2 min 30 à 800 W avec 1 cs d'eau, remuer à mi-temps.",
   "servings": 4,
-  "source": "claude",
+  "source": "moi",
   "steps": [
    "Cuire les penne et, dans la même eau, les haricots coupés en deux pendant les 8 dernières minutes.",
    "Saisir le poulet en dés dans l'huile 6 minutes, ajouter les tomates cerises coupées en deux 2 minutes.",
@@ -332,7 +332,9 @@
   "time": "25 min",
   "title": "Penne au pesto, poulet et tomates cerises",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "adoptedFrom": "claude",
+  "adoptedAt": "2026-11-01T13:42:34.744Z"
  },
  "c-poulet-chou-rouge": {
   "createdAt": "2026-10-31T15:39:00Z",
