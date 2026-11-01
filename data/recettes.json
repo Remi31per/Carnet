@@ -48,7 +48,7 @@
   "prep": 15,
   "reheat": "2 min 30 à 800 W, couvercle entrouvert ; la sauce garde le riz moelleux.",
   "servings": 4,
-  "source": "claude",
+  "source": "moi",
   "steps": [
    "Cuire le riz. Cuire les haricots 6 minutes à l'eau salée.",
    "Faire revenir oignon émincé, ail et gingembre râpé dans l'huile.",
@@ -62,7 +62,9 @@
   "time": "35 min",
   "title": "Ayam kecap : poulet sauce soja sucrée, riz et haricots",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "adoptedFrom": "claude",
+  "adoptedAt": "2026-11-01T13:45:23.711Z"
  },
  "c-curry-butternut": {
   "createdAt": "2026-10-31T16:00:00Z",
