@@ -364,6 +364,19 @@ header.top .iconbtn .ic{width:20px;height:20px}
 /* Filtres des recettes : 3 lignes de 2 */
 #recFilter{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 #recFilter .chip{justify-content:center;white-space:nowrap;padding:8px 10px}
+
+/* En-tête : forme d'origine (bas en biais) avec les quatre coins arrondis */
+header.top{background:none!important;isolation:isolate;padding-bottom:40px}
+header.top::before,header.top::after{content:"";position:absolute;left:0;right:0;z-index:-1;background:var(--forest);border-radius:30px}
+header.top::before{top:0;bottom:38%}
+header.top::after{top:30%;bottom:0;transform:skewY(-4deg);transform-origin:left bottom}
+
+header.top .iconbtn{bottom:-1px}
+/* Pastilles à choix : effet 3D (bombé, ombre portée en dessous) plutôt que surbrillance */
+:root:not([data-theme="dark"]) .chip{background:linear-gradient(180deg,#FCFAF4 0%,#EDE6D6 100%);box-shadow:0 1px 0 #fff inset,0 -2px 3px rgba(60,45,20,.07) inset,0 3px 0 rgba(60,45,20,.10),0 5px 10px rgba(60,45,20,.16)}
+:root:not([data-theme="dark"]) .chip[aria-pressed="true"]{background:linear-gradient(180deg,#1E6255 0%,#134B42 100%);color:#F1E8D6;box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 -2px 4px rgba(0,0,0,.18) inset,0 3px 0 rgba(10,40,34,.35),0 5px 10px rgba(10,40,34,.28)}
+:root:not([data-theme="dark"]) .chip:active{transform:translateY(2px);box-shadow:0 1px 0 #fff inset,0 1px 0 rgba(60,45,20,.12),0 2px 4px rgba(60,45,20,.14)}
+:root:not([data-theme="dark"]) .chip.static{box-shadow:0 1px 0 #fff inset,0 2px 0 rgba(60,45,20,.08),0 3px 6px rgba(60,45,20,.12)}
 </style>
 </head>
 <body>
@@ -1003,6 +1016,10 @@ function route(){
   document.querySelectorAll("nav.tabs a").forEach(a => { if (a.dataset.view===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
 }
 window.addEventListener("hashchange", ()=>{ route(); window.scrollTo(0,0); });
+// Toucher l'onglet où l'on est déjà : retour tout en haut
+document.querySelectorAll("nav.tabs a").forEach(a => a.addEventListener("click", e => {
+  if (a.getAttribute("aria-current")==="page"){ e.preventDefault(); window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); }
+}));
 
 /* ---- écritures ---- */
 function writeError(e){
@@ -1153,7 +1170,7 @@ $("#recSearch").addEventListener("input", renderRecipes);
 $("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01j";
+const APP_VERSION = "2026-11-01l";
 function themeMode(){ return store.get("themeMode") || "auto"; }
 function applyTheme(){
   const mode = themeMode(), h = new Date().getHours();
