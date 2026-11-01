@@ -27,6 +27,8 @@ Puis committer et pousser sur `main`. Sinon le changement reste dans la conversa
   - Pas de bandeau « Mode lecture » en haut de page (seuls les messages d'erreur s'affichent dans `#status`).
   - Pastilles à choix (filtres, magasins, favoris) : **effet 3D** en mode jour (bombées, liseré clair en haut, ombre portée en dessous, légèrement enfoncées au toucher), pas de halo blanc.
   - **Toucher l'onglet où l'on est déjà ramène tout en haut** de la page.
+  - **Cœur + (`.favadd`, `adoptRecipe`)** sur chaque idée de Claude (cartes Recettes, plats « Nouvelle idée » du Menu, fiche du plat) : la recette passe en `source: "moi"` (+ `adoptedFrom: "claude"`, `adoptedAt`), garde son id, et ne sera donc plus retirée chaque semaine.
+  - **Décorations de fête du bandeau** (`festiveFor`, `applyFestive`) : 21 octobre « Joyeux anniversaire Cindy ! » et 25 août « Joyeux anniversaire Rémi ! » (fanions, confettis, ballons) ; 24 et 25 décembre (guirlande de sapin, boules, neige, étoile) ; 31 décembre et 1er janvier (feux d'artifice, étoiles, « Bonne année AAAA ! »). Aperçu possible avec `?fete=cindy|remi|veille|noel|reveillon|nouvelan` dans l'adresse.
   - Barre d'onglets vert forêt flottante en bas, onglet actif en bloc moutarde. Icônes au trait (sprite `#i-…`, helper `ic(nom)`). Garder ce style pour tout nouvel élément.
   **Fenêtre du bas** (bottom sheet, `openSheet(html)` / `closeSheet()`) : se ferme avec la croix, en touchant le fond, ou en glissant vers le bas. Utilisée pour : la recette d'un plat touché dans le Menu (`showRecipe` : ingrédients à avoir sous forme de liste à cocher, puis la préparation s'il y en a ; nos recettes sans étapes = juste la liste), les actions d'un plat via la pastille « N en action » (`showHits` : toutes les actions à la suite dans une seule fenêtre, avec magasin, produit, prix, rabais, ingrédient concerné, date), et une action seule via la pastille du magasin à côté d'un ingrédient (`showPromo`).
   Recettes : les cartes sont **repliées** (titre, badge, type, temps de préparation, « en action ») et **se déplient d'un toucher** (`S.openCards`).
@@ -48,13 +50,13 @@ Puis committer et pousser sur `main`. Sinon le changement reste dans la conversa
 
 ## Mise à jour automatique
 Tâche programmée Claude « Actions Carnet », lundi et jeudi à 9 h 46 (Europe/Zurich) :
-- lundi et jeudi : met à jour `promos.json` et `semaine.json` depuis rappn.ch (Migros, Lidl, Aldi, Denner ; canton de Vaud) ;
+- lundi et jeudi : met à jour `promos.json` et `semaine.json` depuis rappn.ch (Migros, Lidl, Aldi, Denner) pour **nos magasins de Domdidier, Avenches, Payerne et Morat** (Vaud et Fribourg : Migros Vaud pour Payerne/Avenches, Migros Neuchâtel-Fribourg pour Domdidier/Morat ; préciser une action limitée à une seule région) ;
 - à chaque exécution : complète les recettes « moi » ajoutées incomplètes (voir plus haut) ;
-- jeudi : prépare deux menus (Menu 1 et Menu 2) pour la semaine suivante dans `menus.json` et ajoute les nouvelles recettes « claude ».
+- jeudi : **retire toutes les idées de Claude de la semaine d'avant** (recettes `source: "claude"` ; celles adoptées avec le cœur + sont devenues « moi » et restent), **ajoute 15 nouvelles idées** (environ 7 midis, 5 soirs, 3 weekend, champ `week`), puis prépare deux menus (Menu 1 et Menu 2) pour la semaine suivante dans `menus.json`, les nouvelles idées des menus étant prises parmi ces 15.
 
 ## Règles du foyer (résumé ; `preferences.json` fait foi)
 - 2 personnes. **Soirs et plats du weekend : toujours pour 2 personnes.** Midis en tupperware : 3 fournées de 4 portions (Lun–Mar, Mer–Jeu, Ven), réchauffage au micro-ondes, toujours des légumes.
 - Midi : pas d'os, pas de purée, pas de tofu, surtout poulet (filet) et viande hachée, porc possible. Pâtes courtes plutôt que spaghetti.
 - Butternut : au plus un plat par menu. Soirs : 15 min de préparation au plus. En général, peu de préparation active.
-- Viande suisse uniquement dans les actions, sauf produits industriels panés.
+- Viande suisse uniquement dans les actions, sauf produits industriels panés. Magasins : Domdidier, Avenches, Payerne et Morat.
 - Cuisines : méditerranéenne, italienne, asiatique, suisse. Inspirations listées dans `preferences.json` ; pas d'influenceurs sauf Le Riz Jaune.

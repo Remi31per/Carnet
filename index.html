@@ -377,6 +377,21 @@ header.top .iconbtn{bottom:-1px}
 :root:not([data-theme="dark"]) .chip[aria-pressed="true"]{background:linear-gradient(180deg,#1E6255 0%,#134B42 100%);color:#F1E8D6;box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 -2px 4px rgba(0,0,0,.18) inset,0 3px 0 rgba(10,40,34,.35),0 5px 10px rgba(10,40,34,.28)}
 :root:not([data-theme="dark"]) .chip:active{transform:translateY(2px);box-shadow:0 1px 0 #fff inset,0 1px 0 rgba(60,45,20,.12),0 2px 4px rgba(60,45,20,.14)}
 :root:not([data-theme="dark"]) .chip.static{box-shadow:0 1px 0 #fff inset,0 2px 0 rgba(60,45,20,.08),0 3px 6px rgba(60,45,20,.12)}
+
+/* Cœur + : ajouter une idée de Claude à nos recettes */
+.favadd{display:inline-grid;place-items:center;width:30px;height:30px;padding:0;border:0;border-radius:50%;background:var(--must);color:var(--must-ink);box-shadow:0 2px 0 rgba(60,45,20,.18),0 3px 6px rgba(60,45,20,.18);cursor:pointer;flex:0 0 auto}
+.favadd .ic{width:17px;height:17px;stroke-width:2.2}
+.favadd.inline{width:26px;height:26px}.favadd.inline .ic{width:15px;height:15px}
+.rcard{position:relative}
+.favadd.oncard{position:absolute;top:11px;right:12px;z-index:1}
+.rtoggle.hasfav{padding-right:50px}
+.adoptwide{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:8px 0 4px;background:var(--must);color:var(--must-ink);border:0;font-weight:800;padding:10px 14px;border-radius:999px}
+.adoptwide .ic{width:18px;height:18px}
+/* Décorations de fête dans le bandeau */
+header.top .festive{position:absolute;left:0;top:0;width:100%;height:78%;z-index:0;pointer-events:none;border-radius:30px 30px 0 0}
+header.top .kicker,header.top h1,header.top .week{position:relative;z-index:1}
+header.top[data-fete="bday"] .kicker{margin-top:28px!important}
+header.top[data-fete="bday"] .kicker,header.top[data-fete="xmas"] .kicker,header.top[data-fete="ny"] .kicker{color:var(--must);font-size:.86rem;margin-top:14px}
 </style>
 </head>
 <body>
@@ -404,7 +419,7 @@ header.top .iconbtn{bottom:-1px}
 <symbol id="m-fish" viewBox="0 0 60 60"><path d="M8 30 Q24 12 42 30 Q24 48 8 30Z" fill="#F08A6A"/><path d="M42 30 L54 20 L54 40Z" fill="#F08A6A"/><circle cx="18" cy="28" r="2.5" fill="#1E1E1E"/><path d="M26 22 q4 8 0 16" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/></symbol>
 <symbol id="m-pep" viewBox="0 0 60 60"><path d="M14 22 q-6 30 16 32 q22-2 16-32 q-8-6-16 0 q-8-6-16 0z" fill="#E5553B"/><path d="M30 20 q0-8 6-12" stroke="#3E8E5A" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
 <symbol id="m-pasta" viewBox="0 0 60 60"><g transform="rotate(-20 30 30)"><path d="M18 10 L36 10 L32 50 L14 50Z" fill="#F2C45A"/><path d="M20 20h14M19 30h14M18 40h14" stroke="#D9A23A" stroke-width="2"/></g><g transform="rotate(15 40 34)"><path d="M34 16 L50 16 L47 52 L31 52Z" fill="#F5CF6E"/></g></symbol>
-<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
+<symbol id="i-heartplus" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/><path d="M12 9v6M9 12h6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol><symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol></svg>
 <div class="wrap">
   <header class="top">
     <div class="kicker" id="heroKicker">Pour nous deux</div>
@@ -457,7 +472,7 @@ header.top .iconbtn{bottom:-1px}
 
   <section id="v-actions" hidden><div class="tile tabtile t-act">
     <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg></span><span>Actions alimentaires</span></h2>
-    <p class="lede">Une sélection des produits utiles pour cuisiner, viande suisse uniquement. Prix relevés pour le canton de Vaud, ils peuvent varier un peu selon la région.</p>
+    <p class="lede">Une sélection des produits utiles pour cuisiner, viande suisse uniquement. Prix pour nos magasins de Domdidier, Avenches, Payerne et Morat (Vaud et Fribourg).</p>
     <div class="chips" id="storeFilter"></div>
     <input class="search" id="promoSearch" type="search" placeholder="Chercher un produit (ex. poulet, courgette)">
     <div class="pgrid" id="promoGrid"></div>
@@ -647,6 +662,7 @@ function matchPromos(ingName){
 }
 function recipeHits(r){ const res=[]; (r.ingredients||[]).forEach(i=>{ const m=matchPromos(i.n); if(m.length) res.push({ing:i,promo:m[0],all:m}); }); return res; }
 function hitHtml(p, ingName){return `<button type="button" class="hit" data-promo="${esc(p._id)}" data-ing="${esc(ingName||"")}" aria-label="Voir l'action ${esc(p.name)}"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)} ${p.price!=null?chf(p.price):""}${p.pct?` · −${p.pct} %`:""}</button>`}
+function adoptBtn(r, cls=""){ return r.source==="claude" ? `<button type="button" class="favadd ${cls}" data-adopt="${esc(r._id)}" aria-label="Ajouter « ${esc(r.title)} » à nos recettes" title="Ajouter à nos recettes">${ic("heartplus")}</button>` : ""; }
 function savingsBtn(r, n){ return n ? `<button type="button" class="savings" data-hits="${esc(r._id)}" aria-label="Voir les ${n} actions de ce plat">${ic("tag")}${n} en action</button>` : ""; }
 const hasPrep = r => typeof r.prep === "number";
 function timing(r){ if (hasPrep(r)) return `Prép. ${r.prep} min${r.cuisson?` · cuisson ${r.cuisson} min`:""}`; return r.time || ""; }
@@ -664,7 +680,7 @@ function recipeCard(r){
   const insp = r.inspiration && /^https:\/\//.test(r.inspiration.url||"") ? `<p class="note">Inspiré de <a href="${esc(r.inspiration.url)}" target="_blank" rel="noopener">${esc(r.inspiration.nom||"la recette d'origine")}</a></p>` : "";
   const open = S.openCards && S.openCards.has(r._id);
   return `<article class="rcard${open?" open":""}" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
-    <button type="button" class="rtoggle" aria-expanded="${open}"><h3>${esc(r.title)}</h3><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    ${adoptBtn(r,"oncard")}<button type="button" class="rtoggle${r.source==="claude"?" hasfav":""}" aria-expanded="${open}"><h3>${esc(r.title)}</h3><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
       <span class="mini"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Idée de Claude"}</span>${TYPES[t]?`<span>${TYPES[t]}</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(hasPrep(r)?r.prep+" min":timing(r))}</span>`:""}${hits.length?`<span class="savings" data-hits="${esc(r._id)}">${ic("tag")}${hits.length} en action</span>`:""}</span></button>
     <div class="rbody">
     <div class="meta">${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
@@ -915,7 +931,7 @@ function slotHtml(s, kind){
     : `<div class="sv rest"><span class="d">${esc(s.day||"")}</span><span class="ib">${ic("moon")}</span><div><div class="t">${esc(s.title||"Libre")}</div>${s.tip?`<div class="tp">${esc(s.tip)}</div>`:""}</div></div>`;
   const vegs = [...new Set((r.ingredients||[]).map(i=>phareOf(i.n)).filter(Boolean))];
   const pc = recipeHits(r).length, mine = r.source==="moi";
-  const badge = `<span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>`;
+  const badge = `<span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Nouvelle idée"}</span>${adoptBtn(r,"inline")}`;
   const time = hasPrep(r) ? `${r.prep} min${r.cuisson?` + ${dur(r.cuisson)}`:""}` : (r.time||"");
   if (kind==="midi") return `<div class="mc" data-open="${esc(r._id)}" role="button" tabindex="0">
     <div class="when">${esc(s.days||"")}${s.when?` · <i>${esc(s.when)}</i>`:""}</div><div class="art">${dishArt(r)}</div>
@@ -930,6 +946,7 @@ function slotHtml(s, kind){
 function renderMenu(){
   const opts = menuOptions(), el = $("#menuWrap");
   if (S.menu){ $("#menuTitle").textContent = S.menu.label || "Menus de la semaine"; $("#heroKicker").textContent = S.menu.label || "Pour nous deux"; $("#menuLede").textContent = S.menu.intro || ""; }
+  applyFestive();
   if (!opts.length){ $("#menuPick").innerHTML=""; el.innerHTML = `<div class="empty">Les menus de la semaine ne sont pas encore prêts. Ils sont préparés automatiquement chaque jeudi.</div>`; renderFun(); return; }
   if (S.menuIdx >= opts.length) S.menuIdx = 0;
   $("#menuPick").innerHTML = opts.map((o,i)=>`<button type="button" data-menu="${i}" aria-pressed="${i===S.menuIdx}"><b>${esc(o.nom||"Menu "+(i+1))}</b>${o.theme?`<span>${esc(o.theme)}</span>`:""}</button>`).join("");
@@ -940,6 +957,49 @@ function renderMenu(){
     ${o.note?`<p class="note" style="margin:-6px 6px 14px">${esc(o.note)}</p>`:""}`;
   renderFun();
 }
+
+
+/* ---- décorations de fête du bandeau (anniversaires, Noël, Nouvel An) ; aperçu : ?fete=cindy|remi|veille|noel|reveillon|nouvelan ---- */
+function festiveFor(d){
+  const forced = new URLSearchParams(location.search).get("fete");
+  const m = d.getMonth()+1, j = d.getDate(), y = d.getFullYear();
+  const key = forced || (m===10&&j===21 ? "cindy" : m===8&&j===25 ? "remi" : m===12&&j===24 ? "veille" : m===12&&j===25 ? "noel" : m===12&&j===31 ? "reveillon" : m===1&&j===1 ? "nouvelan" : "");
+  const T = {cindy:["bday","Joyeux anniversaire Cindy !"], remi:["bday","Joyeux anniversaire Rémi !"], veille:["xmas","Joyeux réveillon de Noël !"], noel:["xmas","Joyeux Noël !"], reveillon:["ny",`Bon réveillon, à bientôt ${y+1} !`], nouvelan:["ny",`Bonne année ${m===12?y+1:y} !`]};
+  return T[key] ? {theme:T[key][0], text:T[key][1]} : null;
+}
+function festiveSVG(theme){
+  const rnd = (a)=>{ let x=Math.sin(a*99.1)*10000; return x-Math.floor(x); };
+  if (theme==="bday"){
+    const cols=["#EEA83B","#CA763B","#AEBA8A","#F1E8D6","#E58B86"], flags=[];
+    for(let i=0;i<13;i++){ const x=12+i*27, y=10+Math.sin(i/12*Math.PI)*16; flags.push(`<path d="M${x-9} ${y} L${x+9} ${y+1} L${x} ${y+17}Z" fill="${cols[i%5]}"/>`); }
+    const conf=[...Array(26)].map((_,i)=>`<rect x="${(rnd(i)*340+10).toFixed(0)}" y="${(rnd(i+50)*150+30).toFixed(0)}" width="5" height="2.6" rx="1" fill="${cols[i%5]}" transform="rotate(${(rnd(i+9)*180).toFixed(0)} ${(rnd(i)*340+10).toFixed(0)} ${(rnd(i+50)*150+30).toFixed(0)})" opacity=".9"/>`).join("");
+    const balloons=[[218,70,"#E58B86"],[244,52,"#EEA83B"],[202,40,"#AEBA8A"]].map(([x,y,c])=>`<path d="M${x} ${y+19} q-4 18 4 34" stroke="#F1E8D6" stroke-width="1" fill="none" opacity=".7"/><ellipse cx="${x}" cy="${y}" rx="13" ry="16" fill="${c}"/><ellipse cx="${x-4}" cy="${y-6}" rx="3" ry="5" fill="#fff" opacity=".35"/><path d="M${x-3} ${y+16} l3 4 3-4z" fill="${c}"/>`).join("");
+    return `<path d="M0 8 Q180 34 360 8" stroke="#F1E8D6" stroke-width="1.4" fill="none" opacity=".8"/>${flags.join("")}${conf}${balloons}`;
+  }
+  if (theme==="xmas"){
+    const flakes=[...Array(30)].map((_,i)=>{ const x=(rnd(i)*350+5).toFixed(0), y=(rnd(i+30)*170+18).toFixed(0), r=(rnd(i+60)*2+1).toFixed(1); return `<circle cx="${x}" cy="${y}" r="${r}" fill="#fff" opacity="${(.45+rnd(i+90)*.5).toFixed(2)}"/>`; }).join("");
+    const garland=[...Array(16)].map((_,i)=>{ const x=i*24, y=8+Math.sin(i/15*Math.PI)*12; return `<ellipse cx="${x}" cy="${y}" rx="15" ry="7" fill="${i%2?"#2E6E45":"#3E8E5A"}" transform="rotate(${i%2?12:-12} ${x} ${y})"/>`; }).join("");
+    const baubles=[[40,"#C8432C"],[100,"#EEA83B"],[160,"#C8432C"],[220,"#F1E8D6"],[280,"#EEA83B"],[335,"#C8432C"]].map(([x,c])=>{ const y=8+Math.sin(x/360*Math.PI)*12; return `<path d="M${x} ${y} v8" stroke="#E9D7B0" stroke-width="1"/><circle cx="${x}" cy="${y+14}" r="6" fill="${c}"/><circle cx="${x-2}" cy="${y+12}" r="1.6" fill="#fff" opacity=".6"/>`; }).join("");
+    const star=`<path d="M232 44 l4 9 10 1 -8 6 3 10 -9 -6 -9 6 3 -10 -8 -6 10 -1z" fill="#EEA83B"/>`;
+    return `${flakes}${garland}${baubles}${star}`;
+  }
+  if (theme==="ny"){
+    const burst=(x,y,c,r)=>[...Array(12)].map((_,i)=>{ const a=i/12*Math.PI*2; return `<path d="M${(x+Math.cos(a)*r*.35).toFixed(1)} ${(y+Math.sin(a)*r*.35).toFixed(1)} L${(x+Math.cos(a)*r).toFixed(1)} ${(y+Math.sin(a)*r).toFixed(1)}" stroke="${c}" stroke-width="2" stroke-linecap="round"/><circle cx="${(x+Math.cos(a)*(r+4)).toFixed(1)}" cy="${(y+Math.sin(a)*(r+4)).toFixed(1)}" r="1.4" fill="${c}"/>`; }).join("");
+    const stars=[...Array(22)].map((_,i)=>`<circle cx="${(rnd(i)*350+5).toFixed(0)}" cy="${(rnd(i+40)*170+10).toFixed(0)}" r="${(rnd(i+80)*1.6+.6).toFixed(1)}" fill="#F1E8D6" opacity=".8"/>`).join("");
+    return `${stars}${burst(210,36,"#EEA83B",22)}${burst(250,92,"#E58B86",16)}${burst(186,104,"#AEBA8A",13)}${burst(330,170,"#F1E8D6",14)}`;
+  }
+  return "";
+}
+function applyFestive(){
+  const f = festiveFor(new Date()), h = document.querySelector("header.top");
+  let layer = h.querySelector(".festive");
+  h.dataset.fete = f ? f.theme : "";
+  if (!f){ if (layer) layer.remove(); return; }
+  if (!layer){ layer = document.createElementNS("http://www.w3.org/2000/svg","svg"); layer.setAttribute("class","festive"); layer.setAttribute("viewBox","0 0 360 210"); layer.setAttribute("preserveAspectRatio","xMidYMin slice"); layer.setAttribute("aria-hidden","true"); h.prepend(layer); }
+  layer.innerHTML = festiveSVG(f.theme);
+  $("#heroKicker").textContent = f.text;
+}
+
 /* ---- bloc d'humour : une illustration au hasard, nouvelle à chaque actualisation ---- */
 const FUNS = [
   ["f-cloud","Vendredi soir, on souffle.","La baguette aussi a besoin de repos."],
@@ -1096,7 +1156,7 @@ function showHits(id){
   const h = recipeHits(r);
   openSheet(`<div class="kicker">${esc(r.title)}</div><h2 id="sheetTitle">${h.length} aliment${h.length>1?"s":""} en action</h2>
     ${h.map(x=>dealHtml(x.promo, x.ing.n)).join("")}
-    <p class="note">Prix relevés pour le canton de Vaud. Vérifie en magasin.</p>`);
+    <p class="note">Prix pour Domdidier, Avenches, Payerne et Morat. Vérifie en magasin.</p>`);
 }
 function showPromo(pid, ing){
   const p = S.promos.find(x=>x._id===pid); if (!p) return;
@@ -1107,7 +1167,7 @@ function showRecipe(id){
   const mine = r.source==="moi", hits = recipeHits(r), t = typeOf(r);
   const ings = (r.ingredients||[]).map(i=>{ const m=matchPromos(i.n); return `<li><span class="box" aria-hidden="true"></span><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}</span>${m.length?hitHtml(m[0],i.n):""}</li>`; }).join("");
   const steps = (r.steps||[]).map(x=>`<li>${esc(x)}</li>`).join("");
-  openSheet(`<div class="kicker">${mine?"Notre plat":"Suggestion de Claude"}${TYPES[t]?` · ${TYPES[t]}`:""}</div>
+  openSheet(`<div class="kicker">${mine?"Notre plat":"Idée de Claude"}${TYPES[t]?` · ${TYPES[t]}`:""}</div>${r.source==="claude"?`<button type="button" class="adoptwide" data-adopt="${esc(r._id)}">${ic("heartplus")} Ajouter à nos recettes</button>`:""}
     <h2 id="sheetTitle">${esc(r.title)}</h2>
     <div class="meta">${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${savingsBtn(r,hits.length)}</div>
     ${r.reheat?`<p class="note">Au micro-ondes : ${esc(r.reheat)}</p>`:""}
@@ -1116,6 +1176,18 @@ function showRecipe(id){
     ${steps?`<div class="sec">${ic("utensils")} Préparation</div><ol>${steps}</ol>`:""}
     ${r.notes?`<p class="note">${esc(r.notes)}</p>`:""}
     <div class="row" style="margin-top:16px"><button type="button" data-goto="${esc(r._id)}">Voir dans Recettes</button></div>`);
+}
+// Cœur + : une idée de Claude devient une de nos recettes (elle ne sera plus retirée chaque semaine)
+async function adoptRecipe(id, btn){
+  const r = S.recettes.find(x=>x._id===id); if (!r || r.source!=="claude") return;
+  if (!canWrite()){ toast("Enregistre d'abord le code d'accès dans Favoris."); return; }
+  btn.disabled = true;
+  try{
+    const all = await writeFile("recettes.json", cur => { const n = {...(cur||{})}; if (n[id]) n[id] = {...n[id], source:"moi", adoptedFrom:"claude", adoptedAt:new Date().toISOString()}; return n; }, `App : ${r.title} ajoutée à nos recettes`);
+    S.recettes = Object.entries(all).map(([k,v])=>({_id:k,...v}));
+    renderAll(); toast("Ajoutée à nos recettes ♥");
+    if (!$("#sheetBack").hidden) showRecipe(id);
+  }catch(err){ btn.disabled = false; writeError(err); }
 }
 function openRecipe(id){
   S.openCards ||= new Set();
@@ -1133,6 +1205,8 @@ document.addEventListener("click", async e => {
   if (mp){ S.menuIdx = Number(mp.dataset.menu); store.set("menuIdx",S.menuIdx); renderMenu(); return; }
   const sc = e.target.closest("#storeFilter .chip");
   if (sc){ S.store = sc.dataset.s; renderPromos(); return; }
+  const ad = e.target.closest("[data-adopt]");
+  if (ad){ e.preventDefault(); e.stopPropagation(); adoptRecipe(ad.dataset.adopt, ad); return; }
   const hb = e.target.closest("[data-hits]");
   if (hb){ e.preventDefault(); e.stopPropagation(); showHits(hb.dataset.hits); return; }
   const pb = e.target.closest("[data-promo]");
@@ -1170,7 +1244,7 @@ $("#recSearch").addEventListener("input", renderRecipes);
 $("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01l";
+const APP_VERSION = "2026-11-01n";
 function themeMode(){ return store.get("themeMode") || "auto"; }
 function applyTheme(){
   const mode = themeMode(), h = new Date().getHours();
