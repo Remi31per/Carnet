@@ -2791,5 +2791,32 @@
   "title": "Tranches panées maison, légumes et pâtes",
   "type": "midi",
   "weekend": true
+ },
+ "moi-tarte-tomates-thon-kzxh": {
+  "title": "Tarte tomates thon",
+  "type": "soir",
+  "weekend": false,
+  "servings": 2,
+  "prep": 15,
+  "ingredients": [
+   {
+    "q": "",
+    "n": "Tomates"
+   },
+   {
+    "q": "",
+    "n": "Thon"
+   },
+   {
+    "q": "",
+    "n": "Pâte brisée"
+   }
+  ],
+  "steps": [],
+  "reheat": "",
+  "tags": [],
+  "notes": "",
+  "source": "moi",
+  "createdAt": "2026-11-01T00:06:25.704Z"
  }
 }
