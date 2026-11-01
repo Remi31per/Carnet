@@ -340,35 +340,35 @@
   "ingredients": [
    {
     "n": "cuisses de poulet",
-    "q": "1 kg"
+    "q": "2 (env. 500 g)"
    },
    {
     "n": "pommes de terre",
-    "q": "600 g"
+    "q": "300 g"
    },
    {
     "n": "chou rouge",
-    "q": "1 kg"
+    "q": "500 g"
    },
    {
-    "n": "pommes golden",
-    "q": "2"
-   },
-   {
-    "n": "oignon",
+    "n": "pomme golden",
     "q": "1"
    },
    {
-    "n": "vinaigre de vin rouge",
-    "q": "2 cs"
+    "n": "oignon",
+    "q": "1/2"
    },
    {
-    "n": "sucre",
+    "n": "vinaigre de vin rouge",
     "q": "1 cs"
    },
    {
+    "n": "sucre",
+    "q": "1/2 cs"
+   },
+   {
     "n": "huile",
-    "q": "2 cs"
+    "q": "1 cs"
    },
    {
     "n": "thym, sel, poivre, paprika",
@@ -377,13 +377,13 @@
   ],
   "notes": "Plat avec os : réservé au weekend, pas aux tupperwares.",
   "prep": 20,
-  "servings": 4,
+  "servings": 2,
   "source": "claude",
   "steps": [
    "Préchauffer le four à 200 °C. Frotter les cuisses avec huile, paprika, thym, sel et poivre.",
    "Couper les pommes de terre en quartiers, les disposer autour du poulet et enfourner 50 à 55 minutes.",
    "Pendant ce temps, émincer finement le chou rouge et l'oignon, couper les pommes en dés.",
-   "Faire suer l'oignon, ajouter chou, pommes, vinaigre, sucre et un verre d'eau. Couvrir et cuire 40 minutes à feu doux.",
+   "Faire suer l'oignon, ajouter chou, pomme, vinaigre, sucre et un demi-verre d'eau. Couvrir et cuire 40 minutes à feu doux.",
    "Servir le poulet doré avec le chou fondant et les pommes de terre."
   ],
   "tags": [
@@ -392,7 +392,8 @@
   ],
   "time": "1 h 10",
   "title": "Cuisses de poulet rôties, chou rouge aux pommes",
-  "type": "weekend"
+  "type": "weekend",
+  "updatedAt": "2026-11-01T01:15:00Z"
  },
  "c-saumon-riz": {
   "createdAt": "2026-10-31T15:36:00Z",
@@ -400,19 +401,19 @@
   "ingredients": [
    {
     "n": "dos de saumon",
-    "q": "400 g"
+    "q": "2 pavés (env. 280 g)"
    },
    {
     "n": "riz basmati",
-    "q": "250 g"
+    "q": "160 g"
    },
    {
     "n": "épinards frais",
-    "q": "500 g"
+    "q": "350 g"
    },
    {
     "n": "citron",
-    "q": "1"
+    "q": "1/2"
    },
    {
     "n": "gousse d'ail",
@@ -424,16 +425,16 @@
    },
    {
     "n": "beurre",
-    "q": "1 cs"
+    "q": "1 cc"
    }
   ],
   "notes": "",
   "prep": 10,
-  "servings": 3,
+  "servings": 2,
   "source": "claude",
   "steps": [
    "Cuire le riz selon le paquet.",
-   "Couper le saumon en 3 pavés, saler et poêler côté peau 4 minutes, puis 2 minutes de l'autre côté.",
+   "Saler les pavés et les poêler côté peau 4 minutes, puis 2 minutes de l'autre côté.",
    "Dans la même poêle, faire tomber les épinards avec l'ail et le beurre, ajouter le zeste et un filet de jus de citron.",
    "Servir le saumon sur le riz et les épinards."
   ],
@@ -443,7 +444,8 @@
   ],
   "time": "25 min",
   "title": "Saumon poêlé, riz et épinards au citron",
-  "type": "soir"
+  "type": "soir",
+  "updatedAt": "2026-11-01T01:15:00Z"
  },
  "c-tartines-saumon": {
   "createdAt": "2026-10-31T16:03:00Z",
@@ -501,23 +503,23 @@
   "ingredients": [
    {
     "n": "courge butternut",
-    "q": "1 kg"
+    "q": "500 g"
    },
    {
     "n": "châtaignes cuites",
-    "q": "200 g"
+    "q": "100 g"
    },
    {
     "n": "lait de coco",
-    "q": "250 ml"
+    "q": "125 ml"
    },
    {
     "n": "oignon",
-    "q": "1"
+    "q": "1/2"
    },
    {
     "n": "bouillon de légumes",
-    "q": "8 dl"
+    "q": "4 dl"
    },
    {
     "n": "huile d'olive",
@@ -528,13 +530,13 @@
     "q": ""
    }
   ],
-  "notes": "Se congèle très bien en portions.",
+  "notes": "Pour 2. Double les quantités pour en congeler une partie : il se congèle très bien.",
   "prep": 15,
-  "servings": 4,
+  "servings": 2,
   "source": "claude",
   "steps": [
    "Peler la courge, retirer les graines et la couper en cubes. Émincer l'oignon.",
-   "Faire revenir l'oignon dans l'huile 3 minutes, ajouter la courge et 150 g de châtaignes.",
+   "Faire revenir l'oignon dans l'huile 3 minutes, ajouter la courge et 75 g de châtaignes.",
    "Mouiller avec le bouillon, couvrir et cuire 25 minutes à feu moyen.",
    "Ajouter le lait de coco, mixer finement, assaisonner de sel, poivre et muscade.",
    "Servir avec le reste des châtaignes émiettées et poêlées à sec."
@@ -546,7 +548,8 @@
   ],
   "time": "40 min",
   "title": "Velouté de butternut, châtaignes et coco",
-  "type": "soir"
+  "type": "soir",
+  "updatedAt": "2026-11-01T01:15:00Z"
  },
  "moi-bol-cereales": {
   "createdAt": "2026-10-31T16:31:04Z",
@@ -2800,23 +2803,48 @@
   "prep": 15,
   "ingredients": [
    {
-    "q": "",
-    "n": "Tomates"
+    "q": "1 rouleau",
+    "n": "Pâte brisée"
    },
    {
-    "q": "",
+    "q": "1 boîte (env. 140 g égoutté)",
     "n": "Thon"
    },
    {
+    "q": "3",
+    "n": "Tomates"
+   },
+   {
+    "q": "1 cs",
+    "n": "moutarde"
+   },
+   {
+    "q": "60 g",
+    "n": "gruyère râpé"
+   },
+   {
     "q": "",
-    "n": "Pâte brisée"
+    "n": "herbes de Provence, sel, poivre"
    }
   ],
-  "steps": [],
+  "steps": [
+   "Préchauffer le four à 200 °C. Dérouler la pâte dans le moule, piquer le fond à la fourchette.",
+   "Étaler la moutarde sur le fond, puis répartir le thon égoutté et émietté.",
+   "Couvrir de tranches de tomates, saler, poivrer, parsemer d'herbes de Provence et de gruyère.",
+   "Cuire 30 minutes, jusqu'à ce que la pâte soit dorée. Servir avec une salade verte."
+  ],
   "reheat": "",
-  "tags": [],
-  "notes": "",
+  "tags": [
+   "four",
+   "poisson",
+   "rapide à préparer"
+  ],
+  "notes": "Complétée par Claude (quantités, étapes, cuisson) à partir des ingrédients de base.",
   "source": "moi",
-  "createdAt": "2026-11-01T00:06:25.704Z"
+  "createdAt": "2026-11-01T00:06:25.704Z",
+  "cuisson": 30,
+  "time": "45 min",
+  "completedBy": "claude",
+  "updatedAt": "2026-11-01T01:15:00Z"
  }
 }
