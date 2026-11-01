@@ -580,7 +580,8 @@
   ],
   "time": "2 min",
   "title": "Bol de céréales",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-bolognese": {
   "createdAt": "2026-10-31T16:30:08Z",
@@ -650,7 +651,8 @@
   "time": "1 h 30 (ou plus à feu doux)",
   "title": "Pâtes bolognese (la recette maison)",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-boulettes": {
   "createdAt": "2026-10-31T16:30:16Z",
@@ -710,7 +712,8 @@
   "time": "45 min",
   "title": "Boulettes de viande hachée, sauce tomate, pâtes et légumes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-butternut-farcie": {
   "createdAt": "2026-10-31T16:30:03Z",
@@ -768,7 +771,8 @@
   "time": "1 h 15",
   "title": "Butternut farcie à la viande hachée, riz",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-carbonara": {
   "createdAt": "2026-10-31T16:30:21Z",
@@ -817,7 +821,8 @@
   "time": "20 min",
   "title": "Pâtes carbonara",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-chili": {
   "createdAt": "2026-10-31T16:30:23Z",
@@ -890,7 +895,8 @@
   "time": "1 h",
   "title": "Chili con carne",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-cordons-bleus": {
   "createdAt": "2026-10-31T16:30:20Z",
@@ -930,7 +936,8 @@
   "time": "25 min",
   "title": "Cordons bleus (achetés), légumes et pâtes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-courgettes-farcies": {
   "createdAt": "2026-10-31T16:30:02Z",
@@ -987,7 +994,8 @@
   "time": "55 min",
   "title": "Courgettes farcies à la viande hachée, riz",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-crepes": {
   "createdAt": "2026-10-31T16:31:08Z",
@@ -1037,7 +1045,8 @@
   ],
   "time": "30 min",
   "title": "Crêpes jambon-fromage (et sucrées)",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-croque": {
   "createdAt": "2026-10-31T16:31:07Z",
@@ -1078,7 +1087,8 @@
   ],
   "time": "15 min",
   "title": "Croque-monsieur",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-flammekueche": {
   "createdAt": "2026-10-31T16:31:00Z",
@@ -1117,7 +1127,8 @@
   ],
   "time": "25 min",
   "title": "Flammekueche sans oignons",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-fondue": {
   "createdAt": "2026-10-31T16:32:00Z",
@@ -1173,7 +1184,8 @@
   ],
   "time": "25 min",
   "title": "Fondue moitié-moitié",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-gateau-courgette": {
   "createdAt": "2026-10-31T16:31:02Z",
@@ -1208,9 +1220,9 @@
     "q": ""
    }
   ],
-  "notes": "J'ai supposé un gâteau salé à la romande (façon quiche) ; dis-moi si c'est un cake sucré.",
+  "notes": "J'ai supposé un gâteau salé à la romande (façon quiche) ; dis-moi si c'est un cake sucré. Pour 2 : un moule entier, le reste se garde pour le lendemain.",
   "prep": 20,
-  "servings": 4,
+  "servings": 2,
   "source": "moi",
   "steps": [
    "Foncer un moule avec la pâte et piquer le fond.",
@@ -1224,7 +1236,9 @@
   ],
   "time": "50 min",
   "title": "Gâteau à la courgette",
-  "type": "soir"
+  "type": "soir",
+  "updatedAt": "2026-11-01T01:20:00Z",
+  "completedBy": "claude"
  },
  "moi-gateau-pommes": {
   "createdAt": "2026-10-31T16:31:01Z",
@@ -1259,9 +1273,9 @@
     "q": "1 cc"
    }
   ],
-  "notes": "",
+  "notes": "Pour 2 : un moule entier, le reste se garde pour le lendemain.",
   "prep": 15,
-  "servings": 4,
+  "servings": 2,
   "source": "moi",
   "steps": [
    "Foncer un moule avec la pâte, piquer le fond et parsemer de noisettes.",
@@ -1276,7 +1290,9 @@
   ],
   "time": "50 min",
   "title": "Gâteau aux pommes",
-  "type": "soir"
+  "type": "soir",
+  "updatedAt": "2026-11-01T01:20:00Z",
+  "completedBy": "claude"
  },
  "moi-gratin-pates": {
   "createdAt": "2026-10-31T16:30:00Z",
@@ -1333,7 +1349,8 @@
   "time": "45 min",
   "title": "Gratin de pâtes jambon-fromage",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-grillades": {
   "createdAt": "2026-10-31T16:32:03Z",
@@ -1388,7 +1405,8 @@
   ],
   "time": "40 min",
   "title": "Grillades : viande, saucisses et légumes",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-lasagne": {
   "createdAt": "2026-10-31T16:30:09Z",
@@ -1445,7 +1463,8 @@
   "time": "2 h (avec la bolognese)",
   "title": "Lasagne maison",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-omelette": {
   "createdAt": "2026-10-31T16:31:10Z",
@@ -1490,7 +1509,8 @@
   ],
   "time": "15 min",
   "title": "Omelette tomate, jambon et champignons",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-pain-fromage-yaourt": {
   "createdAt": "2026-10-31T16:31:03Z",
@@ -1525,7 +1545,8 @@
   ],
   "time": "5 min",
   "title": "Pain, fromage et yaourt",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-pain-perdu": {
   "createdAt": "2026-10-31T16:31:09Z",
@@ -1575,7 +1596,8 @@
   ],
   "time": "15 min",
   "title": "Pain perdu",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-pain-viande-froide": {
   "createdAt": "2026-10-31T16:31:05Z",
@@ -1611,7 +1633,8 @@
   ],
   "time": "5 min",
   "title": "Pain et viande froide",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-pates-thon": {
   "createdAt": "2026-10-31T16:30:22Z",
@@ -1664,7 +1687,8 @@
   "time": "20 min",
   "title": "Pâtes au thon et sauce tomate, légumes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-pilons-four": {
   "createdAt": "2026-10-31T16:32:02Z",
@@ -1718,7 +1742,8 @@
   ],
   "time": "50 min",
   "title": "Pilons de poulet au four, légumes et pâtes",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-pizza": {
   "createdAt": "2026-10-31T16:31:11Z",
@@ -1778,7 +1803,8 @@
   "time": "1 h 30 (avec la levée)",
   "title": "Pizza maison",
   "type": "soir",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-cajou": {
   "createdAt": "2026-10-31T16:30:05Z",
@@ -1847,7 +1873,8 @@
   "time": "30 min",
   "title": "Poulet sauté aux noix de cajou, nouilles, carottes et poivrons",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-cantadou": {
   "createdAt": "2026-10-31T16:30:11Z",
@@ -1896,7 +1923,8 @@
   "time": "25 min",
   "title": "Poulet Cantadou, pâtes et légumes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-champignons": {
   "createdAt": "2026-10-31T16:30:06Z",
@@ -1957,7 +1985,8 @@
   "time": "30 min",
   "title": "Poulet aux champignons à la crème, pâtes et carottes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-citron": {
   "createdAt": "2026-10-31T16:30:04Z",
@@ -2010,7 +2039,8 @@
   "time": "30 min + marinade",
   "title": "Poulet au citron, pâtes et carottes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-curry-coco": {
   "createdAt": "2026-10-31T16:30:13Z",
@@ -2067,7 +2097,8 @@
   "time": "30 min",
   "title": "Poulet curry coco, riz et carottes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-moutarde": {
   "createdAt": "2026-10-31T16:30:10Z",
@@ -2123,7 +2154,8 @@
   "time": "30 min",
   "title": "Poulet à la crème moutarde, pâtes et légumes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-poulet-sauce-tomate": {
   "createdAt": "2026-10-31T16:30:17Z",
@@ -2175,7 +2207,8 @@
   "time": "35 min",
   "title": "Poulet mijoté à la sauce tomate, pâtes et légumes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-raclette": {
   "createdAt": "2026-10-31T16:32:01Z",
@@ -2218,7 +2251,8 @@
   ],
   "time": "30 min",
   "title": "Raclette",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-risotto-viande": {
   "createdAt": "2026-10-31T16:32:06Z",
@@ -2272,7 +2306,8 @@
   ],
   "time": "35 min",
   "title": "Risotto avec un morceau de viande",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-riz-casimir": {
   "createdAt": "2026-10-31T16:30:14Z",
@@ -2337,7 +2372,8 @@
   "time": "30 min",
   "title": "Riz Casimir",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-riz-saute-poulet": {
   "createdAt": "2026-10-31T16:30:12Z",
@@ -2402,7 +2438,8 @@
   "time": "25 min",
   "title": "Riz sauté au poulet",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-sandwich": {
   "createdAt": "2026-10-31T16:31:06Z",
@@ -2437,7 +2474,8 @@
   ],
   "time": "10 min",
   "title": "Sandwich",
-  "type": "soir"
+  "type": "soir",
+  "completedBy": "claude"
  },
  "moi-saucisse-rotir": {
   "createdAt": "2026-10-31T16:30:15Z",
@@ -2485,7 +2523,8 @@
   "time": "35 min",
   "title": "Saucisse à rôtir, sauce oignon, cornettes et carottes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-tacquitos": {
   "createdAt": "2026-10-31T16:30:07Z",
@@ -2550,7 +2589,8 @@
   "time": "50 min",
   "title": "Taquitos au poulet effiloché, poivrons, Kiri et cheddar",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-tomates-farcies": {
   "createdAt": "2026-10-31T16:30:01Z",
@@ -2607,7 +2647,8 @@
   "time": "1 h",
   "title": "Tomates farcies à la viande hachée, riz",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-tranche-boeuf": {
   "createdAt": "2026-10-31T16:32:04Z",
@@ -2652,7 +2693,8 @@
   ],
   "time": "25 min",
   "title": "Tranche de bœuf, légumes poêlés",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-tranche-porc": {
   "createdAt": "2026-10-31T16:32:05Z",
@@ -2697,7 +2739,8 @@
   ],
   "time": "25 min",
   "title": "Tranche de porc, légumes et pommes de terre",
-  "type": "weekend"
+  "type": "weekend",
+  "completedBy": "claude"
  },
  "moi-tranches-panees-indus": {
   "createdAt": "2026-10-31T16:30:19Z",
@@ -2737,7 +2780,8 @@
   "time": "20 min",
   "title": "Tranches panées (achetées), légumes et pâtes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-tranches-panees-maison": {
   "createdAt": "2026-10-31T16:30:18Z",
@@ -2793,7 +2837,8 @@
   "time": "35 min",
   "title": "Tranches panées maison, légumes et pâtes",
   "type": "midi",
-  "weekend": true
+  "weekend": true,
+  "completedBy": "claude"
  },
  "moi-tarte-tomates-thon-kzxh": {
   "title": "Tarte tomates thon",
