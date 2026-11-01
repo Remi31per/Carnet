@@ -301,8 +301,8 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
 .mc .when i{font-style:normal;font-weight:600;text-transform:none;letter-spacing:0;color:var(--muted)}
 .mc .t{font-size:1.1rem;font-weight:800;line-height:1.15;margin-top:2px;color:var(--accent)}
 .mc .art{grid-row:1/span 2;grid-column:2;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--press);color:var(--terra)}
-.mc .art .mini{width:34px;height:34px}
-.sv .ib .mini{width:28px;height:28px}
+.mc .art .mini{width:54px;height:54px}
+.sv .ib .mini{width:42px;height:42px}
 :root[data-theme="dark"] .tile.mid .ib3{background:var(--card);color:var(--accent)}
 .week{max-width:100%}
 .mrow{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}
@@ -334,6 +334,36 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
 :root[data-theme="dark"] .sv{border-top-color:rgba(241,232,214,.12)}
 :root[data-theme="dark"] nav.tabs{box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px rgba(241,232,214,.16),0 12px 30px rgba(0,0,0,.5),0 0 18px rgba(238,168,59,.16)}
 :root[data-theme="dark"] header.top{background-image:linear-gradient(180deg,rgba(241,232,214,.09),rgba(241,232,214,0) 50%)}
+
+/* En-tête : coins tous arrondis, bouton Actualiser à cheval sur le bord */
+header.top{clip-path:none;border-radius:30px;overflow:visible;padding:18px 150px 26px 20px;margin-bottom:34px;min-height:170px}
+header.top .iconbtn{top:auto;bottom:-22px;right:26px;width:46px;height:46px;border:4px solid var(--paper);box-shadow:0 6px 14px rgba(0,0,0,.28);z-index:2}
+header.top .iconbtn .ic{width:20px;height:20px}
+/* Onglets Recettes, Actions, Favoris, Ajouter : une grande tuile de couleur par onglet, comme le Menu */
+.tabtile{padding:18px 14px 16px;margin-bottom:10px}
+.tabtile h2{color:inherit;margin-bottom:4px}
+.tabtile .lede{color:inherit;opacity:.85;margin-bottom:14px}
+.tabtile .ibub{background:var(--paper);color:var(--forest);box-shadow:3px 3px 8px rgba(0,0,0,.22),-2px -2px 6px rgba(255,255,255,.3)}
+:root[data-theme="dark"] .tabtile .ibub{background:var(--ivory);color:#134B42}
+.tabtile .ingres,.tabtile .empty{color:inherit}
+.tabtile .empty{border-color:currentColor;opacity:.85}
+.tabtile .empty a{color:inherit!important;font-weight:800}
+.rcard,.promo,.favbox,form.add,.searches,.search{color:var(--ink)}
+.rcard,.promo,.favbox,form.add,.searches{box-shadow:5px 5px 12px rgba(30,40,30,.26),-3px -3px 8px rgba(255,255,255,.16)}
+:root[data-theme="dark"] .rcard,:root[data-theme="dark"] .promo,:root[data-theme="dark"] .favbox,:root[data-theme="dark"] form.add,:root[data-theme="dark"] .searches{box-shadow:var(--shadow)}
+.t-rec{background:#AEBA8A;color:#22302A}
+.t-act{background:#CA763B;color:#FFF6EC}
+.t-fav{background:#EEA83B;color:#2D1E00}
+.t-add{background:#2E6B5E;color:#F1E8D6}
+:root[data-theme="dark"] .t-rec{background:#55644A;color:#F1E8D6}
+:root[data-theme="dark"] .t-act{background:#7E4A2C;color:#F7E8DA}
+:root[data-theme="dark"] .t-fav{background:#7A5A24;color:#FBEFD6}
+:root[data-theme="dark"] .t-add{background:#24584D;color:#F1E8D6}
+.tabtile .search{margin-bottom:14px}
+.tabtile .chips{margin-bottom:14px}
+/* Filtres des recettes : 3 lignes de 2 */
+#recFilter{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#recFilter .chip{justify-content:center;white-space:nowrap;padding:8px 10px}
 </style>
 </head>
 <body>
@@ -389,16 +419,16 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
     <div class="fun" id="funBox" aria-live="polite"></div>
   </section>
 
-  <section id="v-recettes" hidden>
+  <section id="v-recettes" hidden><div class="tile tabtile t-rec">
     <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span>Toutes les recettes</span></h2>
-    <p class="lede">Les vôtres et les suggestions de Claude. Le temps affiché en premier est le temps de préparation, hors cuisson.</p>
+    <p class="lede">Les nôtres et les idées de Claude. Le temps affiché est le temps de préparation, hors cuisson.</p>
     <div class="chips" id="recFilter">
       <button class="chip" data-f="all" aria-pressed="true">Toutes</button>
-      <button class="chip" data-f="moi-midi" aria-pressed="false">Les miennes · midis de semaine</button>
-      <button class="chip" data-f="moi-soir" aria-pressed="false">Les miennes · soirs</button>
-      <button class="chip" data-f="moi-weekend" aria-pressed="false">Les miennes · weekend</button>
-      <button class="chip" data-f="claude" aria-pressed="false">Suggestions de Claude</button>
-      <button class="chip" data-f="rapide" aria-pressed="false">Rapides · 15 min max</button>
+      <button class="chip" data-f="rapide" aria-pressed="false">Rapides · 15 min</button>
+      <button class="chip" data-f="moi-midi" aria-pressed="false">Nôtres · midis</button>
+      <button class="chip" data-f="moi-soir" aria-pressed="false">Nôtres · soirs</button>
+      <button class="chip" data-f="moi-weekend" aria-pressed="false">Nôtres · weekend</button>
+      <button class="chip" data-f="claude" aria-pressed="false">Idées de Claude</button>
     </div>
     <div class="searches">
       <div class="lbl">Par nom de plat</div>
@@ -409,17 +439,19 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
     </div>
     <p class="ingres" id="ingRes" hidden></p>
     <div class="stack" id="recList"></div>
+  </div>
   </section>
 
-  <section id="v-actions" hidden>
+  <section id="v-actions" hidden><div class="tile tabtile t-act">
     <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg></span><span>Actions alimentaires</span></h2>
     <p class="lede">Une sélection des produits utiles pour cuisiner, viande suisse uniquement. Prix relevés pour le canton de Vaud, ils peuvent varier un peu selon la région.</p>
     <div class="chips" id="storeFilter"></div>
     <input class="search" id="promoSearch" type="search" placeholder="Chercher un produit (ex. poulet, courgette)">
     <div class="pgrid" id="promoGrid"></div>
+  </div>
   </section>
 
-  <section id="v-favoris" hidden>
+  <section id="v-favoris" hidden><div class="tile tabtile t-fav">
     <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><span>Nos favoris</span></h2>
     <p class="lede">Les menus mettent ces produits en avant. Ajoutez ou retirez ce que vous voulez.</p>
     <div id="favLists"></div>
@@ -447,9 +479,10 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
       <div class="row" style="margin-top:8px"><button type="button" class="ghost" id="tokenClear" hidden>Retirer le code de ce téléphone</button></div>
       <p class="note">Le code reste uniquement sur ce téléphone. À faire une fois sur chaque iPhone, depuis l'icône de l'écran d'accueil.</p>
     </div>
+  </div>
   </section>
 
-  <section id="v-ajout" hidden>
+  <section id="v-ajout" hidden><div class="tile tabtile t-add">
     <h2><span class="ibub"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span><span id="formTitle">Ajouter une recette</span></h2>
     <p class="lede" id="formLede">Elle rejoint ton carnet et sera reliée automatiquement aux actions de chaque semaine.</p>
     <div class="empty" id="v-ajout-locked" hidden>Pour ajouter ou modifier des recettes, enregistre d'abord le code d'accès dans l'onglet <a href="#favoris" style="color:var(--accent)">Favoris</a>.</div>
@@ -488,6 +521,7 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
         <button class="ghost" type="button" id="f-cancel" hidden>Annuler</button>
       </div>
     </form>
+  </div>
   </section>
 
   <p class="source">Actions relevées sur les prospectus publics de chaque enseigne, mises à jour automatiquement chaque lundi et jeudi par Claude. Vérifiez en magasin : les stocks et quelques prix diffèrent selon la région.</p>
@@ -502,7 +536,7 @@ const STORES = {migros:"Migros", lidl:"Lidl", aldi:"Aldi", denner:"Denner"};
 const TYPES = {midi:"Midi de semaine", soir:"Soir léger", weekend:"Weekend"};
 const DEFAULT_VEG = ["carotte","brocoli","haricots","petits pois","courge butternut","tomate","courgette"];
 const FAVS = [["legumes","Légumes"],["fruits","Fruits"],["viandes","Viandes"]];
-const EMPTY = {"moi-midi":"Aucun plat de midi à toi pour l'instant.","moi-soir":"Aucune recette du soir à toi pour l'instant.","moi-weekend":"Aucune recette du weekend à toi pour l'instant."};
+const EMPTY = {"moi-midi":"Pas encore de plat de midi à nous.","moi-soir":"Pas encore de recette du soir à nous.","moi-weekend":"Pas encore de recette du weekend à nous."};
 const S = {funIdx:null, promos:[], recettes:[], meta:null, menu:null, prefs:null, menuIdx:0, recFilter:"all", store:"all", editing:null};
 const $ = s => document.querySelector(s);
 const ic = n => `<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`;
@@ -618,7 +652,7 @@ function recipeCard(r){
   const open = S.openCards && S.openCards.has(r._id);
   return `<article class="rcard${open?" open":""}" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
     <button type="button" class="rtoggle" aria-expanded="${open}"><h3>${esc(r.title)}</h3><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
-      <span class="mini"><span class="badge ${mine?"moi":"claude"}">${mine?"Ma recette":"Suggestion"}</span>${TYPES[t]?`<span>${TYPES[t]}</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(hasPrep(r)?r.prep+" min":timing(r))}</span>`:""}${hits.length?`<span class="savings" data-hits="${esc(r._id)}">${ic("tag")}${hits.length} en action</span>`:""}</span></button>
+      <span class="mini"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Idée de Claude"}</span>${TYPES[t]?`<span>${TYPES[t]}</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(hasPrep(r)?r.prep+" min":timing(r))}</span>`:""}${hits.length?`<span class="savings" data-hits="${esc(r._id)}">${ic("tag")}${hits.length} en action</span>`:""}</span></button>
     <div class="rbody">
     <div class="meta">${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
     ${(r.tags||[]).length?`<div class="meta">${r.tags.map(esc).join(" · ")}</div>`:""}
@@ -660,9 +694,207 @@ function menuOptions(){
   return [];
 }
 function dur(min){ if (!min) return ""; if (min<60) return `${min} min`; const h=Math.floor(min/60), m=min%60; return `${h} h${m?(" "+String(m).padStart(2,"0")):""}`; }
-// Petite illustration par plat, d'après le titre (puis les ingrédients)
-const DISH_ART = [[/saumon|dorade|poisson|thon/,"m-fish"],[/omelette|oeuf|crepe|pain perdu/,"m-egg"],[/croque|tartine|sandwich|pain|flammekueche|pizza|tarte/,"m-bread"],[/fromage|raclette|fondue|gratin/,"m-cheese"],[/curry|chili|piment|kecap|ayam/,"m-pep"],[/bolognese|tomate|boulettes/,"m-tom"],[/carotte/,"m-car"],[/brocoli/,"m-broc"],[/pates|penne|lasagne|carbonara|nouilles|cornettes/,"m-pasta"],[/veloute|soupe|butternut|courge/,"m-car"]];
-function dishArt(r){ const t=norm(r.title), all=norm(r.title+" "+(r.ingredients||[]).map(i=>i.n).join(" ")); const f=DISH_ART.find(([re])=>re.test(t)) || DISH_ART.find(([re])=>re.test(all)); return `<svg class="mini" viewBox="0 0 60 60" aria-hidden="true"><use href="#${f?f[1]:"m-leaf"}"/></svg>`; }
+/* ---- pastilles des plats : petite illustration composée (contenant + aliment principal + accompagnements), unique par plat ---- */
+const DA = (()=>{
+  const L = 'stroke="#3B2A1A" stroke-opacity=".45" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"';
+  const G = (x,y,r,s) => `<g transform="translate(${x} ${y})${r?` rotate(${r})`:""}">${s}</g>`;
+  const blob = (x,y,rx,ry,c,o=1) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${c}" opacity="${o}"/>`;
+  const box = {
+    plate:()=>`<circle cx="30" cy="30" r="28" fill="#FFFDF8" stroke="#D9CCB2" stroke-width="1.4"/><circle cx="30" cy="30" r="21.5" fill="none" stroke="#EDE3CF" stroke-width="1"/>`,
+    bowl:(f)=>`<circle cx="30" cy="30" r="28" fill="#F3ECDF" stroke="#D6C8AD" stroke-width="1.4"/><circle cx="30" cy="30" r="22" fill="${f}" ${L}/><path d="M13 23 a19 19 0 0 1 10-9" stroke="#fff" stroke-opacity=".55" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+    board:()=>`<rect x="4" y="9" width="52" height="42" rx="10" fill="#C99760" ${L}/><path d="M9 21h42M9 33h42M9 45h42" stroke="#B9854D" stroke-width="1"/>`,
+    pan:()=>`<path d="M48 47 L58 57" stroke="#2E2E2E" stroke-width="5" stroke-linecap="round"/><circle cx="28" cy="28" r="26" fill="#363A38"/><circle cx="28" cy="28" r="21.5" fill="#474C49"/>`,
+    dish:()=>`<ellipse cx="30" cy="31" rx="28" ry="23" fill="#B85C3A" ${L}/><ellipse cx="30" cy="31" rx="23" ry="18" fill="#EFC066"/>`,
+    grill:()=>`<circle cx="30" cy="30" r="28" fill="#2F3331"/><path d="M10 18h40M6 26h48M6 34h48M10 42h40" stroke="#5A605C" stroke-width="2"/>`,
+    none:()=>"" };
+  const M = {
+    chicken:(x,y,c="#E8B465",gl="#B57A33")=>G(x,y,-25,[-8,0,8].map(d=>`<rect x="${d-3.6}" y="-10" width="7.2" height="20" rx="3.6" fill="${c}" ${L}/><path d="M${d-2.2} -4.5l4.4 -2M${d-2.2} 1l4.4 -2M${d-2.2} 6.5l4.4 -2" stroke="${gl}" stroke-width="1.1"/>`).join("")),
+    chunks:(x,y,c="#C98A45")=>[[-6,-4],[3,-6],[7,3],[-2,4],[-8,5]].map(([a,b],i)=>`<rect x="${x+a-3.2}" y="${y+b-3.2}" width="6.4" height="6.4" rx="2" fill="${c}" ${L} transform="rotate(${i*23} ${x+a} ${y+b})"/>`).join(""),
+    drum:(x,y,r=-35)=>G(x,y,r,`<rect x="-2" y="3" width="4" height="11" rx="2" fill="#FFF4E2" ${L}/><circle cx="-2.6" cy="14" r="2.6" fill="#FFF4E2" ${L}/><circle cx="2.6" cy="14" r="2.6" fill="#FFF4E2" ${L}/><ellipse cx="0" cy="-3" rx="8" ry="10" fill="#D58C3B" ${L}/><ellipse cx="-3" cy="-6" rx="2.4" ry="4" fill="#EEB466"/>`),
+    balls:(x,y)=>[[-5,-3],[5,-4],[0,5]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="5.6" fill="#8A4B2A" ${L}/><circle cx="${x+a-1.8}" cy="${y+b-1.8}" r="1.6" fill="#B26C42"/>`).join(""),
+    mince:(x,y)=>blob(x,y,10,8,"#B8432C")+[[-4,-2],[2,-4],[5,2],[-1,3],[-6,3],[3,5]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="1.6" fill="#6E2817"/>`).join(""),
+    sausage:(x,y)=>G(x,y,-18,`<rect x="-13" y="-4.5" width="26" height="9" rx="4.5" fill="#B5652F" ${L}/><path d="M-7 -2.5l2 5M-1 -2.5l2 5M5 -2.5l2 5" stroke="#7E4119" stroke-width="1.1"/>`),
+    steak:(x,y,c="#8E402A",ln="#5B271A")=>G(x,y,-10,`<path d="M-12 -6 Q-4 -13 6 -10 Q14 -6 12 3 Q9 11 -2 10 Q-13 9 -13 0 Z" fill="${c}" ${L}/><path d="M-12 -6 Q-4 -13 6 -10" stroke="#EBD3B4" stroke-width="2.4" fill="none"/><path d="M-7 -4l10 8M-2 -7l11 8M-10 1l9 7" stroke="${ln}" stroke-width="1.4"/>`),
+    salmon:(x,y)=>G(x,y,-12,`<rect x="-11" y="-7" width="22" height="14" rx="3" fill="#F28A5B" ${L}/><path d="M-6 -7l-3 14M-1 -7l-3 14M4 -7l-3 14M9 -7l-3 14" stroke="#FFD9C4" stroke-width="1.2"/><rect x="-11" y="5" width="22" height="2" fill="#B9653F"/>`),
+    fish:(x,y)=>G(x,y,-15,`<path d="M-16 0 Q-4 -11 9 -3 L17 -10 L15 0 L17 10 L9 3 Q-4 11 -16 0Z" fill="#BFC8CA" ${L}/><path d="M-4 -6v12M1 -5.5v11M6 -4.5v9" stroke="#97A3A5" stroke-width="1"/><circle cx="-10" cy="-1.6" r="1.5" fill="#2A2A2A"/>`),
+    tuna:(x,y)=>[[-3,-2],[3,0],[0,4],[-5,3]].map(([a,b])=>blob(x+a,y+b,3,2.2,"#E2A88E")).join(""),
+    omelette:(x,y,top="")=>G(x,y,0,`<path d="M-16 3 A16 14 0 0 1 16 3 Z" fill="#F5CF4C" ${L}/><path d="M-12 3 A12 10 0 0 1 12 3" stroke="#E2B331" stroke-width="1" fill="none"/>${top}`),
+    crepe:(x,y)=>G(x,y,-8,`<path d="M-17 9 L0 -16 L17 9 Z" fill="#EBC27F" ${L}/><path d="M-12 7 L0 -10 L12 7 Z" fill="#F2A79C"/><path d="M-12 7 H12" stroke="#F6D04E" stroke-width="2.4"/><circle cx="-4" cy="-1" r="1.3" fill="#C68B45"/><circle cx="4" cy="-4" r="1.1" fill="#C68B45"/>`),
+    toast:(x,y)=>G(x,y,-8,`<rect x="-14" y="-13" width="28" height="26" rx="7" fill="#D68F45" ${L}/><rect x="-11" y="-10" width="22" height="20" rx="5" fill="#F0BE6E"/><path d="M-11 -3 q4 7 8 0 q4 8 9 0 l5 0 v4 q-11 7 -22 0z" fill="#F7D24E"/>`),
+    salmontoast:(x,y)=>[[-10,0,-10],[9,-1,12]].map(([a,b,r])=>G(x+a,y+b,r,`<rect x="-9" y="-12" width="18" height="24" rx="5" fill="#D9964A" ${L}/><rect x="-7" y="-10" width="14" height="20" rx="3" fill="#F3D3A0"/><path d="M-6 -6 q6 -4 12 0 q-6 5 -12 2z M-6 2 q6 -4 12 0 q-6 5 -12 2z" fill="#F28A5B"/><circle cx="3" cy="7" r="2.6" fill="#BFE0A0" stroke="#4E8B3A" stroke-width="1"/>`)).join(""),
+    baguette:(x,y)=>G(x,y,-22,`<rect x="-19" y="-7" width="38" height="14" rx="7" fill="#D9964A" ${L}/><path d="M-18 1 h36" stroke="#7FB069" stroke-width="2.6"/><path d="M-18 3.5 h36" stroke="#F3A8A0" stroke-width="2.2"/><path d="M-11 -6l4 3M-2 -6l4 3M7 -6l4 3" stroke="#B9772E" stroke-width="1.3"/>`),
+    pizza:(x,y)=>`<circle cx="${x}" cy="${y}" r="26" fill="#E3A85A" ${L}/><circle cx="${x}" cy="${y}" r="21" fill="#C8432C"/>`+[[-8,-7,6,4],[7,-9,5,3.5],[9,6,6,4],[-7,8,5,4],[0,0,5,3]].map(([a,b,rx,ry])=>blob(x+a,y+b,rx,ry,"#F8E6A6")).join("")+[[-1,-11],[12,-1],[-12,1],[3,11],[-5,-1]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="3" fill="#9E2A1E"/>`).join("")+`<path d="M${x+5} ${y-3} q3 -3 5 0 q-3 3 -5 0z" fill="#3E8E5A"/>`,
+    flamm:(x,y)=>G(x,y,-6,`<rect x="-22" y="-14" width="44" height="28" rx="6" fill="#E3B26E" ${L}/><rect x="-18" y="-10" width="36" height="20" rx="4" fill="#FFF3DC"/>`+[[-12,-5],[-3,-6],[7,-4],[13,3],[-9,4],[2,4],[-14,0]].map(([a,b])=>`<rect x="${a}" y="${b}" width="4" height="2.6" rx="1" fill="#E58B86"/>`).join("")),
+    tart:(x,y,top)=>`<circle cx="${x}" cy="${y}" r="24" fill="#D69C55" ${L}/><circle cx="${x}" cy="${y}" r="19.5" fill="#F3D27A"/>`+(top==="tomato"?[[-8,-7],[7,-8],[0,0],[-9,7],[8,7]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="5.4" fill="#D9452C" stroke="#B5301D" stroke-width="1"/><circle cx="${x+a}" cy="${y+b}" r="2" fill="#F07A5E"/>`).join("")+`<circle cx="${x+3}" cy="${y-2}" r="1.6" fill="#E9D7B0"/><circle cx="${x-4}" cy="${y+3}" r="1.4" fill="#E9D7B0"/>`:[[-8,-6],[7,-7],[0,1],[-8,8],[8,7],[0,-12]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="4.4" fill="#4E8B3A"/><circle cx="${x+a}" cy="${y+b}" r="2.6" fill="#CFE3A4"/>`).join("")),
+    lasagna:(x,y)=>G(x,y,0,`<path d="M10 -12 L16 -8 L16 13 L10 9Z" fill="#B4402B" ${L}/><rect x="-16" y="-12" width="26" height="21" rx="2" fill="#F2C45A" ${L}/>`+[["#E9A84A",-12,5],["#C8432C",-7,3],["#F5E7C8",-4,2],["#F2C45A",-2,2],["#C8432C",0,3],["#F5E7C8",3,2],["#C8432C",5,4]].map(([c,yy,h])=>`<rect x="-16" y="${yy}" width="26" height="${h}" fill="${c}"/>`).join("")+`<rect x="-16" y="-12" width="26" height="21" rx="2" fill="none" ${L}/><circle cx="-9" cy="-10" r="1.2" fill="#B9772E"/><circle cx="1" cy="-9.5" r="1.4" fill="#B9772E"/><path d="M-16 -12 L-10 -16 L16 -16 L10 -12Z" fill="#E9A84A" ${L}/>`),
+    gratin:(x,y)=>[[-10,-5],[2,-8],[11,-2],[-4,4],[8,7],[-12,6],[3,2]].map(([a,b],i)=>i%3===0?`<circle cx="${x+a}" cy="${y+b}" r="3.2" fill="#4E8B3A"/>`:blob(x+a,y+b,3.4,2.4,"#B8742E")).join("")+[[-6,-1],[6,-4],[-1,8]].map(([a,b])=>`<rect x="${x+a}" y="${y+b}" width="4" height="2.6" rx="1" fill="#E58B86"/>`).join(""),
+    pasta:(x,y,sauce,s=1,c="#F2C45A")=>[[-6,-4,30],[3,-6,-20],[7,1,60],[-2,2,10],[-7,4,-40],[2,7,20],[6,-2,-70],[-3,-8,80]].map(([a,b,r])=>G(x+a*s,y+b*s,r,`<rect x="${-4.4*s}" y="${-1.9*s}" width="${8.8*s}" height="${3.8*s}" rx="${1.9*s}" fill="${c}" ${L}/><path d="M${-2*s} ${-1.4*s}v${2.8*s}M${1*s} ${-1.4*s}v${2.8*s}" stroke="#D9A23A" stroke-width=".8"/>`)).join("")+(sauce?[[-3,-1,5,3.5],[4,3,4,3],[-4,5,3.5,2.6],[3,-5,3.5,2.6]].map(([a,b,rx,ry])=>blob(x+a*s,y+b*s,rx*s,ry*s,sauce,.92)).join(""):""),
+    noodles:(x,y)=>[0,1,2,3].map(i=>`<path d="M${x-10} ${y-6+i*4} q3 -3 5 0 t5 0 t5 0 t5 0" stroke="#EFD07A" stroke-width="2.4" fill="none" stroke-linecap="round"/>`).join(""),
+    rice:(x,y,c="#FBF8F0",r=9)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" ${L}/>`+[[-4,-3],[2,-5],[5,1],[-1,2],[-5,4],[3,5]].map(([a,b],i)=>`<ellipse cx="${x+a*r/9}" cy="${y+b*r/9}" rx="1.6" ry=".8" fill="#E2DBC8" transform="rotate(${i*40} ${x+a*r/9} ${y+b*r/9})"/>`).join(""),
+    potato:(x,y)=>[[-4,-3,20],[4,-2,-30],[0,5,70]].map(([a,b,r])=>G(x+a,y+b,r,`<path d="M-5 3 Q-5 -5 5 -4 Q4 4 -5 3Z" fill="#E6BE72" ${L}/><path d="M-3 1 Q-1 -3 3 -3" stroke="#C99A4A" stroke-width="1" fill="none"/>`)).join(""),
+    cabbage:(x,y)=>[0,1,2,3,4].map(i=>`<path d="M${x-8} ${y-6+i*3} q8 -4 16 1" stroke="${i%2?"#7A3E7A":"#9C5A9C"}" stroke-width="2.6" fill="none" stroke-linecap="round"/>`).join(""),
+    curry:(x,y)=>M.rice(x-8,y-5,"#FBF8F0",7)+M.chunks(x+4,y+4,"#F3DFB8")+`<path d="M${x-2} ${y+12} q6 -4 12 0" stroke="#FFF8E8" stroke-width="2" fill="none"/>`,
+    chili:(x,y)=>[[-7,-5],[2,-8],[8,-1],[-3,2],[5,6],[-8,6],[0,9]].map(([a,b],i)=>`<ellipse cx="${x+a}" cy="${y+b}" rx="2.8" ry="1.8" fill="#5E1F16" transform="rotate(${i*30} ${x+a} ${y+b})"/>`).join("")+[[-2,-4],[6,3],[-6,1],[3,10]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="1.6" fill="#F2CF45"/>`).join("")+blob(x+6,y-8,4,3,"#FFF8EC"),
+    soup:(x,y)=>`<path d="M${x-9} ${y} q4 -8 9 -2 q5 6 9 -2" stroke="#FFF1DA" stroke-width="2.4" fill="none" stroke-linecap="round"/>`+[[-6,7],[4,8],[8,-6]].map(([a,b])=>blob(x+a,y+b,2.6,2,"#8A5A33")).join("")+`<path d="M${x-3} ${y-10} q2 -3 4 0" stroke="#3E8E5A" stroke-width="2" fill="none"/>`,
+    cereal:(x,y)=>[[-8,-5],[0,-9],[8,-4],[-4,2],[5,4],[-9,6],[1,10]].map(([a,b],i)=>`<path d="M${x+a-3} ${y+b} q3 -3 6 0 q-3 3 -6 0z" fill="#E2B05E" transform="rotate(${i*25} ${x+a} ${y+b})"/>`).join("")+[[3,-2],[-2,7],[9,7]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="2.4" fill="#C8324A"/>`).join(""),
+    risotto:(x,y)=>`<circle cx="${x-4}" cy="${y+2}" r="13" fill="#F3E3B8" ${L}/>`+[[-9,-2],[-3,-5],[1,1],[-7,6],[-1,8],[3,-3]].map(([a,b])=>`<ellipse cx="${x+a}" cy="${y+b}" rx="1.8" ry="1" fill="#E3CC90"/>`).join("")+G(x+10,y-6,20,`<path d="M-7 -4 Q0 -8 7 -4 Q8 4 0 5 Q-8 4 -7 -4Z" fill="#C98F6A" ${L}/><path d="M-4 -3l7 4M-5 1l6 3" stroke="#9E6040" stroke-width="1.1"/>`),
+    casimir:(x,y)=>M.rice(x-6,y,"#FBF8F0",12)+blob(x+6,y+2,11,9,"#EBB43C",.95)+M.chunks(x+7,y+2,"#F3DFB8")+[[2,-7],[12,-3]].map(([a,b])=>`<path d="M${x+a} ${y+b} l3 -4 3 4z" fill="#F7DC54" ${L}/>`).join("")+`<circle cx="${x+11}" cy="${y+9}" r="2.4" fill="#C8324A"/>`,
+    fried:(x,y)=>M.rice(x,y,"#EAD7A0",15)+[[-6,-4],[5,-7],[8,3],[-3,6],[-9,3],[2,0]].map(([a,b],i)=>`<circle cx="${x+a}" cy="${y+b}" r="1.8" fill="${["#6DB34F","#EE8A3C","#C98A45"][i%3]}"/>`).join("")+`<path d="M${x-12} ${y-10} l10 6" stroke="#3E8E5A" stroke-width="2" stroke-linecap="round"/>`,
+    stomato:(x,y)=>[[-7,2],[7,-3]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="8.4" fill="#D9452C" ${L}/><ellipse cx="${x+a-3}" cy="${y+b-3}" rx="2.4" ry="1.6" fill="#fff" opacity=".35"/><ellipse cx="${x+a+1}" cy="${y+b-7}" rx="5" ry="2.4" fill="#C9361F" ${L}/><path d="M${x+a+1} ${y+b-9} l0 -3" stroke="#3E8E5A" stroke-width="2"/>`).join(""),
+    scourgette:(x,y)=>[[-1,-6,-15],[1,6,-15]].map(([a,b,r])=>G(x+a,y+b,r,`<path d="M-15 0 Q-15 -6 0 -6 Q15 -6 15 0 Q15 6 0 6 Q-15 6 -15 0Z" fill="#4E8B3A" ${L}/><path d="M-12 0 Q-12 -3.5 0 -3.5 Q12 -3.5 12 0 Q12 3.5 0 3.5 Q-12 3.5 -12 0Z" fill="#9A5A36"/><circle cx="-5" cy="-1" r="1.6" fill="#F2CF45"/><circle cx="4" cy="1" r="1.8" fill="#F2CF45"/>`)).join(""),
+    sbutternut:(x,y)=>G(x,y,-20,`<path d="M-15 0 Q-15 -11 -3 -9 Q4 -7 9 -9 Q17 -10 17 0 Q17 10 9 9 Q4 7 -3 9 Q-15 11 -15 0Z" fill="#EE9A3C" ${L}/><path d="M-11 0 Q-11 -6 -3 -5 Q4 -4 8 -5 Q13 -6 13 0 Q13 6 8 5 Q4 4 -3 5 Q-11 6 -11 0Z" fill="#8A4B2A"/><circle cx="-4" cy="-1" r="1.8" fill="#F2CF45"/><circle cx="5" cy="1" r="1.8" fill="#F2CF45"/>`),
+    taquitos:(x,y)=>[-7,0,7].map((d,i)=>G(x+d*0.4,y+d,-25,`<rect x="-15" y="-3.5" width="30" height="7" rx="3.5" fill="#E8C07A" ${L}/><ellipse cx="15" cy="0" rx="2" ry="3.5" fill="#C9883A"/><path d="M-8 -3l3 6M0 -3l3 6" stroke="#C9883A" stroke-width="1"/>`)).join("")+blob(x+12,y-12,4,3,"#7DB55A")+blob(x-13,y+12,4,3,"#D9452C"),
+    breaded:(x,y,cheese)=>G(x,y,-12,`<path d="M-14 -4 Q-10 -12 2 -11 Q14 -10 14 0 Q13 10 0 10 Q-13 10 -14 -4Z" fill="#D99A45" ${L}/>`+[[-8,-4],[-2,-7],[5,-6],[9,1],[3,4],[-5,4],[-9,2],[1,-2]].map(([a,b])=>`<circle cx="${a}" cy="${b}" r=".9" fill="#A96A26"/>`).join("")+(cheese?`<path d="M8 2 Q14 3 15 8 Q12 11 9 7Z" fill="#F7D24E" ${L}/><path d="M6 5 h4" stroke="#F2A79C" stroke-width="1.6"/>`:"")),
+    fondue:(x,y)=>`<path d="M${x+12} ${y+10} L${x+26} ${y+26}" stroke="#5A3A22" stroke-width="4" stroke-linecap="round"/><circle cx="${x}" cy="${y}" r="24" fill="#A8392A" ${L}/><circle cx="${x}" cy="${y}" r="19" fill="#F5D776"/><path d="M${x-8} ${y-2} q8 -6 16 0" stroke="#E8BE45" stroke-width="2" fill="none"/><path d="M${x+18} ${y-20} L${x+2} ${y-2}" stroke="#7D8A84" stroke-width="2"/><rect x="${x-3}" y="${y-5}" width="7" height="7" rx="1.5" fill="#E2B05E" ${L}/>`,
+    raclette:(x,y)=>[[-8,-4],[6,-6],[0,7],[-10,8]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="6" fill="#E6BE72" ${L}/>`).join("")+`<path d="M${x-14} ${y-8} Q${x} ${y-14} ${x+12} ${y-8} L${x+10} ${y+2} Q${x+6} ${y+6} ${x+2} ${y+1} Q${x-4} ${y+7} ${x-8} ${y} Q${x-12} ${y+4} ${x-14} ${y-2}Z" fill="#F6D04E" ${L}/><circle cx="${x+13}" cy="${y+9}" r="2.4" fill="#7DB55A"/>`,
+    cheeseboard:(x,y)=>`<path d="M${x-18} ${y+6} L${x+2} ${y-6} L${x+2} ${y+10} L${x-18} ${y+10}Z" fill="#F2CF45" ${L}/><circle cx="${x-10}" cy="${y+6}" r="1.8" fill="#E0B02A"/><circle cx="${x-3}" cy="${y+3}" r="2" fill="#E0B02A"/><rect x="${x+6}" y="${y-12}" width="12" height="15" rx="2" fill="#FFFFFF" ${L}/><rect x="${x+5}" y="${y-14}" width="14" height="4" rx="1.5" fill="#6FA8DC" ${L}/><rect x="${x+4}" y="${y+5}" width="15" height="9" rx="4" fill="#D9964A" ${L}/>`,
+    charcut:(x,y)=>[[-10,-6],[-3,-9],[-12,3],[-4,1]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="5" fill="#B8323A" ${L}/><circle cx="${x+a-1.5}" cy="${y+b-1}" r=".9" fill="#F3D6D6"/><circle cx="${x+a+1.6}" cy="${y+b+1.2}" r=".8" fill="#F3D6D6"/>`).join("")+`<path d="M${x+3} ${y-10} q8 -2 14 4 q-6 8 -14 4z" fill="#F2A79C" ${L}/><rect x="${x+3}" y="${y+3}" width="15" height="9" rx="4" fill="#D9964A" ${L}/><ellipse cx="${x-6}" cy="${y+11}" rx="5" ry="2" fill="#6E8B3D" ${L}/>`,
+    painperdu:(x,y)=>[[-7,-3,-12],[7,3,14]].map(([a,b,r])=>G(x+a,y+b,r,`<rect x="-9" y="-11" width="18" height="22" rx="5" fill="#C9822F" ${L}/><rect x="-7" y="-9" width="14" height="18" rx="3" fill="#E9B05A"/><circle cx="-2" cy="-3" r=".8" fill="#fff"/><circle cx="3" cy="2" r=".8" fill="#fff"/><circle cx="-1" cy="5" r=".8" fill="#fff"/>`)).join("")+[[-12,10],[12,-11],[15,-6]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="2.6" fill="#C8324A"/>`).join(""),
+    applecake:(x,y)=>G(x,y,0,`<path d="M-15 10 L0 -16 L15 10Z" fill="#E7B76A" ${L}/><path d="M-15 10 L15 10 L15 14 L-15 14Z" fill="#C98A3E" ${L}/>`+[-8,-2,4].map((d,i)=>`<path d="M${d-3} ${6-i*6} q4 -5 8 0" stroke="#F3E3A0" stroke-width="2.6" fill="none"/><path d="M${d-3} ${6-i*6} q4 -5 8 0" stroke="#C8432C" stroke-width=".8" fill="none"/>`).join("")),
+    grillmix:(x,y)=>M.sausage(x-4,y-8)+G(x+2,y+7,-15,`<path d="M-18 0 H18" stroke="#9A8C7A" stroke-width="1.4"/>`+[["#8E402A",-12],["#E5553B",-5],["#7FB069",2],["#8E402A",9]].map(([c,d])=>`<rect x="${d-3}" y="-4" width="6" height="8" rx="2" fill="${c}" ${L}/>`).join(""))
+  };
+  const S = { // accompagnements (petites quantités)
+    pasta:(x,y,c)=>M.pasta(x,y,c,.9), rice:(x,y)=>M.rice(x,y), potato:(x,y)=>M.potato(x,y), noodles:(x,y)=>M.noodles(x,y), cabbage:(x,y)=>M.cabbage(x,y),
+    carrot:(x,y)=>[[-4,-3],[3,-4],[0,3],[5,3],[-5,4]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="3" fill="#EE8A3C" ${L}/><circle cx="${x+a}" cy="${y+b}" r="1.2" fill="#F6B26B"/>`).join(""),
+    broccoli:(x,y)=>[[-3,0],[4,2]].map(([a,b])=>`<rect x="${x+a-1.2}" y="${y+b}" width="2.4" height="5" fill="#8BC07A"/><circle cx="${x+a-2}" cy="${y+b-1}" r="3" fill="#3E8E5A"/><circle cx="${x+a+2}" cy="${y+b-1}" r="3" fill="#3E8E5A"/><circle cx="${x+a}" cy="${y+b-3.4}" r="3" fill="#4C9B62"/>`).join(""),
+    peas:(x,y)=>[[-4,-2],[0,-4],[4,-1],[-2,2],[2,3],[-5,3],[5,4],[0,0]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="1.9" fill="#6DB34F" stroke="#4E8B3A" stroke-width=".6"/>`).join(""),
+    beans:(x,y)=>[-5,-2,1,4,7].map((d,i)=>G(x+d-1,y+(i%2?2:-1),60+i*8,`<rect x="-6" y="-1.2" width="12" height="2.4" rx="1.2" fill="#5E9E45"/>`)).join(""),
+    courgette:(x,y)=>[[-3,-3],[4,-1],[0,4]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="3.6" fill="#4E8B3A"/><circle cx="${x+a}" cy="${y+b}" r="2.4" fill="#CFE3A4"/>`).join(""),
+    spinach:(x,y)=>[[-3,-2,-30],[3,-3,20],[0,3,70]].map(([a,b,r])=>G(x+a,y+b,r,`<path d="M-5 0 Q0 -5 5 0 Q0 5 -5 0Z" fill="#2E6E45"/>`)).join(""),
+    cherry:(x,y)=>[[-3,-2],[4,1],[-1,5]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="3.6" fill="#D9452C" ${L}/><circle cx="${x+a-1}" cy="${y+b-1.2}" r="1" fill="#fff" opacity=".5"/>`).join(""),
+    mushroom:(x,y)=>[[-4,-1],[4,2]].map(([a,b])=>`<rect x="${x+a-1.4}" y="${y+b}" width="2.8" height="4" fill="#E9D7B5"/><path d="M${x+a-4.5} ${y+b+.5} A4.5 4 0 0 1 ${x+a+4.5} ${y+b+.5}Z" fill="#9C6B43" ${L}/>`).join(""),
+    lemon:(x,y)=>`<circle cx="${x}" cy="${y}" r="5" fill="#F2CF45" ${L}/><circle cx="${x}" cy="${y}" r="3.6" fill="#FBE79A"/><path d="M${x} ${y-3.4}v6.8M${x-3.4} ${y}h6.8M${x-2.4} ${y-2.4}l4.8 4.8M${x+2.4} ${y-2.4}l-4.8 4.8" stroke="#F2CF45" stroke-width=".8"/>`,
+    cashew:(x,y)=>[[-3,-2,0],[3,0,60],[0,4,120]].map(([a,b,r])=>G(x+a,y+b,r,`<path d="M-3 -1 Q0 -4 3 -1 Q1 1 0 0 Q-1 1 -3 -1Z" fill="#E9CFA0" ${L}/>`)).join(""),
+    mustard:(x,y)=>[[-3,-1],[0,-3],[3,0],[-1,2],[2,3]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="1" fill="#A8761E"/>`).join(""),
+    herbs:(x,y)=>[[-3,0,-30],[2,-2,30],[1,3,80]].map(([a,b,r])=>G(x+a,y+b,r,`<path d="M-2.5 0 Q0 -2.5 2.5 0 Q0 2.5 -2.5 0Z" fill="#3E8E5A"/>`)).join(""),
+    sesame:(x,y)=>[[-3,-1],[0,-3],[3,-1],[-1,2],[2,2],[4,3]].map(([a,b])=>`<ellipse cx="${x+a}" cy="${y+b}" rx="1" ry=".6" fill="#FFF6DE"/>`).join(""),
+    lardons:(x,y)=>[[-4,-2],[2,-4],[4,2],[-2,3]].map(([a,b])=>`<rect x="${x+a}" y="${y+b}" width="3.6" height="2.4" rx="1" fill="#E58B86" ${L}/>`).join(""),
+    tuna:(x,y)=>M.tuna(x,y)
+  };
+  // Une recette = contenant + aliment principal + accompagnements ; chaque plat a sa propre composition
+  const SPEC = {
+    "c-ayam-kecap":{side:["rice"],main:["chicken","#A55A26","#6E3512"],g:["sesame","herbs"]},
+    "c-dorade-four":{main:["fish"],side:["cherry"],g:["lemon"]},
+    "c-omelette-courgettes":{box:"pan",main:["omelette",'<circle cx="-6" cy="-3" r="3" fill="#4E8B3A"/><circle cx="-6" cy="-3" r="1.8" fill="#CFE3A4"/><circle cx="3" cy="-6" r="3" fill="#4E8B3A"/><circle cx="3" cy="-6" r="1.8" fill="#CFE3A4"/><circle cx="8" cy="-1" r="2.4" fill="#3E8E5A"/>']},
+    "c-penne-pesto-poulet":{side:[["pasta","#5E9B46"]],main:["chicken"],g:["cherry"]},
+    "c-poulet-chou-rouge":{side:["cabbage"],main:["drum"]},
+    "c-saumon-riz":{side:["rice"],main:["salmon"],g:["spinach"]},
+    "c-tartines-saumon":{box:"board",main:["salmontoast"],center:true},
+    "c-veloute-butternut":{box:"bowl",fill:"#EE9A3C",main:["soup"],center:true},
+    "moi-bol-cereales":{box:"bowl",fill:"#FBF6EC",main:["cereal"],center:true},
+    "moi-bolognese":{main:["pasta",null,1.5],over:"mince",center:true},
+    "moi-boulettes":{side:["pasta"],main:["balls"],sauce:"#C8432C",g:["courgette"]},
+    "moi-butternut-farcie":{side:["rice"],main:["sbutternut"]},
+    "moi-carbonara":{main:["pasta","#FFF4DA",1.5],g:["lardons","peas"],center:true},
+    "moi-chili":{box:"bowl",fill:"#A8361F",main:["chili"],center:true},
+    "moi-cordons-bleus":{side:["pasta"],main:["breaded",true],g:["peas"]},
+    "moi-courgettes-farcies":{side:["rice"],main:["scourgette"]},
+    "moi-crepes":{main:["crepe"],center:true},
+    "moi-croque":{main:["toast"],g:["cherry"],center:true},
+    "moi-flammekueche":{box:"board",main:["flamm"],center:true},
+    "moi-fondue":{box:"none",main:["fondue"],center:true},
+    "moi-gateau-courgette":{box:"none",main:["tart","courgette"],center:true},
+    "moi-gateau-pommes":{main:["applecake"],center:true},
+    "moi-gratin-pates":{box:"dish",main:["gratin"],center:true},
+    "moi-grillades":{box:"grill",main:["grillmix"],center:true},
+    "moi-lasagne":{main:["lasagna"],center:true},
+    "moi-omelette":{box:"pan",main:["omelette",'<circle cx="-6" cy="-3" r="2.8" fill="#D9452C"/><rect x="0" y="-8" width="5" height="3" rx="1" fill="#F2A79C"/><path d="M5 -3 a3 2.6 0 0 1 6 0z" fill="#9C6B43"/>']},
+    "moi-pain-fromage-yaourt":{box:"board",main:["cheeseboard"],center:true},
+    "moi-pain-perdu":{main:["painperdu"],center:true},
+    "moi-pain-viande-froide":{box:"board",main:["charcut"],center:true},
+    "moi-pates-thon":{main:["pasta","#C8432C",1.5],g:["tuna","beans"],center:true},
+    "moi-pilons-four":{side:["carrot","courgette"],main:["drum2"]},
+    "moi-pizza":{box:"none",main:["pizza"],center:true},
+    "moi-poulet-cajou":{side:["noodles"],main:["chunks","#C98A45"],g:["cashew","herbs"]},
+    "moi-poulet-cantadou":{side:["pasta"],main:["chicken"],sauce:"#FFF6E4",g:["herbs"]},
+    "moi-poulet-champignons":{side:["pasta"],main:["chicken"],sauce:"#F1E2C4",g:["mushroom"]},
+    "moi-poulet-citron":{side:["carrot","pasta"],main:["chicken"],g:["lemon"]},
+    "moi-poulet-curry-coco":{box:"bowl",fill:"#E9A23B",main:["curry"],center:true},
+    "moi-poulet-moutarde":{side:["pasta","broccoli"],main:["chicken"],sauce:"#F1D27A",g:["mustard"]},
+    "moi-poulet-sauce-tomate":{side:["beans","pasta"],main:["chicken"],sauce:"#C8432C"},
+    "moi-raclette":{main:["raclette"],center:true},
+    "moi-risotto-viande":{main:["risotto"],center:true},
+    "moi-riz-casimir":{main:["casimir"],center:true},
+    "moi-riz-saute-poulet":{box:"bowl",fill:"#5A4632",main:["fried"],center:true},
+    "moi-sandwich":{box:"board",main:["baguette"],center:true},
+    "moi-saucisse-rotir":{side:["pasta"],main:["sausage"],sauce:"#8A5A2E"},
+    "moi-tacquitos":{main:["taquitos"],center:true},
+    "moi-tomates-farcies":{side:["rice"],main:["stomato"]},
+    "moi-tranche-boeuf":{side:["beans","potato"],main:["steak"]},
+    "moi-tranche-porc":{side:["potato","broccoli"],main:["steak","#D29A74","#9E6040"]},
+    "moi-tranches-panees-indus":{side:["pasta","carrot"],main:["breaded"]},
+    "moi-tranches-panees-maison":{side:["beans"],main:["breaded"],g:["lemon"]}
+  };
+  M.drum2 = (x,y)=>M.drum(x-3,y-2,-40)+M.drum(x+5,y+3,-10);
+  // Plats ajoutés plus tard : composition déduite du titre et des ingrédients
+  function guess(r){
+    const t = norm(r.title), all = norm(r.title+" "+(r.ingredients||[]).map(i=>i.n).join(" "));
+    const has = re => re.test(t), any = re => re.test(all);
+    const sp = {};
+    if (has(/lasagne/)) sp.main=["lasagna"];
+    else if (has(/pizza/)) Object.assign(sp,{box:"none",main:["pizza"]});
+    else if (has(/tarte|quiche|gateau/)) Object.assign(sp,{box:"none",main:["tart",any(/tomate/)?"tomato":"courgette"]});
+    else if (has(/soupe|veloute/)) Object.assign(sp,{box:"bowl",fill:any(/brocoli|epinard|courgette/)?"#7DA65A":"#EE9A3C",main:["soup"]});
+    else if (has(/curry/)) Object.assign(sp,{box:"bowl",fill:"#E9A23B",main:["curry"]});
+    else if (has(/chili/)) Object.assign(sp,{box:"bowl",fill:"#A8361F",main:["chili"]});
+    else if (has(/omelette/)) Object.assign(sp,{box:"pan",main:["omelette"]});
+    else if (has(/crepe/)) sp.main=["crepe"];
+    else if (has(/croque|tartine/)) sp.main=["toast"];
+    else if (has(/sandwich|wrap|burger/)) Object.assign(sp,{box:"board",main:["baguette"]});
+    else if (has(/gratin/)) Object.assign(sp,{box:"dish",main:["gratin"]});
+    else if (has(/risotto/)) sp.main=["risotto"];
+    else if (has(/riz saute|nasi|fried rice/)) Object.assign(sp,{box:"bowl",fill:"#5A4632",main:["fried"]});
+    else if (has(/farci/)) sp.main=[any(/tomate/)?"stomato":any(/butternut|courge/)?"sbutternut":"scourgette"];
+    else if (has(/saumon/)) sp.main=["salmon"];
+    else if (has(/dorade|poisson|cabillaud|truite/)) sp.main=["fish"];
+    else if (has(/boulette/)) sp.main=["balls"];
+    else if (has(/pane|cordon/)) sp.main=["breaded",has(/cordon/)];
+    else if (has(/saucisse/)) sp.main=["sausage"];
+    else if (has(/cuisse|pilon|aile/)) sp.main=["drum"];
+    else if (has(/poulet|dinde/)) sp.main=["chicken"];
+    else if (has(/boeuf|steak|entrecote/)) sp.main=["steak"];
+    else if (has(/porc|cotelette/)) sp.main=["steak","#D29A74","#9E6040"];
+    else if (has(/hache|bolognese/)) Object.assign(sp,{main:["pasta",null,1.5],over:"mince"});
+    else if (has(/pates|penne|fusilli|cornette|nouille/)) sp.main=["pasta",any(/tomate/)?"#C8432C":any(/creme/)?"#FFF4DA":null,1.5];
+    else sp.main=["rice"];
+    const big = ["lasagna","pizza","tart","soup","curry","chili","omelette","crepe","toast","baguette","gratin","risotto","fried","pasta"].includes(sp.main[0]);
+    if (big) sp.center = true;
+    else { sp.side=[any(/\bpates|penne|fusilli|cornette|nouille/)?"pasta":any(/pomme de terre|patate/)?"potato":"rice"]; }
+    const veg = [["carotte","carrot"],["brocoli","broccoli"],["haricot","beans"],["petits pois","peas"],["courgette","courgette"],["tomate","cherry"],["epinard","spinach"],["champignon","mushroom"]].find(([k])=>all.includes(k));
+    if (veg) (sp.g ||= []).push(veg[1]);
+    return sp;
+  }
+  function draw(sp){
+    const k = sp.box || "plate";
+    let out = k==="bowl" ? box.bowl(sp.fill||"#F3E3B8") : box[k]();
+    const [m, ...args] = sp.main;
+    if (sp.center || !sp.side){
+      const cx = k==="pan" ? 28 : 30, cy = k==="pan" ? 28 : 30;
+      out += M[m](cx, cy, ...args);
+      if (sp.over) out += M[sp.over](cx, cy-1);
+      (sp.g||[]).forEach((n,i)=>{ out += S[n](i ? 42 : 18, i ? 42 : 43); });
+    } else {
+      const sides = sp.side, pos = sides.length>1 ? [[19,21],[18,40]] : [[19,31]];
+      sides.forEach((n,i)=>{ const [a,b] = pos[i], [nm, ...ar] = Array.isArray(n) ? n : [n]; out += S[nm](a, b, ...ar); });
+      if (sp.sauce) out += blob(38,30,13,11,sp.sauce,.95);
+      out += M[m](38, 29, ...args);
+      (sp.g||[]).forEach((n,i)=>{ out += S[n](i ? 43 : 37, i ? 17 : 45); });
+    }
+    return out;
+  }
+  return function(r, used){
+    let sp = SPEC[r._id] ? {...SPEC[r._id]} : guess(r);
+    let sig = JSON.stringify(sp);
+    // jamais deux pastilles identiques dans la même vue
+    const extras = ["herbs","lemon","cherry","peas","sesame","carrot"];
+    let n = 0;
+    while (used && used.has(sig) && n < extras.length){ sp = {...sp, g:[...(sp.g||[]).slice(0,1), extras[n++]]}; sig = JSON.stringify(sp); }
+    if (used) used.add(sig);
+    return `<svg class="mini" viewBox="0 0 60 60" aria-hidden="true">${draw(sp)}</svg>`;
+  };
+})();
+function dishArt(r){ return DA(r, S.artUsed); }
+
 function slotHtml(s, kind){
   const r = S.recettes.find(x=>x._id===s.recipeId);
   if (!r) return kind==="midi"
@@ -689,6 +921,7 @@ function renderMenu(){
   if (S.menuIdx >= opts.length) S.menuIdx = 0;
   $("#menuPick").innerHTML = opts.map((o,i)=>`<button type="button" data-menu="${i}" aria-pressed="${i===S.menuIdx}"><b>${esc(o.nom||"Menu "+(i+1))}</b>${o.theme?`<span>${esc(o.theme)}</span>`:""}</button>`).join("");
   const o = opts[S.menuIdx];
+  S.artUsed = new Set();
   el.innerHTML = `<div class="tile mid"><div class="lbl"><span class="ib3">${ic("box")}</span>Midis · tupperwares<small>2 pers. × 2 jours</small></div>${(o.midi||[]).map(s=>slotHtml(s,"midi")).join("")}</div>
     <div class="tile eve"><div class="lbl"><span class="ib3">${ic("moon")}</span>Soirs rapides<small>pour 2</small></div>${(o.soir||[]).map(s=>slotHtml(s,"soir")).join("")}</div>
     ${o.note?`<p class="note" style="margin:-6px 6px 14px">${esc(o.note)}</p>`:""}`;
@@ -920,7 +1153,7 @@ $("#recSearch").addEventListener("input", renderRecipes);
 $("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01h";
+const APP_VERSION = "2026-11-01j";
 function themeMode(){ return store.get("themeMode") || "auto"; }
 function applyTheme(){
   const mode = themeMode(), h = new Date().getHours();
