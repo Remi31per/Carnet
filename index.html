@@ -381,6 +381,9 @@ header.top .iconbtn{bottom:-1px}
 /* Cœur + : ajouter une idée de Claude à nos recettes */
 .favadd{display:inline-grid;place-items:center;width:30px;height:30px;padding:0;border:0;border-radius:50%;background:var(--must);color:var(--must-ink);box-shadow:0 2px 0 rgba(60,45,20,.18),0 3px 6px rgba(60,45,20,.18);cursor:pointer;flex:0 0 auto}
 .favadd .ic{width:17px;height:17px;stroke-width:2.2}
+.favadd.on{background:#E5553B;color:#fff}
+.favadd.on .ic{fill:#fff;stroke:#E5553B}
+.adoptwide.on{background:var(--chip);color:var(--ink)}
 .favadd.inline{width:26px;height:26px}.favadd.inline .ic{width:15px;height:15px}
 .rcard{position:relative}
 .favadd.oncard{position:absolute;top:11px;right:12px;z-index:1}
@@ -662,7 +665,14 @@ function matchPromos(ingName){
 }
 function recipeHits(r){ const res=[]; (r.ingredients||[]).forEach(i=>{ const m=matchPromos(i.n); if(m.length) res.push({ing:i,promo:m[0],all:m}); }); return res; }
 function hitHtml(p, ingName){return `<button type="button" class="hit" data-promo="${esc(p._id)}" data-ing="${esc(ingName||"")}" aria-label="Voir l'action ${esc(p.name)}"><span class="dot d-${esc(p.store)}"></span>${esc(STORES[p.store]||p.store)} ${p.price!=null?chf(p.price):""}${p.pct?` · −${p.pct} %`:""}</button>`}
-function adoptBtn(r, cls=""){ return r.source==="claude" ? `<button type="button" class="favadd ${cls}" data-adopt="${esc(r._id)}" aria-label="Ajouter « ${esc(r.title)} » à nos recettes" title="Ajouter à nos recettes">${ic("heartplus")}</button>` : ""; }
+// Une idée gardée peut être retirée tant qu'on est dans la même semaine d'idées (jusqu'au renouvellement du jeudi)
+function sinceThursday(){ const d = new Date(); d.setHours(0,0,0,0); d.setDate(d.getDate() - ((d.getDay()+3)%7)); return d; }
+const undoable = r => r.source==="moi" && r.adoptedFrom==="claude" && r.adoptedAt && new Date(r.adoptedAt) >= sinceThursday();
+function adoptBtn(r, cls=""){
+  if (r.source==="claude") return `<button type="button" class="favadd ${cls}" data-adopt="${esc(r._id)}" aria-pressed="false" aria-label="Ajouter « ${esc(r.title)} » à nos recettes" title="Ajouter à nos recettes">${ic("heartplus")}</button>`;
+  if (undoable(r)) return `<button type="button" class="favadd on ${cls}" data-adopt="${esc(r._id)}" aria-pressed="true" aria-label="Retirer « ${esc(r.title)} » de nos recettes" title="Retirer de nos recettes">${ic("heartplus")}</button>`;
+  return "";
+}
 function savingsBtn(r, n){ return n ? `<button type="button" class="savings" data-hits="${esc(r._id)}" aria-label="Voir les ${n} actions de ce plat">${ic("tag")}${n} en action</button>` : ""; }
 const hasPrep = r => typeof r.prep === "number";
 function timing(r){ if (hasPrep(r)) return `Prép. ${r.prep} min${r.cuisson?` · cuisson ${r.cuisson} min`:""}`; return r.time || ""; }
@@ -680,7 +690,7 @@ function recipeCard(r){
   const insp = r.inspiration && /^https:\/\//.test(r.inspiration.url||"") ? `<p class="note">Inspiré de <a href="${esc(r.inspiration.url)}" target="_blank" rel="noopener">${esc(r.inspiration.nom||"la recette d'origine")}</a></p>` : "";
   const open = S.openCards && S.openCards.has(r._id);
   return `<article class="rcard${open?" open":""}" data-id="${esc(r._id)}" id="r-${esc(r._id)}">
-    ${adoptBtn(r,"oncard")}<button type="button" class="rtoggle${r.source==="claude"?" hasfav":""}" aria-expanded="${open}"><h3>${esc(r.title)}</h3><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+    ${adoptBtn(r,"oncard")}<button type="button" class="rtoggle${adoptBtn(r)?" hasfav":""}" aria-expanded="${open}"><h3>${esc(r.title)}</h3><svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
       <span class="mini"><span class="badge ${mine?"moi":"claude"}">${mine?"Notre plat":"Idée de Claude"}</span>${TYPES[t]?`<span>${TYPES[t]}</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(hasPrep(r)?r.prep+" min":timing(r))}</span>`:""}${hits.length?`<span class="savings" data-hits="${esc(r._id)}">${ic("tag")}${hits.length} en action</span>`:""}</span></button>
     <div class="rbody">
     <div class="meta">${TYPES[t]?`<span><b>${TYPES[t]}</b>${r.weekend&&t!=="weekend"?" · aussi le weekend":""}</span>`:""}${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${r.saison&&r.saison.label?`<span>Saison : ${esc(r.saison.label)}</span>`:""}</div>
@@ -1167,7 +1177,7 @@ function showRecipe(id){
   const mine = r.source==="moi", hits = recipeHits(r), t = typeOf(r);
   const ings = (r.ingredients||[]).map(i=>{ const m=matchPromos(i.n); return `<li><span class="box" aria-hidden="true"></span><span class="q">${esc(i.q)}</span><span class="n">${esc(i.n)}</span>${m.length?hitHtml(m[0],i.n):""}</li>`; }).join("");
   const steps = (r.steps||[]).map(x=>`<li>${esc(x)}</li>`).join("");
-  openSheet(`<div class="kicker">${mine?"Notre plat":"Idée de Claude"}${TYPES[t]?` · ${TYPES[t]}`:""}</div>${r.source==="claude"?`<button type="button" class="adoptwide" data-adopt="${esc(r._id)}">${ic("heartplus")} Ajouter à nos recettes</button>`:""}
+  openSheet(`<div class="kicker">${mine?"Notre plat":"Idée de Claude"}${TYPES[t]?` · ${TYPES[t]}`:""}</div>${r.source==="claude"?`<button type="button" class="adoptwide" data-adopt="${esc(r._id)}">${ic("heartplus")} Ajouter à nos recettes</button>`:undoable(r)?`<button type="button" class="adoptwide on" data-adopt="${esc(r._id)}">${ic("heartplus")} Gardée dans nos recettes · retirer</button>`:""}
     <h2 id="sheetTitle">${esc(r.title)}</h2>
     <div class="meta">${r.servings?`<span>${esc(r.servings)} portions</span>`:""}${timing(r)?`<span class="timing">${ic("clock")}${esc(timing(r))}</span>`:""}${savingsBtn(r,hits.length)}</div>
     ${r.reheat?`<p class="note">Au micro-ondes : ${esc(r.reheat)}</p>`:""}
@@ -1177,15 +1187,22 @@ function showRecipe(id){
     ${r.notes?`<p class="note">${esc(r.notes)}</p>`:""}
     <div class="row" style="margin-top:16px"><button type="button" data-goto="${esc(r._id)}">Voir dans Recettes</button></div>`);
 }
-// Cœur + : une idée de Claude devient une de nos recettes (elle ne sera plus retirée chaque semaine)
+// Cœur + : une idée de Claude devient une de nos recettes ; un second toucher (la même semaine) annule
 async function adoptRecipe(id, btn){
-  const r = S.recettes.find(x=>x._id===id); if (!r || r.source!=="claude") return;
+  const r = S.recettes.find(x=>x._id===id); if (!r) return;
+  const undo = undoable(r);
+  if (!undo && r.source!=="claude") return;
   if (!canWrite()){ toast("Enregistre d'abord le code d'accès dans Favoris."); return; }
   btn.disabled = true;
   try{
-    const all = await writeFile("recettes.json", cur => { const n = {...(cur||{})}; if (n[id]) n[id] = {...n[id], source:"moi", adoptedFrom:"claude", adoptedAt:new Date().toISOString()}; return n; }, `App : ${r.title} ajoutée à nos recettes`);
+    const all = await writeFile("recettes.json", cur => {
+      const n = {...(cur||{})}; if (!n[id]) return n;
+      if (undo){ const {adoptedFrom, adoptedAt, ...rest} = n[id]; n[id] = {...rest, source:"claude"}; }
+      else n[id] = {...n[id], source:"moi", adoptedFrom:"claude", adoptedAt:new Date().toISOString()};
+      return n;
+    }, undo ? `App : ${r.title} retirée de nos recettes` : `App : ${r.title} ajoutée à nos recettes`);
     S.recettes = Object.entries(all).map(([k,v])=>({_id:k,...v}));
-    renderAll(); toast("Ajoutée à nos recettes ♥");
+    renderAll(); toast(undo ? "Retirée de nos recettes" : "Ajoutée à nos recettes ♥");
     if (!$("#sheetBack").hidden) showRecipe(id);
   }catch(err){ btn.disabled = false; writeError(err); }
 }
@@ -1244,7 +1261,7 @@ $("#recSearch").addEventListener("input", renderRecipes);
 $("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01n";
+const APP_VERSION = "2026-11-01o";
 function themeMode(){ return store.get("themeMode") || "auto"; }
 function applyTheme(){
   const mode = themeMode(), h = new Date().getHours();
