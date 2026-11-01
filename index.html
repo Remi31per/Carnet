@@ -8,7 +8,7 @@
 <script>/* Thème : automatique par défaut (nuit de 19 h à 7 h), ou nuit / jour fixe (Favoris → Affichage) */
 (function(){var m="auto";try{m=localStorage.getItem("themeMode")||"auto"}catch(e){}var h=new Date().getHours();
 var t=m==="auto"?((h>=19||h<7)?"dark":"light"):m;document.documentElement.setAttribute("data-theme",t);
-document.write('<meta name="theme-color" id="themeColor" content="'+(t==="light"?"#EAE3D3":"#1F2A25")+'">');})();</script>
+document.write('<meta name="theme-color" id="themeColor" content="'+(t==="light"?"#EAE3D3":"#24302A")+'">');})();</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet">
@@ -49,10 +49,14 @@ img{max-width:100%}
 }
 /* Mode nuit (par défaut), en tons plus clairs qu'avant */
 :root[data-theme="dark"]{
-  --paper:#1F2A25; --card:#2A3631; --ink:#F1E8D6; --muted:#B7B5A6; --line:#3A4740;
+  --paper:#24302A; --card:#313D37; --ink:#F1E8D6; --muted:#BDBBAC; --line:#4A5850;
   --accent:#AEBA8A; --accent-soft:#33422F; --lime-soft:#33422F; --lime-ink:#D3DDB4;
-  --tile-mid:#3F4E43; --tile-mid-ink:#EEF1E6; --chip:#34413B;
-  --hi:rgba(255,255,255,.05); --lo:rgba(0,0,0,.45);
+  --tile-mid:#4A5B4F; --tile-mid-ink:#EEF1E6; --chip:#34413B;
+  --hi:rgba(255,255,255,.07); --lo:rgba(0,0,0,.42);
+  /* Contours éclairés : liseré clair en haut (comme une lumière venant d'en haut) + fin contour ivoire + ombre portée */
+  --shadow:inset 0 1px 0 rgba(255,255,255,.16),0 0 0 1px rgba(241,232,214,.13),0 -3px 16px rgba(241,232,214,.07),0 10px 22px rgba(0,0,0,.38);
+  --glow:inset 0 1px 0 rgba(255,255,255,.14),0 0 0 1px rgba(241,232,214,.12),0 4px 10px rgba(0,0,0,.35);
+  --press:inset 3px 3px 8px rgba(0,0,0,.42),inset -1px -1px 0 rgba(255,255,255,.07),0 0 0 1px rgba(241,232,214,.11);
   --hero-a:#134B42; --hero-b:#134B42; --hero-hi:#AEBA8A;
   --bar-bg:#134B42; --bar-ink:#C9D3BE; --bar-on:#EEA83B; --bar-on-ink:#2D1E00;
   --tag:#D98466; --tag-ink:#2A140C; --danger:#F09A8C;
@@ -323,6 +327,13 @@ nav.tabs .count{background:var(--terra);border-color:var(--bar-bg)}
 .fun b{display:block;color:var(--accent);font-size:.95rem;line-height:1.25}
 .fun span{display:block;font-size:.8rem;color:var(--muted);margin-top:3px}
 @media (prefers-reduced-motion:no-preference){.fun svg{animation:funin .5s ease-out}@keyframes funin{from{transform:translateY(8px) rotate(-3deg);opacity:0}to{transform:none;opacity:1}}}
+
+/* Mode nuit : blocs éclairés par le haut, contours plus visibles */
+:root[data-theme="dark"] .tile,:root[data-theme="dark"] .rcard,:root[data-theme="dark"] .promo,:root[data-theme="dark"] .favbox,:root[data-theme="dark"] form.add,:root[data-theme="dark"] .searches,:root[data-theme="dark"] .fun,:root[data-theme="dark"] .mc,:root[data-theme="dark"] .sw button[aria-pressed="true"]{background-image:linear-gradient(180deg,rgba(241,232,214,.07),rgba(241,232,214,0) 45%)}
+:root[data-theme="dark"] .mc{box-shadow:var(--shadow)}
+:root[data-theme="dark"] .sv{border-top-color:rgba(241,232,214,.12)}
+:root[data-theme="dark"] nav.tabs{box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px rgba(241,232,214,.16),0 12px 30px rgba(0,0,0,.5),0 0 18px rgba(238,168,59,.16)}
+:root[data-theme="dark"] header.top{background-image:linear-gradient(180deg,rgba(241,232,214,.09),rgba(241,232,214,0) 50%)}
 </style>
 </head>
 <body>
@@ -564,7 +575,7 @@ async function loadAll(silent){
     S.recettes = Object.entries(rec||{}).map(([id,v])=>({_id:id,...v}));
     S.promos = Object.entries(pro||{}).map(([id,v])=>({_id:id,...v}));
     S.menu = men; S.prefs = pref; S.meta = sem;
-    setStatus(canWrite() ? "" : "Mode lecture. Pour ajouter ou modifier des recettes, enregistre le code d'accès dans l'onglet Favoris.");
+    setStatus("");
   }catch(e){
     setStatus(e.code==="auth" ? "Le code d'accès n'est plus valide. Remplace-le dans l'onglet Favoris." : "Le carnet n'a pas pu être chargé. Vérifie la connexion, puis touche Actualiser.");
   }
@@ -909,13 +920,13 @@ $("#recSearch").addEventListener("input", renderRecipes);
 $("#ingSearch").addEventListener("input", renderRecipes);
 $("#promoSearch").addEventListener("input", renderPromos);
 // Mise à jour de l'app elle-même : si index.html publié a une autre version, on recharge la page (URL nouvelle pour contourner le cache de l'iPhone).
-const APP_VERSION = "2026-11-01g";
+const APP_VERSION = "2026-11-01h";
 function themeMode(){ return store.get("themeMode") || "auto"; }
 function applyTheme(){
   const mode = themeMode(), h = new Date().getHours();
   const t = mode==="auto" ? ((h>=19 || h<7) ? "dark" : "light") : mode;
   document.documentElement.setAttribute("data-theme", t);
-  const m = document.getElementById("themeColor"); if (m) m.content = t==="light" ? "#EAE3D3" : "#1F2A25";
+  const m = document.getElementById("themeColor"); if (m) m.content = t==="light" ? "#EAE3D3" : "#24302A";
   document.querySelectorAll("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.themeSet===mode)));
 }
 applyTheme();
