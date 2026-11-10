@@ -49,10 +49,13 @@ Puis committer et pousser sur `main`. Sinon le changement reste dans la conversa
 - Avant de committer des changements de données : `git pull --rebase origin main`, car l'app peut avoir modifié ces fichiers depuis les téléphones.
 
 ## Mise à jour automatique
-Tâche programmée Claude « Actions Carnet », lundi et jeudi à 9 h 46 (Europe/Zurich) :
-- lundi et jeudi : met à jour `promos.json` et `semaine.json` depuis rappn.ch (Migros, Lidl, Aldi, Denner) pour **nos magasins de Domdidier, Avenches, Payerne et Morat** (Vaud et Fribourg : Migros Vaud pour Payerne/Avenches, Migros Neuchâtel-Fribourg pour Domdidier/Morat ; préciser une action limitée à une seule région) ;
+**Robot GitHub « Télécharger les actions des magasins »** (`.github/workflows/actions-magasins.yml`, lundi et jeudi à 7 h 15, lançable à la main dans l'onglet Actions de GitHub) : télécharge les pages d'actions de rappn.ch (Migros, Lidl, Aldi, Denner, canton de Vaud) dans `data/raw/rappn-<magasin>-VD.html`, puis `scripts/extraire_actions.py` les résume dans **`data/raw/actions-brutes.json`** (offres avec nom, marque, prix, ancien prix + texte de la page). Raison : depuis novembre 2026, les tâches Claude ne peuvent plus lire rappn.ch directement (adresse refusée par l'outil de lecture web). Le site ne publie la liste détaillée en ligne que pour Vaud (Fribourg seulement dans son app) ; Lidl, Aldi et Denner ont les mêmes actions partout.
+
+Tâche programmée Claude « Actions Carnet », lundi et jeudi à 9 h 46 (Europe/Zurich), après le robot :
+- lundi et jeudi : met à jour `promos.json` et `semaine.json` **à partir de `data/raw/actions-brutes.json`** (vérifier la date `telecharge_le`) pour **nos magasins de Domdidier, Avenches, Payerne et Morat** ;
 - à chaque exécution : complète les recettes « moi » ajoutées incomplètes (voir plus haut) ;
 - jeudi : **retire toutes les idées de Claude de la semaine d'avant** (recettes `source: "claude"` ; celles adoptées avec le cœur + sont devenues « moi » et restent), **ajoute 15 nouvelles idées** (environ 7 midis, 5 soirs, 3 weekend, champ `week`), puis prépare deux menus (Menu 1 et Menu 2) pour la semaine suivante dans `menus.json`, les nouvelles idées des menus étant prises parmi ces 15.
+- Si les actions manquent, la tâche fait quand même les menus du jeudi et le signale.
 
 ## Règles du foyer (résumé ; `preferences.json` fait foi)
 - 2 personnes. **Soirs et plats du weekend : toujours pour 2 personnes.** Midis en tupperware : 3 fournées de 4 portions (Lun–Mar, Mer–Jeu, Ven), réchauffage au micro-ondes, toujours des légumes.

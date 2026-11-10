@@ -1,6 +1,6 @@
 name: Télécharger les actions des magasins
 # Chaque lundi et jeudi, télécharge les pages d'actions de rappn.ch (Migros, Lidl, Aldi, Denner),
-# pour les cantons de Vaud (Payerne, Avenches) et Fribourg (Domdidier, Morat), dans data/raw/,
+# pour le canton de Vaud (Payerne, Avenches ; Lidl, Aldi et Denner sont identiques à Fribourg), dans data/raw/,
 # puis les résume dans data/raw/actions-brutes.json pour la tâche Claude « Actions Carnet ».
 on:
   schedule:
@@ -18,7 +18,7 @@ jobs:
           mkdir -p data/raw
           rm -f data/raw/rappn-*.html
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
-          for k in VD FR; do
+          for k in VD; do   # le site ne publie la liste détaillée en ligne que pour Vaud (Fribourg : seulement dans son app)
             for s in migros lidl-suisse aldi-suisse denner; do
               curl -sSL --compressed -A "$UA" -H "Accept-Language: fr-CH,fr;q=0.9" \
                 "https://rappn.ch/fr/actions/$s?kanton=$k" -o "data/raw/rappn-$s-$k.html" || echo "échec $s $k"
