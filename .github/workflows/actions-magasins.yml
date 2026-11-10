@@ -1,9 +1,10 @@
 name: Télécharger les actions des magasins
-# Télécharge chaque lundi et jeudi les pages d'actions de rappn.ch (Migros, Lidl, Aldi, Denner)
-# dans data/raw/, pour que la tâche Claude « Actions Carnet » puisse les lire depuis le dépôt.
+# Chaque lundi et jeudi, télécharge les pages d'actions de rappn.ch (Migros, Lidl, Aldi, Denner),
+# pour les cantons de Vaud (Payerne, Avenches) et Fribourg (Domdidier, Morat), dans data/raw/,
+# puis les résume dans data/raw/actions-brutes.json pour la tâche Claude « Actions Carnet ».
 on:
   schedule:
-    - cron: "15 6 * * 1,4"   # lundi et jeudi, 7 h 15 heure suisse (hiver)
+    - cron: "15 6 * * 1,4"   # lundi et jeudi, 7 h 15 en hiver (8 h 15 en été)
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -15,17 +16,23 @@ jobs:
       - name: Télécharger les pages
         run: |
           mkdir -p data/raw
+          rm -f data/raw/rappn-*.html
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
-          for s in migros lidl-suisse aldi-suisse denner; do
-            curl -sSL --compressed -A "$UA" -H "Accept-Language: fr-CH,fr;q=0.9" \
-              "https://rappn.ch/fr/actions/$s" -o "data/raw/rappn-$s.html" || echo "échec $s"
-            echo "$s : $(wc -c < data/raw/rappn-$s.html 2>/dev/null || echo 0) octets"
+          for k in VD FR; do
+            curl -sSL -A "$UA" -c jar-$k -b jar-$k "https://rappn.ch/ref/canton?locale=fr&kanton=$k" -o /dev/null || true
+            for s in migros lidl-suisse aldi-suisse denner; do
+              curl -sSL --compressed -A "$UA" -b jar-$k -H "Accept-Language: fr-CH,fr;q=0.9" \
+                "https://rappn.ch/fr/actions/$s" -o "data/raw/rappn-$s-$k.html" || echo "échec $s $k"
+              echo "$s $k : $(wc -c < data/raw/rappn-$s-$k.html) octets"
+              sleep 2
+            done
           done
           date -u +"%Y-%m-%dT%H:%M:%SZ" > data/raw/telecharge-le.txt
+          python3 scripts/extraire_actions.py
       - name: Enregistrer dans le dépôt
         run: |
           git config user.name "Robot actions"
           git config user.email "actions@users.noreply.github.com"
-          git add data/raw
+          git add -A data/raw
           git commit -m "Pages d'actions téléchargées ($(date +%d.%m))" || exit 0
           git pull --rebase origin main && git push origin HEAD:main
