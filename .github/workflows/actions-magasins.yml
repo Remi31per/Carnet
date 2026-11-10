@@ -1,0 +1,31 @@
+name: Télécharger les actions des magasins
+# Télécharge chaque lundi et jeudi les pages d'actions de rappn.ch (Migros, Lidl, Aldi, Denner)
+# dans data/raw/, pour que la tâche Claude « Actions Carnet » puisse les lire depuis le dépôt.
+on:
+  schedule:
+    - cron: "15 6 * * 1,4"   # lundi et jeudi, 7 h 15 heure suisse (hiver)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  telecharger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger les pages
+        run: |
+          mkdir -p data/raw
+          UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
+          for s in migros lidl-suisse aldi-suisse denner; do
+            curl -sSL --compressed -A "$UA" -H "Accept-Language: fr-CH,fr;q=0.9" \
+              "https://rappn.ch/fr/actions/$s" -o "data/raw/rappn-$s.html" || echo "échec $s"
+            echo "$s : $(wc -c < data/raw/rappn-$s.html 2>/dev/null || echo 0) octets"
+          done
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > data/raw/telecharge-le.txt
+      - name: Enregistrer dans le dépôt
+        run: |
+          git config user.name "Robot actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/raw
+          git commit -m "Pages d'actions téléchargées ($(date +%d.%m))" || exit 0
+          git pull --rebase origin main && git push origin HEAD:main
