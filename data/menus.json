@@ -1,46 +1,31 @@
 {
- "intro": "Deux menus au choix pour deux personnes. Courses à faire d'ici mercredi 4.11 pour profiter des actions.",
- "label": "Menus du lun. 2.11 au ven. 6.11",
+ "week": "2026-S46",
+ "label": "Menus du mer. 11.11 au ven. 13.11",
+ "intro": "Menus de rattrapage pour la fin de semaine. La plupart des actions se terminent ce mercredi 11.11 ; les nouvelles arrivent jeudi.",
  "options": [
   {
+   "nom": "Menu 1",
+   "theme": "Poulet et Italie",
    "midi": [
     {
-     "days": "Lun – Mar",
-     "portions": 4,
-     "recipeId": "moi-bolognese",
-     "tip": "Pâtes Barilla −50 % chez Denner, sugo à 0.99 chez Aldi.",
-     "when": "cuisiné dim. soir"
-    },
-    {
      "days": "Mer – Jeu",
+     "when": "cuisiné mer. matin ou mar. soir",
+     "recipeId": "c-penne-poulet-tomates-sechees",
      "portions": 4,
-     "recipeId": "moi-poulet-curry-coco",
-     "tip": "Lait de coco en action chez Lidl, riz Ben's −40 % chez Denner.",
-     "when": "cuisiné mar. soir"
+     "tip": "Penne Agnesi et tomates en action chez Migros."
     },
     {
      "days": "Ven",
+     "when": "cuisiné jeu. soir",
+     "recipeId": "moi-poulet-moutarde",
      "portions": 4,
-     "recipeId": "c-penne-pesto-poulet",
-     "tip": "Nouvelle idée. 2 portions de plus pour le samedi.",
-     "when": "cuisiné jeu. soir"
+     "tip": "Moutarde Thomy en action chez Migros."
     }
    ],
-   "nom": "Menu 1",
-   "note": "Aucune courge cette semaine ; carottes, haricots, petits pois et tomates à midi.",
    "soir": [
     {
-     "day": "Lun",
-     "recipeId": "moi-omelette"
-    },
-    {
-     "day": "Mar",
-     "recipeId": "c-tartines-saumon",
-     "tip": "Sans cuisson, pendant que le curry mijote."
-    },
-    {
      "day": "Mer",
-     "recipeId": "moi-croque"
+     "recipeId": "c-wraps-poulet-poivrons"
     },
     {
      "day": "Jeu",
@@ -49,65 +34,46 @@
     },
     {
      "day": "Ven",
-     "recipeId": "moi-flammekueche"
+     "recipeId": "c-tortelloni-beurre-sauge"
     }
    ],
-   "theme": "Italien et curry"
+   "note": "Légumes : courgette, tomates, poivrons."
   },
   {
+   "nom": "Menu 2",
+   "theme": "Réconfort et Asie",
    "midi": [
     {
-     "days": "Lun – Mar",
-     "portions": 4,
-     "recipeId": "moi-poulet-cantadou",
-     "tip": "10 min de préparation seulement.",
-     "when": "cuisiné dim. soir"
-    },
-    {
      "days": "Mer – Jeu",
+     "when": "cuisiné mer. matin ou mar. soir",
+     "recipeId": "c-hache-lentilles-carottes",
      "portions": 4,
-     "recipeId": "moi-chili",
-     "tip": "Encore meilleur réchauffé.",
-     "when": "cuisiné mar. soir"
+     "tip": "Lentilles rouges en action chez Denner."
     },
     {
      "days": "Ven",
+     "when": "cuisiné jeu. soir",
+     "recipeId": "c-poulet-chou-chinois",
      "portions": 4,
-     "recipeId": "c-ayam-kecap",
-     "tip": "Nouvelle idée indonésienne. 2 portions de plus pour le samedi.",
-     "when": "cuisiné jeu. soir"
+     "tip": "Chou chinois en action chez Denner."
     }
    ],
-   "nom": "Menu 2",
-   "note": "Brocoli, carottes, haricots, tomates et maïs à midi.",
    "soir": [
     {
-     "day": "Lun",
-     "recipeId": "c-veloute-butternut",
-     "tip": "Le seul plat à la butternut de la semaine ; en garder la moitié pour jeudi."
-    },
-    {
-     "day": "Mar",
-     "recipeId": "moi-crepes"
-    },
-    {
      "day": "Mer",
-     "recipeId": "c-dorade-four",
-     "tip": "Dorade en action jusqu'à ce soir."
+     "recipeId": "c-rosti-oeuf-jambon"
     },
     {
      "day": "Jeu",
-     "leftover": true,
-     "recipeId": "c-veloute-butternut"
+     "recipeId": "moi-croque",
+     "tip": "Soir de fournée : 10 minutes."
     },
     {
      "day": "Ven",
-     "recipeId": "moi-pizza",
-     "tip": "Avec une pâte achetée pour rester rapide."
+     "recipeId": "c-veloute-potimarron"
     }
    ],
-   "theme": "Crème, tex-mex et Indonésie"
+   "note": "Légumes : carottes, chou chinois, potimarron."
   }
- ],
- "week": "2026-S45"
+ ]
 }

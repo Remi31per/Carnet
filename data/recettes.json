@@ -1,287 +1,4 @@
 {
- "c-ayam-kecap": {
-  "createdAt": "2026-10-31T16:51:00Z",
-  "cuisson": 20,
-  "ingredients": [
-   {
-    "n": "filet de poulet",
-    "q": "600 g"
-   },
-   {
-    "n": "kecap manis (sauce soja sucrée)",
-    "q": "5 cs"
-   },
-   {
-    "n": "sauce soja",
-    "q": "1 cs"
-   },
-   {
-    "n": "oignon",
-    "q": "1"
-   },
-   {
-    "n": "gousses d'ail",
-    "q": "3"
-   },
-   {
-    "n": "gingembre (2 cm)",
-    "q": "1 morceau"
-   },
-   {
-    "n": "tomates",
-    "q": "2"
-   },
-   {
-    "n": "haricots verts",
-    "q": "400 g"
-   },
-   {
-    "n": "riz jasmin",
-    "q": "250 g"
-   },
-   {
-    "n": "huile",
-    "q": "2 cs"
-   }
-  ],
-  "notes": "Plat familial indonésien ; le kecap manis se trouve au rayon asiatique de Migros et Coop.",
-  "prep": 15,
-  "reheat": "2 min 30 à 800 W, couvercle entrouvert ; la sauce garde le riz moelleux.",
-  "servings": 4,
-  "source": "claude",
-  "steps": [
-   "Cuire le riz. Cuire les haricots 6 minutes à l'eau salée.",
-   "Faire revenir oignon émincé, ail et gingembre râpé dans l'huile.",
-   "Ajouter le poulet en morceaux, dorer 5 minutes, puis kecap manis, sauce soja, tomates en dés et 1 dl d'eau.",
-   "Laisser mijoter 10 minutes jusqu'à ce que la sauce nappe le poulet."
-  ],
-  "tags": [
-   "indonésien",
-   "asiatique"
-  ],
-  "time": "35 min",
-  "title": "Ayam kecap : poulet sauce soja sucrée, riz et haricots",
-  "type": "midi",
-  "weekend": true
- },
- "c-curry-butternut": {
-  "createdAt": "2026-10-31T16:00:00Z",
-  "cuisson": 25,
-  "ingredients": [
-   {
-    "n": "courge butternut",
-    "q": "1 kg"
-   },
-   {
-    "n": "carottes",
-    "q": "3"
-   },
-   {
-    "n": "petits pois surgelés",
-    "q": "200 g"
-   },
-   {
-    "n": "pois chiches (400 g)",
-    "q": "1 boîte"
-   },
-   {
-    "n": "lait de coco",
-    "q": "250 ml"
-   },
-   {
-    "n": "bouillon de légumes",
-    "q": "3 dl"
-   },
-   {
-    "n": "oignon",
-    "q": "1"
-   },
-   {
-    "n": "pâte de curry ou curry en poudre",
-    "q": "2 cs"
-   },
-   {
-    "n": "riz basmati",
-    "q": "250 g"
-   },
-   {
-    "n": "huile",
-    "q": "1 cs"
-   }
-  ],
-  "notes": "Une portion de plus ? Le curry se congèle sans le riz.",
-  "prep": 20,
-  "reheat": "2 min 30 à 800 W, couvercle entrouvert, remuer à mi-temps. Garder le riz sous le curry pour qu'il ne sèche pas.",
-  "servings": 4,
-  "source": "claude",
-  "steps": [
-   "Peler la courge et les carottes, couper en cubes de 2 cm. Émincer l'oignon.",
-   "Faire revenir l'oignon dans l'huile avec le curry 2 minutes.",
-   "Ajouter courge, carottes, bouillon et lait de coco. Couvrir et cuire 20 minutes.",
-   "Ajouter pois chiches égouttés et petits pois, cuire encore 5 minutes. Saler.",
-   "Cuire le riz. Laisser tiédir puis répartir riz et curry dans 4 boîtes. Frigo : 3 jours."
-  ],
-  "tags": [
-   "végétarien",
-   "batch cooking"
-  ],
-  "time": "45 min",
-  "title": "Curry de butternut, petits pois et carottes au coco, riz basmati",
-  "type": "midi"
- },
- "c-dorade-four": {
-  "createdAt": "2026-10-31T15:37:00Z",
-  "cuisson": 25,
-  "ingredients": [
-   {
-    "n": "dorades entières (env. 400 g pièce)",
-    "q": "2"
-   },
-   {
-    "n": "citron",
-    "q": "1"
-   },
-   {
-    "n": "tomates cerises",
-    "q": "300 g"
-   },
-   {
-    "n": "pommes de terre",
-    "q": "600 g"
-   },
-   {
-    "n": "bouquet de persil",
-    "q": "1"
-   },
-   {
-    "n": "huile d'olive",
-    "q": "3 cs"
-   },
-   {
-    "n": "gousses d'ail",
-    "q": "2"
-   }
-  ],
-  "notes": "Demande au rayon de vider et écailler les dorades.",
-  "prep": 10,
-  "servings": 2,
-  "source": "claude",
-  "steps": [
-   "Préchauffer le four à 200 °C. Couper les pommes de terre en fines rondelles, les huiler, saler et précuire 15 minutes.",
-   "Inciser les dorades, les garnir de rondelles de citron, d'ail et de persil.",
-   "Poser les dorades et les tomates cerises sur les pommes de terre, arroser d'huile.",
-   "Cuire 20 minutes, jusqu'à ce que la chair se détache facilement de l'arête."
-  ],
-  "tags": [
-   "poisson",
-   "léger",
-   "four"
-  ],
-  "time": "35 min",
-  "title": "Dorade au four, citron et tomates cerises",
-  "type": "soir"
- },
- "c-omelette-courgettes": {
-  "createdAt": "2026-10-31T16:04:00Z",
-  "cuisson": 12,
-  "ingredients": [
-   {
-    "n": "œufs",
-    "q": "5"
-   },
-   {
-    "n": "courgette",
-    "q": "1"
-   },
-   {
-    "n": "brocoli",
-    "q": "200 g"
-   },
-   {
-    "n": "Tomme vaudoise",
-    "q": "1"
-   },
-   {
-    "n": "huile d'olive",
-    "q": "1 cs"
-   },
-   {
-    "n": "ciboulette, sel, poivre",
-    "q": ""
-   }
-  ],
-  "notes": "",
-  "prep": 10,
-  "servings": 2,
-  "source": "claude",
-  "steps": [
-   "Couper le brocoli en petites fleurettes et le cuire 4 minutes à la vapeur. Couper la courgette en fines rondelles.",
-   "Faire revenir la courgette 5 minutes dans l'huile, ajouter le brocoli.",
-   "Verser les œufs battus avec la ciboulette, sel et poivre. Cuire à feu doux à couvert 6 minutes.",
-   "Poser la Tomme coupée en tranches dessus, couvrir 2 minutes pour la faire fondre."
-  ],
-  "tags": [
-   "végétarien",
-   "léger"
-  ],
-  "time": "20 min",
-  "title": "Omelette aux courgettes, brocoli et Tomme vaudoise",
-  "type": "soir"
- },
- "c-pates-bolets": {
-  "createdAt": "2026-10-31T15:38:00Z",
-  "cuisson": 20,
-  "ingredients": [
-   {
-    "n": "pâtes casarecce",
-    "q": "500 g"
-   },
-   {
-    "n": "bolets séchés",
-    "q": "30 g"
-   },
-   {
-    "n": "épinards frais",
-    "q": "300 g"
-   },
-   {
-    "n": "Gruyère salé",
-    "q": "100 g"
-   },
-   {
-    "n": "crème",
-    "q": "2 dl"
-   },
-   {
-    "n": "gousse d'ail",
-    "q": "1"
-   },
-   {
-    "n": "beurre",
-    "q": "1 cs"
-   }
-  ],
-  "notes": "",
-  "prep": 10,
-  "reheat": "ajouter 1 cs d'eau ou de lait, 2 min 30 à 800 W en remuant à mi-temps.",
-  "servings": 4,
-  "source": "claude",
-  "steps": [
-   "Réhydrater les bolets 20 minutes dans 2 dl d'eau tiède. Les égoutter en gardant l'eau, puis les hacher.",
-   "Cuire les pâtes al dente.",
-   "Faire revenir l'ail et les bolets dans le beurre, ajouter 1 dl d'eau de trempage filtrée et la crème, laisser réduire 5 minutes.",
-   "Ajouter les épinards et laisser tomber 2 minutes.",
-   "Mélanger avec les pâtes et la moitié du Gruyère râpé, servir avec le reste par-dessus."
-  ],
-  "tags": [
-   "végétarien",
-   "rapide",
-   "pâtes"
-  ],
-  "time": "30 min",
-  "title": "Casarecce aux bolets, épinards et Gruyère",
-  "type": "midi"
- },
  "c-penne-pesto-poulet": {
   "createdAt": "2026-10-31T16:50:00Z",
   "cuisson": 15,
@@ -335,223 +52,6 @@
   "weekend": true,
   "adoptedFrom": "claude",
   "adoptedAt": "2026-11-01T13:42:34.744Z"
- },
- "c-poulet-chou-rouge": {
-  "createdAt": "2026-10-31T15:39:00Z",
-  "cuisson": 55,
-  "ingredients": [
-   {
-    "n": "cuisses de poulet",
-    "q": "2 (env. 500 g)"
-   },
-   {
-    "n": "pommes de terre",
-    "q": "300 g"
-   },
-   {
-    "n": "chou rouge",
-    "q": "500 g"
-   },
-   {
-    "n": "pomme golden",
-    "q": "1"
-   },
-   {
-    "n": "oignon",
-    "q": "1/2"
-   },
-   {
-    "n": "vinaigre de vin rouge",
-    "q": "1 cs"
-   },
-   {
-    "n": "sucre",
-    "q": "1/2 cs"
-   },
-   {
-    "n": "huile",
-    "q": "1 cs"
-   },
-   {
-    "n": "thym, sel, poivre, paprika",
-    "q": ""
-   }
-  ],
-  "notes": "Plat avec os : réservé au weekend, pas aux tupperwares.",
-  "prep": 20,
-  "servings": 2,
-  "source": "claude",
-  "steps": [
-   "Préchauffer le four à 200 °C. Frotter les cuisses avec huile, paprika, thym, sel et poivre.",
-   "Couper les pommes de terre en quartiers, les disposer autour du poulet et enfourner 50 à 55 minutes.",
-   "Pendant ce temps, émincer finement le chou rouge et l'oignon, couper les pommes en dés.",
-   "Faire suer l'oignon, ajouter chou, pomme, vinaigre, sucre et un demi-verre d'eau. Couvrir et cuire 40 minutes à feu doux.",
-   "Servir le poulet doré avec le chou fondant et les pommes de terre."
-  ],
-  "tags": [
-   "four",
-   "plat du dimanche"
-  ],
-  "time": "1 h 10",
-  "title": "Cuisses de poulet rôties, chou rouge aux pommes",
-  "type": "weekend",
-  "updatedAt": "2026-11-01T01:15:00Z"
- },
- "c-saumon-riz": {
-  "createdAt": "2026-10-31T15:36:00Z",
-  "cuisson": 15,
-  "ingredients": [
-   {
-    "n": "dos de saumon",
-    "q": "2 pavés (env. 280 g)"
-   },
-   {
-    "n": "riz basmati",
-    "q": "160 g"
-   },
-   {
-    "n": "épinards frais",
-    "q": "350 g"
-   },
-   {
-    "n": "citron",
-    "q": "1/2"
-   },
-   {
-    "n": "gousse d'ail",
-    "q": "1"
-   },
-   {
-    "n": "huile",
-    "q": "1 cs"
-   },
-   {
-    "n": "beurre",
-    "q": "1 cc"
-   }
-  ],
-  "notes": "",
-  "prep": 10,
-  "servings": 2,
-  "source": "claude",
-  "steps": [
-   "Cuire le riz selon le paquet.",
-   "Saler les pavés et les poêler côté peau 4 minutes, puis 2 minutes de l'autre côté.",
-   "Dans la même poêle, faire tomber les épinards avec l'ail et le beurre, ajouter le zeste et un filet de jus de citron.",
-   "Servir le saumon sur le riz et les épinards."
-  ],
-  "tags": [
-   "poisson",
-   "rapide"
-  ],
-  "time": "25 min",
-  "title": "Saumon poêlé, riz et épinards au citron",
-  "type": "soir",
-  "updatedAt": "2026-11-01T01:15:00Z"
- },
- "c-tartines-saumon": {
-  "createdAt": "2026-10-31T16:03:00Z",
-  "cuisson": 0,
-  "ingredients": [
-   {
-    "n": "pain tessinois",
-    "q": "4 tranches"
-   },
-   {
-    "n": "saumon fumé",
-    "q": "125 g"
-   },
-   {
-    "n": "cottage cheese",
-    "q": "200 g"
-   },
-   {
-    "n": "concombre",
-    "q": "1/2"
-   },
-   {
-    "n": "tomates cerises",
-    "q": "6"
-   },
-   {
-    "n": "citron",
-    "q": "1/2"
-   },
-   {
-    "n": "aneth ou ciboulette, poivre",
-    "q": ""
-   }
-  ],
-  "notes": "Idéal le soir où l'on prépare une fournée.",
-  "prep": 10,
-  "servings": 2,
-  "source": "claude",
-  "steps": [
-   "Griller légèrement le pain.",
-   "Mélanger le cottage cheese avec un filet de citron, les herbes et du poivre.",
-   "Tartiner, ajouter le concombre en fines tranches et le saumon. Servir avec les tomates cerises."
-  ],
-  "tags": [
-   "léger",
-   "sans cuisson"
-  ],
-  "time": "10 min",
-  "title": "Tartines de saumon fumé, cottage cheese et concombre",
-  "type": "soir"
- },
- "c-veloute-butternut": {
-  "createdAt": "2026-10-31T15:40:00Z",
-  "cuisson": 25,
-  "ingredients": [
-   {
-    "n": "courge butternut",
-    "q": "500 g"
-   },
-   {
-    "n": "châtaignes cuites",
-    "q": "100 g"
-   },
-   {
-    "n": "lait de coco",
-    "q": "125 ml"
-   },
-   {
-    "n": "oignon",
-    "q": "1/2"
-   },
-   {
-    "n": "bouillon de légumes",
-    "q": "4 dl"
-   },
-   {
-    "n": "huile d'olive",
-    "q": "1 cs"
-   },
-   {
-    "n": "sel, poivre, muscade",
-    "q": ""
-   }
-  ],
-  "notes": "Pour 2. Double les quantités pour en congeler une partie : il se congèle très bien.",
-  "prep": 15,
-  "servings": 2,
-  "source": "claude",
-  "steps": [
-   "Peler la courge, retirer les graines et la couper en cubes. Émincer l'oignon.",
-   "Faire revenir l'oignon dans l'huile 3 minutes, ajouter la courge et 75 g de châtaignes.",
-   "Mouiller avec le bouillon, couvrir et cuire 25 minutes à feu moyen.",
-   "Ajouter le lait de coco, mixer finement, assaisonner de sel, poivre et muscade.",
-   "Servir avec le reste des châtaignes émiettées et poêlées à sec."
-  ],
-  "tags": [
-   "végétarien",
-   "soupe",
-   "automne"
-  ],
-  "time": "40 min",
-  "title": "Velouté de butternut, châtaignes et coco",
-  "type": "soir",
-  "updatedAt": "2026-11-01T01:15:00Z"
  },
  "moi-bol-cereales": {
   "createdAt": "2026-10-31T16:31:04Z",
@@ -2893,5 +2393,725 @@
   "time": "45 min",
   "completedBy": "claude",
   "updatedAt": "2026-11-01T01:15:00Z"
+ },
+ "c-poulet-paprika-poivrons": {
+  "title": "Poulet au paprika, poivrons et riz",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 15,
+  "cuisson": 25,
+  "time": "40 min",
+  "tags": [
+   "hongrois",
+   "mijoté"
+  ],
+  "ingredients": [
+   {
+    "q": "600 g",
+    "n": "filet de poulet"
+   },
+   {
+    "q": "2",
+    "n": "poivrons rouges"
+   },
+   {
+    "q": "1",
+    "n": "oignon"
+   },
+   {
+    "q": "2 cs",
+    "n": "paprika doux"
+   },
+   {
+    "q": "2 cs",
+    "n": "purée de tomates"
+   },
+   {
+    "q": "2 dl",
+    "n": "crème"
+   },
+   {
+    "q": "2 dl",
+    "n": "bouillon"
+   },
+   {
+    "q": "250 g",
+    "n": "riz"
+   },
+   {
+    "q": "300 g",
+    "n": "haricots verts"
+   },
+   {
+    "q": "1 cs",
+    "n": "huile"
+   }
+  ],
+  "steps": [
+   "Cuire le riz et les haricots.",
+   "Dorer le poulet en dés dans l'huile, ajouter oignon et poivrons en lanières.",
+   "Ajouter paprika, purée de tomates et bouillon, mijoter 15 minutes.",
+   "Hors du feu, ajouter la crème."
+  ],
+  "notes": "Poivrons et purée de tomates en action chez Migros et Lidl.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "2 min 30 à 800 W, remuer à mi-temps.",
+  "weekend": true
+ },
+ "c-penne-poulet-tomates-sechees": {
+  "title": "Penne au poulet, tomates et fromage frais",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
+  "tags": [
+   "italien",
+   "crémeux"
+  ],
+  "ingredients": [
+   {
+    "q": "500 g",
+    "n": "penne"
+   },
+   {
+    "q": "500 g",
+    "n": "filet de poulet"
+   },
+   {
+    "q": "300 g",
+    "n": "tomates cerises"
+   },
+   {
+    "q": "1",
+    "n": "courgette"
+   },
+   {
+    "q": "150 g",
+    "n": "fromage frais aux herbes"
+   },
+   {
+    "q": "1",
+    "n": "gousse d'ail"
+   },
+   {
+    "q": "1 cs",
+    "n": "huile d'olive"
+   }
+  ],
+  "steps": [
+   "Cuire les penne.",
+   "Dorer le poulet en dés avec l'ail, ajouter la courgette en demi-rondelles et les tomates coupées.",
+   "Faire fondre le fromage frais avec un peu d'eau de cuisson.",
+   "Mélanger avec les pâtes."
+  ],
+  "notes": "Un cousin rapide du poulet Cantadou que vous aimez.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "2 min à 800 W avec une cuillère d'eau.",
+  "weekend": true
+ },
+ "c-hache-lentilles-carottes": {
+  "title": "Viande hachée aux lentilles corail, carottes et riz",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 15,
+  "cuisson": 25,
+  "time": "40 min",
+  "tags": [
+   "familial",
+   "économique"
+  ],
+  "ingredients": [
+   {
+    "q": "400 g",
+    "n": "viande hachée de bœuf"
+   },
+   {
+    "q": "150 g",
+    "n": "lentilles rouges"
+   },
+   {
+    "q": "3",
+    "n": "carottes"
+   },
+   {
+    "q": "1",
+    "n": "oignon"
+   },
+   {
+    "q": "400 g",
+    "n": "tomates concassées"
+   },
+   {
+    "q": "1 cc",
+    "n": "cumin"
+   },
+   {
+    "q": "250 g",
+    "n": "riz"
+   }
+  ],
+  "steps": [
+   "Cuire le riz.",
+   "Dorer la viande avec l'oignon, ajouter carottes en dés, lentilles rincées, tomates et 4 dl d'eau.",
+   "Mijoter 20 minutes jusqu'à ce que les lentilles soient fondantes."
+  ],
+  "notes": "Lentilles rouges et tomates concassées en action chez Denner et Lidl.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "2 min 30 à 800 W.",
+  "weekend": true
+ },
+ "c-cabillaud-curry-riz": {
+  "title": "Cabillaud au curry coco, riz et petits pois",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
+  "tags": [
+   "asiatique",
+   "poisson"
+  ],
+  "ingredients": [
+   {
+    "q": "600 g",
+    "n": "cabillaud"
+   },
+   {
+    "q": "2 dl",
+    "n": "lait de coco"
+   },
+   {
+    "q": "1 cs",
+    "n": "pâte de curry jaune"
+   },
+   {
+    "q": "300 g",
+    "n": "petits pois"
+   },
+   {
+    "q": "2",
+    "n": "carottes"
+   },
+   {
+    "q": "250 g",
+    "n": "riz jasmin"
+   }
+  ],
+  "steps": [
+   "Cuire le riz.",
+   "Chauffer la pâte de curry, ajouter lait de coco, carottes en rondelles et petits pois, cuire 8 minutes.",
+   "Poser le cabillaud en gros morceaux, couvrir et cuire 6 minutes doucement."
+  ],
+  "notes": "Le cabillaud ferme se réchauffe bien en sauce. Cabillaud en action chez Migros.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "2 min à 600 W, couvert.",
+  "weekend": false
+ },
+ "c-tortellini-jambon-petits-pois": {
+  "title": "Tortellini au jambon, crème et petits pois",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 10,
+  "cuisson": 10,
+  "time": "20 min",
+  "tags": [
+   "italien",
+   "rapide"
+  ],
+  "ingredients": [
+   {
+    "q": "750 g",
+    "n": "tortellini au jambon cru"
+   },
+   {
+    "q": "150 g",
+    "n": "jambon"
+   },
+   {
+    "q": "300 g",
+    "n": "petits pois"
+   },
+   {
+    "q": "2 dl",
+    "n": "crème"
+   },
+   {
+    "q": "50 g",
+    "n": "parmesan"
+   }
+  ],
+  "steps": [
+   "Cuire les tortellini et les petits pois ensemble.",
+   "Chauffer la crème avec le jambon en lanières et le parmesan.",
+   "Mélanger le tout."
+  ],
+  "notes": "Tortellini Fini en action chez Denner.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "2 min à 800 W avec un peu de lait.",
+  "weekend": true
+ },
+ "c-poulet-chou-chinois": {
+  "title": "Poulet sauté au chou chinois, nouilles et carottes",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 15,
+  "cuisson": 10,
+  "time": "25 min",
+  "tags": [
+   "asiatique",
+   "wok"
+  ],
+  "ingredients": [
+   {
+    "q": "500 g",
+    "n": "filet de poulet"
+   },
+   {
+    "q": "1/2",
+    "n": "chou chinois"
+   },
+   {
+    "q": "2",
+    "n": "carottes"
+   },
+   {
+    "q": "250 g",
+    "n": "nouilles aux œufs"
+   },
+   {
+    "q": "3 cs",
+    "n": "sauce soja"
+   },
+   {
+    "q": "1 cs",
+    "n": "miel"
+   },
+   {
+    "q": "1 morceau",
+    "n": "gingembre"
+   },
+   {
+    "q": "1 cs",
+    "n": "huile"
+   }
+  ],
+  "steps": [
+   "Cuire les nouilles.",
+   "Saisir le poulet en lanières, ajouter carottes en julienne et gingembre.",
+   "Ajouter le chou émincé, sauce soja et miel, sauter 3 minutes.",
+   "Mélanger avec les nouilles."
+  ],
+  "notes": "Chou chinois en action chez Denner.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "2 min à 800 W.",
+  "weekend": false
+ },
+ "c-gratin-chou-hache": {
+  "title": "Gratin de chou blanc à la viande hachée et pommes de terre",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 20,
+  "cuisson": 40,
+  "time": "60 min",
+  "tags": [
+   "suisse",
+   "gratin"
+  ],
+  "ingredients": [
+   {
+    "q": "1/2",
+    "n": "chou blanc"
+   },
+   {
+    "q": "400 g",
+    "n": "viande hachée"
+   },
+   {
+    "q": "600 g",
+    "n": "pommes de terre"
+   },
+   {
+    "q": "1",
+    "n": "oignon"
+   },
+   {
+    "q": "2 dl",
+    "n": "crème"
+   },
+   {
+    "q": "100 g",
+    "n": "emmental râpé"
+   }
+  ],
+  "steps": [
+   "Cuire chou émincé et pommes de terre en rondelles 10 minutes à l'eau salée.",
+   "Dorer la viande avec l'oignon.",
+   "Alterner les couches dans un plat, verser la crème, parsemer de fromage.",
+   "Cuire 30 minutes à 200 °C."
+  ],
+  "notes": "Chou blanc suisse chez Lidl, pommes de terre IP-Suisse chez Denner.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46",
+  "reheat": "3 min à 600 W.",
+  "weekend": true
+ },
+ "c-wraps-poulet-poivrons": {
+  "title": "Wraps au poulet, poivrons et fromage frais",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 15,
+  "cuisson": 8,
+  "time": "23 min",
+  "tags": [
+   "tex-mex",
+   "rapide"
+  ],
+  "ingredients": [
+   {
+    "q": "4",
+    "n": "tortillas"
+   },
+   {
+    "q": "250 g",
+    "n": "filet de poulet"
+   },
+   {
+    "q": "1",
+    "n": "poivron"
+   },
+   {
+    "q": "60 g",
+    "n": "fromage frais"
+   },
+   {
+    "q": "1 poignée",
+    "n": "salade ou pousses d'épinards"
+   },
+   {
+    "q": "1 cc",
+    "n": "épices tex-mex"
+   }
+  ],
+  "steps": [
+   "Saisir le poulet en lanières avec le poivron et les épices.",
+   "Tartiner les tortillas de fromage frais, garnir, rouler."
+  ],
+  "notes": "Wraps en action chez Migros.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-tortelloni-beurre-sauge": {
+  "title": "Tortelloni ricotta-épinards, beurre et tomates",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 5,
+  "cuisson": 8,
+  "time": "13 min",
+  "tags": [
+   "italien",
+   "express"
+  ],
+  "ingredients": [
+   {
+    "q": "300 g",
+    "n": "tortelloni ricotta-épinards"
+   },
+   {
+    "q": "150 g",
+    "n": "tomates cerises"
+   },
+   {
+    "q": "20 g",
+    "n": "beurre"
+   },
+   {
+    "q": "30 g",
+    "n": "parmesan"
+   }
+  ],
+  "steps": [
+   "Cuire les tortelloni.",
+   "Faire fondre le beurre avec les tomates coupées 2 minutes, mélanger, parsemer de parmesan."
+  ],
+  "notes": "Prêt en 15 minutes chrono.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-limande-pommes-terre": {
+  "title": "Filets de limande au beurre citronné, pommes de terre",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
+  "tags": [
+   "poisson",
+   "léger"
+  ],
+  "ingredients": [
+   {
+    "q": "200 g",
+    "n": "filets de limande"
+   },
+   {
+    "q": "400 g",
+    "n": "pommes de terre"
+   },
+   {
+    "q": "1",
+    "n": "citron"
+   },
+   {
+    "q": "20 g",
+    "n": "beurre"
+   },
+   {
+    "q": "1 poignée",
+    "n": "persil"
+   }
+  ],
+  "steps": [
+   "Cuire les pommes de terre.",
+   "Poêler les filets 2 minutes par face dans le beurre.",
+   "Arroser de jus de citron et de persil."
+  ],
+  "notes": "Limande MSC en action chez Lidl.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-veloute-potimarron": {
+  "title": "Velouté de potimarron et tartines au vacherin",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
+  "tags": [
+   "suisse",
+   "soupe"
+  ],
+  "ingredients": [
+   {
+    "q": "1/2",
+    "n": "potimarron"
+   },
+   {
+    "q": "1",
+    "n": "pomme de terre"
+   },
+   {
+    "q": "5 dl",
+    "n": "bouillon"
+   },
+   {
+    "q": "1 dl",
+    "n": "crème"
+   },
+   {
+    "q": "4 tranches",
+    "n": "pain"
+   },
+   {
+    "q": "80 g",
+    "n": "vacherin fribourgeois"
+   }
+  ],
+  "steps": [
+   "Cuire potimarron (avec la peau) et pomme de terre en dés dans le bouillon 20 minutes.",
+   "Mixer avec la crème.",
+   "Gratiner les tartines de vacherin 5 minutes au four."
+  ],
+  "notes": "Potimarron et vacherin en action chez Lidl.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-rosti-oeuf-jambon": {
+  "title": "Rösti, œuf au plat et jambon",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 5,
+  "cuisson": 15,
+  "time": "20 min",
+  "tags": [
+   "suisse",
+   "express"
+  ],
+  "ingredients": [
+   {
+    "q": "500 g",
+    "n": "rösti"
+   },
+   {
+    "q": "2",
+    "n": "œufs"
+   },
+   {
+    "q": "100 g",
+    "n": "jambon"
+   },
+   {
+    "q": "1",
+    "n": "tomate"
+   }
+  ],
+  "steps": [
+   "Dorer le rösti à la poêle 12 minutes en le retournant.",
+   "Cuire les œufs au plat, servir avec le jambon et la tomate."
+  ],
+  "notes": "Rösti Primana chez Aldi.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-raclette-four": {
+  "title": "Raclette au four, pommes de terre et charcuterie",
+  "source": "claude",
+  "type": "weekend",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 25,
+  "time": "35 min",
+  "tags": [
+   "suisse",
+   "convivial"
+  ],
+  "ingredients": [
+   {
+    "q": "600 g",
+    "n": "pommes de terre"
+   },
+   {
+    "q": "300 g",
+    "n": "fromage à raclette en tranches"
+   },
+   {
+    "q": "150 g",
+    "n": "jambon et viande séchée"
+   },
+   {
+    "q": "1 bocal",
+    "n": "cornichons et oignons"
+   },
+   {
+    "q": "1",
+    "n": "poivron"
+   }
+  ],
+  "steps": [
+   "Cuire les pommes de terre en robe des champs.",
+   "Les couper en deux sur une plaque, couvrir de raclette et de poivron en lanières.",
+   "Gratiner 8 minutes à 220 °C."
+  ],
+  "notes": "Sans appareil à raclette. Raclette en action chez Denner et Lidl.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-cabillaud-four-tomates": {
+  "title": "Cabillaud au four, tomates et pommes de terre",
+  "source": "claude",
+  "type": "weekend",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 30,
+  "time": "40 min",
+  "tags": [
+   "méditerranéen",
+   "four"
+  ],
+  "ingredients": [
+   {
+    "q": "350 g",
+    "n": "cabillaud"
+   },
+   {
+    "q": "400 g",
+    "n": "pommes de terre"
+   },
+   {
+    "q": "250 g",
+    "n": "tomates en grappe"
+   },
+   {
+    "q": "1",
+    "n": "gousse d'ail"
+   },
+   {
+    "q": "2 cs",
+    "n": "huile d'olive"
+   },
+   {
+    "q": "1 poignée",
+    "n": "herbes"
+   }
+  ],
+  "steps": [
+   "Rôtir les pommes de terre en quartiers 15 minutes à 200 °C.",
+   "Ajouter tomates, ail, puis le cabillaud huilé et salé.",
+   "Cuire encore 15 minutes, parsemer d'herbes."
+  ],
+  "notes": "Sans réchauffage : à manger tout de suite.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
+ },
+ "c-feuillete-saucisson": {
+  "title": "Saucisson vaudois en croûte feuilletée, salade de chou",
+  "source": "claude",
+  "type": "weekend",
+  "servings": 2,
+  "prep": 15,
+  "cuisson": 40,
+  "time": "55 min",
+  "tags": [
+   "suisse",
+   "vaudois"
+  ],
+  "ingredients": [
+   {
+    "q": "1",
+    "n": "saucisson vaudois"
+   },
+   {
+    "q": "1",
+    "n": "pâte feuilletée"
+   },
+   {
+    "q": "1",
+    "n": "jaune d'œuf"
+   },
+   {
+    "q": "1/4",
+    "n": "chou blanc"
+   },
+   {
+    "q": "2 cs",
+    "n": "vinaigrette"
+   }
+  ],
+  "steps": [
+   "Pocher le saucisson 20 minutes dans l'eau frémissante, peler.",
+   "L'envelopper de pâte feuilletée, dorer au jaune d'œuf.",
+   "Cuire 20 minutes à 200 °C ; servir avec le chou émincé en salade."
+  ],
+  "notes": "Saucisson vaudois IGP chez Denner, pâte feuilletée chez Aldi.",
+  "createdAt": "2026-11-11T00:40:00Z",
+  "week": "2026-S46"
  }
 }
