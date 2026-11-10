@@ -19,10 +19,9 @@ jobs:
           rm -f data/raw/rappn-*.html
           UA="Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
           for k in VD FR; do
-            curl -sSL -A "$UA" -c jar-$k -b jar-$k "https://rappn.ch/ref/canton?locale=fr&kanton=$k" -o /dev/null || true
             for s in migros lidl-suisse aldi-suisse denner; do
-              curl -sSL --compressed -A "$UA" -b jar-$k -H "Accept-Language: fr-CH,fr;q=0.9" \
-                "https://rappn.ch/fr/actions/$s" -o "data/raw/rappn-$s-$k.html" || echo "échec $s $k"
+              curl -sSL --compressed -A "$UA" -H "Accept-Language: fr-CH,fr;q=0.9" \
+                "https://rappn.ch/fr/actions/$s?kanton=$k" -o "data/raw/rappn-$s-$k.html" || echo "échec $s $k"
               echo "$s $k : $(wc -c < data/raw/rappn-$s-$k.html) octets"
               sleep 2
             done
