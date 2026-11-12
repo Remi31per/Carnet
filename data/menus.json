@@ -1,79 +1,111 @@
 {
- "week": "2026-S46",
- "label": "Menus du mer. 11.11 au ven. 13.11",
- "intro": "Menus de rattrapage pour la fin de semaine. La plupart des actions se terminent ce mercredi 11.11 ; les nouvelles arrivent jeudi.",
+ "week": "2026-S47",
+ "label": "Menus du lun. 16.11 au ven. 20.11",
+ "intro": "Deux menus au choix pour deux personnes. Courses d'ici mercredi 18.11 pour profiter des actions (les nouvelles actions Migros seront ajoutées lundi).",
  "options": [
   {
    "nom": "Menu 1",
-   "theme": "Poulet et Italie",
+   "theme": "Asie et réconfort",
    "midi": [
     {
-     "days": "Mer – Jeu",
-     "when": "cuisiné mer. matin ou mar. soir",
-     "recipeId": "c-penne-poulet-tomates-sechees",
+     "days": "Lun – Mar",
+     "when": "cuisiné dim. soir",
+     "recipeId": "moi-poulet-champignons",
      "portions": 4,
-     "tip": "Penne Agnesi et tomates en action chez Migros."
+     "tip": "Morilles séchées en action chez Denner pour relever la sauce."
+    },
+    {
+     "days": "Mer – Jeu",
+     "when": "cuisiné mar. soir",
+     "recipeId": "c-poulet-coco-pakchoi",
+     "portions": 4,
+     "tip": "Nouvelle idée. Riz jasmin et lait de coco en action chez Denner."
     },
     {
      "days": "Ven",
      "when": "cuisiné jeu. soir",
-     "recipeId": "moi-poulet-moutarde",
+     "recipeId": "moi-gratin-pates",
      "portions": 4,
-     "tip": "Moutarde Thomy en action chez Migros."
+     "tip": "Emmental râpé chez Aldi."
     }
    ],
    "soir": [
     {
+     "day": "Lun",
+     "recipeId": "c-tartines-jambon-cru-mozza"
+    },
+    {
+     "day": "Mar",
+     "recipeId": "c-batonnets-poisson-rosti",
+     "tip": "Pendant que le curry mijote."
+    },
+    {
      "day": "Mer",
-     "recipeId": "c-wraps-poulet-poivrons"
+     "recipeId": "moi-crepes"
     },
     {
      "day": "Jeu",
-     "recipeId": "moi-pain-fromage-yaourt",
+     "recipeId": "moi-sandwich",
      "tip": "Soir de fournée : rien à cuisiner."
     },
     {
      "day": "Ven",
-     "recipeId": "c-tortelloni-beurre-sauge"
+     "recipeId": "c-thon-poele-riz"
     }
    ],
-   "note": "Légumes : courgette, tomates, poivrons."
+   "note": "Légumes : carottes, pak-choï, petits pois. Pas de butternut."
   },
   {
    "nom": "Menu 2",
-   "theme": "Réconfort et Asie",
+   "theme": "Italie et four",
    "midi": [
     {
-     "days": "Mer – Jeu",
-     "when": "cuisiné mer. matin ou mar. soir",
-     "recipeId": "c-hache-lentilles-carottes",
+     "days": "Lun – Mar",
+     "when": "cuisiné dim. soir",
+     "recipeId": "moi-boulettes",
      "portions": 4,
-     "tip": "Lentilles rouges en action chez Denner."
+     "tip": "Penne Rummo 2 kg chez Aldi."
+    },
+    {
+     "days": "Mer – Jeu",
+     "when": "cuisiné mar. soir",
+     "recipeId": "c-gratin-butternut-hache",
+     "portions": 4,
+     "tip": "Nouvelle idée. Butternut IP-Suisse chez Denner."
     },
     {
      "days": "Ven",
      "when": "cuisiné jeu. soir",
-     "recipeId": "c-poulet-chou-chinois",
+     "recipeId": "moi-poulet-citron",
      "portions": 4,
-     "tip": "Chou chinois en action chez Denner."
+     "tip": "Citrons et carottes suisses chez Lidl."
     }
    ],
    "soir": [
     {
+     "day": "Lun",
+     "recipeId": "c-omelette-courgette-tomme"
+    },
+    {
+     "day": "Mar",
+     "recipeId": "c-soupe-coco-carottes",
+     "tip": "Faire double dose pour le jeudi."
+    },
+    {
      "day": "Mer",
-     "recipeId": "c-rosti-oeuf-jambon"
+     "recipeId": "moi-pain-viande-froide"
     },
     {
      "day": "Jeu",
-     "recipeId": "moi-croque",
-     "tip": "Soir de fournée : 10 minutes."
+     "recipeId": "c-soupe-coco-carottes",
+     "leftover": true
     },
     {
      "day": "Ven",
-     "recipeId": "c-veloute-potimarron"
+     "recipeId": "moi-pizza"
     }
    ],
-   "note": "Légumes : carottes, chou chinois, potimarron."
+   "note": "Un seul plat à la butternut. Légumes : courgettes, carottes, tomates."
   }
  ]
 }

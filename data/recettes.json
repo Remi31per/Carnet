@@ -2394,17 +2394,17 @@
   "completedBy": "claude",
   "updatedAt": "2026-11-01T01:15:00Z"
  },
- "c-poulet-paprika-poivrons": {
-  "title": "Poulet au paprika, poivrons et riz",
+ "c-poulet-coco-pakchoi": {
+  "title": "Poulet coco au citron vert, pak-choï et riz jasmin",
   "source": "claude",
   "type": "midi",
   "servings": 4,
   "prep": 15,
-  "cuisson": 25,
-  "time": "40 min",
+  "cuisson": 20,
+  "time": "35 min",
   "tags": [
-   "hongrois",
-   "mijoté"
+   "thaï",
+   "asiatique"
   ],
   "ingredients": [
    {
@@ -2412,193 +2412,24 @@
     "n": "filet de poulet"
    },
    {
-    "q": "2",
-    "n": "poivrons rouges"
-   },
-   {
-    "q": "1",
-    "n": "oignon"
-   },
-   {
-    "q": "2 cs",
-    "n": "paprika doux"
-   },
-   {
-    "q": "2 cs",
-    "n": "purée de tomates"
-   },
-   {
-    "q": "2 dl",
-    "n": "crème"
-   },
-   {
-    "q": "2 dl",
-    "n": "bouillon"
-   },
-   {
-    "q": "250 g",
-    "n": "riz"
-   },
-   {
-    "q": "300 g",
-    "n": "haricots verts"
-   },
-   {
-    "q": "1 cs",
-    "n": "huile"
-   }
-  ],
-  "steps": [
-   "Cuire le riz et les haricots.",
-   "Dorer le poulet en dés dans l'huile, ajouter oignon et poivrons en lanières.",
-   "Ajouter paprika, purée de tomates et bouillon, mijoter 15 minutes.",
-   "Hors du feu, ajouter la crème."
-  ],
-  "notes": "Poivrons et purée de tomates en action chez Migros et Lidl.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
-  "reheat": "2 min 30 à 800 W, remuer à mi-temps.",
-  "weekend": true
- },
- "c-penne-poulet-tomates-sechees": {
-  "title": "Penne au poulet, tomates et fromage frais",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 10,
-  "cuisson": 20,
-  "time": "30 min",
-  "tags": [
-   "italien",
-   "crémeux"
-  ],
-  "ingredients": [
-   {
-    "q": "500 g",
-    "n": "penne"
-   },
-   {
-    "q": "500 g",
-    "n": "filet de poulet"
-   },
-   {
-    "q": "300 g",
-    "n": "tomates cerises"
-   },
-   {
-    "q": "1",
-    "n": "courgette"
-   },
-   {
-    "q": "150 g",
-    "n": "fromage frais aux herbes"
-   },
-   {
-    "q": "1",
-    "n": "gousse d'ail"
-   },
-   {
-    "q": "1 cs",
-    "n": "huile d'olive"
-   }
-  ],
-  "steps": [
-   "Cuire les penne.",
-   "Dorer le poulet en dés avec l'ail, ajouter la courgette en demi-rondelles et les tomates coupées.",
-   "Faire fondre le fromage frais avec un peu d'eau de cuisson.",
-   "Mélanger avec les pâtes."
-  ],
-  "notes": "Un cousin rapide du poulet Cantadou que vous aimez.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
-  "reheat": "2 min à 800 W avec une cuillère d'eau.",
-  "weekend": true
- },
- "c-hache-lentilles-carottes": {
-  "title": "Viande hachée aux lentilles corail, carottes et riz",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 15,
-  "cuisson": 25,
-  "time": "40 min",
-  "tags": [
-   "familial",
-   "économique"
-  ],
-  "ingredients": [
-   {
-    "q": "400 g",
-    "n": "viande hachée de bœuf"
-   },
-   {
-    "q": "150 g",
-    "n": "lentilles rouges"
-   },
-   {
-    "q": "3",
-    "n": "carottes"
-   },
-   {
-    "q": "1",
-    "n": "oignon"
-   },
-   {
-    "q": "400 g",
-    "n": "tomates concassées"
-   },
-   {
-    "q": "1 cc",
-    "n": "cumin"
-   },
-   {
-    "q": "250 g",
-    "n": "riz"
-   }
-  ],
-  "steps": [
-   "Cuire le riz.",
-   "Dorer la viande avec l'oignon, ajouter carottes en dés, lentilles rincées, tomates et 4 dl d'eau.",
-   "Mijoter 20 minutes jusqu'à ce que les lentilles soient fondantes."
-  ],
-  "notes": "Lentilles rouges et tomates concassées en action chez Denner et Lidl.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
-  "reheat": "2 min 30 à 800 W.",
-  "weekend": true
- },
- "c-cabillaud-curry-riz": {
-  "title": "Cabillaud au curry coco, riz et petits pois",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 10,
-  "cuisson": 20,
-  "time": "30 min",
-  "tags": [
-   "asiatique",
-   "poisson"
-  ],
-  "ingredients": [
-   {
-    "q": "600 g",
-    "n": "cabillaud"
-   },
-   {
-    "q": "2 dl",
+    "q": "4 dl",
     "n": "lait de coco"
    },
    {
     "q": "1 cs",
-    "n": "pâte de curry jaune"
+    "n": "pâte de curry rouge"
    },
    {
-    "q": "300 g",
-    "n": "petits pois"
+    "q": "2",
+    "n": "pak-choï"
    },
    {
     "q": "2",
     "n": "carottes"
+   },
+   {
+    "q": "1",
+    "n": "citron vert"
    },
    {
     "q": "250 g",
@@ -2607,62 +2438,168 @@
   ],
   "steps": [
    "Cuire le riz.",
-   "Chauffer la pâte de curry, ajouter lait de coco, carottes en rondelles et petits pois, cuire 8 minutes.",
-   "Poser le cabillaud en gros morceaux, couvrir et cuire 6 minutes doucement."
+   "Dorer le poulet en dés avec la pâte de curry, ajouter carottes en rondelles et lait de coco, mijoter 12 minutes.",
+   "Ajouter le pak-choï émincé 3 minutes, finir au jus de citron vert."
   ],
-  "notes": "Le cabillaud ferme se réchauffe bien en sauce. Cabillaud en action chez Migros.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
-  "reheat": "2 min à 600 W, couvert.",
-  "weekend": false
+  "notes": "Riz jasmin, lait de coco et pak-choï en action chez Denner et Lidl.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
+  "reheat": "2 min 30 à 800 W.",
+  "weekend": true
  },
- "c-tortellini-jambon-petits-pois": {
-  "title": "Tortellini au jambon, crème et petits pois",
+ "c-penne-courgettes-thon": {
+  "title": "Penne aux courgettes, thon et citron",
   "source": "claude",
   "type": "midi",
   "servings": 4,
   "prep": 10,
-  "cuisson": 10,
-  "time": "20 min",
+  "cuisson": 15,
+  "time": "25 min",
   "tags": [
-   "italien",
+   "méditerranéen",
    "rapide"
   ],
   "ingredients": [
    {
-    "q": "750 g",
-    "n": "tortellini au jambon cru"
+    "q": "500 g",
+    "n": "penne"
    },
    {
-    "q": "150 g",
-    "n": "jambon"
+    "q": "2",
+    "n": "courgettes"
    },
    {
-    "q": "300 g",
-    "n": "petits pois"
+    "q": "2 boîtes",
+    "n": "thon à l'huile"
    },
    {
-    "q": "2 dl",
-    "n": "crème"
+    "q": "1",
+    "n": "citron"
    },
    {
-    "q": "50 g",
+    "q": "1",
+    "n": "gousse d'ail"
+   },
+   {
+    "q": "2 cs",
+    "n": "huile d'olive"
+   },
+   {
+    "q": "40 g",
     "n": "parmesan"
    }
   ],
   "steps": [
-   "Cuire les tortellini et les petits pois ensemble.",
-   "Chauffer la crème avec le jambon en lanières et le parmesan.",
-   "Mélanger le tout."
+   "Cuire les penne.",
+   "Faire revenir l'ail et les courgettes en dés 6 minutes.",
+   "Ajouter le thon émietté, le zeste et le jus de citron, mélanger aux pâtes et au parmesan."
   ],
-  "notes": "Tortellini Fini en action chez Denner.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
-  "reheat": "2 min à 800 W avec un peu de lait.",
+  "notes": "Penne Rummo et thon chez Aldi, courgettes chez Lidl.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
+  "reheat": "2 min à 800 W avec une cuillère d'eau.",
+  "weekend": false
+ },
+ "c-gratin-butternut-hache": {
+  "title": "Gratin de butternut à la viande hachée et penne",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 20,
+  "cuisson": 30,
+  "time": "50 min",
+  "tags": [
+   "gratin",
+   "familial"
+  ],
+  "ingredients": [
+   {
+    "q": "1",
+    "n": "courge butternut"
+   },
+   {
+    "q": "400 g",
+    "n": "viande hachée"
+   },
+   {
+    "q": "300 g",
+    "n": "penne"
+   },
+   {
+    "q": "1",
+    "n": "oignon"
+   },
+   {
+    "q": "400 g",
+    "n": "sauce tomate"
+   },
+   {
+    "q": "120 g",
+    "n": "mozzarella râpée"
+   }
+  ],
+  "steps": [
+   "Cuire les penne et la butternut en dés 10 minutes.",
+   "Dorer la viande avec l'oignon, ajouter la sauce tomate.",
+   "Mélanger le tout dans un plat, couvrir de mozzarella, gratiner 20 minutes à 200 °C."
+  ],
+  "notes": "Butternut IP-Suisse chez Denner, mozzarella râpée chez Lidl.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
+  "reheat": "3 min à 600 W.",
   "weekend": true
  },
- "c-poulet-chou-chinois": {
-  "title": "Poulet sauté au chou chinois, nouilles et carottes",
+ "c-poulet-moutarde-miel-carottes": {
+  "title": "Poulet miel-moutarde, carottes rôties et riz",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 10,
+  "cuisson": 25,
+  "time": "35 min",
+  "tags": [
+   "four",
+   "familial"
+  ],
+  "ingredients": [
+   {
+    "q": "600 g",
+    "n": "filet de poulet"
+   },
+   {
+    "q": "2 cs",
+    "n": "moutarde"
+   },
+   {
+    "q": "2 cs",
+    "n": "miel"
+   },
+   {
+    "q": "500 g",
+    "n": "carottes"
+   },
+   {
+    "q": "1 cs",
+    "n": "huile"
+   },
+   {
+    "q": "250 g",
+    "n": "riz"
+   }
+  ],
+  "steps": [
+   "Mélanger moutarde, miel et huile, enrober le poulet en morceaux et les carottes en bâtonnets.",
+   "Rôtir 25 minutes à 200 °C.",
+   "Servir avec le riz."
+  ],
+  "notes": "Carottes suisses bio chez Lidl.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
+  "reheat": "2 min 30 à 800 W.",
+  "weekend": true
+ },
+ "c-hache-pakchoi-nouilles": {
+  "title": "Bœuf haché sauté au pak-choï et nouilles",
   "source": "claude",
   "type": "midi",
   "servings": 4,
@@ -2675,12 +2612,12 @@
   ],
   "ingredients": [
    {
-    "q": "500 g",
-    "n": "filet de poulet"
+    "q": "400 g",
+    "n": "viande hachée de bœuf"
    },
    {
-    "q": "1/2",
-    "n": "chou chinois"
+    "q": "2",
+    "n": "pak-choï"
    },
    {
     "q": "2",
@@ -2688,7 +2625,7 @@
    },
    {
     "q": "250 g",
-    "n": "nouilles aux œufs"
+    "n": "nouilles"
    },
    {
     "q": "3 cs",
@@ -2696,255 +2633,163 @@
    },
    {
     "q": "1 cs",
-    "n": "miel"
+    "n": "sauce d'huître"
    },
    {
     "q": "1 morceau",
     "n": "gingembre"
-   },
-   {
-    "q": "1 cs",
-    "n": "huile"
    }
   ],
   "steps": [
    "Cuire les nouilles.",
-   "Saisir le poulet en lanières, ajouter carottes en julienne et gingembre.",
-   "Ajouter le chou émincé, sauce soja et miel, sauter 3 minutes.",
-   "Mélanger avec les nouilles."
+   "Saisir la viande avec le gingembre, ajouter carottes en julienne.",
+   "Ajouter le pak-choï, les sauces et les nouilles, sauter 3 minutes."
   ],
-  "notes": "Chou chinois en action chez Denner.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
+  "notes": "Pak-choï en action chez Lidl et Denner.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
   "reheat": "2 min à 800 W.",
   "weekend": false
  },
- "c-gratin-chou-hache": {
-  "title": "Gratin de chou blanc à la viande hachée et pommes de terre",
+ "c-riz-tomate-poulet-courgettes": {
+  "title": "Riz à la tomate, poulet et courgettes façon paella",
   "source": "claude",
   "type": "midi",
   "servings": 4,
-  "prep": 20,
-  "cuisson": 40,
-  "time": "60 min",
-  "tags": [
-   "suisse",
-   "gratin"
-  ],
-  "ingredients": [
-   {
-    "q": "1/2",
-    "n": "chou blanc"
-   },
-   {
-    "q": "400 g",
-    "n": "viande hachée"
-   },
-   {
-    "q": "600 g",
-    "n": "pommes de terre"
-   },
-   {
-    "q": "1",
-    "n": "oignon"
-   },
-   {
-    "q": "2 dl",
-    "n": "crème"
-   },
-   {
-    "q": "100 g",
-    "n": "emmental râpé"
-   }
-  ],
-  "steps": [
-   "Cuire chou émincé et pommes de terre en rondelles 10 minutes à l'eau salée.",
-   "Dorer la viande avec l'oignon.",
-   "Alterner les couches dans un plat, verser la crème, parsemer de fromage.",
-   "Cuire 30 minutes à 200 °C."
-  ],
-  "notes": "Chou blanc suisse chez Lidl, pommes de terre IP-Suisse chez Denner.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46",
-  "reheat": "3 min à 600 W.",
-  "weekend": true
- },
- "c-wraps-poulet-poivrons": {
-  "title": "Wraps au poulet, poivrons et fromage frais",
-  "source": "claude",
-  "type": "soir",
-  "servings": 2,
   "prep": 15,
-  "cuisson": 8,
-  "time": "23 min",
+  "cuisson": 25,
+  "time": "40 min",
   "tags": [
-   "tex-mex",
-   "rapide"
+   "espagnol",
+   "une poêle"
   ],
   "ingredients": [
    {
-    "q": "4",
-    "n": "tortillas"
+    "q": "500 g",
+    "n": "filet de poulet"
    },
    {
     "q": "250 g",
-    "n": "filet de poulet"
+    "n": "riz"
+   },
+   {
+    "q": "2",
+    "n": "courgettes"
    },
    {
     "q": "1",
     "n": "poivron"
    },
    {
-    "q": "60 g",
-    "n": "fromage frais"
-   },
-   {
-    "q": "1 poignée",
-    "n": "salade ou pousses d'épinards"
+    "q": "400 g",
+    "n": "tomates concassées"
    },
    {
     "q": "1 cc",
-    "n": "épices tex-mex"
+    "n": "paprika fumé"
+   },
+   {
+    "q": "6 dl",
+    "n": "bouillon"
    }
   ],
   "steps": [
-   "Saisir le poulet en lanières avec le poivron et les épices.",
-   "Tartiner les tortillas de fromage frais, garnir, rouler."
+   "Dorer le poulet en dés, ajouter poivron et courgettes.",
+   "Ajouter le riz, le paprika, les tomates et le bouillon.",
+   "Cuire 20 minutes à couvert sans remuer."
   ],
-  "notes": "Wraps en action chez Migros.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
+  "notes": "Tout dans une seule poêle.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
+  "reheat": "2 min 30 à 800 W.",
+  "weekend": true
  },
- "c-tortelloni-beurre-sauge": {
-  "title": "Tortelloni ricotta-épinards, beurre et tomates",
+ "c-tortellini-four-mozzarella": {
+  "title": "Tortellini gratinés à la tomate et mozzarella",
   "source": "claude",
-  "type": "soir",
-  "servings": 2,
-  "prep": 5,
-  "cuisson": 8,
-  "time": "13 min",
+  "type": "midi",
+  "servings": 4,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
   "tags": [
    "italien",
-   "express"
+   "gratin"
   ],
   "ingredients": [
    {
-    "q": "300 g",
-    "n": "tortelloni ricotta-épinards"
+    "q": "800 g",
+    "n": "tortellini ricotta-épinards"
+   },
+   {
+    "q": "500 g",
+    "n": "sauce tomate"
+   },
+   {
+    "q": "2",
+    "n": "courgettes"
    },
    {
     "q": "150 g",
-    "n": "tomates cerises"
-   },
-   {
-    "q": "20 g",
-    "n": "beurre"
-   },
-   {
-    "q": "30 g",
-    "n": "parmesan"
+    "n": "mozzarella"
    }
   ],
   "steps": [
-   "Cuire les tortelloni.",
-   "Faire fondre le beurre avec les tomates coupées 2 minutes, mélanger, parsemer de parmesan."
+   "Cuire les tortellini 2 minutes de moins que prévu.",
+   "Mélanger avec la sauce et les courgettes en dés dans un plat.",
+   "Couvrir de mozzarella, gratiner 15 minutes à 200 °C."
   ],
-  "notes": "Prêt en 15 minutes chrono.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
+  "notes": "Tortellini Rana et mozzarella Galbani chez Denner.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47",
+  "reheat": "2 min 30 à 800 W.",
+  "weekend": true
  },
- "c-limande-pommes-terre": {
-  "title": "Filets de limande au beurre citronné, pommes de terre",
+ "c-thon-poele-riz": {
+  "title": "Steak de thon poêlé, riz et pak-choï au sésame",
   "source": "claude",
   "type": "soir",
   "servings": 2,
   "prep": 10,
-  "cuisson": 20,
-  "time": "30 min",
+  "cuisson": 15,
+  "time": "25 min",
   "tags": [
    "poisson",
-   "léger"
+   "asiatique"
   ],
   "ingredients": [
    {
-    "q": "200 g",
-    "n": "filets de limande"
+    "q": "1",
+    "n": "steak de thon (200 g)"
    },
    {
-    "q": "400 g",
-    "n": "pommes de terre"
+    "q": "150 g",
+    "n": "riz jasmin"
    },
    {
     "q": "1",
-    "n": "citron"
+    "n": "pak-choï"
    },
    {
-    "q": "20 g",
-    "n": "beurre"
+    "q": "2 cs",
+    "n": "sauce soja"
    },
    {
-    "q": "1 poignée",
-    "n": "persil"
+    "q": "1 cc",
+    "n": "graines de sésame"
    }
   ],
   "steps": [
-   "Cuire les pommes de terre.",
-   "Poêler les filets 2 minutes par face dans le beurre.",
-   "Arroser de jus de citron et de persil."
+   "Cuire le riz.",
+   "Saisir le thon 2 minutes par face.",
+   "Sauter le pak-choï 3 minutes avec la sauce soja, parsemer de sésame."
   ],
-  "notes": "Limande MSC en action chez Lidl.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
+  "notes": "Steak de thon MSC chez Lidl.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
  },
- "c-veloute-potimarron": {
-  "title": "Velouté de potimarron et tartines au vacherin",
-  "source": "claude",
-  "type": "soir",
-  "servings": 2,
-  "prep": 10,
-  "cuisson": 20,
-  "time": "30 min",
-  "tags": [
-   "suisse",
-   "soupe"
-  ],
-  "ingredients": [
-   {
-    "q": "1/2",
-    "n": "potimarron"
-   },
-   {
-    "q": "1",
-    "n": "pomme de terre"
-   },
-   {
-    "q": "5 dl",
-    "n": "bouillon"
-   },
-   {
-    "q": "1 dl",
-    "n": "crème"
-   },
-   {
-    "q": "4 tranches",
-    "n": "pain"
-   },
-   {
-    "q": "80 g",
-    "n": "vacherin fribourgeois"
-   }
-  ],
-  "steps": [
-   "Cuire potimarron (avec la peau) et pomme de terre en dés dans le bouillon 20 minutes.",
-   "Mixer avec la crème.",
-   "Gratiner les tartines de vacherin 5 minutes au four."
-  ],
-  "notes": "Potimarron et vacherin en action chez Lidl.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
- },
- "c-rosti-oeuf-jambon": {
-  "title": "Rösti, œuf au plat et jambon",
+ "c-batonnets-poisson-rosti": {
+  "title": "Bâtonnets de poisson, rösti et sauce yogourt citron",
   "source": "claude",
   "type": "soir",
   "servings": 2,
@@ -2952,37 +2797,169 @@
   "cuisson": 15,
   "time": "20 min",
   "tags": [
-   "suisse",
-   "express"
+   "express",
+   "familial"
   ],
   "ingredients": [
+   {
+    "q": "250 g",
+    "n": "bâtonnets de poisson"
+   },
    {
     "q": "500 g",
     "n": "rösti"
    },
    {
-    "q": "2",
-    "n": "œufs"
+    "q": "150 g",
+    "n": "yogourt grec"
    },
    {
-    "q": "100 g",
-    "n": "jambon"
+    "q": "1/2",
+    "n": "citron"
    },
    {
-    "q": "1",
-    "n": "tomate"
+    "q": "1 cs",
+    "n": "herbes"
    }
   ],
   "steps": [
-   "Dorer le rösti à la poêle 12 minutes en le retournant.",
-   "Cuire les œufs au plat, servir avec le jambon et la tomate."
+   "Cuire les bâtonnets au four selon le paquet.",
+   "Dorer le rösti à la poêle.",
+   "Mélanger yogourt, citron et herbes."
   ],
-  "notes": "Rösti Primana chez Aldi.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
+  "notes": "Bâtonnets et yogourt grec chez Lidl, rösti chez Aldi.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
  },
- "c-raclette-four": {
-  "title": "Raclette au four, pommes de terre et charcuterie",
+ "c-tartines-jambon-cru-mozza": {
+  "title": "Tartines grillées jambon cru, mozzarella et tomates",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 5,
+  "time": "15 min",
+  "tags": [
+   "italien",
+   "sans cuisson ou presque"
+  ],
+  "ingredients": [
+   {
+    "q": "4 tranches",
+    "n": "pain"
+   },
+   {
+    "q": "80 g",
+    "n": "jambon cru"
+   },
+   {
+    "q": "1",
+    "n": "mozzarella"
+   },
+   {
+    "q": "2",
+    "n": "tomates"
+   },
+   {
+    "q": "1 filet",
+    "n": "huile d'olive"
+   }
+  ],
+  "steps": [
+   "Griller le pain, garnir de tomates et mozzarella, passer 4 minutes sous le gril.",
+   "Ajouter le jambon cru et un filet d'huile d'olive."
+  ],
+  "notes": "Jambon cru et mozzarella en action chez Denner.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
+ },
+ "c-omelette-courgette-tomme": {
+  "title": "Omelette courgette et tomme vaudoise",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 8,
+  "time": "18 min",
+  "tags": [
+   "suisse",
+   "express"
+  ],
+  "ingredients": [
+   {
+    "q": "4",
+    "n": "œufs"
+   },
+   {
+    "q": "1",
+    "n": "courgette"
+   },
+   {
+    "q": "1/2",
+    "n": "tomme vaudoise"
+   },
+   {
+    "q": "1 cs",
+    "n": "herbes"
+   }
+  ],
+  "steps": [
+   "Poêler la courgette en fines rondelles 4 minutes.",
+   "Verser les œufs battus, ajouter la tomme en morceaux, cuire à couvert 4 minutes."
+  ],
+  "notes": "Tomme vaudoise chez Aldi.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
+ },
+ "c-soupe-coco-carottes": {
+  "title": "Soupe carottes-coco et pain grillé",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
+  "tags": [
+   "soupe",
+   "douceur"
+  ],
+  "ingredients": [
+   {
+    "q": "500 g",
+    "n": "carottes"
+   },
+   {
+    "q": "1",
+    "n": "oignon"
+   },
+   {
+    "q": "2 dl",
+    "n": "lait de coco"
+   },
+   {
+    "q": "4 dl",
+    "n": "bouillon"
+   },
+   {
+    "q": "1 cc",
+    "n": "curry"
+   },
+   {
+    "q": "4 tranches",
+    "n": "pain"
+   }
+  ],
+  "steps": [
+   "Cuire carottes et oignon dans le bouillon 20 minutes avec le curry.",
+   "Mixer avec le lait de coco.",
+   "Servir avec le pain grillé."
+  ],
+  "notes": "Se double facilement pour le lendemain.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
+ },
+ "c-fondue-tomate": {
+  "title": "Fondue à la tomate et pommes de terre",
   "source": "claude",
   "type": "weekend",
   "servings": 2,
@@ -2995,123 +2972,130 @@
   ],
   "ingredients": [
    {
-    "q": "600 g",
-    "n": "pommes de terre"
-   },
-   {
-    "q": "300 g",
-    "n": "fromage à raclette en tranches"
-   },
-   {
-    "q": "150 g",
-    "n": "jambon et viande séchée"
-   },
-   {
-    "q": "1 bocal",
-    "n": "cornichons et oignons"
-   },
-   {
-    "q": "1",
-    "n": "poivron"
-   }
-  ],
-  "steps": [
-   "Cuire les pommes de terre en robe des champs.",
-   "Les couper en deux sur une plaque, couvrir de raclette et de poivron en lanières.",
-   "Gratiner 8 minutes à 220 °C."
-  ],
-  "notes": "Sans appareil à raclette. Raclette en action chez Denner et Lidl.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
- },
- "c-cabillaud-four-tomates": {
-  "title": "Cabillaud au four, tomates et pommes de terre",
-  "source": "claude",
-  "type": "weekend",
-  "servings": 2,
-  "prep": 10,
-  "cuisson": 30,
-  "time": "40 min",
-  "tags": [
-   "méditerranéen",
-   "four"
-  ],
-  "ingredients": [
-   {
-    "q": "350 g",
-    "n": "cabillaud"
+    "q": "400 g",
+    "n": "mélange à fondue"
    },
    {
     "q": "400 g",
-    "n": "pommes de terre"
+    "n": "tomates concassées"
    },
    {
-    "q": "250 g",
-    "n": "tomates en grappe"
+    "q": "600 g",
+    "n": "pommes de terre"
    },
    {
     "q": "1",
     "n": "gousse d'ail"
    },
    {
-    "q": "2 cs",
-    "n": "huile d'olive"
-   },
-   {
-    "q": "1 poignée",
+    "q": "1 cs",
     "n": "herbes"
    }
   ],
   "steps": [
-   "Rôtir les pommes de terre en quartiers 15 minutes à 200 °C.",
-   "Ajouter tomates, ail, puis le cabillaud huilé et salé.",
-   "Cuire encore 15 minutes, parsemer d'herbes."
+   "Cuire les pommes de terre.",
+   "Chauffer les tomates avec l'ail, ajouter le fromage et faire fondre en remuant.",
+   "Servir sur les pommes de terre, parsemer d'herbes."
   ],
-  "notes": "Sans réchauffage : à manger tout de suite.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
+  "notes": "Variante valaisanne de la fondue, fondue Gerber chez Denner.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
  },
- "c-feuillete-saucisson": {
-  "title": "Saucisson vaudois en croûte feuilletée, salade de chou",
+ "c-dorade-citron-legumes": {
+  "title": "Filets de dorade au citron, courgettes et carottes au four",
+  "source": "claude",
+  "type": "weekend",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 20,
+  "time": "30 min",
+  "tags": [
+   "méditerranéen",
+   "four"
+  ],
+  "ingredients": [
+   {
+    "q": "2",
+    "n": "filets de dorade"
+   },
+   {
+    "q": "1",
+    "n": "courgette"
+   },
+   {
+    "q": "2",
+    "n": "carottes"
+   },
+   {
+    "q": "1",
+    "n": "citron"
+   },
+   {
+    "q": "2 cs",
+    "n": "huile d'olive"
+   },
+   {
+    "q": "300 g",
+    "n": "pommes de terre grenaille"
+   }
+  ],
+  "steps": [
+   "Rôtir les légumes et les grenailles 15 minutes à 200 °C.",
+   "Poser les filets, citron en rondelles et huile, cuire 8 minutes."
+  ],
+  "notes": "Filets de dorade chez Denner.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
+ },
+ "c-risotto-morilles": {
+  "title": "Risotto aux morilles et parmesan",
   "source": "claude",
   "type": "weekend",
   "servings": 2,
   "prep": 15,
-  "cuisson": 40,
-  "time": "55 min",
+  "cuisson": 25,
+  "time": "40 min",
   "tags": [
-   "suisse",
-   "vaudois"
+   "italien",
+   "fête"
   ],
   "ingredients": [
    {
-    "q": "1",
-    "n": "saucisson vaudois"
+    "q": "20 g",
+    "n": "morilles séchées"
+   },
+   {
+    "q": "160 g",
+    "n": "riz à risotto"
    },
    {
     "q": "1",
-    "n": "pâte feuilletée"
+    "n": "échalote"
    },
    {
-    "q": "1",
-    "n": "jaune d'œuf"
+    "q": "1 dl",
+    "n": "vin blanc"
    },
    {
-    "q": "1/4",
-    "n": "chou blanc"
+    "q": "6 dl",
+    "n": "bouillon"
    },
    {
-    "q": "2 cs",
-    "n": "vinaigrette"
+    "q": "40 g",
+    "n": "parmesan"
+   },
+   {
+    "q": "20 g",
+    "n": "beurre"
    }
   ],
   "steps": [
-   "Pocher le saucisson 20 minutes dans l'eau frémissante, peler.",
-   "L'envelopper de pâte feuilletée, dorer au jaune d'œuf.",
-   "Cuire 20 minutes à 200 °C ; servir avec le chou émincé en salade."
+   "Réhydrater les morilles 20 minutes dans l'eau chaude, filtrer l'eau.",
+   "Nacrer le riz avec l'échalote, déglacer au vin.",
+   "Ajouter bouillon et eau des morilles louche par louche 18 minutes, puis les morilles, le beurre et le parmesan."
   ],
-  "notes": "Saucisson vaudois IGP chez Denner, pâte feuilletée chez Aldi.",
-  "createdAt": "2026-11-11T00:40:00Z",
-  "week": "2026-S46"
+  "notes": "Morilles séchées en action chez Denner.",
+  "createdAt": "2026-11-12T08:00:00Z",
+  "week": "2026-S47"
  }
 }
