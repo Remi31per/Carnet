@@ -461,5 +461,195 @@
    "lait"
   ],
   "until": "jusqu'à épuisement du stock"
+ },
+ "m-courge": {
+  "store": "migros",
+  "name": "Courge Migros Bio",
+  "format": "1 kg",
+  "price": 3.75,
+  "regular": 5.8,
+  "pct": 35,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "courge",
+   "potimarron",
+   "butternut"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-patates-douces": {
+  "store": "migros",
+  "name": "Patates douces",
+  "format": "1 kg",
+  "price": 1.25,
+  "regular": 1.8,
+  "pct": 31,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "patate douce",
+   "patates douces"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-pdt": {
+  "store": "migros",
+  "name": "Pommes de terre",
+  "format": "2.5 kg",
+  "price": 3.45,
+  "regular": 4.6,
+  "pct": 25,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "pommes de terre"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-aubergines": {
+  "store": "migros",
+  "name": "Aubergines Migros Bio",
+  "format": "1 kg",
+  "price": 3.75,
+  "regular": 5.0,
+  "pct": 25,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "aubergine",
+   "aubergines"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-saumon-fume": {
+  "store": "migros",
+  "name": "Saumon fumé d'Islande",
+  "format": "250 g",
+  "price": 9.95,
+  "regular": 17.35,
+  "pct": 43,
+  "cat": "Poisson",
+  "keywords": [
+   "saumon fumé"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-gruyere-rape": {
+  "store": "migros",
+  "name": "Gruyère râpé",
+  "format": "3 × 130 g",
+  "price": 6.95,
+  "regular": 8.85,
+  "pct": 21,
+  "cat": "Fromages",
+  "keywords": [
+   "gruyère",
+   "fromage râpé",
+   "emmental"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-raclette": {
+  "store": "migros",
+  "name": "Fromage à raclette Le Maréchal",
+  "format": "au 100 g",
+  "price": 2.1,
+  "regular": 3.0,
+  "pct": 30,
+  "cat": "Fromages",
+  "keywords": [
+   "raclette"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-tomates-conc": {
+  "store": "migros",
+  "name": "Tomates Longobardi",
+  "format": "6 × 230 g",
+  "price": 5.45,
+  "regular": 7.8,
+  "pct": 30,
+  "cat": "Épicerie",
+  "keywords": [
+   "tomates concassées",
+   "sauce tomate",
+   "tomates pelées"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-couscous": {
+  "store": "migros",
+  "name": "Couscous Tipiak",
+  "format": "500 g",
+  "price": 1.84,
+  "regular": 2.3,
+  "pct": 20,
+  "cat": "Pâtes & riz",
+  "keywords": [
+   "couscous"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-huile": {
+  "store": "migros",
+  "name": "Huile de tournesol M-Classic",
+  "format": "500 ml",
+  "price": 1.62,
+  "regular": 2.7,
+  "pct": 40,
+  "cat": "Épicerie",
+  "keywords": [
+   "huile"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud · dès 2 pièces"
+ },
+ "m-clementines": {
+  "store": "migros",
+  "name": "Clémentines Extra",
+  "format": "1.5 kg",
+  "price": 4.4,
+  "regular": 5.9,
+  "pct": 25,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "clémentines"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-fol-epi": {
+  "store": "migros",
+  "name": "Fromage en tranches Fol Epi",
+  "format": "270 g",
+  "price": 4.95,
+  "regular": 6.3,
+  "pct": 21,
+  "cat": "Fromages",
+  "keywords": [
+   "fromage en tranches"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud"
+ },
+ "m-thai-noodles": {
+  "store": "migros",
+  "name": "Nouilles Thai Kitchen",
+  "format": "80 g",
+  "price": 1.56,
+  "regular": 1.95,
+  "pct": 20,
+  "cat": "Pâtes & riz",
+  "keywords": [
+   "nouilles"
+  ],
+  "until": "jusqu'au mer. 18.11",
+  "condition": "Migros Vaud · dès 2 pièces"
  }
 }
