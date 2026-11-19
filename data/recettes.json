@@ -2394,22 +2394,75 @@
   "completedBy": "claude",
   "updatedAt": "2026-11-01T01:15:00Z"
  },
- "c-poulet-coco-pakchoi": {
-  "title": "Poulet coco au citron vert, pak-choï et riz jasmin",
+ "c-fusilli-poulet-brocoli": {
+  "title": "Fusilli au poulet, brocoli et crème au parmesan",
   "source": "claude",
   "type": "midi",
   "servings": 4,
-  "prep": 15,
-  "cuisson": 20,
-  "time": "35 min",
+  "prep": 10,
+  "cuisson": 15,
+  "time": "25 min",
   "tags": [
-   "thaï",
-   "asiatique"
+   "italien",
+   "crémeux"
   ],
   "ingredients": [
    {
-    "q": "600 g",
+    "q": "500 g",
+    "n": "fusilli"
+   },
+   {
+    "q": "500 g",
     "n": "filet de poulet"
+   },
+   {
+    "q": "1",
+    "n": "brocoli"
+   },
+   {
+    "q": "2.5 dl",
+    "n": "crème"
+   },
+   {
+    "q": "60 g",
+    "n": "grana padano râpé"
+   },
+   {
+    "q": "1",
+    "n": "gousse d'ail"
+   }
+  ],
+  "steps": [
+   "Cuire les fusilli, ajouter les fleurettes de brocoli les 4 dernières minutes.",
+   "Dorer le poulet en dés avec l'ail, ajouter la crème et le fromage.",
+   "Mélanger le tout."
+  ],
+  "notes": "Fusilli, brocoli et crème en action chez Denner, Lidl et Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
+  "reheat": "2 min à 800 W avec un peu de lait.",
+  "weekend": true
+ },
+ "c-curry-crevettes-courgettes": {
+  "title": "Crevettes au curry coco, courgettes et riz jasmin",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 10,
+  "cuisson": 15,
+  "time": "25 min",
+  "tags": [
+   "thaï",
+   "rapide"
+  ],
+  "ingredients": [
+   {
+    "q": "450 g",
+    "n": "crevettes"
+   },
+   {
+    "q": "2",
+    "n": "courgettes"
    },
    {
     "q": "4 dl",
@@ -2420,16 +2473,8 @@
     "n": "pâte de curry rouge"
    },
    {
-    "q": "2",
-    "n": "pak-choï"
-   },
-   {
-    "q": "2",
-    "n": "carottes"
-   },
-   {
     "q": "1",
-    "n": "citron vert"
+    "n": "citron"
    },
    {
     "q": "250 g",
@@ -2438,221 +2483,17 @@
   ],
   "steps": [
    "Cuire le riz.",
-   "Dorer le poulet en dés avec la pâte de curry, ajouter carottes en rondelles et lait de coco, mijoter 12 minutes.",
-   "Ajouter le pak-choï émincé 3 minutes, finir au jus de citron vert."
+   "Chauffer la pâte de curry, ajouter le lait de coco et les courgettes en dés, cuire 6 minutes.",
+   "Ajouter les crevettes 3 minutes, finir au citron."
   ],
-  "notes": "Riz jasmin, lait de coco et pak-choï en action chez Denner et Lidl.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
-  "reheat": "2 min 30 à 800 W.",
-  "weekend": true
- },
- "c-penne-courgettes-thon": {
-  "title": "Penne aux courgettes, thon et citron",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 10,
-  "cuisson": 15,
-  "time": "25 min",
-  "tags": [
-   "méditerranéen",
-   "rapide"
-  ],
-  "ingredients": [
-   {
-    "q": "500 g",
-    "n": "penne"
-   },
-   {
-    "q": "2",
-    "n": "courgettes"
-   },
-   {
-    "q": "2 boîtes",
-    "n": "thon à l'huile"
-   },
-   {
-    "q": "1",
-    "n": "citron"
-   },
-   {
-    "q": "1",
-    "n": "gousse d'ail"
-   },
-   {
-    "q": "2 cs",
-    "n": "huile d'olive"
-   },
-   {
-    "q": "40 g",
-    "n": "parmesan"
-   }
-  ],
-  "steps": [
-   "Cuire les penne.",
-   "Faire revenir l'ail et les courgettes en dés 6 minutes.",
-   "Ajouter le thon émietté, le zeste et le jus de citron, mélanger aux pâtes et au parmesan."
-  ],
-  "notes": "Penne Rummo et thon chez Aldi, courgettes chez Lidl.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
-  "reheat": "2 min à 800 W avec une cuillère d'eau.",
+  "notes": "Crevettes, lait de coco et courgettes en action chez Lidl.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
+  "reheat": "2 min à 600 W, couvert (les crevettes restent tendres).",
   "weekend": false
  },
- "c-gratin-butternut-hache": {
-  "title": "Gratin de butternut à la viande hachée et penne",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 20,
-  "cuisson": 30,
-  "time": "50 min",
-  "tags": [
-   "gratin",
-   "familial"
-  ],
-  "ingredients": [
-   {
-    "q": "1",
-    "n": "courge butternut"
-   },
-   {
-    "q": "400 g",
-    "n": "viande hachée"
-   },
-   {
-    "q": "300 g",
-    "n": "penne"
-   },
-   {
-    "q": "1",
-    "n": "oignon"
-   },
-   {
-    "q": "400 g",
-    "n": "sauce tomate"
-   },
-   {
-    "q": "120 g",
-    "n": "mozzarella râpée"
-   }
-  ],
-  "steps": [
-   "Cuire les penne et la butternut en dés 10 minutes.",
-   "Dorer la viande avec l'oignon, ajouter la sauce tomate.",
-   "Mélanger le tout dans un plat, couvrir de mozzarella, gratiner 20 minutes à 200 °C."
-  ],
-  "notes": "Butternut IP-Suisse chez Denner, mozzarella râpée chez Lidl.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
-  "reheat": "3 min à 600 W.",
-  "weekend": true
- },
- "c-poulet-moutarde-miel-carottes": {
-  "title": "Poulet miel-moutarde, carottes rôties et riz",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 10,
-  "cuisson": 25,
-  "time": "35 min",
-  "tags": [
-   "four",
-   "familial"
-  ],
-  "ingredients": [
-   {
-    "q": "600 g",
-    "n": "filet de poulet"
-   },
-   {
-    "q": "2 cs",
-    "n": "moutarde"
-   },
-   {
-    "q": "2 cs",
-    "n": "miel"
-   },
-   {
-    "q": "500 g",
-    "n": "carottes"
-   },
-   {
-    "q": "1 cs",
-    "n": "huile"
-   },
-   {
-    "q": "250 g",
-    "n": "riz"
-   }
-  ],
-  "steps": [
-   "Mélanger moutarde, miel et huile, enrober le poulet en morceaux et les carottes en bâtonnets.",
-   "Rôtir 25 minutes à 200 °C.",
-   "Servir avec le riz."
-  ],
-  "notes": "Carottes suisses bio chez Lidl.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
-  "reheat": "2 min 30 à 800 W.",
-  "weekend": true
- },
- "c-hache-pakchoi-nouilles": {
-  "title": "Bœuf haché sauté au pak-choï et nouilles",
-  "source": "claude",
-  "type": "midi",
-  "servings": 4,
-  "prep": 15,
-  "cuisson": 10,
-  "time": "25 min",
-  "tags": [
-   "asiatique",
-   "wok"
-  ],
-  "ingredients": [
-   {
-    "q": "400 g",
-    "n": "viande hachée de bœuf"
-   },
-   {
-    "q": "2",
-    "n": "pak-choï"
-   },
-   {
-    "q": "2",
-    "n": "carottes"
-   },
-   {
-    "q": "250 g",
-    "n": "nouilles"
-   },
-   {
-    "q": "3 cs",
-    "n": "sauce soja"
-   },
-   {
-    "q": "1 cs",
-    "n": "sauce d'huître"
-   },
-   {
-    "q": "1 morceau",
-    "n": "gingembre"
-   }
-  ],
-  "steps": [
-   "Cuire les nouilles.",
-   "Saisir la viande avec le gingembre, ajouter carottes en julienne.",
-   "Ajouter le pak-choï, les sauces et les nouilles, sauter 3 minutes."
-  ],
-  "notes": "Pak-choï en action chez Lidl et Denner.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
-  "reheat": "2 min à 800 W.",
-  "weekend": false
- },
- "c-riz-tomate-poulet-courgettes": {
-  "title": "Riz à la tomate, poulet et courgettes façon paella",
+ "c-hache-padron-riz": {
+  "title": "Viande hachée à l'espagnole, poivrons et riz",
   "source": "claude",
   "type": "midi",
   "servings": 4,
@@ -2661,24 +2502,20 @@
   "time": "40 min",
   "tags": [
    "espagnol",
-   "une poêle"
+   "familial"
   ],
   "ingredients": [
    {
-    "q": "500 g",
-    "n": "filet de poulet"
+    "q": "400 g",
+    "n": "viande hachée"
    },
    {
-    "q": "250 g",
-    "n": "riz"
-   },
-   {
-    "q": "2",
-    "n": "courgettes"
+    "q": "200 g",
+    "n": "pimientos de Padrón"
    },
    {
     "q": "1",
-    "n": "poivron"
+    "n": "oignon"
    },
    {
     "q": "400 g",
@@ -2689,23 +2526,27 @@
     "n": "paprika fumé"
    },
    {
-    "q": "6 dl",
-    "n": "bouillon"
+    "q": "250 g",
+    "n": "riz"
+   },
+   {
+    "q": "150 g",
+    "n": "petits pois"
    }
   ],
   "steps": [
-   "Dorer le poulet en dés, ajouter poivron et courgettes.",
-   "Ajouter le riz, le paprika, les tomates et le bouillon.",
-   "Cuire 20 minutes à couvert sans remuer."
+   "Cuire le riz.",
+   "Dorer la viande avec l'oignon et les pimientos coupés.",
+   "Ajouter tomates, paprika et petits pois, mijoter 15 minutes."
   ],
-  "notes": "Tout dans une seule poêle.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
+  "notes": "Pimientos de Padrón à 1.– chez Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
   "reheat": "2 min 30 à 800 W.",
   "weekend": true
  },
- "c-tortellini-four-mozzarella": {
-  "title": "Tortellini gratinés à la tomate et mozzarella",
+ "c-raviolis-four-legumes": {
+  "title": "Raviolis gratinés aux légumes et sauce tomate",
   "source": "claude",
   "type": "midi",
   "servings": 4,
@@ -2718,11 +2559,11 @@
   ],
   "ingredients": [
    {
-    "q": "800 g",
-    "n": "tortellini ricotta-épinards"
+    "q": "1 kg",
+    "n": "raviolis ricotta-épinards"
    },
    {
-    "q": "500 g",
+    "q": "600 g",
     "n": "sauce tomate"
    },
    {
@@ -2735,184 +2576,161 @@
    }
   ],
   "steps": [
-   "Cuire les tortellini 2 minutes de moins que prévu.",
-   "Mélanger avec la sauce et les courgettes en dés dans un plat.",
-   "Couvrir de mozzarella, gratiner 15 minutes à 200 °C."
+   "Cuire les raviolis 2 minutes.",
+   "Mélanger avec la sauce et les courgettes en dés dans un plat, couvrir de mozzarella.",
+   "Gratiner 15 minutes à 200 °C."
   ],
-  "notes": "Tortellini Rana et mozzarella Galbani chez Denner.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47",
+  "notes": "Raviolis Anna's Best à −50 % chez Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
   "reheat": "2 min 30 à 800 W.",
   "weekend": true
  },
- "c-thon-poele-riz": {
-  "title": "Steak de thon poêlé, riz et pak-choï au sésame",
+ "c-poulet-celeri-noix-cajou": {
+  "title": "Poulet sauté au céleri et carottes, riz jasmin",
   "source": "claude",
-  "type": "soir",
-  "servings": 2,
+  "type": "midi",
+  "servings": 4,
+  "prep": 15,
+  "cuisson": 10,
+  "time": "25 min",
+  "tags": [
+   "chinois",
+   "wok"
+  ],
+  "ingredients": [
+   {
+    "q": "600 g",
+    "n": "filet de poulet"
+   },
+   {
+    "q": "3 branches",
+    "n": "céleri"
+   },
+   {
+    "q": "2",
+    "n": "carottes"
+   },
+   {
+    "q": "3 cs",
+    "n": "sauce soja"
+   },
+   {
+    "q": "1 cs",
+    "n": "miel"
+   },
+   {
+    "q": "1 cc",
+    "n": "fécule"
+   },
+   {
+    "q": "250 g",
+    "n": "riz jasmin"
+   }
+  ],
+  "steps": [
+   "Cuire le riz.",
+   "Saisir le poulet en lanières, ajouter céleri et carottes en biais 4 minutes.",
+   "Ajouter soja, miel et fécule délayée, laisser napper."
+  ],
+  "notes": "Céleri-branche suisse chez Lidl.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
+  "reheat": "2 min à 800 W.",
+  "weekend": false
+ },
+ "c-saumon-petits-pois-tortiglioni": {
+  "title": "Tortiglioni au saumon, petits pois et citron",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
   "prep": 10,
   "cuisson": 15,
   "time": "25 min",
   "tags": [
    "poisson",
-   "asiatique"
+   "crémeux"
   ],
   "ingredients": [
-   {
-    "q": "1",
-    "n": "steak de thon (200 g)"
-   },
-   {
-    "q": "150 g",
-    "n": "riz jasmin"
-   },
-   {
-    "q": "1",
-    "n": "pak-choï"
-   },
-   {
-    "q": "2 cs",
-    "n": "sauce soja"
-   },
-   {
-    "q": "1 cc",
-    "n": "graines de sésame"
-   }
-  ],
-  "steps": [
-   "Cuire le riz.",
-   "Saisir le thon 2 minutes par face.",
-   "Sauter le pak-choï 3 minutes avec la sauce soja, parsemer de sésame."
-  ],
-  "notes": "Steak de thon MSC chez Lidl.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
- },
- "c-batonnets-poisson-rosti": {
-  "title": "Bâtonnets de poisson, rösti et sauce yogourt citron",
-  "source": "claude",
-  "type": "soir",
-  "servings": 2,
-  "prep": 5,
-  "cuisson": 15,
-  "time": "20 min",
-  "tags": [
-   "express",
-   "familial"
-  ],
-  "ingredients": [
-   {
-    "q": "250 g",
-    "n": "bâtonnets de poisson"
-   },
    {
     "q": "500 g",
-    "n": "rösti"
+    "n": "tortiglioni"
+   },
+   {
+    "q": "400 g",
+    "n": "saumon"
+   },
+   {
+    "q": "300 g",
+    "n": "petits pois"
+   },
+   {
+    "q": "2 dl",
+    "n": "crème"
+   },
+   {
+    "q": "1",
+    "n": "citron"
+   }
+  ],
+  "steps": [
+   "Cuire les pâtes et les petits pois.",
+   "Cuire le saumon en dés 4 minutes dans la crème, ajouter zeste et jus de citron.",
+   "Mélanger aux pâtes."
+  ],
+  "notes": "Saumon en action chez Migros et Lidl, tortiglioni chez Aldi.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
+  "reheat": "2 min à 600 W, couvert.",
+  "weekend": false
+ },
+ "c-gratin-pdt-brocoli-lard": {
+  "title": "Gratin de pommes de terre, brocoli et lard",
+  "source": "claude",
+  "type": "midi",
+  "servings": 4,
+  "prep": 15,
+  "cuisson": 35,
+  "time": "50 min",
+  "tags": [
+   "suisse",
+   "gratin"
+  ],
+  "ingredients": [
+   {
+    "q": "800 g",
+    "n": "pommes de terre"
+   },
+   {
+    "q": "1",
+    "n": "brocoli"
    },
    {
     "q": "150 g",
-    "n": "yogourt grec"
+    "n": "lard"
    },
    {
-    "q": "1/2",
-    "n": "citron"
+    "q": "2.5 dl",
+    "n": "crème"
    },
    {
-    "q": "1 cs",
-    "n": "herbes"
+    "q": "100 g",
+    "n": "raclette ou tomme"
    }
   ],
   "steps": [
-   "Cuire les bâtonnets au four selon le paquet.",
-   "Dorer le rösti à la poêle.",
-   "Mélanger yogourt, citron et herbes."
+   "Cuire pommes de terre en rondelles et brocoli 8 minutes.",
+   "Dorer le lard.",
+   "Tout mettre dans un plat, napper de crème, couvrir de fromage, cuire 25 minutes à 200 °C."
   ],
-  "notes": "Bâtonnets et yogourt grec chez Lidl, rösti chez Aldi.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
+  "notes": "Lard Swiss Bacon chez Aldi, brocoli chez Denner ou Lidl.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48",
+  "reheat": "3 min à 600 W.",
+  "weekend": true
  },
- "c-tartines-jambon-cru-mozza": {
-  "title": "Tartines grillées jambon cru, mozzarella et tomates",
-  "source": "claude",
-  "type": "soir",
-  "servings": 2,
-  "prep": 10,
-  "cuisson": 5,
-  "time": "15 min",
-  "tags": [
-   "italien",
-   "sans cuisson ou presque"
-  ],
-  "ingredients": [
-   {
-    "q": "4 tranches",
-    "n": "pain"
-   },
-   {
-    "q": "80 g",
-    "n": "jambon cru"
-   },
-   {
-    "q": "1",
-    "n": "mozzarella"
-   },
-   {
-    "q": "2",
-    "n": "tomates"
-   },
-   {
-    "q": "1 filet",
-    "n": "huile d'olive"
-   }
-  ],
-  "steps": [
-   "Griller le pain, garnir de tomates et mozzarella, passer 4 minutes sous le gril.",
-   "Ajouter le jambon cru et un filet d'huile d'olive."
-  ],
-  "notes": "Jambon cru et mozzarella en action chez Denner.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
- },
- "c-omelette-courgette-tomme": {
-  "title": "Omelette courgette et tomme vaudoise",
-  "source": "claude",
-  "type": "soir",
-  "servings": 2,
-  "prep": 10,
-  "cuisson": 8,
-  "time": "18 min",
-  "tags": [
-   "suisse",
-   "express"
-  ],
-  "ingredients": [
-   {
-    "q": "4",
-    "n": "œufs"
-   },
-   {
-    "q": "1",
-    "n": "courgette"
-   },
-   {
-    "q": "1/2",
-    "n": "tomme vaudoise"
-   },
-   {
-    "q": "1 cs",
-    "n": "herbes"
-   }
-  ],
-  "steps": [
-   "Poêler la courgette en fines rondelles 4 minutes.",
-   "Verser les œufs battus, ajouter la tomme en morceaux, cuire à couvert 4 minutes."
-  ],
-  "notes": "Tomme vaudoise chez Aldi.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
- },
- "c-soupe-coco-carottes": {
-  "title": "Soupe carottes-coco et pain grillé",
+ "c-truite-amandes": {
+  "title": "Truite aux amandes, pommes grenaille",
   "source": "claude",
   "type": "soir",
   "servings": 2,
@@ -2920,51 +2738,213 @@
   "cuisson": 20,
   "time": "30 min",
   "tags": [
-   "soupe",
-   "douceur"
+   "poisson",
+   "classique"
   ],
   "ingredients": [
    {
-    "q": "500 g",
-    "n": "carottes"
+    "q": "2",
+    "n": "truites"
+   },
+   {
+    "q": "400 g",
+    "n": "pommes de terre grenaille"
+   },
+   {
+    "q": "30 g",
+    "n": "amandes effilées"
+   },
+   {
+    "q": "20 g",
+    "n": "beurre"
    },
    {
     "q": "1",
-    "n": "oignon"
+    "n": "citron"
+   }
+  ],
+  "steps": [
+   "Cuire les grenailles.",
+   "Poêler les truites farinées 5 minutes par face dans le beurre.",
+   "Dorer les amandes dans le beurre restant, arroser de citron."
+  ],
+  "notes": "Truites chez Denner, grenaille chez Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
+ },
+ "c-burrata-tomates-pain": {
+  "title": "Burrata, tomates cerises et pain grillé",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 0,
+  "time": "10 min",
+  "tags": [
+   "italien",
+   "sans cuisson"
+  ],
+  "ingredients": [
+   {
+    "q": "4",
+    "n": "mini burratas"
    },
    {
-    "q": "2 dl",
-    "n": "lait de coco"
-   },
-   {
-    "q": "4 dl",
-    "n": "bouillon"
-   },
-   {
-    "q": "1 cc",
-    "n": "curry"
+    "q": "250 g",
+    "n": "tomates cerises"
    },
    {
     "q": "4 tranches",
     "n": "pain"
+   },
+   {
+    "q": "1 cs",
+    "n": "pesto"
+   },
+   {
+    "q": "1 filet",
+    "n": "huile d'olive"
    }
   ],
   "steps": [
-   "Cuire carottes et oignon dans le bouillon 20 minutes avec le curry.",
-   "Mixer avec le lait de coco.",
-   "Servir avec le pain grillé."
+   "Couper les tomates, assaisonner.",
+   "Poser les burratas, ajouter pesto et huile, servir avec le pain grillé."
   ],
-  "notes": "Se double facilement pour le lendemain.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
+  "notes": "Mini burratas chez Lidl.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
  },
- "c-fondue-tomate": {
-  "title": "Fondue à la tomate et pommes de terre",
+ "c-rosti-saumon-fume": {
+  "title": "Rösti, saumon fumé et crème citronnée",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 5,
+  "cuisson": 15,
+  "time": "20 min",
+  "tags": [
+   "suisse",
+   "express"
+  ],
+  "ingredients": [
+   {
+    "q": "500 g",
+    "n": "rösti"
+   },
+   {
+    "q": "150 g",
+    "n": "saumon fumé"
+   },
+   {
+    "q": "100 g",
+    "n": "fromage frais"
+   },
+   {
+    "q": "1/2",
+    "n": "citron"
+   },
+   {
+    "q": "1 cs",
+    "n": "ciboulette"
+   }
+  ],
+  "steps": [
+   "Dorer le rösti en deux galettes.",
+   "Mélanger fromage frais, citron et ciboulette.",
+   "Servir avec le saumon fumé."
+  ],
+  "notes": "Saumon fumé et rösti en action chez Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
+ },
+ "c-soupe-legumes-raviolis": {
+  "title": "Soupe de légumes aux raviolis",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 5,
+  "cuisson": 15,
+  "time": "20 min",
+  "tags": [
+   "soupe",
+   "express"
+  ],
+  "ingredients": [
+   {
+    "q": "300 g",
+    "n": "jardinière de légumes"
+   },
+   {
+    "q": "250 g",
+    "n": "raviolis"
+   },
+   {
+    "q": "8 dl",
+    "n": "bouillon"
+   },
+   {
+    "q": "2 cs",
+    "n": "grana padano râpé"
+   }
+  ],
+  "steps": [
+   "Cuire les légumes 8 minutes dans le bouillon.",
+   "Ajouter les raviolis 3 minutes, parsemer de fromage."
+  ],
+  "notes": "Un reste de raviolis du midi suffit.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
+ },
+ "c-pizza-burrata-courgette": {
+  "title": "Pizza courgette, burrata et basilic",
+  "source": "claude",
+  "type": "soir",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 15,
+  "time": "25 min",
+  "tags": [
+   "italien",
+   "four"
+  ],
+  "ingredients": [
+   {
+    "q": "1",
+    "n": "pâte à pizza"
+   },
+   {
+    "q": "150 g",
+    "n": "sauce tomate"
+   },
+   {
+    "q": "1",
+    "n": "courgette"
+   },
+   {
+    "q": "2",
+    "n": "mini burratas"
+   },
+   {
+    "q": "1 poignée",
+    "n": "basilic"
+   }
+  ],
+  "steps": [
+   "Étaler sauce et courgette en fines rondelles sur la pâte.",
+   "Cuire 13 minutes à 230 °C.",
+   "Ajouter les burratas déchirées et le basilic."
+  ],
+  "notes": "Pâte à pizza bio chez Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
+ },
+ "c-fondue-chinoise": {
+  "title": "Fondue chinoise et ses sauces",
   "source": "claude",
   "type": "weekend",
   "servings": 2,
-  "prep": 10,
-  "cuisson": 25,
+  "prep": 15,
+  "cuisson": 20,
   "time": "35 min",
   "tags": [
    "suisse",
@@ -2973,58 +2953,97 @@
   "ingredients": [
    {
     "q": "400 g",
-    "n": "mélange à fondue"
+    "n": "viande pour fondue chinoise"
    },
    {
-    "q": "400 g",
-    "n": "tomates concassées"
+    "q": "1 l",
+    "n": "bouillon"
    },
+   {
+    "q": "300 g",
+    "n": "pommes de terre grenaille"
+   },
+   {
+    "q": "1 bocal",
+    "n": "sauces (cocktail, curry)"
+   },
+   {
+    "q": "1 bocal",
+    "n": "légumes au vinaigre"
+   }
+  ],
+  "steps": [
+   "Chauffer le bouillon dans le caquelon.",
+   "Cuire les grenailles.",
+   "Chacun cuit sa viande dans le bouillon ; servir avec les sauces."
+  ],
+  "notes": "Fondue chinoise Migros en action (viande suisse à vérifier sur l'emballage).",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
+ },
+ "c-raclette-legumes": {
+  "title": "Raclette au four, brocoli et pommes de terre",
+  "source": "claude",
+  "type": "weekend",
+  "servings": 2,
+  "prep": 10,
+  "cuisson": 25,
+  "time": "35 min",
+  "tags": [
+   "suisse",
+   "four"
+  ],
+  "ingredients": [
    {
     "q": "600 g",
     "n": "pommes de terre"
    },
    {
-    "q": "1",
-    "n": "gousse d'ail"
+    "q": "1/2",
+    "n": "brocoli"
    },
    {
-    "q": "1 cs",
-    "n": "herbes"
+    "q": "300 g",
+    "n": "fromage à raclette"
+   },
+   {
+    "q": "80 g",
+    "n": "viande séchée"
    }
   ],
   "steps": [
-   "Cuire les pommes de terre.",
-   "Chauffer les tomates avec l'ail, ajouter le fromage et faire fondre en remuant.",
-   "Servir sur les pommes de terre, parsemer d'herbes."
+   "Cuire les pommes de terre et le brocoli.",
+   "Les répartir dans un plat, couvrir de raclette.",
+   "Gratiner 8 minutes à 220 °C, servir avec la viande séchée."
   ],
-  "notes": "Variante valaisanne de la fondue, fondue Gerber chez Denner.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
+  "notes": "Raclette en action dans les quatre magasins.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
  },
- "c-dorade-citron-legumes": {
-  "title": "Filets de dorade au citron, courgettes et carottes au four",
+ "c-saumon-four-grenaille": {
+  "title": "Saumon au four, grenaille et tomates cerises",
   "source": "claude",
   "type": "weekend",
   "servings": 2,
   "prep": 10,
-  "cuisson": 20,
-  "time": "30 min",
+  "cuisson": 25,
+  "time": "35 min",
   "tags": [
-   "méditerranéen",
-   "four"
+   "four",
+   "poisson"
   ],
   "ingredients": [
    {
     "q": "2",
-    "n": "filets de dorade"
+    "n": "pavés de saumon"
    },
    {
-    "q": "1",
-    "n": "courgette"
+    "q": "400 g",
+    "n": "pommes de terre grenaille"
    },
    {
-    "q": "2",
-    "n": "carottes"
+    "q": "250 g",
+    "n": "tomates cerises"
    },
    {
     "q": "1",
@@ -3033,69 +3052,15 @@
    {
     "q": "2 cs",
     "n": "huile d'olive"
-   },
-   {
-    "q": "300 g",
-    "n": "pommes de terre grenaille"
    }
   ],
   "steps": [
-   "Rôtir les légumes et les grenailles 15 minutes à 200 °C.",
-   "Poser les filets, citron en rondelles et huile, cuire 8 minutes."
+   "Rôtir les grenailles coupées en deux 15 minutes à 200 °C.",
+   "Ajouter le saumon et les tomates, citron, huile.",
+   "Cuire encore 10 minutes."
   ],
-  "notes": "Filets de dorade chez Denner.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
- },
- "c-risotto-morilles": {
-  "title": "Risotto aux morilles et parmesan",
-  "source": "claude",
-  "type": "weekend",
-  "servings": 2,
-  "prep": 15,
-  "cuisson": 25,
-  "time": "40 min",
-  "tags": [
-   "italien",
-   "fête"
-  ],
-  "ingredients": [
-   {
-    "q": "20 g",
-    "n": "morilles séchées"
-   },
-   {
-    "q": "160 g",
-    "n": "riz à risotto"
-   },
-   {
-    "q": "1",
-    "n": "échalote"
-   },
-   {
-    "q": "1 dl",
-    "n": "vin blanc"
-   },
-   {
-    "q": "6 dl",
-    "n": "bouillon"
-   },
-   {
-    "q": "40 g",
-    "n": "parmesan"
-   },
-   {
-    "q": "20 g",
-    "n": "beurre"
-   }
-  ],
-  "steps": [
-   "Réhydrater les morilles 20 minutes dans l'eau chaude, filtrer l'eau.",
-   "Nacrer le riz avec l'échalote, déglacer au vin.",
-   "Ajouter bouillon et eau des morilles louche par louche 18 minutes, puis les morilles, le beurre et le parmesan."
-  ],
-  "notes": "Morilles séchées en action chez Denner.",
-  "createdAt": "2026-11-12T08:00:00Z",
-  "week": "2026-S47"
+  "notes": "Saumon sans peau à −42 % chez Migros.",
+  "createdAt": "2026-11-19T09:00:00Z",
+  "week": "2026-S48"
  }
 }

@@ -1,111 +1,110 @@
 {
- "week": "2026-S47",
- "label": "Menus du lun. 16.11 au ven. 20.11",
- "intro": "Deux menus au choix pour deux personnes. Courses d'ici mercredi 18.11 pour profiter des actions (les nouvelles actions Migros seront ajoutées lundi).",
+ "week": "2026-S48",
+ "label": "Menus du lun. 23.11 au ven. 27.11",
+ "intro": "Deux menus au choix pour deux personnes. Courses d'ici mercredi 25.11 pour profiter des actions.",
  "options": [
   {
    "nom": "Menu 1",
-   "theme": "Asie et réconfort",
+   "theme": "Italie et Asie",
    "midi": [
     {
      "days": "Lun – Mar",
      "when": "cuisiné dim. soir",
-     "recipeId": "moi-poulet-champignons",
+     "recipeId": "moi-lasagne",
      "portions": 4,
-     "tip": "Morilles séchées en action chez Denner pour relever la sauce."
+     "tip": "Sauces tomate et Grana Padano en action chez Migros."
     },
     {
      "days": "Mer – Jeu",
      "when": "cuisiné mar. soir",
-     "recipeId": "c-poulet-coco-pakchoi",
+     "recipeId": "c-fusilli-poulet-brocoli",
      "portions": 4,
-     "tip": "Nouvelle idée. Riz jasmin et lait de coco en action chez Denner."
+     "tip": "Nouvelle idée. Fusilli Barilla −50 % chez Denner, brocoli chez Lidl."
     },
     {
      "days": "Ven",
      "when": "cuisiné jeu. soir",
-     "recipeId": "moi-gratin-pates",
+     "recipeId": "moi-poulet-cajou",
      "portions": 4,
-     "tip": "Emmental râpé chez Aldi."
+     "tip": "Céleri ou carottes pour compléter."
     }
    ],
    "soir": [
     {
      "day": "Lun",
-     "recipeId": "c-tartines-jambon-cru-mozza"
+     "recipeId": "c-burrata-tomates-pain"
     },
     {
      "day": "Mar",
-     "recipeId": "c-batonnets-poisson-rosti",
-     "tip": "Pendant que le curry mijote."
+     "recipeId": "c-rosti-saumon-fume",
+     "tip": "Pendant que le poulet cuit."
     },
     {
      "day": "Mer",
-     "recipeId": "moi-crepes"
+     "recipeId": "moi-omelette"
     },
     {
      "day": "Jeu",
-     "recipeId": "moi-sandwich",
+     "recipeId": "moi-pain-perdu",
      "tip": "Soir de fournée : rien à cuisiner."
     },
     {
      "day": "Ven",
-     "recipeId": "c-thon-poele-riz"
+     "recipeId": "c-pizza-burrata-courgette"
     }
    ],
-   "note": "Légumes : carottes, pak-choï, petits pois. Pas de butternut."
+   "note": "Légumes : brocoli, carottes, tomates, courgette."
   },
   {
    "nom": "Menu 2",
-   "theme": "Italie et four",
+   "theme": "Mer et réconfort",
    "midi": [
     {
      "days": "Lun – Mar",
      "when": "cuisiné dim. soir",
-     "recipeId": "moi-boulettes",
+     "recipeId": "moi-riz-casimir",
      "portions": 4,
-     "tip": "Penne Rummo 2 kg chez Aldi."
+     "tip": "Riz jasmin chez Aldi."
     },
     {
      "days": "Mer – Jeu",
      "when": "cuisiné mar. soir",
-     "recipeId": "c-gratin-butternut-hache",
+     "recipeId": "c-curry-crevettes-courgettes",
      "portions": 4,
-     "tip": "Nouvelle idée. Butternut IP-Suisse chez Denner."
+     "tip": "Nouvelle idée. Crevettes et lait de coco chez Lidl."
     },
     {
      "days": "Ven",
      "when": "cuisiné jeu. soir",
-     "recipeId": "moi-poulet-citron",
+     "recipeId": "moi-pates-thon",
      "portions": 4,
-     "tip": "Citrons et carottes suisses chez Lidl."
+     "tip": "Thon chez Aldi, sauces Barilla chez Lidl."
     }
    ],
    "soir": [
     {
      "day": "Lun",
-     "recipeId": "c-omelette-courgette-tomme"
+     "recipeId": "c-truite-amandes"
     },
     {
      "day": "Mar",
-     "recipeId": "c-soupe-coco-carottes",
-     "tip": "Faire double dose pour le jeudi."
+     "recipeId": "c-soupe-legumes-raviolis"
     },
     {
      "day": "Mer",
-     "recipeId": "moi-pain-viande-froide"
+     "recipeId": "moi-tarte-tomates-thon-kzxh"
     },
     {
      "day": "Jeu",
-     "recipeId": "c-soupe-coco-carottes",
-     "leftover": true
+     "recipeId": "moi-bol-cereales",
+     "tip": "Soir de fournée : rien à cuisiner."
     },
     {
      "day": "Ven",
-     "recipeId": "moi-pizza"
+     "recipeId": "moi-flammekueche"
     }
    ],
-   "note": "Un seul plat à la butternut. Légumes : courgettes, carottes, tomates."
+   "note": "Pas de butternut. Légumes : courgettes, petits pois, carottes."
   }
  ]
 }
