@@ -626,5 +626,46 @@
    "pâte feuilletée"
   ],
   "until": "jusqu'à épuisement du stock"
+ },
+ "l-epinards": {
+  "store": "lidl",
+  "name": "Épinards suisses Qualité Suisse",
+  "format": "500 g",
+  "price": 2.59,
+  "regular": 3.49,
+  "pct": 26,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "épinards",
+   "épinard"
+  ],
+  "until": "jusqu'au mer. 25.11"
+ },
+ "l-clementines": {
+  "store": "lidl",
+  "name": "Clémentines XXL",
+  "format": "2.3 kg",
+  "price": 3.29,
+  "regular": 4.49,
+  "pct": 27,
+  "cat": "Fruits & légumes",
+  "keywords": [
+   "clémentines"
+  ],
+  "until": "jusqu'au mer. 25.11"
+ },
+ "d-oignons-pickles": {
+  "store": "denner",
+  "name": "Pickles d'oignons rouges Hugo",
+  "format": "bocal",
+  "price": 4.1,
+  "regular": 5.5,
+  "pct": 25,
+  "cat": "Épicerie",
+  "keywords": [
+   "oignons au vinaigre",
+   "pickles"
+  ],
+  "until": "jusqu'au mer. 25.11"
  }
 }
