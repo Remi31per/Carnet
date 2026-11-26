@@ -1,548 +1,138 @@
 {
- "m-saumon": {
-  "store": "migros",
-  "name": "Filet de saumon sans peau",
-  "format": "paquet",
-  "price": 12.95,
-  "cat": "Poisson",
-  "keywords": [
-   "saumon"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 22.25,
-  "pct": 42,
-  "condition": "Migros Vaud"
- },
- "m-saumon-fume": {
-  "store": "migros",
-  "name": "Saumon fumé Migros",
-  "format": "300 g",
-  "price": 8.95,
-  "cat": "Poisson",
-  "keywords": [
-   "saumon fumé"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 13.5,
-  "pct": 34,
-  "condition": "Migros Vaud"
- },
- "m-padron": {
-  "store": "migros",
-  "name": "Pimientos de Padrón",
-  "format": "200 g",
-  "price": 1.0,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "poivron",
-   "pimientos"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 1.95,
-  "pct": 49,
-  "condition": "Migros Vaud"
- },
- "m-raviolis": {
-  "store": "migros",
-  "name": "Raviolis Anna's Best (ricotta-épinards ou mozzarella-tomate)",
-  "format": "4 × 250 g",
-  "price": 9.5,
-  "cat": "Pâtes & riz",
-  "keywords": [
-   "raviolis",
-   "ravioli"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 19.0,
-  "pct": 50,
-  "condition": "Migros Vaud"
- },
- "m-sauces": {
-  "store": "migros",
-  "name": "Sauce basilic ou napolitaine",
-  "format": "pot",
-  "price": 5.9,
-  "cat": "Épicerie",
-  "keywords": [
-   "sauce tomate"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 8.85,
-  "pct": 33,
-  "condition": "Migros Vaud"
- },
- "m-jardiniere": {
-  "store": "migros",
-  "name": "Jardinière de légumes IP-Suisse",
-  "format": "paquet",
-  "price": 4.6,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "petits pois",
-   "carottes",
-   "légumes"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 6.93,
-  "pct": 34,
-  "condition": "Migros Vaud"
- },
- "m-grenaille": {
-  "store": "migros",
-  "name": "Pommes de terre grenaille",
-  "format": "600 g",
-  "price": 1.41,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "pommes de terre",
-   "grenaille"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 2.1,
-  "pct": 33,
-  "condition": "Migros Vaud"
- },
- "m-fondue-chinoise": {
-  "store": "migros",
-  "name": "Fondue chinoise Migros",
-  "format": "400 g",
-  "price": 13.1,
-  "cat": "Viande",
-  "keywords": [
-   "fondue chinoise"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 19.9,
-  "pct": 34,
-  "condition": "Migros Vaud"
- },
- "m-raclette": {
-  "store": "migros",
-  "name": "Fromage à raclette Plat Nature",
-  "format": "au 100 g",
-  "price": 1.55,
-  "cat": "Fromages",
-  "keywords": [
-   "raclette"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 2.6,
-  "pct": 40,
-  "condition": "Migros Vaud"
- },
- "m-rosti": {
-  "store": "migros",
-  "name": "Rösti originaux",
-  "format": "paquet",
-  "price": 5.0,
-  "cat": "Épicerie",
-  "keywords": [
-   "rösti"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 7.5,
-  "pct": 33,
-  "condition": "Migros Vaud"
- },
- "m-fusilli": {
-  "store": "migros",
-  "name": "Fusilli ou Mezzi rigatoni La Molisana",
-  "format": "1 kg",
-  "price": 3.0,
-  "cat": "Pâtes & riz",
-  "keywords": [
-   "fusilli",
-   "rigatoni",
-   "pâtes"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 5.0,
-  "pct": 40,
-  "condition": "Migros Vaud"
- },
- "m-petits-pois": {
-  "store": "migros",
-  "name": "Petits pois potagers",
-  "format": "paquet",
-  "price": 3.75,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "petits pois"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 5.6,
-  "pct": 33,
-  "condition": "Migros Vaud"
- },
- "m-grana": {
-  "store": "migros",
-  "name": "Grana Padano DOP râpé",
-  "format": "paquet",
-  "price": 5.85,
-  "cat": "Fromages",
-  "keywords": [
-   "parmesan",
-   "grana padano",
-   "fromage râpé"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 8.4,
-  "pct": 30,
-  "condition": "Migros Vaud"
- },
- "m-tomates-cerises": {
-  "store": "migros",
-  "name": "Tomates cerises mélange",
-  "format": "500 g",
-  "price": 3.45,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "tomates cerises",
-   "tomate",
-   "tomates"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 4.95,
-  "pct": 30,
-  "condition": "Migros Vaud"
- },
- "m-creme": {
-  "store": "migros",
-  "name": "Crème (boîte)",
-  "format": "pot",
-  "price": 1.25,
-  "cat": "Produits laitiers",
-  "keywords": [
-   "crème"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 2.5,
-  "pct": 50,
-  "condition": "Migros Vaud"
- },
- "m-philadelphia": {
-  "store": "migros",
-  "name": "Philadelphia Balance",
-  "format": "2 × 200 g",
-  "price": 3.9,
-  "cat": "Fromages",
-  "keywords": [
-   "fromage frais",
-   "philadelphia",
-   "cantadou"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 5.6,
-  "pct": 30,
-  "condition": "Migros Vaud"
- },
- "m-nuggets": {
-  "store": "migros",
-  "name": "Nuggets de poulet Migros",
-  "format": "500 g",
-  "price": 5.45,
-  "cat": "Viande",
-  "keywords": [
-   "nuggets"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 7.3,
-  "pct": 25,
-  "condition": "Migros Vaud"
- },
- "m-pate-pizza": {
-  "store": "migros",
-  "name": "Pâte à pizza bio abaissée",
-  "format": "rouleau",
-  "price": 2.36,
-  "cat": "Épicerie",
-  "keywords": [
-   "pâte à pizza"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 2.95,
-  "pct": 20,
-  "condition": "Migros Vaud"
- },
- "d-brocolis": {
-  "store": "denner",
-  "name": "Brocolis",
-  "format": "pièce",
-  "price": 2.5,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "brocoli"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 4.0,
-  "pct": 38
- },
- "d-raclette": {
-  "store": "denner",
-  "name": "Raclette Original Swiss",
-  "format": "paquet",
-  "price": 9.95,
-  "cat": "Fromages",
-  "keywords": [
-   "raclette"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 15.8,
-  "pct": 37
- },
- "d-fusilli": {
-  "store": "denner",
-  "name": "Barilla Fusilli n° 98",
-  "format": "6 × 500 g",
-  "price": 7.5,
-  "cat": "Pâtes & riz",
-  "keywords": [
-   "fusilli",
-   "pâtes"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 15.0,
-  "pct": 50
- },
- "d-kiri": {
-  "store": "denner",
-  "name": "Kiri double crème",
-  "format": "24 portions",
-  "price": 5.95,
-  "cat": "Fromages",
-  "keywords": [
-   "kiri",
-   "fromage frais"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 9.2,
-  "pct": 35
- },
- "d-chataignes": {
-  "store": "denner",
-  "name": "Châtaignes",
-  "format": "barquette",
-  "price": 0.69,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "châtaignes"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 0.99,
-  "pct": 30
- },
- "d-legumes": {
-  "store": "denner",
-  "name": "Mélange de légumes suisses Findus",
-  "format": "600 g",
-  "price": 5.8,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "légumes",
-   "haricots",
-   "carottes"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 8.3,
-  "pct": 30
- },
- "d-truites": {
-  "store": "denner",
-  "name": "Truites Denner",
-  "format": "paquet",
-  "price": 8.9,
-  "cat": "Poisson",
-  "keywords": [
-   "truite"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 15.1,
-  "pct": 41
- },
- "d-cremefine": {
-  "store": "denner",
-  "name": "Rama Cremefine à cuire",
-  "format": "250 ml",
-  "price": 1.25,
-  "cat": "Produits laitiers",
-  "keywords": [
-   "crème"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 1.8,
-  "pct": 31
- },
- "d-rosti-lard": {
-  "store": "denner",
-  "name": "Rösti bernois au lard Hero",
-  "format": "3 × 500 g",
-  "price": 9.95,
-  "cat": "Épicerie",
-  "keywords": [
-   "rösti"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 14.4,
-  "pct": 31
- },
- "l-brocoli": {
+ "l-clementines": {
   "store": "lidl",
-  "name": "Brocoli",
-  "format": "500 g",
-  "price": 1.19,
+  "name": "Clémentines avec feuilles",
+  "format": "1 kg",
+  "price": 1.79,
   "cat": "Fruits & légumes",
   "keywords": [
-   "brocoli"
+   "clémentines"
   ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 1.99,
+  "until": "jusqu'au mer. 02.12",
+  "regular": 2.99,
   "pct": 40
  },
- "l-courgettes": {
+ "l-vacherin": {
   "store": "lidl",
-  "name": "Courgettes",
-  "format": "1 kg",
-  "price": 1.29,
-  "cat": "Fruits & légumes",
+  "name": "Vacherin fribourgeois AOP",
+  "format": "200 g",
+  "price": 2.85,
+  "cat": "Fromages",
   "keywords": [
-   "courgette",
-   "courgettes"
+   "vacherin",
+   "fondue"
   ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 1.95,
-  "pct": 34
+  "until": "jusqu'au mer. 02.12",
+  "regular": 3.85,
+  "pct": 26
  },
- "l-saumon": {
+ "l-sauce-cerises": {
   "store": "lidl",
-  "name": "Pointes de saumon ASC Ocean Sea",
-  "format": "455 g",
-  "price": 7.49,
-  "cat": "Poisson",
-  "keywords": [
-   "saumon"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 10.99,
-  "pct": 32
- },
- "l-crevettes": {
-  "store": "lidl",
-  "name": "Crevettes Black Tiger ASC",
-  "format": "450 g",
-  "price": 5.99,
-  "cat": "Poisson",
-  "keywords": [
-   "crevettes"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 7.99,
-  "pct": 25
- },
- "l-coco": {
-  "store": "lidl",
-  "name": "Lait de coco Freshona",
-  "format": "400 ml",
-  "price": 1.06,
-  "cat": "Épicerie",
-  "keywords": [
-   "lait de coco",
-   "coco"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 1.39,
-  "pct": 24
- },
- "l-celeri": {
-  "store": "lidl",
-  "name": "Céleri-branche suisse",
-  "format": "500 g",
-  "price": 2.79,
-  "cat": "Fruits & légumes",
-  "keywords": [
-   "céleri"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 3.99,
-  "pct": 30
- },
- "l-sauces": {
-  "store": "lidl",
-  "name": "Sauces Barilla (arrabbiata, basilico, napoletana)",
-  "format": "400 g",
-  "price": 2.19,
+  "name": "Sauce aux tomates cerises Italiamo",
+  "format": "330 g",
+  "price": 1.16,
   "cat": "Épicerie",
   "keywords": [
    "sauce tomate"
   ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 2.99,
-  "pct": 27
+  "until": "jusqu'au mer. 02.12",
+  "regular": 1.55,
+  "pct": 25
  },
- "l-citrons": {
+ "l-tomates-conc": {
   "store": "lidl",
-  "name": "Citrons bio",
-  "format": "pièce",
-  "price": 0.39,
-  "cat": "Fruits & légumes",
+  "name": "Tomates concassées Baresa",
+  "format": "400 g",
+  "price": 0.49,
+  "cat": "Épicerie",
   "keywords": [
-   "citron"
+   "tomates concassées",
+   "tomates pelées"
   ],
-  "until": "jusqu'au mer. 25.11",
+  "until": "jusqu'au mer. 02.12",
   "regular": 0.59,
-  "pct": 34
+  "pct": 17
+ },
+ "l-pate-flammekueche": {
+  "store": "lidl",
+  "name": "Pâte pour tarte flambée fraîche Chef Select",
+  "format": "280 g",
+  "price": 1.09,
+  "cat": "Épicerie",
+  "keywords": [
+   "pâte à tarte flambée",
+   "pâte à pizza"
+  ],
+  "until": "jusqu'au mer. 02.12",
+  "regular": 1.39,
+  "pct": 22
+ },
+ "l-lasagne-findus": {
+  "store": "lidl",
+  "name": "Lasagne ou cannelloni Findus",
+  "format": "paquet",
+  "price": 5.99,
+  "cat": "Épicerie",
+  "keywords": [
+   "lasagne surgelée"
+  ],
+  "until": "jusqu'au mer. 02.12",
+  "regular": 7.59,
+  "pct": 21
+ },
+ "l-escalope-panee": {
+  "store": "lidl",
+  "name": "Escalopes de poulet panées Chef Select",
+  "format": "750 g",
+  "price": 7.71,
+  "cat": "Viande",
+  "keywords": [
+   "tranches panées",
+   "escalope panée",
+   "pané"
+  ],
+  "until": "jusqu'au mer. 02.12",
+  "regular": 9.64,
+  "pct": 20
+ },
+ "l-thon": {
+  "store": "lidl",
+  "name": "Thon MSC à l'huile Nixe",
+  "format": "140 g",
+  "price": 1.09,
+  "cat": "Poisson",
+  "keywords": [
+   "thon"
+  ],
+  "until": "jusqu'au mer. 02.12",
+  "regular": 1.35,
+  "pct": 19
  },
  "l-raclette": {
   "store": "lidl",
-  "name": "Raclette en bloc Qualité Suisse",
+  "name": "Raclette Qualité Suisse (¼ de meule)",
   "format": "au 100 g",
   "price": 0.89,
   "cat": "Fromages",
   "keywords": [
    "raclette"
   ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 1.19,
-  "pct": 25
+  "until": "jusqu'au mer. 02.12",
+  "regular": 1.09,
+  "pct": 18
  },
- "l-rosti": {
+ "l-huile-colza": {
   "store": "lidl",
-  "name": "Rösti original Harvest Basket",
-  "format": "750 g",
-  "price": 1.69,
+  "name": "Huile de colza Vita d'Or",
+  "format": "1 l",
+  "price": 2.99,
   "cat": "Épicerie",
   "keywords": [
-   "rösti"
+   "huile"
   ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 2.19,
-  "pct": 23
- },
- "l-quartiers": {
-  "store": "lidl",
-  "name": "Quartiers de pommes de terre",
-  "format": "750 g",
-  "price": 2.55,
-  "cat": "Épicerie",
-  "keywords": [
-   "pommes de terre"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 3.69,
-  "pct": 31
- },
- "l-burrata": {
-  "store": "lidl",
-  "name": "Mini burrata Italiamo",
-  "format": "4 × 50 g",
-  "price": 3.79,
-  "cat": "Fromages",
-  "keywords": [
-   "burrata",
-   "mozzarella"
-  ],
-  "until": "jusqu'au mer. 25.11",
-  "regular": 4.79,
-  "pct": 21
+  "until": "jusqu'au mer. 02.12",
+  "regular": 3.49,
+  "pct": 14
  },
  "a-bacon": {
   "store": "aldi",
@@ -560,7 +150,7 @@
  },
  "a-tortiglioni": {
   "store": "aldi",
-  "name": "Tortiglioni",
+  "name": "Tortiglioni Cucina Nobile",
   "format": "500 g",
   "price": 1.99,
   "cat": "Pâtes & riz",
@@ -572,25 +162,13 @@
  },
  "a-riz-jasmin": {
   "store": "aldi",
-  "name": "Riz au jasmin",
+  "name": "Riz au jasmin Bon-Ri",
   "format": "1 kg",
   "price": 1.99,
   "cat": "Pâtes & riz",
   "keywords": [
    "riz",
    "riz jasmin"
-  ],
-  "until": "jusqu'à épuisement du stock"
- },
- "a-sugo": {
-  "store": "aldi",
-  "name": "Sugo de base Le Gusto",
-  "format": "pot",
-  "price": 0.99,
-  "cat": "Épicerie",
-  "keywords": [
-   "sauce tomate",
-   "sugo"
   ],
   "until": "jusqu'à épuisement du stock"
  },
@@ -616,56 +194,53 @@
   ],
   "until": "jusqu'à épuisement du stock"
  },
- "a-pate-feuilletee": {
+ "a-rosti": {
   "store": "aldi",
-  "name": "Pâte feuilletée Leisi",
-  "format": "550 g",
-  "price": 3.99,
+  "name": "Rösti Primana",
+  "format": "paquet",
+  "price": 2.19,
   "cat": "Épicerie",
   "keywords": [
-   "pâte feuilletée"
+   "rösti"
   ],
   "until": "jusqu'à épuisement du stock"
  },
- "l-epinards": {
-  "store": "lidl",
-  "name": "Épinards suisses Qualité Suisse",
-  "format": "500 g",
-  "price": 2.59,
-  "regular": 3.49,
-  "pct": 26,
+ "a-herbes": {
+  "store": "aldi",
+  "name": "Herbes de cuisine Saveurs Suisses",
+  "format": "pot",
+  "price": 2.99,
   "cat": "Fruits & légumes",
   "keywords": [
-   "épinards",
-   "épinard"
+   "persil",
+   "ciboulette",
+   "basilic",
+   "herbes"
   ],
-  "until": "jusqu'au mer. 25.11"
+  "until": "jusqu'à épuisement du stock"
  },
- "l-clementines": {
-  "store": "lidl",
-  "name": "Clémentines XXL",
-  "format": "2.3 kg",
-  "price": 3.29,
-  "regular": 4.49,
-  "pct": 27,
-  "cat": "Fruits & légumes",
+ "a-viande-sechee": {
+  "store": "aldi",
+  "name": "Viande des Grisons Saveurs Suisses",
+  "format": "paquet · Suisse",
+  "price": 5.99,
+  "cat": "Charcuterie",
   "keywords": [
-   "clémentines"
+   "viande séchée",
+   "viande des grisons"
   ],
-  "until": "jusqu'au mer. 25.11"
+  "until": "jusqu'à épuisement du stock",
+  "origin": "Suisse"
  },
- "d-oignons-pickles": {
-  "store": "denner",
-  "name": "Pickles d'oignons rouges Hugo",
-  "format": "bocal",
-  "price": 4.1,
-  "regular": 5.5,
-  "pct": 25,
-  "cat": "Épicerie",
+ "a-sere": {
+  "store": "aldi",
+  "name": "Séré maigre sans lactose",
+  "format": "pot",
+  "price": 1.25,
+  "cat": "Produits laitiers",
   "keywords": [
-   "oignons au vinaigre",
-   "pickles"
+   "séré"
   ],
-  "until": "jusqu'au mer. 25.11"
+  "until": "jusqu'à épuisement du stock"
  }
 }

@@ -1,7 +1,7 @@
 {
- "week": "2026-S48",
- "label": "Menus du lun. 23.11 au ven. 27.11",
- "intro": "Deux menus au choix pour deux personnes. Courses d'ici mercredi 25.11 pour profiter des actions.",
+ "week": "2026-S49",
+ "label": "Menus du lun. 30.11 au ven. 04.12",
+ "intro": "Deux menus au choix pour deux personnes. Courses d'ici mercredi 02.12 pour profiter des actions (Denner et Migros seront ajoutés lundi).",
  "options": [
   {
    "nom": "Menu 1",
@@ -10,101 +10,101 @@
     {
      "days": "Lun – Mar",
      "when": "cuisiné dim. soir",
-     "recipeId": "moi-lasagne",
+     "recipeId": "moi-carbonara",
      "portions": 4,
-     "tip": "Sauces tomate et Grana Padano en action chez Migros."
+     "tip": "Lard Swiss Bacon chez Aldi."
     },
     {
      "days": "Mer – Jeu",
      "when": "cuisiné mar. soir",
-     "recipeId": "c-fusilli-poulet-brocoli",
+     "recipeId": "c-hache-chou-riz-coreen",
      "portions": 4,
-     "tip": "Nouvelle idée. Fusilli Barilla −50 % chez Denner, brocoli chez Lidl."
+     "tip": "Nouvelle idée. Riz jasmin chez Aldi."
     },
     {
      "days": "Ven",
      "when": "cuisiné jeu. soir",
-     "recipeId": "moi-poulet-cajou",
+     "recipeId": "moi-poulet-sauce-tomate",
      "portions": 4,
-     "tip": "Céleri ou carottes pour compléter."
+     "tip": "Tomates concassées à 0.49 chez Lidl."
     }
    ],
    "soir": [
     {
      "day": "Lun",
-     "recipeId": "c-burrata-tomates-pain"
+     "recipeId": "c-rosti-viande-sechee"
     },
     {
      "day": "Mar",
-     "recipeId": "c-rosti-saumon-fume",
-     "tip": "Pendant que le poulet cuit."
+     "recipeId": "c-croute-vacherin"
     },
     {
      "day": "Mer",
-     "recipeId": "moi-omelette"
+     "recipeId": "moi-croque"
     },
     {
      "day": "Jeu",
-     "recipeId": "moi-pain-perdu",
+     "recipeId": "moi-pain-fromage-yaourt",
      "tip": "Soir de fournée : rien à cuisiner."
     },
     {
      "day": "Ven",
-     "recipeId": "c-pizza-burrata-courgette"
+     "recipeId": "c-flammekueche-lardons-pommes"
     }
    ],
-   "note": "Légumes : brocoli, carottes, tomates, courgette."
+   "note": "Légumes : carottes, haricots, tomates."
   },
   {
    "nom": "Menu 2",
-   "theme": "Mer et réconfort",
+   "theme": "Tex-mex et four",
    "midi": [
     {
      "days": "Lun – Mar",
      "when": "cuisiné dim. soir",
-     "recipeId": "moi-riz-casimir",
+     "recipeId": "moi-tacquitos",
      "portions": 4,
-     "tip": "Riz jasmin chez Aldi."
+     "tip": "Poivrons et fromage frais pour la garniture."
     },
     {
      "days": "Mer – Jeu",
      "when": "cuisiné mar. soir",
-     "recipeId": "c-curry-crevettes-courgettes",
+     "recipeId": "c-poulet-tomates-cerises-tortiglioni",
      "portions": 4,
-     "tip": "Nouvelle idée. Crevettes et lait de coco chez Lidl."
+     "tip": "Nouvelle idée. Sauce Italiamo chez Lidl."
     },
     {
      "days": "Ven",
      "when": "cuisiné jeu. soir",
-     "recipeId": "moi-pates-thon",
+     "recipeId": "moi-courgettes-farcies",
      "portions": 4,
-     "tip": "Thon chez Aldi, sauces Barilla chez Lidl."
+     "tip": "Courgettes et riz."
     }
    ],
    "soir": [
     {
      "day": "Lun",
-     "recipeId": "c-truite-amandes"
+     "recipeId": "c-escalope-panee-salade"
     },
     {
      "day": "Mar",
-     "recipeId": "c-soupe-legumes-raviolis"
+     "recipeId": "c-veloute-patate-douce",
+     "tip": "Faire double dose pour jeudi."
     },
     {
      "day": "Mer",
-     "recipeId": "moi-tarte-tomates-thon-kzxh"
+     "recipeId": "moi-pain-viande-froide"
     },
     {
      "day": "Jeu",
-     "recipeId": "moi-bol-cereales",
-     "tip": "Soir de fournée : rien à cuisiner."
+     "recipeId": "c-veloute-patate-douce",
+     "leftover": true
     },
     {
      "day": "Ven",
-     "recipeId": "moi-flammekueche"
+     "recipeId": "moi-gateau-courgette"
     }
    ],
-   "note": "Pas de butternut. Légumes : courgettes, petits pois, carottes."
+   "note": "Pas de butternut. Légumes : courgettes, poivrons, patate douce."
   }
  ]
 }
